@@ -1,0 +1,76 @@
+#######################项目核心配置#######################
+#MySQL
+spring:
+  #数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/teaching_system?userSSL=true&serverTimezone=GMT
+    username: root
+    password: 13597803422dw
+  #    password: 123456
+  #nacos配置
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    loadbalancer:
+      ribbon:
+        eager-load:
+          enabled: true
+  #redis配置
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-idle: 8
+        max-active: 8
+        min-idle: 0
+        max-wait: 100ms
+  #缓存配置
+  cache:
+    redis:
+      time-to-live: 1800000 #设置缓存过期时间30min
+  #文件上传配置
+  servlet:
+    multipart:
+      max-request-size: 5GB  # 上传文件总的最大值 默认10MB
+      max-file-size: 1GB #单个文件最大值 默认10MB
+
+#mybatisplus日志配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#文件上传路径
+image:
+  URL: http://localhost:10086/
+
+
+  #服务器内存放文件的磁盘位置
+file:
+  Path: D:/Test/
+#  Path: /home/item/Test/
+
+#全局时间格式
+date:
+  format: yyyy-MM-dd HH:mm:ss
+
+# feign客户端配置
+feign:
+  client:
+    config:
+      default: # default全局的配置
+        loggerLevel: BASIC # 日志级别，BASIC就是基本的请求和响应信息
+        # feign客户端建立连接超时时间
+        connect-timeout: 10000
+        # feign客户端建立连接后读取资源超时时间
+        read-timeout: 20000
+        # 而service-test表示当调用service-test这个服务时，用下面的配置
+      device:
+        connect-timeout: 10000
+        read-timeout: 20000
+  httpclient:
+    enabled: true # 开启feign对HttpClient的支持
+    max-connections: 200 # 最大的连接数
+    max-connections-per-route: 50 # 每个路径的最大连接数

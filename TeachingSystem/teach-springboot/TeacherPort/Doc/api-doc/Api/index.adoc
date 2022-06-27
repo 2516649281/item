@@ -1,0 +1,188 @@
+= 教务管理系统
+:doctype: book
+:toc: left
+:toclevels: 3
+:toc-title: 目录
+:source-highlighter: highlightjs
+
+[%hardbreaks]
+version:1.0.0
+
+[%hardbreaks]
+教务管理系统接口
+
+
+== 教师端
+
+=== 分页查询已经布置的作业
+请求
+[source,HTTP ]
+----
+GET /work/{current}/{size}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页数+
+|===
+
+
+=== 根据教师编号查询作业
+请求
+[source,HTTP ]
+----
+GET /work/{current}/{size}/{teacherId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+每页显示数+
+|+teacherId+|+Long+|||+教师编号+
+|===
+
+
+=== 添加作业信息
+请求
+[source,HTTP ]
+----
+POST /work HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 修改作业信息
+请求
+[source,HTTP ]
+----
+PUT /work HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 删除作业信息
+请求
+[source,HTTP ]
+----
+DELETE /work/{workId}/{index} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+workId+|+Long+|||+作业编号+
+|+index+|+Boolean+|||+操作指数(true删除,false代表恢复)+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 根据班级编号查询学生
+请求
+[source,HTTP ]
+----
+GET /work/{classId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+classId+|+Long+|||+班级编号+
+|===
+
+
+=== 教师端根据作业编号查询已提交的作业
+请求
+[source,HTTP ]
+----
+GET /work/{workId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+workId+|+Long+|||+作业编号+
+|===
+
+
+=== 根据班级编号查询教师布置的作业
+请求
+[source,HTTP ]
+----
+GET /work/{classId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+classId+|+Long+|||+班级编号+
+|===
+
+
+=== 教师端批改学生作业
+请求
+[source,HTTP ]
+----
+PUT /work/sc HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 教师端查询所有班级
+请求
+[source,HTTP ]
+----
+GET /work HTTP/1.1
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+[ null ]
+----
+

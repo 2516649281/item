@@ -1,0 +1,13 @@
+#服务器端口
+server:
+  port: 8082
+#导入公共配置
+spring:
+  #  服务名称
+  application:
+    name: AdminPort
+  profiles:
+    active: public
+  main:
+    #允许存在多个Feign调用相同Service的接口
+    allow-bean-definition-overriding: true

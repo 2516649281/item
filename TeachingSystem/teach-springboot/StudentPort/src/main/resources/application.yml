@@ -1,0 +1,11 @@
+#服务端口
+server:
+  port: 8080
+
+#导入公共配置
+spring:
+  #  服务名称
+  application:
+    name: StudentPort
+  profiles:
+    include: public

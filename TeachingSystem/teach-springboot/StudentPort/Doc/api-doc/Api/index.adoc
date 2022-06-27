@@ -1,0 +1,138 @@
+= 教务管理系统
+:doctype: book
+:toc: left
+:toclevels: 3
+:toc-title: 目录
+:source-highlighter: highlightjs
+
+[%hardbreaks]
+version:1.0.0
+
+[%hardbreaks]
+教务管理系统接口
+
+
+== 学生端控制层
+
+=== 分页查询已经提交的作业
+请求
+[source,HTTP ]
+----
+GET /work/{current}/{size}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页数+
+|===
+
+
+=== 根据学生编号查询提交的作业
+请求
+[source,HTTP ]
+----
+GET /work/{current}/{size}/{studentId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|+studentId+|+Long+|||+学生编号+
+|===
+
+
+=== 提交作业
+请求
+[source,HTTP ]
+----
+POST /work HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 修改已提交的作业
+请求
+[source,HTTP ]
+----
+PUT /work HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 删除已提交的作业
+请求
+[source,HTTP ]
+----
+DELETE /work/{submitId}/{index} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+submitId+|+Long+|||+需提供:提交编号+
+|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 根据班级编号查询学生
+请求
+[source,HTTP ]
+----
+GET /work/{classId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+classId+|+Long+|||+班级编号+
+|===
+
+
+=== 根据班级编号查询教师布置的作业
+请求
+[source,HTTP ]
+----
+GET /work/{classId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+classId+|+Long+|||+班级编号+
+|===
+

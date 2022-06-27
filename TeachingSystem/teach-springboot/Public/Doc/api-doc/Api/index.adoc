@@ -1,0 +1,457 @@
+= 教务管理系统
+:doctype: book
+:toc: left
+:toclevels: 3
+:toc-title: 目录
+:source-highlighter: highlightjs
+
+[%hardbreaks]
+version:1.0.0
+
+[%hardbreaks]
+教务管理系统接口
+
+
+== 用户管理控制层
+
+=== 用户登录
+请求
+[source,HTTP ]
+----
+POST /user/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId" : 0,
+  "userName" : "",
+  "newUserName" : "",
+  "userPassword" : "",
+  "newUserPassword" : "",
+  "userSalt" : "",
+  "userHeader" : "",
+  "newUserHeader" : "",
+  "userIndex" : 0,
+  "userIdentity" : 0,
+  "logId" : 0,
+  "log" : {
+    "logId" : 0,
+    "deleted" : 0,
+    "createTime" : "",
+    "updateTime" : ""
+  },
+  "token" : ""
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+userId+|+Long+||+0+|
+|+userName+|+String+|||+用户名+
+|+newUserName+|+String+|||
+|+userPassword+|+String+|||+用户密码+
+|+newUserPassword+|+String+|||
+|+userSalt+|+String+|||+盐值+
+|+userHeader+|+String+|||+头像+
+|+newUserHeader+|+String+|||
+|+userIndex+|+Long+||+0+|
+|+userIdentity+|+Integer+||+0+|+身份指数+
+|+logId+|+Long+||+0+|
+|+log+|+Log+|||
+|+log.logId+|+Long+||+0+|
+|+log.deleted+|+Integer+||+0+|+逻辑删除+
+|+log.createTime+|+String+|||+创建时间+
+|+log.updateTime+|+String+|||+修改时间+
+|+token+|+String+|||
+|+user+|+Object+|||
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+{
+  "statue" : 0,
+  "message" : "",
+  "data" : {
+    "userId" : 0,
+    "userName" : "",
+    "newUserName" : "",
+    "userPassword" : "",
+    "newUserPassword" : "",
+    "userSalt" : "",
+    "userHeader" : "",
+    "newUserHeader" : "",
+    "userIndex" : 0,
+    "userIdentity" : 0,
+    "logId" : 0,
+    "log" : {
+      "logId" : 0,
+      "deleted" : 0,
+      "createTime" : "",
+      "updateTime" : ""
+    },
+    "token" : ""
+  },
+  "pageSize" : 0
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+statue+|+Integer+||+0+|+状态码+
+|+message+|+String+|||+消息+
+|+data+|+User+|||+数据+
+|+data.userId+|+Long+||+0+|
+|+data.userName+|+String+|||+用户名+
+|+data.newUserName+|+String+|||
+|+data.userPassword+|+String+|||+用户密码+
+|+data.newUserPassword+|+String+|||
+|+data.userSalt+|+String+|||+盐值+
+|+data.userHeader+|+String+|||+头像+
+|+data.newUserHeader+|+String+|||
+|+data.userIndex+|+Long+||+0+|
+|+data.userIdentity+|+Integer+||+0+|+身份指数+
+|+data.logId+|+Long+||+0+|
+|+data.log+|+Log+|||
+|+data.log.logId+|+Long+||+0+|
+|+data.log.deleted+|+Integer+||+0+|+逻辑删除+
+|+data.log.createTime+|+String+|||+创建时间+
+|+data.log.updateTime+|+String+|||+修改时间+
+|+data.token+|+String+|||
+|+data.user+|+Object+|||
+|+pageSize+|+Long+||+0+|+总数+
+|===
+
+
+=== 用户注册
+请求
+[source,HTTP ]
+----
+POST /user/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId" : 0,
+  "userName" : "",
+  "newUserName" : "",
+  "userPassword" : "",
+  "newUserPassword" : "",
+  "userSalt" : "",
+  "userHeader" : "",
+  "newUserHeader" : "",
+  "userIndex" : 0,
+  "userIdentity" : 0,
+  "logId" : 0,
+  "log" : {
+    "logId" : 0,
+    "deleted" : 0,
+    "createTime" : "",
+    "updateTime" : ""
+  },
+  "token" : ""
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+userId+|+Long+||+0+|
+|+userName+|+String+|||+用户名+
+|+newUserName+|+String+|||
+|+userPassword+|+String+|||+用户密码+
+|+newUserPassword+|+String+|||
+|+userSalt+|+String+|||+盐值+
+|+userHeader+|+String+|||+头像+
+|+newUserHeader+|+String+|||
+|+userIndex+|+Long+||+0+|
+|+userIdentity+|+Integer+||+0+|+身份指数+
+|+logId+|+Long+||+0+|
+|+log+|+Log+|||
+|+log.logId+|+Long+||+0+|
+|+log.deleted+|+Integer+||+0+|+逻辑删除+
+|+log.createTime+|+String+|||+创建时间+
+|+log.updateTime+|+String+|||+修改时间+
+|+token+|+String+|||
+|+user+|+Object+|||
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+{
+  "statue" : 0,
+  "message" : "",
+  "data" : 0,
+  "pageSize" : 0
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+statue+|+Integer+||+0+|+状态码+
+|+message+|+String+|||+消息+
+|+data+|+Integer+||+0+|+数据+
+|+pageSize+|+Long+||+0+|+总数+
+|===
+
+
+=== 修改用户信息
+请求
+[source,HTTP ]
+----
+PUT /user HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId" : 0,
+  "userName" : "",
+  "newUserName" : "",
+  "userPassword" : "",
+  "newUserPassword" : "",
+  "userSalt" : "",
+  "userHeader" : "",
+  "newUserHeader" : "",
+  "userIndex" : 0,
+  "userIdentity" : 0,
+  "logId" : 0,
+  "log" : {
+    "logId" : 0,
+    "deleted" : 0,
+    "createTime" : "",
+    "updateTime" : ""
+  },
+  "token" : ""
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+userId+|+Long+||+0+|
+|+userName+|+String+|||+用户名+
+|+newUserName+|+String+|||
+|+userPassword+|+String+|||+用户密码+
+|+newUserPassword+|+String+|||
+|+userSalt+|+String+|||+盐值+
+|+userHeader+|+String+|||+头像+
+|+newUserHeader+|+String+|||
+|+userIndex+|+Long+||+0+|
+|+userIdentity+|+Integer+||+0+|+身份指数+
+|+logId+|+Long+||+0+|
+|+log+|+Log+|||
+|+log.logId+|+Long+||+0+|
+|+log.deleted+|+Integer+||+0+|+逻辑删除+
+|+log.createTime+|+String+|||+创建时间+
+|+log.updateTime+|+String+|||+修改时间+
+|+token+|+String+|||
+|+user+|+Object+|||
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+{
+  "statue" : 0,
+  "message" : "",
+  "data" : 0,
+  "pageSize" : 0
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+statue+|+Integer+||+0+|+状态码+
+|+message+|+String+|||+消息+
+|+data+|+Integer+||+0+|+数据+
+|+pageSize+|+Long+||+0+|+总数+
+|===
+
+
+=== 注销
+请求
+[source,HTTP ]
+----
+DELETE /user HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId" : 0,
+  "userName" : "",
+  "newUserName" : "",
+  "userPassword" : "",
+  "newUserPassword" : "",
+  "userSalt" : "",
+  "userHeader" : "",
+  "newUserHeader" : "",
+  "userIndex" : 0,
+  "userIdentity" : 0,
+  "logId" : 0,
+  "log" : {
+    "logId" : 0,
+    "deleted" : 0,
+    "createTime" : "",
+    "updateTime" : ""
+  },
+  "token" : ""
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+userId+|+Long+||+0+|
+|+userName+|+String+|||+用户名+
+|+newUserName+|+String+|||
+|+userPassword+|+String+|||+用户密码+
+|+newUserPassword+|+String+|||
+|+userSalt+|+String+|||+盐值+
+|+userHeader+|+String+|||+头像+
+|+newUserHeader+|+String+|||
+|+userIndex+|+Long+||+0+|
+|+userIdentity+|+Integer+||+0+|+身份指数+
+|+logId+|+Long+||+0+|
+|+log+|+Log+|||
+|+log.logId+|+Long+||+0+|
+|+log.deleted+|+Integer+||+0+|+逻辑删除+
+|+log.createTime+|+String+|||+创建时间+
+|+log.updateTime+|+String+|||+修改时间+
+|+token+|+String+|||
+|+user+|+Object+|||
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+{
+  "statue" : 0,
+  "message" : "",
+  "data" : 0,
+  "pageSize" : 0
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+statue+|+Integer+||+0+|+状态码+
+|+message+|+String+|||+消息+
+|+data+|+Integer+||+0+|+数据+
+|+pageSize+|+Long+||+0+|+总数+
+|===
+
+
+=== 根据用户编号上传头像
+请求
+[source,HTTP ]
+----
+PUT /user/{userId} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+userId+|+Long+|||+用户编号+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+{
+  "statue" : 0,
+  "message" : "",
+  "data" : 0,
+  "pageSize" : 0
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+statue+|+Integer+||+0+|+状态码+
+|+message+|+String+|||+消息+
+|+data+|+Integer+||+0+|+数据+
+|+pageSize+|+Long+||+0+|+总数+
+|===
+
+
+=== 绑定身份信息
+请求
+[source,HTTP ]
+----
+PUT /user/{userId}/{userIndex} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+userId+|+Long+|||+用户编号+
+|+userIndex+|+Long+|||+身份编号+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+{
+  "statue" : 0,
+  "message" : "",
+  "data" : 0,
+  "pageSize" : 0
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+statue+|+Integer+||+0+|+状态码+
+|+message+|+String+|||+消息+
+|+data+|+Integer+||+0+|+数据+
+|+pageSize+|+Long+||+0+|+总数+
+|===
+
+
+=== 前端每隔3min向后端发送一次http请求，验证token是否已过期或服务器是否关闭
+请求
+[source,HTTP ]
+----
+GET /user HTTP/1.1
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+{
+  "statue" : 0,
+  "message" : "",
+  "pageSize" : 0
+}
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+statue+|+Integer+||+0+|+状态码+
+|+message+|+String+|||+消息+
+|+data+|+Boolean+|||+数据+
+|+pageSize+|+Long+||+0+|+总数+
+|===
+

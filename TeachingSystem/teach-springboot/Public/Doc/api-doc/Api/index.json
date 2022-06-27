@@ -1,0 +1,369 @@
+{
+  "info": {
+    "name": "教务管理系统",
+    "_postman_id": "index",
+    "description": "教务管理系统接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "全局异常处理",
+      "item": []
+    },
+    {
+      "name": "用户管理控制层",
+      "item": [
+        {
+          "id": "0617486a-cc65-4338-8c6f-0ba592b28d23",
+          "name": "用户登录",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/user/login",
+              "query": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/user/login",
+                  "query": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"userId\" : 0,\r\n    \"userName\" : \"\",\r\n    \"newUserName\" : \"\",\r\n    \"userPassword\" : \"\",\r\n    \"newUserPassword\" : \"\",\r\n    \"userSalt\" : \"\",\r\n    \"userHeader\" : \"\",\r\n    \"newUserHeader\" : \"\",\r\n    \"userIndex\" : 0,\r\n    \"userIdentity\" : 0,\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    },\r\n    \"token\" : \"\"\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "9d7a2733-5b06-4c25-9e27-827ecbe93369",
+          "name": "用户注册",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/user/register",
+              "query": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/user/register",
+                  "query": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "99d3543c-064f-4318-9272-55dc20bb0c5c",
+          "name": "修改用户信息",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/user",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/user",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "0f3b2142-6778-454f-afec-38d124f269bb",
+          "name": "注销",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/user",
+              "query": []
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/user",
+                  "query": []
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "0c4d8ee9-bc83-4315-bd47-32f3416f4105",
+          "name": "根据用户编号上传头像",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/user/{userId}",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/user/{userId}",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "1cf90ade-ba1b-450e-abff-04319dd66f81",
+          "name": "绑定身份信息",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/user/{userId}/{userIndex}",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/user/{userId}/{userIndex}",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "91f9a14b-8203-491b-bb81-0e3c3da69f89",
+          "name": "前端每隔3min向后端发送一次http请求，验证token是否已过期或服务器是否关闭",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/user",
+              "query": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/user",
+                  "query": []
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"pageSize\" : 0\r\n}",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

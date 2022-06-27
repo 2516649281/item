@@ -1,0 +1,614 @@
+= 教务管理系统
+:doctype: book
+:toc: left
+:toclevels: 3
+:toc-title: 目录
+:source-highlighter: highlightjs
+
+[%hardbreaks]
+version:1.0.0
+
+[%hardbreaks]
+教务管理系统接口
+
+
+== 管理员管理控制层
+
+=== 查询所有管理员
+请求
+[source,HTTP ]
+----
+GET /admin/{current}/{size}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|===
+
+
+=== 按照地址查询管理员
+请求
+[source,HTTP ]
+----
+GET /admin/{current}/{size}/{address}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|+address+|+String+|||+地址+
+|===
+
+
+=== 根据编号查询管理员
+请求
+[source,HTTP ]
+----
+GET /admin/{AdminId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+AdminId+|+Long+|||+管理员编号+
+|===
+
+
+=== 添加管理员
+请求
+[source,HTTP ]
+----
+POST /admin HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 修改管理员
+请求
+[source,HTTP ]
+----
+PUT /admin HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 删除或恢复管理员
+请求
+[source,HTTP ]
+----
+DELETE /admin/{AdminId}/{index} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+AdminId+|+Long+|||+管理员编号+
+|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+== 班级控制层
+
+=== 查询所有班级
+请求
+[source,HTTP ]
+----
+GET /class/{current}/{size}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+[ null ]
+----
+
+
+=== 根据班级名查询所有班级
+请求
+[source,HTTP ]
+----
+GET /class/{current}/{size}/{className}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|+className+|+String+|||+班级名称+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+[ null ]
+----
+
+
+=== 根据班级编号查询班级
+请求
+[source,HTTP ]
+----
+GET /class/{classId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+classId+|+Long+|||+班级编号+
+|===
+
+
+=== 添加班级
+请求
+[source,HTTP ]
+----
+POST /class HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 修改班级
+请求
+[source,HTTP ]
+----
+PUT /class HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 删除或恢复班级
+请求
+[source,HTTP ]
+----
+DELETE /class/{classId}/{index} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+classId+|+Long+|||+班级编号+
+|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+== 文件管理控制层
+
+=== 查询所有已知文件
+请求
+[source,HTTP ]
+----
+GET /file/select/{current}/{size}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|===
+
+
+=== 条件查询
+请求
+[source,HTTP ]
+----
+GET /file/selectB/{current}/{size}?fileName= HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|+fileName+|+String+|||
+|===
+
+
+== 学生管理控制层
+
+=== 查询所有学生
+请求
+[source,HTTP ]
+----
+GET /student/{current}/{size}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|===
+
+
+=== 按照班级编号查询学生
+请求
+[source,HTTP ]
+----
+GET /student/{current}/{size}/{classId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|+classId+|+Long+|||+班级编号+
+|===
+
+
+=== 根据编号查询学生
+请求
+[source,HTTP ]
+----
+GET /student/{studentId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+studentId+|+Long+|||+学生编号+
+|===
+
+
+=== 添加学生
+请求
+[source,HTTP ]
+----
+POST /student HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 修改学生
+请求
+[source,HTTP ]
+----
+PUT /student HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 删除或恢复学生
+请求
+[source,HTTP ]
+----
+DELETE /student/{studentId}/{index} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+studentId+|+Long+|||+学生编号+
+|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+== 科目控制层
+
+=== 查询所有科目
+请求
+[source,HTTP ]
+----
+GET /subject/{current}/{size}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|===
+
+
+=== 根据科目名查询
+请求
+[source,HTTP ]
+----
+GET /subject/{current}/{size}/{subjectName}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|+subjectName+|+String+|||+科目名+
+|===
+
+
+=== 根据科目编号查询
+请求
+[source,HTTP ]
+----
+GET /subject/{subjectId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+subjectId+|+Long+|||+科目编号+
+|===
+
+
+=== 添加科目
+请求
+[source,HTTP ]
+----
+POST /subject HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 修改科目
+请求
+[source,HTTP ]
+----
+PUT /subject HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 删除或恢复科目
+请求
+[source,HTTP ]
+----
+DELETE /subject/{subjectId}/{index} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+subjectId+|+Long+|||+科目编号+
+|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+== 教师控制层
+
+=== 查询所有教师
+请求
+[source,HTTP ]
+----
+GET /teacher/{current}/{size}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|===
+
+
+=== 按照科目编号查询教师
+请求
+[source,HTTP ]
+----
+GET /teacher/{current}/{size}/{subjectId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+current+|+Integer+|||+页码+
+|+size+|+Integer+|||+页长+
+|+subjectId+|+Long+|||+科目编号+
+|===
+
+
+=== 根据编号查询教师
+请求
+[source,HTTP ]
+----
+GET /teacher/{teacherId}? HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+teacherId+|+Long+|||+教师编号+
+|===
+
+
+=== 添加教师
+请求
+[source,HTTP ]
+----
+POST /teacher HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 修改教师
+请求
+[source,HTTP ]
+----
+PUT /teacher HTTP/1.1
+Content-Type: application/json
+
+----
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+
+
+=== 删除或恢复教师
+请求
+[source,HTTP ]
+----
+DELETE /teacher/{teacherId}/{index} HTTP/1.1
+
+----
+
+[options="header"]
+|===
+|+名称+|+类型+|+校验+|+默认+|+描述+
+|+teacherId+|+Integer+|||+教师编号+
+|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
+|===
+
+响应
+[source,HTTP ]
+----
+HTTP/1.1 200 OK
+
+
+----
+

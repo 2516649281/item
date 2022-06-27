@@ -1,0 +1,11 @@
+#服务端口
+server:
+  port: 8081
+
+#导入公共配置
+spring:
+  #  服务名称
+  application:
+    name: TeacherPort
+  profiles:
+    include: public

@@ -1,0 +1,42 @@
+#服务端口
+server:
+  port: 10086
+spring:
+  #服务名称
+  application:
+    name: FileServer
+    #数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fileserver?userSSL=false&serverTimezone=GMT
+    username: root
+    password: 13597803422dw
+    #    password: 123456
+    #nacos配置
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    loadbalancer:
+      ribbon:
+        eager-load:
+          enabled: true
+  #redis配置
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-idle: 8
+        max-active: 8
+        min-idle: 0
+        max-wait: 100ms
+
+  #服务器内存放文件的磁盘位置
+file:
+  Path: D:/Test/
+  #    Path: /home/item/Test/
+
+  #全局时间格式
+date:
+  format: yyyy-MM-dd HH:mm:ss

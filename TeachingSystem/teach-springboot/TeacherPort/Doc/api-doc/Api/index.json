@@ -1,0 +1,599 @@
+{
+  "info": {
+    "name": "教务管理系统",
+    "_postman_id": "index",
+    "description": "教务管理系统接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "教师端",
+      "item": [
+        {
+          "id": "5a165996-9f5e-4445-804b-1a303ad2f59f",
+          "name": "分页查询已经布置的作业",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work/{current}/{size}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work/{current}/{size}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "0de946bf-9563-474d-a055-8b31e347bb5d",
+          "name": "根据教师编号查询作业",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work/{current}/{size}/{teacherId}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "teacherId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work/{current}/{size}/{teacherId}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "teacherId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "d006caef-e8cc-48f2-a6fa-fb10490e2910",
+          "name": "添加作业信息",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work",
+              "query": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work",
+                  "query": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "58a28634-9a10-4425-8684-a9127d7d1bee",
+          "name": "修改作业信息",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "20972cef-af90-4e8e-9651-5d65df8445a5",
+          "name": "删除作业信息",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work/{workId}/{index}",
+              "query": []
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work/{workId}/{index}",
+                  "query": []
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "7dceaf32-ced0-4446-b2f4-7e0fd7fcd5d4",
+          "name": "根据班级编号查询学生",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work/{classId}",
+              "query": [
+                {
+                  "key": "classId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work/{classId}",
+                  "query": [
+                    {
+                      "key": "classId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "ea5bd74a-68a6-402e-bda9-6906c3e62137",
+          "name": "教师端根据作业编号查询已提交的作业",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work/{workId}",
+              "query": [
+                {
+                  "key": "workId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work/{workId}",
+                  "query": [
+                    {
+                      "key": "workId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "ea0bd011-37e8-419a-8821-0cbb8b87b374",
+          "name": "根据班级编号查询教师布置的作业",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work/{classId}",
+              "query": [
+                {
+                  "key": "classId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work/{classId}",
+                  "query": [
+                    {
+                      "key": "classId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "fe10971d-db65-4538-bb8d-1689e0d52e8d",
+          "name": "教师端批改学生作业",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work/sc",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work/sc",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "4f5949eb-cdbd-4b23-9753-18240bb355a9",
+          "name": "教师端查询所有班级",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/work",
+              "query": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/work",
+                  "query": []
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "[ null ]",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

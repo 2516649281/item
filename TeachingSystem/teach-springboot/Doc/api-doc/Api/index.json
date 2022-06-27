@@ -1,0 +1,3541 @@
+{
+  "info" : {
+    "name" : "教务管理系统",
+    "_postman_id" : "index",
+    "description" : "教务管理系统接口",
+    "schema" : "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item" : [ {
+    "name" : "管理员管理控制层",
+    "item" : [ {
+      "id" : "917e6e45-a8f3-4867-9235-da2799525ab1",
+      "name" : "查询所有管理员",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/admin/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/admin/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "af341591-e4cb-49fc-ae5b-b5d0a1e527c2",
+      "name" : "按照地址查询管理员",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/admin/{current}/{size}/{address}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "address",
+            "type" : "String",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/admin/{current}/{size}/{address}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "address",
+              "type" : "String",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "dec69878-0e66-4f86-889d-d878877aa53c",
+      "name" : "根据编号查询管理员",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/admin/{AdminId}",
+          "query" : [ {
+            "key" : "AdminId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/admin/{AdminId}",
+            "query" : [ {
+              "key" : "AdminId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "6aade991-2a02-4caf-9121-a4431458395e",
+      "name" : "添加管理员",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/admin",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"adminId\" : 0,\r\n  \"adminName\" : \"\",\r\n  \"adminAge\" : 0,\r\n  \"adminGender\" : 0,\r\n  \"adminAddress\" : \"\",\r\n  \"adminPhone\" : \"\",\r\n  \"adminEmail\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/admin",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"adminId\" : 0,\r\n  \"adminName\" : \"\",\r\n  \"adminAge\" : 0,\r\n  \"adminGender\" : 0,\r\n  \"adminAddress\" : \"\",\r\n  \"adminPhone\" : \"\",\r\n  \"adminEmail\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "b2e4a93e-8ee8-439e-a7f4-52ec586422a6",
+      "name" : "修改管理员",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/admin",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"adminId\" : 0,\r\n  \"adminName\" : \"\",\r\n  \"adminAge\" : 0,\r\n  \"adminGender\" : 0,\r\n  \"adminAddress\" : \"\",\r\n  \"adminPhone\" : \"\",\r\n  \"adminEmail\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/admin",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"adminId\" : 0,\r\n  \"adminName\" : \"\",\r\n  \"adminAge\" : 0,\r\n  \"adminGender\" : 0,\r\n  \"adminAddress\" : \"\",\r\n  \"adminPhone\" : \"\",\r\n  \"adminEmail\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "f5a633df-0b5e-4006-9da5-14f2fe4d7643",
+      "name" : "删除或恢复管理员",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/admin/{AdminId}/{index}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/admin/{AdminId}/{index}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "班级控制层",
+    "item" : [ {
+      "id" : "8f0a34b1-0190-4375-a1d4-469298a8bec4",
+      "name" : "查询所有班级",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/class/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/class/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "c6faa49f-4081-44b1-96c0-aff518c4e875",
+      "name" : "根据班级名查询所有班级",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/class/{current}/{size}/{className}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "className",
+            "type" : "String",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/class/{current}/{size}/{className}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "className",
+              "type" : "String",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "94992bbe-50d2-4ef8-87f5-825b36f25324",
+      "name" : "根据班级编号查询班级",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/class/{classId}",
+          "query" : [ {
+            "key" : "classId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/class/{classId}",
+            "query" : [ {
+              "key" : "classId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "29e690d3-6796-4780-b582-d71afeaae46a",
+      "name" : "添加班级",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/class",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"classId\" : 0,\r\n  \"className\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/class",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"classId\" : 0,\r\n  \"className\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "5b361759-c387-4ae9-9293-6744aa4e0e97",
+      "name" : "修改班级",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/class",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"classId\" : 0,\r\n  \"className\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/class",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"classId\" : 0,\r\n  \"className\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "ed2f0324-cefb-4c0f-a3c3-a5c070894a25",
+      "name" : "删除或恢复班级",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/class/{classId}/{index}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/class/{classId}/{index}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "文件管理控制层",
+    "item" : [ {
+      "id" : "95d42383-157c-4855-9175-152ad21c1e33",
+      "name" : "查询所有已知文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/fileMage/select/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/fileMage/select/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "736bf9de-285a-49c1-b4ab-d5d3d20920f7",
+      "name" : "条件查询",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/fileMage/selectB/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "fileName",
+            "type" : "String",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/fileMage/selectB/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "fileName",
+              "type" : "String",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "文件操作controller",
+    "item" : [ {
+      "id" : "2b17d259-66b5-434c-969d-179683a6e2c1",
+      "name" : "一次上传一个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/load",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ 0 ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/load",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ 0 ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"0\" : 0\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "7c9c48d0-341b-46bb-a3fc-3c7920d92be1",
+      "name" : "一次上传多个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/loads",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ [ 0 ] ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/loads",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ [ 0 ] ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"0\" : 0\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "6e962f18-4be2-4b86-8d23-a96f6fc9863d",
+      "name" : "修改一个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/update/{fileId}",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ 0 ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/update/{fileId}",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ 0 ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "dc59dbff-137d-486d-9220-1898e9682700",
+      "name" : "一次修改多个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/updates",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ [ 0 ] ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/updates",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ [ 0 ] ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "e000205f-a04a-442a-8f56-ecbcecda7f5c",
+      "name" : "删除一个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/delete/{fileId}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/delete/{fileId}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "c0f6188f-1e2a-49fa-a2a1-64243efe9209",
+      "name" : "一次删除多个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/deletes",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ 0 ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/deletes",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ 0 ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "feadc610-765f-4214-9255-028175d5d566",
+      "name" : "读取一个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/select/{fileId}",
+          "query" : [ {
+            "key" : "fileId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/select/{fileId}",
+            "query" : [ {
+              "key" : "fileId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "5662d62c-8158-47fd-9c28-0a19daa2d6f2",
+      "name" : "读取多个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/selects",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ 0 ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/selects",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ 0 ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "文件管理控制层",
+    "item" : [ {
+      "id" : "b6673d19-4c89-4950-b2d6-9ade2bddc5c3",
+      "name" : "查询所有已知文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/select/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/select/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "5e95ec54-2810-4680-957f-1456db7a4cda",
+      "name" : "条件查询",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/selectB/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "fileName",
+            "type" : "String",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/selectB/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "fileName",
+              "type" : "String",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "全局异常处理",
+    "item" : [ ]
+  }, {
+    "name" : "学生管理控制层",
+    "item" : [ {
+      "id" : "dc96e2a0-17e6-4e9f-b173-340803ff0dae",
+      "name" : "查询所有学生",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/student/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/student/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "4bef9703-3f90-4fad-ab97-e758d792fdc1",
+      "name" : "按照班级编号查询学生",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/student/{current}/{size}/{classId}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "classId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/student/{current}/{size}/{classId}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "classId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "f07864f5-2a77-4f5c-a478-b6e8fa66c070",
+      "name" : "根据编号查询学生",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/student/{studentId}",
+          "query" : [ {
+            "key" : "studentId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/student/{studentId}",
+            "query" : [ {
+              "key" : "studentId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "5beee89b-6fd3-4c5e-b8f9-0c1f74a38fe5",
+      "name" : "添加学生",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/student",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"studentId\" : 0,\r\n  \"studentName\" : \"\",\r\n  \"studentAge\" : 0,\r\n  \"studentGender\" : 0,\r\n  \"studentAddress\" : \"\",\r\n  \"studentPhone\" : \"\",\r\n  \"studentEmail\" : \"\",\r\n  \"classId\" : 0,\r\n  \"aClass\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/student",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"studentId\" : 0,\r\n  \"studentName\" : \"\",\r\n  \"studentAge\" : 0,\r\n  \"studentGender\" : 0,\r\n  \"studentAddress\" : \"\",\r\n  \"studentPhone\" : \"\",\r\n  \"studentEmail\" : \"\",\r\n  \"classId\" : 0,\r\n  \"aClass\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "4b1ee4cb-49c5-4d81-a451-f66bac22ff9d",
+      "name" : "修改学生",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/student",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"studentId\" : 0,\r\n  \"studentName\" : \"\",\r\n  \"studentAge\" : 0,\r\n  \"studentGender\" : 0,\r\n  \"studentAddress\" : \"\",\r\n  \"studentPhone\" : \"\",\r\n  \"studentEmail\" : \"\",\r\n  \"classId\" : 0,\r\n  \"aClass\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/student",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"studentId\" : 0,\r\n  \"studentName\" : \"\",\r\n  \"studentAge\" : 0,\r\n  \"studentGender\" : 0,\r\n  \"studentAddress\" : \"\",\r\n  \"studentPhone\" : \"\",\r\n  \"studentEmail\" : \"\",\r\n  \"classId\" : 0,\r\n  \"aClass\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "5c528deb-e23e-4d2c-b28b-1012bf60af56",
+      "name" : "删除或恢复学生",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/student/{studentId}/{index}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/student/{studentId}/{index}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "科目控制层",
+    "item" : [ {
+      "id" : "23e92ed1-f7ce-44f6-a140-15a352a4e698",
+      "name" : "查询所有科目",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/subject/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/subject/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "231b5a0f-158f-4786-82cd-ccb23e95ab6b",
+      "name" : "根据科目名查询",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/subject/{current}/{size}/{subjectName}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "subjectName",
+            "type" : "String",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/subject/{current}/{size}/{subjectName}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "subjectName",
+              "type" : "String",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "42802f49-db56-4c5c-a4de-c74cfd53a64c",
+      "name" : "根据科目编号查询",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/subject/{subjectId}",
+          "query" : [ {
+            "key" : "subjectId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/subject/{subjectId}",
+            "query" : [ {
+              "key" : "subjectId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "127225ec-595b-4234-83b8-76bb5db5ef75",
+      "name" : "添加科目",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/subject",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"subjectId\" : 0,\r\n  \"subjectName\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/subject",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"subjectId\" : 0,\r\n  \"subjectName\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "069d42f7-3193-4f90-92aa-ce476bf3597b",
+      "name" : "修改科目",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/subject",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"subjectId\" : 0,\r\n  \"subjectName\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/subject",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"subjectId\" : 0,\r\n  \"subjectName\" : \"\",\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "6b4967ee-62e4-43aa-9835-5e2c90306afc",
+      "name" : "删除或恢复科目",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/subject/{subjectId}/{index}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/subject/{subjectId}/{index}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "教师控制层",
+    "item" : [ {
+      "id" : "92d77a89-521a-400a-a961-d118857af9f7",
+      "name" : "查询所有教师",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/teacher/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/teacher/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "b8d862e4-0ef5-4075-af49-cd4a0cabb0ce",
+      "name" : "按照科目编号查询教师",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/teacher/{current}/{size}/{subjectId}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "subjectId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/teacher/{current}/{size}/{subjectId}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "subjectId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "fff142c8-edb7-4e48-9cf4-4226aab8f1af",
+      "name" : "根据编号查询教师",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/teacher/{teacherId}",
+          "query" : [ {
+            "key" : "teacherId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/teacher/{teacherId}",
+            "query" : [ {
+              "key" : "teacherId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "b4725eb5-af16-4725-b755-ff2612ecaa61",
+      "name" : "添加教师",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/teacher",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"teacherId\" : 0,\r\n  \"teacherName\" : \"\",\r\n  \"teacherAge\" : 0,\r\n  \"teacherGender\" : 0,\r\n  \"teacherAddress\" : \"\",\r\n  \"teacherPhone\" : \"\",\r\n  \"teacherEmail\" : \"\",\r\n  \"subjectId\" : 0,\r\n  \"subject\" : {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/teacher",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"teacherId\" : 0,\r\n  \"teacherName\" : \"\",\r\n  \"teacherAge\" : 0,\r\n  \"teacherGender\" : 0,\r\n  \"teacherAddress\" : \"\",\r\n  \"teacherPhone\" : \"\",\r\n  \"teacherEmail\" : \"\",\r\n  \"subjectId\" : 0,\r\n  \"subject\" : {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "3541d8e3-4c45-4a3d-a21a-1b00bb380fe5",
+      "name" : "修改教师",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/teacher",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"teacherId\" : 0,\r\n  \"teacherName\" : \"\",\r\n  \"teacherAge\" : 0,\r\n  \"teacherGender\" : 0,\r\n  \"teacherAddress\" : \"\",\r\n  \"teacherPhone\" : \"\",\r\n  \"teacherEmail\" : \"\",\r\n  \"subjectId\" : 0,\r\n  \"subject\" : {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/teacher",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"teacherId\" : 0,\r\n  \"teacherName\" : \"\",\r\n  \"teacherAge\" : 0,\r\n  \"teacherGender\" : 0,\r\n  \"teacherAddress\" : \"\",\r\n  \"teacherPhone\" : \"\",\r\n  \"teacherEmail\" : \"\",\r\n  \"subjectId\" : 0,\r\n  \"subject\" : {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "d8d1ce23-b1fe-44d7-8796-df4d5729a8e6",
+      "name" : "删除或恢复教师",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/teacher/{teacherId}/{index}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/teacher/{teacherId}/{index}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "用户管理控制层",
+    "item" : [ {
+      "id" : "fd0dd6d9-0cbf-457a-a1d0-58b7e652a47a",
+      "name" : "用户登录",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/user/login",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/user/login",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"userId\" : 0,\r\n    \"userName\" : \"\",\r\n    \"newUserName\" : \"\",\r\n    \"userPassword\" : \"\",\r\n    \"newUserPassword\" : \"\",\r\n    \"userSalt\" : \"\",\r\n    \"userHeader\" : \"\",\r\n    \"newUserHeader\" : \"\",\r\n    \"userIndex\" : 0,\r\n    \"userIdentity\" : 0,\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    },\r\n    \"token\" : \"\"\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "573d5c92-39c1-4162-859b-1f5be2eb4fb4",
+      "name" : "用户注册",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/user/register",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/user/register",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "371a680d-0421-4f7e-a0a3-396214e90719",
+      "name" : "修改用户信息",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/user",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/user",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "d6800fd5-a7e7-4664-8e68-b75ab7143724",
+      "name" : "注销",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/user",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/user",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "2823cd8c-bdaf-428d-ba84-3aa99b7f0c91",
+      "name" : "根据用户编号上传头像",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/user/{userId}",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/user/{userId}",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "9e79fe95-832f-4610-b5b6-4e7b6f0662ce",
+      "name" : "绑定身份信息",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/user/{userId}/{userIndex}",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/user/{userId}/{userIndex}",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "9cb3b984-b3b7-4de9-aae8-cb67c31c0b24",
+      "name" : "前端每隔3min向后端发送一次http请求，验证token是否已过期或服务器是否关闭",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/user",
+          "query" : [ ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/user",
+            "query" : [ ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "学生端控制层",
+    "item" : [ {
+      "id" : "8b4c5af9-50bb-466d-961d-7cac65ec319d",
+      "name" : "分页查询已经提交的作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "1bbef93a-f7cd-481d-8800-ddfdb342f3f5",
+      "name" : "根据学生编号查询提交的作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{current}/{size}/{studentId}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "studentId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{current}/{size}/{studentId}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "studentId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "0d32bc64-15fa-4047-bc91-a94681128674",
+      "name" : "提交作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "null",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "null",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "e89dff84-5e69-42c6-9bf1-816577a6c406",
+      "name" : "修改已提交的作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "null",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "null",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "384f824c-a512-49a2-8fc9-eea59ba49562",
+      "name" : "删除已提交的作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{submitId}/{index}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{submitId}/{index}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "9727a586-7edf-4e57-bff5-698bae730341",
+      "name" : "根据班级编号查询学生",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{classId}",
+          "query" : [ {
+            "key" : "classId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{classId}",
+            "query" : [ {
+              "key" : "classId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "be487096-adbf-40cf-97f1-47bf72a73d78",
+      "name" : "根据班级编号查询教师布置的作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{classId}",
+          "query" : [ {
+            "key" : "classId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{classId}",
+            "query" : [ {
+              "key" : "classId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "教师端",
+    "item" : [ {
+      "id" : "2371fbf4-3a3c-499d-abd1-8a84032a726e",
+      "name" : "分页查询已经布置的作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "313ce461-059e-4374-8c20-fca640f6439f",
+      "name" : "根据教师编号查询作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{current}/{size}/{teacherId}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "teacherId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{current}/{size}/{teacherId}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "teacherId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "ac62ea2b-7fce-49b7-a59e-9d2abf193ed1",
+      "name" : "添加作业信息",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"workId\" : 0,\r\n  \"workName\" : \"\",\r\n  \"workContent\" : \"\",\r\n  \"teacherId\" : 0,\r\n  \"teacher\" : {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"classId\" : 0,\r\n  \"aClass\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"workId\" : 0,\r\n  \"workName\" : \"\",\r\n  \"workContent\" : \"\",\r\n  \"teacherId\" : 0,\r\n  \"teacher\" : {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"classId\" : 0,\r\n  \"aClass\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "60397c52-54e4-4413-86ad-9de0e775528b",
+      "name" : "修改作业信息",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "{\r\n  \"workId\" : 0,\r\n  \"workName\" : \"\",\r\n  \"workContent\" : \"\",\r\n  \"teacherId\" : 0,\r\n  \"teacher\" : {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"classId\" : 0,\r\n  \"aClass\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "{\r\n  \"workId\" : 0,\r\n  \"workName\" : \"\",\r\n  \"workContent\" : \"\",\r\n  \"teacherId\" : 0,\r\n  \"teacher\" : {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"classId\" : 0,\r\n  \"aClass\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "aa837b80-082e-4bac-9084-1394f3a49b18",
+      "name" : "删除作业信息",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{workId}/{index}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{workId}/{index}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "223daf32-e3a3-4c58-94dc-570fc9fff2fa",
+      "name" : "根据班级编号查询学生",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{classId}",
+          "query" : [ {
+            "key" : "classId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{classId}",
+            "query" : [ {
+              "key" : "classId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "84df0636-2927-47e2-9637-fc63c902ed32",
+      "name" : "教师端根据作业编号查询已提交的作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{workId}",
+          "query" : [ {
+            "key" : "workId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{workId}",
+            "query" : [ {
+              "key" : "workId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "f00c2c6d-aeb2-4590-9cee-676539aefa0b",
+      "name" : "根据班级编号查询教师布置的作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/{classId}",
+          "query" : [ {
+            "key" : "classId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/{classId}",
+            "query" : [ {
+              "key" : "classId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "a263531a-4592-47b6-b7a7-0b4438f2aba4",
+      "name" : "教师端批改学生作业",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work/sc",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "null",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work/sc",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "null",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "83928a9b-f7de-4e52-8e56-69eec41607ee",
+      "name" : "教师端查询所有班级",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/work",
+          "query" : [ ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/work",
+            "query" : [ ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  } ]
+}

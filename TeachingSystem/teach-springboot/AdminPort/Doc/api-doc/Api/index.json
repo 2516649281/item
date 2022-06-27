@@ -1,0 +1,2048 @@
+{
+  "info": {
+    "name": "教务管理系统",
+    "_postman_id": "index",
+    "description": "教务管理系统接口",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "管理员管理控制层",
+      "item": [
+        {
+          "id": "0fe87277-830d-48c6-9605-75ff0715d8a8",
+          "name": "查询所有管理员",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/admin/{current}/{size}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/admin/{current}/{size}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "354075b2-eb34-48c2-86b7-55b8019ad9b0",
+          "name": "按照地址查询管理员",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/admin/{current}/{size}/{address}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "address",
+                  "type": "String",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/admin/{current}/{size}/{address}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "address",
+                      "type": "String",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "91d5781d-b099-4bb2-b9ec-38d2e1e3cc7e",
+          "name": "根据编号查询管理员",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/admin/{AdminId}",
+              "query": [
+                {
+                  "key": "AdminId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/admin/{AdminId}",
+                  "query": [
+                    {
+                      "key": "AdminId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "4e4f260b-113e-498b-a799-80a56f0fd5e6",
+          "name": "添加管理员",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/admin",
+              "query": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/admin",
+                  "query": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "e345c898-c51c-40d8-93f1-09194b39159f",
+          "name": "修改管理员",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/admin",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/admin",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "0cf5d7c0-0d1d-4e7b-b8a8-128e7c2e9593",
+          "name": "删除或恢复管理员",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/admin/{AdminId}/{index}",
+              "query": []
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/admin/{AdminId}/{index}",
+                  "query": []
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "班级控制层",
+      "item": [
+        {
+          "id": "c34f41a1-2f96-4693-ab30-a073c259d0b3",
+          "name": "查询所有班级",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/class/{current}/{size}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/class/{current}/{size}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "[ null ]",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "19cad4af-4f03-4622-a206-a9078def396b",
+          "name": "根据班级名查询所有班级",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/class/{current}/{size}/{className}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "className",
+                  "type": "String",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/class/{current}/{size}/{className}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "className",
+                      "type": "String",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "[ null ]",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "af01d78c-9949-4119-a684-60867e844c07",
+          "name": "根据班级编号查询班级",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/class/{classId}",
+              "query": [
+                {
+                  "key": "classId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/class/{classId}",
+                  "query": [
+                    {
+                      "key": "classId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "0a3e90f2-a6f1-4c54-b9d7-a659000e3778",
+          "name": "添加班级",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/class",
+              "query": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/class",
+                  "query": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "73d680e0-7bf5-4609-a83d-24e861bc8398",
+          "name": "修改班级",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/class",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/class",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "a6d226a5-c2c0-41f2-83e1-776cc3c81354",
+          "name": "删除或恢复班级",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/class/{classId}/{index}",
+              "query": []
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/class/{classId}/{index}",
+                  "query": []
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "文件管理控制层",
+      "item": [
+        {
+          "id": "5024d710-6f3c-4fff-adc0-edcae15e430b",
+          "name": "查询所有已知文件",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/file/select/{current}/{size}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/file/select/{current}/{size}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "d6746e08-d601-4fbd-be3b-e56b5d6bd42a",
+          "name": "条件查询",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/file/selectB/{current}/{size}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "fileName",
+                  "type": "String",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/file/selectB/{current}/{size}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "fileName",
+                      "type": "String",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "学生管理控制层",
+      "item": [
+        {
+          "id": "fa9b2140-4aa0-4f06-b5c2-1e838ea9aa1b",
+          "name": "查询所有学生",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/student/{current}/{size}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/student/{current}/{size}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "88f51124-31c0-43ea-b42a-8757d9b6b7c7",
+          "name": "按照班级编号查询学生",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/student/{current}/{size}/{classId}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "classId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/student/{current}/{size}/{classId}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "classId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "f373927d-062a-47d0-9158-93167f5ae98e",
+          "name": "根据编号查询学生",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/student/{studentId}",
+              "query": [
+                {
+                  "key": "studentId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/student/{studentId}",
+                  "query": [
+                    {
+                      "key": "studentId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "55718174-a793-4f55-8af4-9c29d68e1b60",
+          "name": "添加学生",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/student",
+              "query": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/student",
+                  "query": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "3ca570ba-f6b8-4666-9a38-a5d354c8a6fa",
+          "name": "修改学生",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/student",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/student",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "1719c18e-472e-4859-90b2-7e56a2d0bb8e",
+          "name": "删除或恢复学生",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/student/{studentId}/{index}",
+              "query": []
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/student/{studentId}/{index}",
+                  "query": []
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "科目控制层",
+      "item": [
+        {
+          "id": "f9443845-a291-43c3-945d-2473d002df1c",
+          "name": "查询所有科目",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/subject/{current}/{size}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/subject/{current}/{size}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "cd017ea8-582d-47ac-aa29-ceac0755dd4b",
+          "name": "根据科目名查询",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/subject/{current}/{size}/{subjectName}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "subjectName",
+                  "type": "String",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/subject/{current}/{size}/{subjectName}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "subjectName",
+                      "type": "String",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "9f37af1e-8589-44f5-bd33-8593d8acb821",
+          "name": "根据科目编号查询",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/subject/{subjectId}",
+              "query": [
+                {
+                  "key": "subjectId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/subject/{subjectId}",
+                  "query": [
+                    {
+                      "key": "subjectId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "b42e3eb2-98e9-405d-9f6e-64d24755c31b",
+          "name": "添加科目",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/subject",
+              "query": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/subject",
+                  "query": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "09b440ff-b9e0-459d-89c2-fcc115c5e37e",
+          "name": "修改科目",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/subject",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/subject",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "8c78451c-af3f-4146-a661-cfbbb5e54162",
+          "name": "删除或恢复科目",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/subject/{subjectId}/{index}",
+              "query": []
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/subject/{subjectId}/{index}",
+                  "query": []
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "教师控制层",
+      "item": [
+        {
+          "id": "0abf42c6-1416-4cf7-a3b7-bacca7fec5a5",
+          "name": "查询所有教师",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/teacher/{current}/{size}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/teacher/{current}/{size}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "a0ddd653-054d-4495-903e-64dc97c255f9",
+          "name": "按照科目编号查询教师",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/teacher/{current}/{size}/{subjectId}",
+              "query": [
+                {
+                  "key": "current",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "size",
+                  "type": "Integer",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "subjectId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/teacher/{current}/{size}/{subjectId}",
+                  "query": [
+                    {
+                      "key": "current",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "size",
+                      "type": "Integer",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    },
+                    {
+                      "key": "subjectId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "a9458cc7-b3c8-4e90-afe2-05ac2da52008",
+          "name": "根据编号查询教师",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/teacher/{teacherId}",
+              "query": [
+                {
+                  "key": "teacherId",
+                  "type": "Long",
+                  "value": "",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/teacher/{teacherId}",
+                  "query": [
+                    {
+                      "key": "teacherId",
+                      "type": "Long",
+                      "value": "",
+                      "description": "",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "null",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "8b143883-a7a1-4a8f-9c3a-b270b30c2338",
+          "name": "添加教师",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/teacher",
+              "query": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/teacher",
+                  "query": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "6e09b509-cafb-4bc0-8692-d50a334045c9",
+          "name": "修改教师",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/teacher",
+              "query": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "null",
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/teacher",
+                  "query": []
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "id": "58ee1473-7002-44e9-b9de-d4b6ce56bf0a",
+          "name": "删除或恢复教师",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "{{host}}",
+              "path": "/teacher/{teacherId}/{index}",
+              "query": []
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "urlencoded": [],
+              "formdata": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "url": {
+                  "protocol": "http",
+                  "host": "{{host}}",
+                  "path": "/teacher/{teacherId}/{index}",
+                  "query": []
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "urlencoded": [],
+                  "formdata": []
+                }
+              },
+              "header": [],
+              "body": "0",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
