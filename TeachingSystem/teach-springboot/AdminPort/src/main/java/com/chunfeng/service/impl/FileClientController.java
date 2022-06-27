@@ -29,9 +29,9 @@ public interface FileClientController {
     /**
      * 条件查询
      *
-     * @param current    页码
-     * @param size       页长
-     * @param fileSource 查询的条件
+     * @param current  页码
+     * @param size     页长
+     * @param fileName 查询的条件
      * @return JSON
      */
     @GetMapping("/selectB/{current}/{size}")
