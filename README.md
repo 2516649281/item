@@ -3782,3 +3782,7 @@ export function deleteSubjectById(subjectId, index) {
 2022/6/22 将redis真正的加入项目中，mysql数据库压力大大减少
 
 2022/6/23 新增数据库文档和api接口文档，前端代码和后端代码优化
+
+2022/6/26 项目第一次试发布，预计运行一个月，仅学生端开放，演示地址:[teaching-student](http://47.97.229.224:8000/#/index)
+
+2022/6/27 修复了若干bug，管理端新增文件管理模块，前后端代码优化
