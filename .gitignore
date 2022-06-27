@@ -13,9 +13,9 @@
 
 # Package Files #
 .idea/
-.target/
+target/
 .vscode/
-.dist/
+dist/
 node_modules/
 *.jar
 *.war
