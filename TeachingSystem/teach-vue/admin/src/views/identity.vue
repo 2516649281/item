@@ -32,7 +32,6 @@
 <script>
 import {bindIdentity} from "../api/user";
 import jwtDecode from "jwt-decode";
-
 export default {
   data() {
     return {
@@ -98,18 +97,15 @@ export default {
   margin: 0 auto;
   width: 50%;
 }
-
 h1 {
   text-align: center;
   color: white;
 }
-
 .el-form .el-input >>> .el-input__inner {
   color: white;
   background-color: transparent;
   width: 80%;
 }
-
 .el-form .el-button {
   width: 20%;
   margin: 5% 15%;

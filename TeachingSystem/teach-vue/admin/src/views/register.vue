@@ -61,7 +61,6 @@
 <script>
 import SIdentify from "../components/identify";
 import {register} from "../api/user";
-
 export default {
   components: {
     SIdentify: SIdentify,
@@ -173,31 +172,26 @@ video {
   width: 100%;
   z-index: -5;
 }
-
 .el-form {
   border: 1px solid white;
   width: 80%;
   margin: 0 auto;
   border-radius: 30px;
 }
-
 .el-form h1 {
   color: white;
   text-align: center;
 }
-
 .el-form >>> .el-input__inner {
   background-color: transparent;
   color: white;
   font-size: 20px;
 }
-
 .el-form .el-input {
   width: 60%;
   margin-top: 5%;
   margin-left: 20%;
 }
-
 .el-form .el-button {
   width: 15%;
   background-color: transparent;

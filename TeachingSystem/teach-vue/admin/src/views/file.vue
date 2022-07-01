@@ -100,7 +100,6 @@ import {
   selectAllFileBySource,
   deleteFileById,
 } from "../api/file";
-
 export default {
   data() {
     return {
@@ -184,7 +183,6 @@ export default {
 /deep/ .el-table__expanded-cell {
   background-color: transparent;
 }
-
 /* 表格内背景颜色 */
 /deep/ .el-table th,
 /deep/ .el-table tr,
@@ -192,7 +190,6 @@ export default {
   background-color: transparent;
   color: greenyellow;
 }
-
 .addbtn {
   width: 10%;
   margin: 0 auto;

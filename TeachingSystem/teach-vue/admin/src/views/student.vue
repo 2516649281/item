@@ -53,6 +53,12 @@
           </template>
         </el-table-column>
         <el-table-column
+            label="学生班级"
+            prop="aclass.className"
+            align="center"
+            width="200"
+        ></el-table-column>
+        <el-table-column
             label="学生住址"
             prop="studentAddress"
             align="center"
@@ -246,7 +252,6 @@ import {
   deleteStudentById,
 } from "../api/student";
 import {selectAllClass} from "../api/class";
-
 export default {
   data() {
     return {
@@ -479,7 +484,6 @@ export default {
 /deep/ .el-table__expanded-cell {
   background-color: transparent;
 }
-
 /* 表格内背景颜色 */
 /deep/ .el-table th,
 /deep/ .el-table tr,
@@ -487,7 +491,6 @@ export default {
   background-color: transparent;
   color: greenyellow;
 }
-
 .addbtn {
   width: 10%;
   margin: 0 auto;

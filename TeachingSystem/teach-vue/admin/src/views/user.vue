@@ -146,7 +146,6 @@ import jwtDecode from "jwt-decode";
 import {updateUser} from "../api/user";
 import myUpload from "vue-image-crop-upload";
 import {baseURL} from "../../public/config";
-
 export default {
   components: {myUpload},
   data() {
@@ -267,17 +266,14 @@ export default {
   margin: 0 auto;
   color: white;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;
 }
-
 .main .el-main .el-button {
   width: 20%;
   margin: 5% 15%;
 }
-
 .main {
   width: 100%;
   margin: 0 auto;

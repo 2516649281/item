@@ -146,7 +146,6 @@ import {
   updateSubjectById,
   deleteSubjectById,
 } from "../api/subject";
-
 export default {
   data() {
     return {
@@ -299,7 +298,7 @@ export default {
           } else {
             this.$message({
               type: "error",
-              message: "操作失败!",
+              message: req.data.message,
               showClose: true,
             });
           }
@@ -329,7 +328,6 @@ export default {
 /deep/ .el-table__expanded-cell {
   background-color: transparent;
 }
-
 /* 表格内背景颜色 */
 /deep/ .el-table th,
 /deep/ .el-table tr,
@@ -337,7 +335,6 @@ export default {
   background-color: transparent;
   color: greenyellow;
 }
-
 .addbtn {
   width: 10%;
   margin: 0 auto;

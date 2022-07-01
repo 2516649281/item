@@ -186,20 +186,16 @@ export default {
   width: 100%;
   z-index: -5;
 }
-
 .el-container .el-aside {
   width: 15%;
   /* border: 1px solid white; */
 }
-
 .el-container {
   color: white;
 }
-
 .el-header {
   border-bottom: 1px solid white;
 }
-
 .el-header h1,
 .el-header .el-avatar {
   float: right;
