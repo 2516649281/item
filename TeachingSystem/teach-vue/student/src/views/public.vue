@@ -1,17 +1,17 @@
 <template>
-  <img src="../img/bg.png" alt="" id="background"/>
+  <img id="background" alt="" src="../img/bg.png"/>
   <el-container>
     <el-header>
       <div id="header-image">
         <el-image :src="header" fit="fill"></el-image>
       </div>
       <el-menu
+          id="header-link"
           :default-active="1"
+          active-text-color="#ffd04b"
+          background-color="#212121"
           class="el-menu-demo"
           mode="horizontal"
-          id="header-link"
-          background-color="#212121"
-          active-text-color="#ffd04b"
           text-color="#fff"
       >
         <el-menu-item @click="toIndex" index="1"
@@ -55,9 +55,9 @@
       <div id="header-link"></div>
       <div id="header-input">
         <el-input
-            placeholder="输入关键字"
             v-model="search"
             class="search_input"
+            placeholder="输入关键字"
         >
         </el-input>
         <el-button type="success" icon="el-icon-search"></el-button>
@@ -77,16 +77,16 @@
         <router-link to="/user" :underline="false"
         >
           <el-avatar
-              shape="square"
               v-if="userFrom.userHeader != 0"
-              fit="contain"
               :src="fileUrl + userFrom.userHeader"
+              fit="contain"
+              shape="square"
           >
           </el-avatar>
           <el-avatar
-              shape="square"
-              icon="el-icon-user-solid"
               v-else
+              icon="el-icon-user-solid"
+              shape="square"
           ></el-avatar>
         </router-link
         >
@@ -117,7 +117,6 @@ import {getToken} from "../api/user";
 import jwtDecode from "jwt-decode";
 import jpg from "@/assets/logo.png";
 import {FileServerURL} from "../../public/config";
-
 export default {
   data() {
     return {
@@ -228,7 +227,6 @@ export default {
   width: 100%;
   z-index: -5;
 }
-
 /* 头部 */
 .el-header {
   width: 100%;
@@ -236,60 +234,48 @@ export default {
   border: 1px white solid;
   color: white;
 }
-
 #header-image,
 #header-link,
 #header-input,
 #header-user {
   float: left;
 }
-
 #header-image {
   width: 6%;
 }
-
 #header-link {
   width: 40%;
 }
-
 #header-input {
   width: 30%;
 }
-
 #header-user {
   float: right;
 }
-
 #header-link .el-menu-item {
   width: 33%;
   text-align: center;
   color: white;
 }
-
 #header-input .el-input {
   width: 60%;
   margin: 3% 6%;
 }
-
 .search_input >>> .el-input__inner {
   background-color: transparent;
   color: white;
 }
-
 #header-user .el-avatar {
   float: right;
 }
-
 #header-user .el-button {
   text-align: center;
   float: right;
 }
-
 .el-image {
   width: 100%;
   height: 100%;
 }
-
 .el-main {
   border: 1px white solid;
 }
@@ -301,12 +287,10 @@ export default {
   color: white;
   border: 1px white solid;
 }
-
 #foot-text {
   width: 100%;
   margin: 0 auto;
 }
-
 #foot-text li {
   list-style-type: none;
   float: left;

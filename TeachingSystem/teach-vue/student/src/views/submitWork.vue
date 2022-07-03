@@ -2,8 +2,15 @@
   <el-container>
     <el-main
     >
-      <el-table :data="tableData" height="410" id="table">
-        <el-table-column type="expand" align="center"
+      <el-table
+          id="table"
+          ref="submitWorkIds"
+          :data="tableData"
+          height="410"
+          @selection-change="handleSelectionChange"
+      >
+        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column align="center" fixed type="expand"
         >
           <template #default="props">
             <el-form label-position="left" inline>
@@ -16,6 +23,7 @@
         >
         <el-table-column
             align="center"
+            fixed
             label="提交编号"
             prop="submitId"
             width="100"
@@ -56,24 +64,24 @@
         <el-table-column label="操作" width="200" fixed="right" align="center">
           <template #default="scope">
             <el-button
-                icon="el-icon-edit"
                 circle
-                type="primary"
+                icon="el-icon-edit"
                 title="修改作业"
+                type="primary"
                 @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                icon="el-icon-delete"
                 circle
-                type="danger"
+                icon="el-icon-delete"
                 title="删除作业"
+                type="danger"
                 @click="deleteWork(scope.row.submitId, true)"
             ></el-button>
             <el-button
-                icon="el-icon-refresh-left"
                 circle
-                type="success"
+                icon="el-icon-refresh-left"
                 title="恢复作业"
+                type="success"
                 @click="deleteWork(scope.row.submitId, false)"
             ></el-button>
           </template>
@@ -81,21 +89,35 @@
       </el-table>
       <div class="addbtn">
         <el-button
-            type="success"
             icon="el-icon-plus"
-            circle
-            title="添加作业"
+            type="success"
             @click="this.adddialogFormVisible = true"
-        ></el-button>
+        >添加作业
+        </el-button
+        >
+        <el-button
+            icon="el-icon-delete"
+            type="danger"
+            @click="deleteSubmitWorks(this.subjectWorkIds, true)"
+        >批量删除
+        </el-button
+        >
+        <el-button
+            icon="el-icon-refresh-left"
+            type="success"
+            @click="deleteSubmitWorks(this.subjectWorkIds, false)"
+        >批量恢复
+        </el-button
+        >
       </div>
     </el-main>
     <el-footer>
       <div class="page">
         <el-pagination
+            :page-size="this.size"
+            :total="this.pageSize"
             background
             layout="prev, pager, next"
-            :total="this.pageSize"
-            :page-size="this.size"
             @current-change="handleCurrentChange"
         >
         </el-pagination>
@@ -105,18 +127,18 @@
   </el-container>
   <el-dialog title="修改作业" v-model="editdialogFormVisible">
     <el-form
+        ref="updateFrom"
         :model="editFrom"
         :rules="rules"
         @keyup.enter.native="updateWork(editFrom)"
-        ref="updateFrom"
     >
       <h3>注意:当前选择的提交编号:{{ editFrom.submitId }}</h3>
       <el-form-item label="需完成的作业编号:" prop="workId">
         <el-input v-model="editFrom.workId" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item
-          label="修改你的作业内容:"
           :label-width="formLabelWidth"
+          label="修改你的作业内容:"
           prop="submitContent"
       >
         <el-input
@@ -136,17 +158,17 @@
   </el-dialog>
   <el-dialog title="添加作业" v-model="adddialogFormVisible">
     <el-form
+        ref="addFrom"
         :model="addFrom"
         :rules="rules"
         @keyup.enter.native="addWork(addFrom)"
-        ref="addFrom"
     >
       <el-form-item label="作业编号:" prop="workId">
         <el-input v-model="addFrom.workId" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item
-          label="作业内容:"
           :label-width="formLabelWidth"
+          label="作业内容:"
           prop="submitContent"
       >
         <el-input
@@ -174,7 +196,6 @@ import {
   updateWork,
   deleteWork,
 } from "../api/work";
-
 export default {
   data() {
     return {
@@ -199,6 +220,10 @@ export default {
         //作业内容
         submitContent: "",
       },
+      //删除数据
+      map: [],
+      //提交作业id
+      submitWorkIds: [],
       //添加数据
       addFrom: {
         //学生编号
@@ -310,7 +335,9 @@ export default {
             type: "warning",
           }
       ).then(() => {
-        deleteWork(submitId, index).then((req) => {
+        this.map = new Map();
+        this.map[submitId] = index;
+        deleteWork(this.map).then((req) => {
           if ((req.data.statue === 200) & (req.data.data != null)) {
             this.$message({
               showClose: true,
@@ -331,6 +358,47 @@ export default {
           }
         });
       });
+    },
+    //批量删除
+    deleteSubmitWorks(ids, index) {
+      this.$confirm(
+          index ? "此操作将删除作业, 是否继续?" : "此操作将恢复作业, 是否继续?",
+          "提示",
+          {
+            confirmButtonText: "确定",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
+      ).then(() => {
+        this.map = new Map();
+        for (let i = 0; i < ids.length; i++) {
+          this.map[ids[i].submitId] = index;
+        }
+        deleteWork(this.map).then((req) => {
+          if ((req.data.statue === 200) & (req.data.data != null)) {
+            this.$message({
+              type: "success",
+              message: "操作成功!",
+              showClose: true,
+            });
+            this.selectAllWorkByStudentId(
+                this.current,
+                this.size,
+                jwtDecode(sessionStorage.getItem("token")).user.user.studentId
+            );
+          } else {
+            this.$message({
+              type: "error",
+              message: "操作失败!",
+              showClose: true,
+            });
+          }
+        });
+      });
+    },
+    //获取打勾的项
+    handleSelectionChange(val) {
+      this.subjectWorkIds = val;
     },
     editClick(Source) {
       this.editFrom = Source;
@@ -360,28 +428,23 @@ export default {
   width: 60%;
   margin: 0 auto;
 }
-
 /deep/ .el-table,
 /deep/ .el-table__expanded-cell {
   background-color: transparent;
 }
-
 /deep/ .el-table th,
 /deep/ .el-table tr,
 /deep/ .el-table td {
   background-color: transparent;
   color: grey;
 }
-
 .el-tabls {
   color: white;
 }
-
 .addbtn {
-  width: 5%;
+  width: 80%;
   margin: 0 auto;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;

@@ -7,39 +7,39 @@
   <el-button type="success" @click="toIndex" round>回到主页</el-button>
   <el-container>
     <el-form
-        :model="loginForm"
-        @keyup.enter.native="login(loginForm)"
-        :rules="rules"
-        :inline-message="true"
         ref="loginFrom"
+        :inline-message="true"
+        :model="loginForm"
+        :rules="rules"
+        @keyup.enter.native="login(loginForm)"
     >
       <el-form-item>
         <h1>欢迎登录</h1>
       </el-form-item>
       <el-form-item prop="userName">
         <el-input
-            prefix-icon="el-icon-user-solid"
             v-model="loginForm.userName"
-            placeholder="请输入账号"
             class="input_user"
+            placeholder="请输入账号"
+            prefix-icon="el-icon-user-solid"
         ></el-input>
       </el-form-item>
       <el-form-item prop="userPassword"
       >
         <el-input
+            v-model="loginForm.userPassword"
+            class="input_password"
+            placeholder="请输入密码"
             prefix-icon="el-icon-lock"
             show-password
-            v-model="loginForm.userPassword"
-            placeholder="请输入密码"
-            class="input_password"
         ></el-input
         >
       </el-form-item>
       <el-form-item prop="code">
         <el-input
+            v-model="loginForm.code"
             class="input_code"
             placeholder="请输入验证码"
-            v-model="loginForm.code"
         >
           <template v-slot:prefix><i class="el-icon-s-check"></i></template
           >
@@ -68,7 +68,6 @@
 <script>
 import {login} from "../api/user";
 import SIdentify from "../components/identify";
-
 export default {
   data() {
     return {
@@ -190,7 +189,6 @@ export default {
   color: #fff;
   font-size: 15px;
 }
-
 video {
   position: fixed;
   right: 0px;
@@ -201,18 +199,15 @@ video {
   width: 100%;
   z-index: -5;
 }
-
 .el-page-header {
   color: white;
 }
-
 .el-container {
   width: 100%;
   /* height: 100%; */
   height: 100%;
   background-size: 100%;
 }
-
 /* 表单 */
 .el-form {
   width: 70%;
@@ -223,32 +218,27 @@ video {
   border-radius: 25px;
   box-shadow: 0 2px 12px;
 }
-
 .el-form h1 {
   width: 25%;
   text-align: center;
   margin: 0 auto;
   color: white;
 }
-
 .el-form .el-input {
   width: 60%;
   margin-left: 20%;
   margin-top: 5%;
 }
-
 .el-form .el-form-item__error {
   width: 15%;
   margin: 0 auto;
 }
-
 .input_user >>> .el-input__inner,
 .input_password >>> .el-input__inner {
   background-color: transparent;
   color: white;
   font-size: 20px;
 }
-
 .input_code >>> .el-input__inner {
   background-color: transparent;
   color: white;
@@ -256,12 +246,10 @@ video {
   width: 70%;
   float: left;
 }
-
 .el-form .el-button {
   margin-left: 20%;
   width: 20%;
 }
-
 .el-button {
   background-color: transparent;
   height: 10%;

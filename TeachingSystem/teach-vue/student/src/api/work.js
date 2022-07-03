@@ -47,10 +47,11 @@ export function updateWork(obj) {
 }
 
 //删除已提交的作业
-export function deleteWork(submitId, index) {
+export function deleteWork(map) {
     return router({
-        url: `/work/${submitId}/${index}`,
+        url: `/work`,
         method: "DELETE",
+        data: map,
         headers: {
             token: sessionStorage.getItem("token"),
         },

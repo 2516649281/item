@@ -58,10 +58,11 @@ export function updateClassById(obj) {
 }
 
 //根据班级编号删除班级(index值为true,则代表删除,反之代表恢复)
-export function deleteClassById(classId, index) {
+export function deleteClassById(map) {
     return router({
-        url: `/class/${classId}/${index}`,
+        url: `/class`,
         method: "DELETE",
+        data: map,
         headers: {
             token: sessionStorage.getItem("token"),
         },

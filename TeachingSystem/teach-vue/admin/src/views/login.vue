@@ -7,23 +7,23 @@
   <el-container>
     <el-main>
       <el-form
-          @keyup.enter.native="login(loginForm)"
+          ref="loginFrom"
+          :inline-message="true"
           :model="loginForm"
           :rules="rules"
-          :inline-message="true"
-          ref="loginFrom"
+          @keyup.enter.native="login(loginForm)"
       >
         <h1>欢迎登录</h1>
         <el-form-item prop="userName">
           <el-input
-              placeholder="请输入账号"
               v-model="loginForm.userName"
+              placeholder="请输入账号"
           ></el-input>
         </el-form-item>
         <el-form-item prop="userPassword">
           <el-input
-              placeholder="请输入密码"
               v-model="loginForm.userPassword"
+              placeholder="请输入密码"
               show-password
           ></el-input>
         </el-form-item>

@@ -10,6 +10,7 @@
         </el-form-item>
         <el-form-item>
           <el-button
+              icon="el-icon-search"
               type="primary"
               @click="
               selectAllClassByName(
@@ -21,34 +22,54 @@
           >查询
           </el-button
           >
+          <el-button
+              icon="el-icon-delete"
+              type="danger"
+              @click="deleteClasss(this.classIds, true)"
+          >批量删除
+          </el-button
+          >
+          <el-button
+              icon="el-icon-refresh-right"
+              type="success"
+              @click="deleteClasss(this.classIds, false)"
+          >批量恢复
+          </el-button
+          >
         </el-form-item>
       </el-form>
     </el-header>
     <el-main>
-      <el-table :data="tableData" height="400">
+      <el-table
+          ref="classIds"
+          :data="tableData"
+          height="400"
+          @selection-change="handleSelectionChange"
+      >
+        <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column
+            align="center"
+            fixed="left"
             label="班级编号"
             prop="classId"
-            align="center"
             width="100"
-            fixed="left"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="班级名称"
             prop="className"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="创建时间"
             prop="log.createTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="最后修改时间"
             prop="log.updateTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column label="状态" align="center" width="100">
@@ -65,22 +86,22 @@
           <template #default="scope"
           >
             <el-button
-                type="primary"
                 circle
                 icon="el-icon-edit"
+                type="primary"
                 @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                type="danger"
                 circle
                 icon="el-icon-delete"
+                type="danger"
                 @click="deleteClassById(scope.row.classId, true)"
             >
             </el-button>
             <el-button
-                type="success"
                 circle
                 icon="el-icon-refresh-right"
+                type="success"
                 @click="deleteClassById(scope.row.classId, false)"
             ></el-button
             >
@@ -89,18 +110,18 @@
       </el-table>
       <div class="addbtn">
         <el-button
-            type="success"
             circle
             icon="el-icon-plus"
+            type="success"
             @click="adddialogFormVisible = true"
         ></el-button>
       </div>
       <el-pagination
-          background
-          @current-change="handleCurrentChange"
-          layout="prev, pager, next"
-          :total="pageSize"
           :page-size="size"
+          :total="pageSize"
+          background
+          layout="prev, pager, next"
+          @current-change="handleCurrentChange"
       >
       </el-pagination>
     </el-main>
@@ -156,6 +177,10 @@ export default {
         //名称
         className: "",
       },
+      //班级编号
+      classIds: [],
+      //删除数据
+      map: [],
       //页码
       current: 1,
       //页长
@@ -283,7 +308,9 @@ export default {
             type: "warning",
           }
       ).then(() => {
-        deleteClassById(classId, index).then((req) => {
+        this.map = new Map();
+        this.map[classId] = index;
+        deleteClassById(this.map).then((req) => {
           if ((req.data.statue === 200) & (req.data.data != null)) {
             this.$message({
               type: "success",
@@ -309,6 +336,47 @@ export default {
     editClick(obj) {
       this.editFrom = obj;
       this.editdialogFormVisible = true;
+    },
+    //批量删除
+    deleteClasss(ids, index) {
+      this.$confirm(
+          index ? "此操作将删除班级, 是否继续?" : "此操作将恢复班级, 是否继续?",
+          "提示",
+          {
+            confirmButtonText: "确定",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
+      ).then(() => {
+        this.map = new Map();
+        for (let i = 0; i < ids.length; i++) {
+          this.map[ids[i].classId] = index;
+        }
+        deleteClassById(this.map).then((req) => {
+          if ((req.data.statue === 200) & (req.data.data != null)) {
+            this.$message({
+              type: "success",
+              message: "操作成功!",
+              showClose: true,
+            });
+            this.selectAllClassByName(
+                this.current,
+                this.size,
+                this.selectFrom.className
+            );
+          } else {
+            this.$message({
+              type: "error",
+              message: "操作失败!",
+              showClose: true,
+            });
+          }
+        });
+      });
+    },
+    //获取打勾的项
+    handleSelectionChange(val) {
+      this.classIds = val;
     },
     // 分页
     handleCurrentChange(val) {

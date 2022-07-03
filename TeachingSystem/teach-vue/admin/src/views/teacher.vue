@@ -15,6 +15,7 @@
         </el-form-item>
         <el-form-item>
           <el-button
+              icon="el-icon-search"
               type="primary"
               @click="
               selectAllTeacherBySubject(
@@ -26,22 +27,42 @@
           >查询
           </el-button
           >
+          <el-button
+              icon="el-icon-delete"
+              type="danger"
+              @click="deleteTeachers(this.teacherIds, true)"
+          >批量删除
+          </el-button
+          >
+          <el-button
+              icon="el-icon-refresh-right"
+              type="success"
+              @click="deleteTeachers(this.teacherIds, false)"
+          >批量恢复
+          </el-button
+          >
         </el-form-item>
       </el-form>
     </el-header>
     <el-main>
-      <el-table :data="tableData" height="400">
+      <el-table
+          ref="teacherIds"
+          :data="tableData"
+          height="400"
+          @selection-change="handleSelectionChange"
+      >
+        <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column
+            align="center"
+            fixed="left"
             label="教师编号"
             prop="teacherId"
-            align="center"
             width="100"
-            fixed="left"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="教师姓名"
             prop="teacherName"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column label="教师年龄" align="center" width="200">
@@ -53,39 +74,39 @@
           </template>
         </el-table-column>
         <el-table-column
+            align="center"
             label="教师科目"
             prop="subject.subjectName"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="教师住址"
             prop="teacherAddress"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="教师电话"
             prop="teacherPhone"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="教师邮箱"
             prop="teacherEmail"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="创建时间"
             prop="log.createTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="最后修改时间"
             prop="log.updateTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column label="状态" align="center" width="100">
@@ -102,22 +123,22 @@
           <template #default="scope"
           >
             <el-button
-                type="primary"
                 circle
                 icon="el-icon-edit"
+                type="primary"
                 @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                type="danger"
                 circle
                 icon="el-icon-delete"
+                type="danger"
                 @click="deleteTeacherById(scope.row.teacherId, true)"
             >
             </el-button>
             <el-button
-                type="success"
                 circle
                 icon="el-icon-refresh-right"
+                type="success"
                 @click="deleteTeacherById(scope.row.teacherId, false)"
             ></el-button
             >
@@ -126,18 +147,18 @@
       </el-table>
       <div class="addbtn">
         <el-button
-            type="success"
             circle
             icon="el-icon-plus"
+            type="success"
             @click="adddialogFormVisible = true"
         ></el-button>
       </div>
       <el-pagination
-          background
-          @current-change="handleCurrentChange"
-          layout="prev, pager, next"
-          :total="pageSize"
           :page-size="size"
+          :total="pageSize"
+          background
+          layout="prev, pager, next"
+          @current-change="handleCurrentChange"
       >
       </el-pagination>
     </el-main>
@@ -262,6 +283,10 @@ export default {
         //科目名称
         subjectId: "",
       },
+      //删除数据
+      map: [],
+      //教师编号集合
+      teacherIds: [],
       //科目展示数据
       subjectMap: [],
       //页码
@@ -439,7 +464,46 @@ export default {
             type: "warning",
           }
       ).then(() => {
-        deleteTeacherById(teacherId, index).then((req) => {
+        this.map = new Map();
+        this.map[teacherId] = index;
+        deleteTeacherById(this.map).then((req) => {
+          if ((req.data.statue === 200) & (req.data.data != null)) {
+            this.$message({
+              type: "success",
+              message: "操作成功!",
+              showClose: true,
+            });
+            this.selectAllTeacherBySubject(
+                this.current,
+                this.size,
+                this.selectFrom.subjectId
+            );
+          } else {
+            this.$message({
+              type: "error",
+              message: "操作失败!",
+              showClose: true,
+            });
+          }
+        });
+      });
+    },
+    //批量删除
+    deleteTeachers(ids, index) {
+      this.$confirm(
+          index ? "此操作将删除教师, 是否继续?" : "此操作将恢复教师, 是否继续?",
+          "提示",
+          {
+            confirmButtonText: "确定",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
+      ).then(() => {
+        this.map = new Map();
+        for (let i = 0; i < ids.length; i++) {
+          this.map[ids[i].teacherId] = index;
+        }
+        deleteTeacherById(this.map).then((req) => {
           if ((req.data.statue === 200) & (req.data.data != null)) {
             this.$message({
               type: "success",
@@ -465,6 +529,10 @@ export default {
     editClick(obj) {
       this.editFrom = obj;
       this.editdialogFormVisible = true;
+    },
+    //获取打勾的项
+    handleSelectionChange(val) {
+      this.teacherIds = val;
     },
     // 分页
     handleCurrentChange(val) {

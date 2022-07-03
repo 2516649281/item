@@ -58,10 +58,11 @@ export function updateSubjectById(obj) {
 }
 
 //根据科目编号删除科目(index值为true,则代表删除,反之代表恢复)
-export function deleteSubjectById(subjectId, index) {
+export function deleteSubjectById(map) {
     return router({
-        url: `/subject/${subjectId}/${index}`,
+        url: `/subject`,
         method: "DELETE",
+        data: map,
         headers: {
             token: sessionStorage.getItem("token"),
         },

@@ -7,11 +7,11 @@
   <el-container>
     <el-main>
       <el-form
+          ref="registerFrom"
+          :inline-message="true"
           :model="registerFrom"
           :rules="rules"
-          :inline-message="true"
           @keyup.enter.native="register(registerFrom)"
-          ref="registerFrom"
       >
         <h1>欢迎注册</h1>
         <el-form-item prop="userName">
@@ -24,8 +24,8 @@
         </el-form-item>
         <el-form-item prop="userPassword">
           <el-input
-              placeholder="请输入密码"
               v-model="registerFrom.userPassword"
+              placeholder="请输入密码"
               show-password
           >
             <template v-slot:prefix><i class="el-icon-lock"></i></template
@@ -34,8 +34,8 @@
         </el-form-item>
         <el-form-item prop="againPassword">
           <el-input
-              placeholder="请再次输入密码"
               v-model="registerFrom.againPassword"
+              placeholder="请再次输入密码"
               show-password
           >
             <template v-slot:prefix><i class="el-icon-lock"></i></template
@@ -44,9 +44,9 @@
         </el-form-item>
         <el-form-item prop="code">
           <el-input
+              v-model="registerFrom.code"
               class="input_code"
               placeholder="请输入验证码"
-              v-model="registerFrom.code"
           >
             <template v-slot:prefix><i class="el-icon-s-check"></i></template
             >
@@ -75,7 +75,6 @@
 <script>
 import {register} from "../api/user";
 import SIdentify from "../components/identify";
-
 export default {
   data() {
     return {
@@ -191,7 +190,6 @@ video {
   width: 100%;
   z-index: -5;
 }
-
 .el-form {
   border-radius: 30px;
   color: white;
@@ -213,28 +211,23 @@ video {
 .el-form h1 {
   text-align: center;
 }
-
 .el-form .el-input {
   width: 60%;
   margin-top: 5%;
   margin-left: 20%;
 }
-
 .el-button,
 .el-button:hover,
 .el-button:focus {
   background-color: transparent;
   width: 15%;
 }
-
 .el-button:hover {
   color: wheat;
 }
-
 .el-button {
   color: white;
 }
-
 .form-btn {
   margin: 3% 22%;
 }

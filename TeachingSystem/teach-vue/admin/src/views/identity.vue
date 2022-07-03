@@ -8,18 +8,18 @@
         </el-form-item>
         <el-form-item>
           <el-button
+              icon="el-icon-paperclip"
+              round
               type="primary"
               @click="bindIdentity(IdentityFrom.userIndex)"
-              round
-              icon="el-icon-paperclip"
           >绑定
           </el-button
           >
           <el-button
+              icon="el-icon-switch-button"
+              round
               type="danger"
               @click="exit"
-              round
-              icon="el-icon-switch-button"
           >返回
           </el-button
           >

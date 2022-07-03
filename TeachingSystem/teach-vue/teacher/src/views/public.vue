@@ -1,16 +1,16 @@
 <template>
-  <img src="../image/bg.jpg" alt="" id="background"/>
+  <img id="background" alt="" src="../image/bg.jpg"/>
   <el-container>
     <el-aside :width="collapse ? '5%' : '20%'"
     >
       <el-menu
-          default-active="1"
-          class="el-menu-vertical-demo"
-          background-color="transparent"
-          text-color="#fff"
-          active-text-color="#ffd04b"
           :collapse="collapse"
           :collapse-transition="false"
+          active-text-color="#ffd04b"
+          background-color="transparent"
+          class="el-menu-vertical-demo"
+          default-active="1"
+          text-color="#fff"
       >
         <el-image :src="require('@/assets/logo.png')" fit="contain"></el-image>
         <el-menu-item index="1" @click="getUser">
@@ -36,16 +36,16 @@
       <el-header
       >
         <el-button
-            class="menu_shrink"
             :icon="this.collapse ? 'el-icon-caret-right' : 'el-icon-caret-left'"
+            class="menu_shrink"
             @click="this.collapse = !this.collapse"
         ></el-button>
         <div class="user">
           <el-avatar
-              shape="square"
               v-if="userFrom.userHeader != 0"
-              fit="contain"
               :src="FileURL + this.userFrom.userHeader"
+              fit="contain"
+              shape="square"
           >
           </el-avatar>
           <el-avatar shape="square" v-else>user</el-avatar>
@@ -62,7 +62,6 @@
 <script>
 import jwtDecode from "jwt-decode";
 import {FileServerURL} from "../../public/config";
-
 export default {
   data() {
     return {
@@ -138,11 +137,9 @@ export default {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
 }
-
 .el-menu {
   width: auto;
 }
-
 #background {
   position: fixed;
   right: 0px;
@@ -153,43 +150,35 @@ export default {
   width: 100%;
   z-index: -5;
 }
-
 .el-container {
   color: white;
   width: 100%;
   height: 100%;
 }
-
 .el-container .el-header {
   border-bottom: 1px solid white;
 }
-
 .el-container .el-main {
   width: 100%;
 }
-
 .el-container .el-header .el-button >>> .el-button__inner {
   background-color: transparent;
 }
-
 .menu_shrink {
   background-color: transparent;
   color: white;
 }
-
 .el-button,
 .el-button:hover,
 .el-button:focus {
   background-color: transparent;
 }
-
 .user {
   float: right;
   /* border: 1px solid red; */
   width: 20%;
   height: auto;
 }
-
 .user h1 {
   width: auto;
   float: left;

@@ -10,6 +10,7 @@
         </el-form-item>
         <el-form-item>
           <el-button
+              icon="el-icon-search"
               type="primary"
               @click="
               selectAllFileByName(
@@ -27,54 +28,54 @@
     <el-main>
       <el-table :data="tableData" height="400">
         <el-table-column
+            align="center"
+            fixed="left"
             label="文件编号"
             prop="fileId"
-            align="center"
             width="200"
-            fixed="left"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="文件名称"
             prop="fileName"
-            align="center"
             width="350"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="文件类型"
             prop="fileType"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="存放路径"
             prop="filePath"
-            align="center"
             width="450"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="文件大小"
             prop="fileSize"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="上传时间"
             prop="fileUploadTime"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="修改时间"
             prop="fileUpdateTime"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column label="操作" width="200" align="center" fixed="right">
           <template #default="scope">
             <el-button
-                type="danger"
                 circle
                 icon="el-icon-delete"
+                type="danger"
                 @click="deleteFileById(scope.row.fileId)"
             >
             </el-button
@@ -83,11 +84,11 @@
         </el-table-column>
       </el-table>
       <el-pagination
-          background
-          @current-change="handleCurrentChange"
-          layout="prev, pager, next"
-          :total="pageSize"
           :page-size="size"
+          :total="pageSize"
+          background
+          layout="prev, pager, next"
+          @current-change="handleCurrentChange"
       >
       </el-pagination>
     </el-main>

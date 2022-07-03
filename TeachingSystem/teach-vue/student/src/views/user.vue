@@ -3,7 +3,7 @@
     <div v-if="userFrom.user != null" class="main">
       <el-main
       >
-        <el-descriptions title="学生信息" border="true" class="userContent">
+        <el-descriptions border="true" class="userContent" title="学生信息">
           <el-descriptions-item label="学生编号">{{
               userFrom.user.studentId
             }}
@@ -48,9 +48,9 @@
           </el-descriptions-item>
         </el-descriptions>
         <el-button
+            icon="el-icon-key"
             type="primary"
             @click="this.loginDialogFormVisible = true"
-            icon="el-icon-key"
         >修改密码
         </el-button
         >
@@ -82,9 +82,9 @@
           </el-descriptions-item>
         </el-descriptions>
         <el-button
+            icon="el-icon-key"
             type="primary"
             @click="this.loginDialogFormVisible = true"
-            icon="el-icon-key"
         >修改密码
         </el-button
         >
@@ -92,10 +92,10 @@
           更改头像
         </el-button>
         <el-button
-            type="danger"
-            @click="exitLogin"
             icon="el-icon-switch-button
 "
+            type="danger"
+            @click="exitLogin"
         >退出登录
         </el-button
         >
@@ -105,14 +105,14 @@
   <!-- 修改密码 -->
   <el-dialog title="修改密码" v-model="loginDialogFormVisible">
     <el-form
-        :model="updatePasswordFrom"
-        @keyup.enter.native="updatePassword(updatePasswordFrom)"
-        :rules="rules"
         ref="updateFrom"
+        :model="updatePasswordFrom"
+        :rules="rules"
+        @keyup.enter.native="updatePassword(updatePasswordFrom)"
     >
       <el-form-item
-          label="请输入密码:"
           :label-width="formLabelWidth"
+          label="请输入密码:"
           prop="userPassword"
       >
         <el-input
@@ -121,8 +121,8 @@
         ></el-input>
       </el-form-item>
       <el-form-item
-          label="输入新密码:"
           :label-width="formLabelWidth"
+          label="输入新密码:"
           prop="newUserPassword"
       >
         <el-input
@@ -131,8 +131,8 @@
         ></el-input>
       </el-form-item>
       <el-form-item
-          label="确认新密码:"
           :label-width="formLabelWidth"
+          label="确认新密码:"
           prop="againUserPassword"
       >
         <el-input
@@ -151,10 +151,10 @@
   </el-dialog>
   <div>
     <myUpload
-        method="PUT"
-        :headers="Headers"
         v-model="showDialog"
+        :headers="Headers"
         :url="url + `/user/${this.userFrom.userId}`"
+        method="PUT"
         @crop-upload-success="cropUploadSuccess"
     />
   </div>
@@ -165,7 +165,6 @@ import myUpload from "vue-image-crop-upload";
 import {updatePassword} from "../api/user";
 import jwtDecode from "jwt-decode";
 import {baseURL} from "../../public/config";
-
 export default {
   components: {myUpload},
   data() {
@@ -298,17 +297,14 @@ export default {
   margin: 0 auto;
   color: white;
 }
-
 .el-dialog .el-button {
   width: 17%;
   margin: 5% 15%;
 }
-
 .main .el-main .el-button {
   margin: 5% 9%;
   width: 15%;
 }
-
 .main {
   width: 100%;
 }

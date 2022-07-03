@@ -58,10 +58,11 @@ export function updateStudentById(obj) {
 }
 
 //根据学生编号删除学生(index值为true,则代表删除,反之代表恢复)
-export function deleteStudentById(studentId, index) {
+export function deleteStudentById(map) {
     return router({
-        url: `/student/${studentId}/${index}`,
+        url: `/student`,
         method: "DELETE",
+        data: map,
         headers: {
             token: sessionStorage.getItem("token"),
         },

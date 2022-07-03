@@ -15,11 +15,11 @@
     </el-main>
     <el-main v-show="!show1">
       <el-button
-          type="primary"
-          @click="exit"
           circle
           class="exitbtn"
           icon="el-icon-refresh-left"
+          type="primary"
+          @click="exit"
       ></el-button>
       <el-table :data="tableData" height="450">
         <el-table-column label="提交信息" type="expand" width="100">
@@ -32,40 +32,40 @@
           </template>
         </el-table-column>
         <el-table-column
+            align="center"
             label="提交编号"
             prop="submitId"
-            align="center"
             width="100"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="学生姓名"
             prop="student.studentName"
-            align="center"
             width="150"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="学生成绩"
             prop="submitScore"
-            align="center"
             width="150"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="创建时间"
             prop="log.createTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="最后修改时间"
             prop="log.updateTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column label="操作" fixed="right">
           <template #default="props">
             <el-button
-                icon="el-icon-edit"
                 circle
+                icon="el-icon-edit"
                 type="success"
                 @click="updateClick(props.row)"
             ></el-button>
@@ -81,8 +81,8 @@
       <el-form-item label="请输入一个合适的分数:" :label-width="formLabelWidth">
         <el-input-number
             v-model="editFrom.submitScore"
-            :min="0"
             :max="100"
+            :min="0"
             :step="10"
         ></el-input-number>
       </el-form-item>
@@ -98,7 +98,6 @@
 </template>
 <script>
 import {selectAllSubmit, updateSubmit} from "../api/work";
-
 export default {
   data() {
     return {
@@ -193,7 +192,6 @@ export default {
 /deep/ .el-table__expanded-cell {
   background-color: transparent;
 }
-
 /* 表格内背景颜色 */
 /deep/ .el-table th,
 /deep/ .el-table tr,
@@ -211,7 +209,6 @@ export default {
   /* width: 50%; */
   margin: 0 auto;
 }
-
 .selectFrom .el-button,
 .selectFrom .el-button:hover,
 .selectFrom .el-button:focus,
@@ -221,7 +218,6 @@ export default {
   background-color: transparent;
   color: gray;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;

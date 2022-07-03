@@ -6,46 +6,46 @@
     <el-container>
       <el-main>
         <el-form
-            :rules="rules"
-            :model="registerFrom"
-            @keyup.enter.native="register(registerFrom)"
-            :inline-message="true"
             ref="registerFrom"
+            :inline-message="true"
+            :model="registerFrom"
+            :rules="rules"
+            @keyup.enter.native="register(registerFrom)"
         >
           <el-form-item>
             <h1>欢迎注册</h1>
           </el-form-item>
           <el-form-item prop="userName">
             <el-input
-                prefix-icon="el-icon-user-solid"
                 v-model="registerFrom.userName"
-                placeholder="输入用户名"
                 class="input_user"
+                placeholder="输入用户名"
+                prefix-icon="el-icon-user-solid"
             ></el-input>
           </el-form-item>
           <el-form-item prop="userPassword">
             <el-input
-                prefix-icon="el-icon-lock"
                 v-model="registerFrom.userPassword"
-                placeholder="输入密码"
                 class="input_password"
+                placeholder="输入密码"
+                prefix-icon="el-icon-lock"
                 show-password
             ></el-input>
           </el-form-item>
           <el-form-item prop="againPassword">
             <el-input
-                prefix-icon="el-icon-lock"
                 v-model="registerFrom.againPassword"
-                placeholder="再次输入密码"
                 class="input_password"
+                placeholder="再次输入密码"
+                prefix-icon="el-icon-lock"
                 show-password
             ></el-input>
           </el-form-item>
           <el-form-item prop="code">
             <el-input
+                v-model="registerFrom.code"
                 class="input_code"
                 placeholder="请输入验证码"
-                v-model="registerFrom.code"
             >
               <template v-slot:prefix><i class="el-icon-s-check"></i></template
               >
@@ -75,7 +75,6 @@
 <script>
 import {register} from "../api/user";
 import SIdentify from "../components/identify";
-
 export default {
   data() {
     return {
@@ -180,13 +179,11 @@ video {
   width: 100%;
   z-index: -5;
 }
-
 .el-container {
   width: 100%;
   height: 100%;
   background-size: 100%;
 }
-
 /* 表单 */
 .el-form {
   width: 70%;
@@ -197,27 +194,23 @@ video {
   border-radius: 25px;
   box-shadow: 0 2px 12px;
 }
-
 .el-form h1 {
   width: 25%;
   text-align: center;
   margin: 0 auto;
   color: white;
 }
-
 .el-form .el-input {
   width: 60%;
   margin-left: 20%;
   margin-top: 3%;
 }
-
 .input_user >>> .el-input__inner,
 .input_password >>> .el-input__inner {
   background-color: transparent;
   color: white;
   font-size: 20px;
 }
-
 .input_code >>> .el-input__inner {
   background-color: transparent;
   color: white;
@@ -225,12 +218,10 @@ video {
   width: 70%;
   float: left;
 }
-
 .el-form .el-button {
   margin-left: 20%;
   width: 20%;
 }
-
 .el-button {
   background-color: transparent;
   height: 10%;

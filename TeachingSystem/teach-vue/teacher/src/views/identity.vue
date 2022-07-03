@@ -12,18 +12,18 @@
         </el-form-item>
         <el-form-item>
           <el-button
+              icon="el-icon-paperclip"
+              round
               type="primary"
               @click="bindIdentity(IdentityFrom.userIndex)"
-              round
-              icon="el-icon-paperclip"
           >绑定
           </el-button
           >
           <el-button
+              icon="el-icon-switch-button"
+              round
               type="danger"
               @click="exit"
-              round
-              icon="el-icon-switch-button"
           >返回
           </el-button
           >
@@ -36,7 +36,6 @@
 <script>
 import {bindIdentity} from "../api/user";
 import jwtDecode from "jwt-decode";
-
 export default {
   data() {
     return {
@@ -100,18 +99,15 @@ export default {
   margin: 0 auto;
   width: 50%;
 }
-
 h1 {
   text-align: center;
   color: white;
 }
-
 .el-form .el-input >>> .el-input__inner {
   color: white;
   background-color: transparent;
   margin: 0 auto;
 }
-
 .el-form .el-button {
   width: 20%;
   margin: 5% 15%;

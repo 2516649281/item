@@ -58,10 +58,12 @@ export function updateAdminById(obj) {
 }
 
 //根据管理员编号删除管理员(index值为true,则代表删除,反之代表恢复)
-export function deleteAdminById(AdminId, index) {
+export function deleteAdminById(map) {
+    console.log(map);
     return router({
-        url: `/admin/${AdminId}/${index}`,
+        url: `/admin`,
         method: "DELETE",
+        data: map,
         headers: {
             token: sessionStorage.getItem("token"),
         },

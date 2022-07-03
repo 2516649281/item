@@ -47,10 +47,11 @@ export function updateWorkById(obj) {
 }
 
 //删除作业:操作指数(true代表查询未删除的数据,false代表查询已删除的数据)
-export function deleteWork(workId, index) {
+export function deleteWork(map) {
     return router({
-        url: `/work/${workId}/${index}`,
+        url: `/work`,
         method: "DELETE",
+        data: map,
         headers: {
             token: sessionStorage.getItem("token"),
         },

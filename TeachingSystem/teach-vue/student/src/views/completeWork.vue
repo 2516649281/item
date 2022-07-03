@@ -12,24 +12,24 @@
           </template>
         </el-table-column>
         <el-table-column
+            align="center"
             label="作业编号"
             prop="workId"
-            align="center"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="作业名"
             prop="workName"
-            align="center"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="创建时间"
             prop="log.createTime"
-            align="center"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="最后修改时间"
             prop="log.updateTime"
-            align="center"
         ></el-table-column>
       </el-table>
     </el-main>
@@ -39,7 +39,6 @@
 <script>
 import jwtDecode from "jwt-decode";
 import {selectAllCreateWork} from "../api/work";
-
 export default {
   data() {
     return {
@@ -66,7 +65,6 @@ export default {
 /deep/ .el-table__expanded-cell {
   background-color: transparent;
 }
-
 /deep/ .el-table th,
 /deep/ .el-table tr,
 /deep/ .el-table td {

@@ -58,10 +58,11 @@ export function updateTeacherById(obj) {
 }
 
 //根据教师编号删除教师(index值为true,则代表删除,反之代表恢复)
-export function deleteTeacherById(teacherId, index) {
+export function deleteTeacherById(map) {
     return router({
-        url: `/teacher/${teacherId}/${index}`,
+        url: `/teacher`,
         method: "DELETE",
+        data: map,
         headers: {
             token: sessionStorage.getItem("token"),
         },

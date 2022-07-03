@@ -1,13 +1,13 @@
 <template>
-  <img src="../image/bg.jpg" alt="" id="background"/>
+  <img id="background" alt="" src="../image/bg.jpg"/>
   <el-container>
     <el-aside
     >
       <el-menu
-          default-active="1"
-          background-color="transparent"
-          text-color="#fff"
           active-text-color="#ffd04b"
+          background-color="transparent"
+          default-active="1"
+          text-color="#fff"
       >
         <el-image :src="require('@/assets/logo.png')" fit="contain"></el-image>
         <el-menu-item index="1" @click="toUser">
@@ -19,22 +19,22 @@
           <template v-slot:title>学生管理</template>
         </el-menu-item
         >
-        <el-menu-item index="3 " @click="toTeacher" :disabled="menudisabled">
+        <el-menu-item :disabled="menudisabled" index="3 " @click="toTeacher">
           <i class="el-icon-s-custom"></i>
           <template v-slot:title>教师管理</template>
         </el-menu-item
         >
-        <el-menu-item index="4" @click="toAdmin" :disabled="menudisabled">
+        <el-menu-item :disabled="menudisabled" index="4" @click="toAdmin">
           <i class="el-icon-star-on"></i>
           <template v-slot:title>管理员管理</template>
         </el-menu-item
         >
-        <el-menu-item index="5" @click="toClass" :disabled="menudisabled">
+        <el-menu-item :disabled="menudisabled" index="5" @click="toClass">
           <i class="el-icon-price-tag"></i>
           <template v-slot:title>班级管理</template>
         </el-menu-item
         >
-        <el-menu-item index="6" @click="toSubject" :disabled="menudisabled">
+        <el-menu-item :disabled="menudisabled" index="6" @click="toSubject">
           <i class="el-icon-notebook-2"></i>
           <template v-slot:title>科目管理</template>
         </el-menu-item>
@@ -54,10 +54,10 @@
       <el-header>
         <div class="user">
           <el-avatar
-              shape="square"
               v-if="userFrom.userHeader != 0"
-              fit="contain"
               :src="FileUrl + userFrom.userHeader"
+              fit="contain"
+              shape="square"
           >
           </el-avatar>
           <el-avatar shape="square" v-else>user</el-avatar>
@@ -68,10 +68,10 @@
         <iframe
             v-if="iframeV"
             :src="nacos"
-            scrolling="yes"
             frameborder="0"
-            width="100%"
             height="100%"
+            scrolling="yes"
+            width="100%"
         ></iframe>
         <router-view v-else
         />

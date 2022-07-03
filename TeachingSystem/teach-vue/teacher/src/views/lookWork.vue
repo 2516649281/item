@@ -1,8 +1,14 @@
 <template>
   <el-container>
     <el-main>
-      <el-table :data="tableData" height="400">
-        <el-table-column type="expand">
+      <el-table
+          ref="workIds"
+          :data="tableData"
+          height="400"
+          @selection-change="handleSelectionChange"
+      >
+        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column fixed type="expand">
           <template #default="props">
             <el-form label-position="left" inline class="demo-table-expand">
               <el-form-item label="作业描述:">
@@ -12,27 +18,28 @@
           </template>
         </el-table-column>
         <el-table-column
+            align="center"
+            fixed
             label="编号"
             prop="workId"
-            align="center"
             width="150"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="作业名"
             prop="workName"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="创建时间"
             prop="log.createTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="最后修改时间"
             prop="log.updateTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column label="状态" align="center" width="100">
@@ -49,22 +56,22 @@
           <template #default="scope"
           >
             <el-button
-                type="primary"
                 circle
                 icon="el-icon-edit"
+                type="primary"
                 @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                type="danger"
                 circle
                 icon="el-icon-delete"
+                type="danger"
                 @click="deleteWork(scope.row.workId, true)"
             >
             </el-button>
             <el-button
-                type="success"
                 circle
                 icon="el-icon-refresh-right"
+                type="success"
                 @click="deleteWork(scope.row.workId, false)"
             ></el-button
             >
@@ -73,18 +80,33 @@
       </el-table>
       <div class="addbtn">
         <el-button
-            type="success"
-            circle
             icon="el-icon-plus"
+            type="success"
             @click="adddialogFormVisible = true"
-        ></el-button>
+        >添加作业
+        </el-button
+        >
+        <el-button
+            icon="el-icon-delete"
+            type="danger"
+            @click="deleteClasss(this.workIds, true)"
+        >批量删除
+        </el-button
+        >
+        <el-button
+            icon="el-icon-refresh-right"
+            type="success"
+            @click="deleteClasss(this.workIds, false)"
+        >批量恢复
+        </el-button
+        >
       </div>
       <el-pagination
-          background
-          @current-change="handleCurrentChange"
-          layout="prev, pager, next"
-          :total="pageSize"
           :page-size="size"
+          :total="pageSize"
+          background
+          layout="prev, pager, next"
+          @current-change="handleCurrentChange"
       >
       </el-pagination>
     </el-main>
@@ -95,9 +117,9 @@
       <el-form-item label="作业名称:" prop="workName">
         <el-input v-model="addFrom.workName" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="发布班级" prop="classId"
+      <el-form-item label="发布班级" prop="workId"
       >
-        <el-select v-model="addFrom.classId" placeholder="请选择">
+        <el-select v-model="addFrom.workId" placeholder="请选择">
           <el-option
               v-for="item in classMap"
               :key="item.value"
@@ -111,8 +133,8 @@
       <el-form-item label="作业描述:" prop="workContent">
         <el-input
             v-model="addFrom.workContent"
-            type="textarea"
             :rows="2"
+            type="textarea"
         ></el-input>
       </el-form-item>
     </el-form>
@@ -131,9 +153,9 @@
       <el-form-item label="作业名称:" prop="workName">
         <el-input v-model="editFrom.workName" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="发布班级" prop="classId"
+      <el-form-item label="发布班级" prop="workId"
       >
-        <el-select v-model="editFrom.classId" placeholder="请选择">
+        <el-select v-model="editFrom.workId" placeholder="请选择">
           <el-option
               v-for="item in classMap"
               :key="item.value"
@@ -147,8 +169,8 @@
       <el-form-item label="作业描述:" prop="workContent">
         <el-input
             v-model="editFrom.workContent"
-            type="textarea"
             :rows="2"
+            type="textarea"
         ></el-input>
       </el-form-item>
     </el-form>
@@ -171,7 +193,6 @@ import {
   deleteWork,
   selectAllClass,
 } from "../api/work";
-
 export default {
   data() {
     return {
@@ -196,10 +217,14 @@ export default {
         //作业描述
         workContent: "",
         //班级编号
-        classId: "",
+        workId: "",
         //教师编号
         teacherId: "",
       },
+      //班级编号
+      workIds: [],
+      //删除数据
+      map: [],
       //编辑数据
       editFrom: {
         //作业编号
@@ -209,7 +234,7 @@ export default {
         //作业描述
         workContent: "",
         //班级编号
-        classId: "",
+        workId: "",
         //教师编号
         teacherId: "",
       },
@@ -218,9 +243,7 @@ export default {
         workName: [
           {required: true, message: "作业名不得为空!", trigger: "blur"},
         ],
-        classId: [
-          {required: true, message: "请选择班级!", trigger: "change"},
-        ],
+        workId: [{required: true, message: "请选择班级!", trigger: "change"}],
         workContent: [
           {required: true, message: "作业描述不得为空!", trigger: "blur"},
         ],
@@ -242,7 +265,7 @@ export default {
         var classList = req.data.data;
         for (let i = 0; i < classList.length; i++) {
           var a = {
-            value: classList[i].classId,
+            value: classList[i].workId,
             label: classList[i].className,
           };
           this.classMap.push(a);
@@ -332,7 +355,9 @@ export default {
             type: "warning",
           }
       ).then(() => {
-        deleteWork(workId, index).then((req) => {
+        this.map = new Map();
+        this.map[workId] = index;
+        deleteWork(this.map).then((req) => {
           if ((req.data.statue === 200) & (req.data.data != null)) {
             this.$message({
               type: "success",
@@ -359,6 +384,47 @@ export default {
       this.editFrom = obj;
       this.editdialogFormVisible = true;
     },
+    //批量删除
+    deleteClasss(ids, index) {
+      this.$confirm(
+          index ? "此操作将删除班级, 是否继续?" : "此操作将恢复班级, 是否继续?",
+          "提示",
+          {
+            confirmButtonText: "确定",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
+      ).then(() => {
+        this.map = new Map();
+        for (let i = 0; i < ids.length; i++) {
+          this.map[ids[i].workId] = index;
+        }
+        deleteWork(this.map).then((req) => {
+          if ((req.data.statue === 200) & (req.data.data != null)) {
+            this.$message({
+              type: "success",
+              message: "操作成功!",
+              showClose: true,
+            });
+            this.selectAllWorkByTeacherId(
+                this.current,
+                this.size,
+                jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
+            );
+          } else {
+            this.$message({
+              type: "error",
+              message: "操作失败!",
+              showClose: true,
+            });
+          }
+        });
+      });
+    },
+    //获取打勾的项
+    handleSelectionChange(val) {
+      this.workIds = val;
+    },
     // 分页
     handleCurrentChange(val) {
       this.current = val;
@@ -377,7 +443,6 @@ export default {
 /deep/ .el-table__expanded-cell {
   background-color: transparent;
 }
-
 /* 表格内背景颜色 */
 /deep/ .el-table th,
 /deep/ .el-table tr,
@@ -386,12 +451,10 @@ export default {
   color: white;
   color: grey;
 }
-
 .addbtn {
-  width: 10%;
+  width: 80%;
   margin: 0 auto;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;

@@ -10,6 +10,7 @@
         </el-form-item>
         <el-form-item>
           <el-button
+              icon="el-icon-search"
               type="primary"
               @click="
               selectAllAdminByAddress(
@@ -21,22 +22,42 @@
           >查询
           </el-button
           >
+          <el-button
+              icon="el-icon-delete"
+              type="danger"
+              @click="deleteAdmins(this.adminIds, true)"
+          >批量删除
+          </el-button
+          >
+          <el-button
+              icon="el-icon-refresh-right"
+              type="success"
+              @click="deleteAdmins(this.adminIds, false)"
+          >批量恢复
+          </el-button
+          >
         </el-form-item>
       </el-form>
     </el-header>
     <el-main>
-      <el-table :data="tableData" height="400">
+      <el-table
+          ref="adminIds"
+          :data="tableData"
+          height="400"
+          @selection-change="handleSelectionChange"
+      >
+        <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column
+            align="center"
+            fixed="left"
             label="管理员编号"
             prop="adminId"
-            align="center"
             width="100"
-            fixed="left"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="管理员姓名"
             prop="adminName"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column label="管理员年龄" align="center" width="200">
@@ -48,33 +69,33 @@
           </template>
         </el-table-column>
         <el-table-column
+            align="center"
             label="管理员住址"
             prop="adminAddress"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="管理员电话"
             prop="adminPhone"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="管理员邮箱"
             prop="adminEmail"
-            align="center"
             width="200"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="创建时间"
             prop="log.createTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column
+            align="center"
             label="最后修改时间"
             prop="log.updateTime"
-            align="center"
             width="250"
         ></el-table-column>
         <el-table-column label="状态" align="center" width="100">
@@ -91,22 +112,22 @@
           <template #default="scope"
           >
             <el-button
-                type="primary"
                 circle
                 icon="el-icon-edit"
+                type="primary"
                 @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                type="danger"
                 circle
                 icon="el-icon-delete"
+                type="danger"
                 @click="deleteAdminById(scope.row.adminId, true)"
             >
             </el-button>
             <el-button
-                type="success"
                 circle
                 icon="el-icon-refresh-right"
+                type="success"
                 @click="deleteAdminById(scope.row.adminId, false)"
             ></el-button
             >
@@ -115,18 +136,18 @@
       </el-table>
       <div class="addbtn">
         <el-button
-            type="success"
             circle
             icon="el-icon-plus"
+            type="success"
             @click="adddialogFormVisible = true"
         ></el-button>
       </div>
       <el-pagination
-          background
-          @current-change="handleCurrentChange"
-          layout="prev, pager, next"
-          :total="pageSize"
           :page-size="size"
+          :total="pageSize"
+          background
+          layout="prev, pager, next"
+          @current-change="handleCurrentChange"
       >
       </el-pagination>
     </el-main>
@@ -218,6 +239,8 @@ export default {
         //地址名称
         adminAddress: "",
       },
+      //管理员编号
+      adminIds: [],
       //页码
       current: 1,
       //页长
@@ -260,6 +283,8 @@ export default {
         //管理员邮箱
         adminEmail: "",
       },
+      //删除表单
+      map: [],
       //表单验证
       rules: {
         adminName: [
@@ -367,7 +392,7 @@ export default {
         }
       });
     },
-    //删除管理员
+    //单次删除管理员
     deleteAdminById(adminId, index) {
       this.$confirm(
           index
@@ -380,7 +405,49 @@ export default {
             type: "warning",
           }
       ).then(() => {
-        deleteAdminById(adminId, index).then((req) => {
+        //定义map集合
+        this.map = new Map();
+        this.map[adminId] = index;
+        deleteAdminById(this.map).then((req) => {
+          if ((req.data.statue === 200) & (req.data.data != null)) {
+            this.$message({
+              type: "success",
+              message: "操作成功!",
+              showClose: true,
+            });
+            this.selectAllAdminByAddress(
+                this.current,
+                this.size,
+                this.selectFrom.adminAddress
+            );
+          } else {
+            this.$message({
+              type: "error",
+              message: "操作失败!",
+              showClose: true,
+            });
+          }
+        });
+      });
+    },
+    //批量删除
+    deleteAdmins(ids, index) {
+      this.$confirm(
+          index
+              ? "此操作将删除管理员, 是否继续?"
+              : "此操作将恢复管理员, 是否继续?",
+          "提示",
+          {
+            confirmButtonText: "确定",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
+      ).then(() => {
+        this.map = new Map();
+        for (let i = 0; i < ids.length; i++) {
+          this.map[ids[i].adminId] = index;
+        }
+        deleteAdminById(this.map).then((req) => {
           if ((req.data.statue === 200) & (req.data.data != null)) {
             this.$message({
               type: "success",
@@ -406,6 +473,10 @@ export default {
     editClick(obj) {
       this.editFrom = obj;
       this.editdialogFormVisible = true;
+    },
+    //获取打勾的项
+    handleSelectionChange(val) {
+      this.adminIds = val;
     },
     // 分页
     handleCurrentChange(val) {

@@ -7,30 +7,30 @@
   <el-container>
     <el-main>
       <el-form
+          ref="registerFrom"
+          :inline-message="true"
           :model="registerFrom"
           :rules="rules"
-          :inline-message="true"
           @keyup.enter.native="register(registerFrom)"
-          ref="registerFrom"
       >
         <h1>欢迎注册</h1>
         <el-form-item prop="userName">
           <el-input
-              placeholder="请输入账号"
               v-model="registerFrom.userName"
+              placeholder="请输入账号"
           ></el-input>
         </el-form-item>
         <el-form-item prop="userPassword">
           <el-input
-              placeholder="请输入密码"
               v-model="registerFrom.userPassword"
+              placeholder="请输入密码"
               show-password
           ></el-input>
         </el-form-item>
         <el-form-item prop="againPassword">
           <el-input
-              placeholder="请再次输入密码"
               v-model="registerFrom.againPassword"
+              placeholder="请再次输入密码"
               show-password
           ></el-input>
         </el-form-item>

@@ -39,17 +39,17 @@
         </el-descriptions>
         <el-divider></el-divider>
         <el-button
+            icon="el-icon-key"
             round
             type="primary"
-            icon="el-icon-key"
             @click="editdialogFormVisible = true"
         >修改密码
         </el-button
         >
         <el-button
+            icon="el-icon-upload"
             round
             type="success"
-            icon="el-icon-upload"
             @click="toggleShow"
         >更改头像
         </el-button
@@ -75,17 +75,17 @@
           </el-descriptions-item>
         </el-descriptions>
         <el-button
+            icon="el-icon-key"
             round
             type="primary"
-            icon="el-icon-key"
             @click="editdialogFormVisible = true"
         >修改密码
         </el-button
         >
         <el-button
+            icon="el-icon-upload"
             round
             type="success"
-            icon="el-icon-upload"
             @click="toggleShow"
         >更改头像
         </el-button
@@ -132,10 +132,10 @@
   <!-- 上传头像组件 -->
   <div>
     <myUpload
-        method="PUT"
-        :headers="Headers"
         v-model="showDialog"
+        :headers="Headers"
         :url="url + `/user/${this.tableData.userId}`"
+        method="PUT"
         @crop-upload-success="cropUploadSuccess"
     />
   </div>
@@ -278,17 +278,14 @@ export default {
   margin: 0 auto;
   color: white;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;
 }
-
 .main .el-main .el-button {
   width: 20%;
   margin: 5% 15%;
 }
-
 .main {
   width: 100%;
   margin: 0 auto;

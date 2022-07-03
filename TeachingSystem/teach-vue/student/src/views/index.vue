@@ -68,7 +68,6 @@ import img1 from "../img/1.jpg";
 import img2 from "../img/2.jpg";
 import img3 from "../img/3.jpg";
 import img4 from "../img/4.jpg";
-
 export default {
   data() {
     return {
@@ -84,22 +83,18 @@ export default {
   width: 100%;
   margin: 0 auto;
 }
-
 #main-image .el-image {
   width: 100%;
 }
-
 #main-news {
   width: 50%;
   float: left;
 }
-
 #main-card {
   margin: 0 auto;
   float: left;
   width: 50%;
 }
-
 #main-card .el-card {
   background-color: transparent;
   color: white;
@@ -107,16 +102,13 @@ export default {
   /* float: left; */
   margin: 0 1.5%;
 }
-
 .el-dropdown-link {
   cursor: pointer;
   color: #409eff;
 }
-
 .el-icon-arrow-down {
   font-size: 12px;
 }
-
 #main-news .el-timeline .el-card {
   background-color: transparent;
   color: white;

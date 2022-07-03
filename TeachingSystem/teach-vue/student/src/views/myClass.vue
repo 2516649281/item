@@ -3,14 +3,14 @@
     <el-main>
       <el-table :data="tableData" height="450" id="table">
         <el-table-column
-            prop="studentId"
-            label="学生编号"
             align="center"
+            label="学生编号"
+            prop="studentId"
         ></el-table-column>
         <el-table-column
-            prop="studentName"
-            label="学生姓名"
             align="center"
+            label="学生姓名"
+            prop="studentName"
         ></el-table-column>
         <el-table-column prop="studentAge" label="学生年龄" align="center">
           <template #default="scope"> {{ scope.row.studentAge }}岁</template>
@@ -28,7 +28,6 @@
 <script>
 import {selectAllStudentByClassId} from "../api/work";
 import jwtDecode from "jwt-decode";
-
 export default {
   data() {
     return {
@@ -57,7 +56,6 @@ export default {
 /deep/ .el-table__expanded-cell {
   background-color: transparent;
 }
-
 /* 表格内背景颜色 */
 /deep/ .el-table th,
 /deep/ .el-table tr,
