@@ -1,7 +1,7 @@
 package com.chunfeng.service.impl;
 
 import com.chunfeng.entity.FileSource;
-import com.chunfeng.util.JsonRequest;
+import com.chunfeng.entity.JsonRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

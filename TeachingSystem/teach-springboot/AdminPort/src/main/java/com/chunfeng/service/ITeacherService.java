@@ -1,10 +1,11 @@
 package com.chunfeng.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.entity.Teacher;
-import com.chunfeng.util.JsonRequest;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 教师管理业务层接口
@@ -55,11 +56,13 @@ public interface ITeacherService extends IService<Teacher> {
     JsonRequest<Integer> updateTeacher(Teacher teacher);
 
     /**
-     * 删除或恢复教师
+     * 批量删除或恢复教师
      *
-     * @param teacherId 教师编号
-     * @param index     操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:教师id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    JsonRequest<Integer> deleteTeacher(Integer teacherId, Boolean index);
+    JsonRequest<Integer> deleteTeacher(Map<Long, Boolean> map);
 }

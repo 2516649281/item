@@ -2,7 +2,7 @@ package com.chunfeng.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.chunfeng.entity.FileSource;
-import com.chunfeng.util.JsonRequest;
+import com.chunfeng.entity.JsonRequest;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.ResponseEntity;
 

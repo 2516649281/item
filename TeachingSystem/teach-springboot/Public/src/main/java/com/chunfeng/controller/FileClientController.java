@@ -1,6 +1,6 @@
 package com.chunfeng.controller;
 
-import com.chunfeng.util.JsonRequest;
+import com.chunfeng.entity.JsonRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.ResponseEntity;

@@ -2,9 +2,10 @@ package com.chunfeng.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.chunfeng.entity.CreateWork;
-import com.chunfeng.util.JsonRequest;
+import com.chunfeng.entity.JsonRequest;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 教师端业务层接口
@@ -48,12 +49,13 @@ public interface IWorkService extends IService<CreateWork> {
     JsonRequest<Integer> updateWorkById(CreateWork createWork);
 
     /**
-     * 删除作业信息
+     * 批量删除或恢复已提交的作业
      *
-     * @param workId 作业编号
-     * @param index  操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:提交作业id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    JsonRequest<Integer> deleteWork(Long workId, Boolean index);
-
+    JsonRequest<Integer> deleteWork(Map<Long, Boolean> map);
 }

@@ -1,12 +1,13 @@
 package com.chunfeng.controller;
 
 import com.chunfeng.entity.Admin;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.service.IAdminService;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 管理员管理控制层
@@ -18,7 +19,7 @@ public class AdminController extends ServiceController {
     /**
      * 管理员业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IAdminService AdminService;
 
     /**
@@ -58,7 +59,7 @@ public class AdminController extends ServiceController {
     }
 
     /**
-     * 添加管理员
+     * 添加或批量添加管理员
      *
      * @param Admin 需提供:管理员姓名,管理员年龄,管理员性别,管理员住址,管理员电话,管理员邮箱,地址
      * @return JSON
@@ -80,14 +81,16 @@ public class AdminController extends ServiceController {
     }
 
     /**
-     * 删除或恢复管理员
+     * 批量删除或恢复管理员
      *
-     * @param AdminId 管理员编号
-     * @param index   操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:管理员id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    @DeleteMapping("/{AdminId}/{index}")
-    JsonRequest<Integer> deleteAdminById(@PathVariable Long AdminId, @PathVariable Boolean index) {
-        return AdminService.deleteAdminById(AdminId, index);
+    @DeleteMapping
+    JsonRequest<Integer> deleteAdminById(@RequestBody Map<Long, Boolean> map) {
+        return AdminService.deleteAdminById(map);
     }
 }

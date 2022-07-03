@@ -3,6 +3,8 @@ package com.chunfeng.config;
 import com.chunfeng.interceptor.LoginInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
@@ -11,12 +13,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * Spring配置中心
  */
 @Slf4j
+@Configuration
 public class WebMvcConfig extends WebMvcConfigurationSupport {
 
     /**
      * 登录拦截器
      */
-    @Autowired
+    @Autowired(required = false)
     private LoginInterceptor loginInterceptor;
 
     /**

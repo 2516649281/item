@@ -13,7 +13,7 @@ import java.util.Date;
 @SpringBootTest
 public class LogMapperTest {
 
-    @Autowired
+    @Autowired(required = false)
     private IWorkService workService;
 
     /**
@@ -41,7 +41,7 @@ public class LogMapperTest {
 
     @Test
     void delete() {
-        System.out.println(workService.deleteWork(1511157057750380546L, true));
+        //System.out.println(workService.deleteWork(1511157057750380546L, true));
     }
 
     @Test

@@ -2,9 +2,10 @@ package com.chunfeng.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.chunfeng.entity.Class;
-import com.chunfeng.util.JsonRequest;
+import com.chunfeng.entity.JsonRequest;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 班级管理业务层接口
@@ -55,11 +56,13 @@ public interface IClassService extends IService<Class> {
     JsonRequest<Integer> updateClassById(Class aClass);
 
     /**
-     * 删除或恢复班级
+     * 批量删除或恢复班级
      *
-     * @param classId 班级编号
-     * @param index   操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:班级id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    JsonRequest<Integer> deleteClassById(Long classId, Boolean index);
+    JsonRequest<Integer> deleteClassById(Map<Long, Boolean> map);
 }

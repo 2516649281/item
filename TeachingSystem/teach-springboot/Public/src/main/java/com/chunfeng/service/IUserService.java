@@ -1,8 +1,8 @@
 package com.chunfeng.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.entity.User;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.web.multipart.MultipartFile;
 
 /**

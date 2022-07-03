@@ -62,7 +62,7 @@ GET /admin/{AdminId}? HTTP/1.1
 |===
 
 
-=== 添加管理员
+=== 添加或批量添加管理员
 请求
 [source,HTTP ]
 ----
@@ -98,20 +98,14 @@ HTTP/1.1 200 OK
 ----
 
 
-=== 删除或恢复管理员
+=== 批量删除或恢复管理员
 请求
 [source,HTTP ]
 ----
-DELETE /admin/{AdminId}/{index} HTTP/1.1
+DELETE /admin HTTP/1.1
+Content-Type: application/json
 
 ----
-
-[options="header"]
-|===
-|+名称+|+类型+|+校验+|+默认+|+描述+
-|+AdminId+|+Long+|||+管理员编号+
-|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
-|===
 
 响应
 [source,HTTP ]
@@ -224,20 +218,14 @@ HTTP/1.1 200 OK
 ----
 
 
-=== 删除或恢复班级
+=== 批量删除或恢复班级
 请求
 [source,HTTP ]
 ----
-DELETE /class/{classId}/{index} HTTP/1.1
+DELETE /class HTTP/1.1
+Content-Type: application/json
 
 ----
-
-[options="header"]
-|===
-|+名称+|+类型+|+校验+|+默认+|+描述+
-|+classId+|+Long+|||+班级编号+
-|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
-|===
 
 响应
 [source,HTTP ]
@@ -279,7 +267,7 @@ GET /file/selectB/{current}/{size}?fileName= HTTP/1.1
 |+名称+|+类型+|+校验+|+默认+|+描述+
 |+current+|+Integer+|||+页码+
 |+size+|+Integer+|||+页长+
-|+fileName+|+String+|||
+|+fileName+|+String+|||+查询的条件+
 |===
 
 
@@ -369,20 +357,14 @@ HTTP/1.1 200 OK
 ----
 
 
-=== 删除或恢复学生
+=== 批量删除或恢复学生
 请求
 [source,HTTP ]
 ----
-DELETE /student/{studentId}/{index} HTTP/1.1
+DELETE /student HTTP/1.1
+Content-Type: application/json
 
 ----
-
-[options="header"]
-|===
-|+名称+|+类型+|+校验+|+默认+|+描述+
-|+studentId+|+Long+|||+学生编号+
-|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
-|===
 
 响应
 [source,HTTP ]
@@ -479,20 +461,14 @@ HTTP/1.1 200 OK
 ----
 
 
-=== 删除或恢复科目
+=== 批量删除或恢复科目
 请求
 [source,HTTP ]
 ----
-DELETE /subject/{subjectId}/{index} HTTP/1.1
+DELETE /subject HTTP/1.1
+Content-Type: application/json
 
 ----
-
-[options="header"]
-|===
-|+名称+|+类型+|+校验+|+默认+|+描述+
-|+subjectId+|+Long+|||+科目编号+
-|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
-|===
 
 响应
 [source,HTTP ]
@@ -589,20 +565,14 @@ HTTP/1.1 200 OK
 ----
 
 
-=== 删除或恢复教师
+=== 批量删除或恢复教师
 请求
 [source,HTTP ]
 ----
-DELETE /teacher/{teacherId}/{index} HTTP/1.1
+DELETE /teacher HTTP/1.1
+Content-Type: application/json
 
 ----
-
-[options="header"]
-|===
-|+名称+|+类型+|+校验+|+默认+|+描述+
-|+teacherId+|+Integer+|||+教师编号+
-|+index+|+Boolean+|||+操作指数(如果index值为true,则代表删除,反之代表恢复)+
-|===
 
 响应
 [source,HTTP ]

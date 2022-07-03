@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Asciidoctor 1.5.6.1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Asciidoctor 1.5.6.1" name="generator">
     <title>教务管理系统</title>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"
+          rel="stylesheet">
     <style>
         /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
         /* Remove comment around @import statement below when using as a custom stylesheet */
@@ -2086,7 +2086,7 @@
 <body class="book toc2 toc-left">
 <div id="header">
     <h1>教务管理系统</h1>
-    <div id="toc" class="toc2">
+    <div class="toc2" id="toc">
         <div id="toctitle">目录</div>
         <ul class="sectlevel1">
             <li><a href="#_用户管理控制层">1. 用户管理控制层</a>
@@ -2304,8 +2304,8 @@ Content-Type: application/json
 <pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : {
     "userId" : 0,
     "userName" : "",
@@ -2326,7 +2326,7 @@ Content-Type: application/json
     },
     "token" : ""
   },
-  "pageSize" : 0
+  "pageSize" : "0L"
 }</code></pre>
                     </div>
                 </div>
@@ -2352,14 +2352,14 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">statue</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">状态码</p></td>
                     </tr>
                     <tr>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">请求已完成!</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">消息</p></td>
                     </tr>
                     <tr>
@@ -2500,7 +2500,7 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Long</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">0L</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">总数</p></td>
                     </tr>
                     </tbody>
@@ -2692,10 +2692,10 @@ Content-Type: application/json
 <pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }</code></pre>
                     </div>
                 </div>
@@ -2721,14 +2721,14 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">statue</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">状态码</p></td>
                     </tr>
                     <tr>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">请求已完成!</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">消息</p></td>
                     </tr>
                     <tr>
@@ -2742,7 +2742,7 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Long</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">0L</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">总数</p></td>
                     </tr>
                     </tbody>
@@ -2934,10 +2934,10 @@ Content-Type: application/json
 <pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }</code></pre>
                     </div>
                 </div>
@@ -2963,14 +2963,14 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">statue</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">状态码</p></td>
                     </tr>
                     <tr>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">请求已完成!</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">消息</p></td>
                     </tr>
                     <tr>
@@ -2984,7 +2984,7 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Long</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">0L</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">总数</p></td>
                     </tr>
                     </tbody>
@@ -3176,10 +3176,10 @@ Content-Type: application/json
 <pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }</code></pre>
                     </div>
                 </div>
@@ -3205,14 +3205,14 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">statue</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">状态码</p></td>
                     </tr>
                     <tr>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">请求已完成!</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">消息</p></td>
                     </tr>
                     <tr>
@@ -3226,7 +3226,7 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Long</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">0L</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">总数</p></td>
                     </tr>
                     </tbody>
@@ -3277,10 +3277,10 @@ Content-Type: application/json
 <pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }</code></pre>
                     </div>
                 </div>
@@ -3306,14 +3306,14 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">statue</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">状态码</p></td>
                     </tr>
                     <tr>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">请求已完成!</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">消息</p></td>
                     </tr>
                     <tr>
@@ -3327,7 +3327,7 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Long</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">0L</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">总数</p></td>
                     </tr>
                     </tbody>
@@ -3385,10 +3385,10 @@ Content-Type: application/json
 <pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }</code></pre>
                     </div>
                 </div>
@@ -3414,14 +3414,14 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">statue</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">状态码</p></td>
                     </tr>
                     <tr>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">请求已完成!</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">消息</p></td>
                     </tr>
                     <tr>
@@ -3435,7 +3435,7 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Long</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">0L</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">总数</p></td>
                     </tr>
                     </tbody>
@@ -3460,9 +3460,9 @@ Content-Type: application/json
 <pre class="highlightjs highlight"><code class="language-HTTP hljs" data-lang="HTTP">HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
-  "pageSize" : 0
+  "statue" : "200",
+  "message" : "请求已完成!",
+  "pageSize" : "0L"
 }</code></pre>
                     </div>
                 </div>
@@ -3488,14 +3488,14 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">statue</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">状态码</p></td>
                     </tr>
                     <tr>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">请求已完成!</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">消息</p></td>
                     </tr>
                     <tr>
@@ -3509,7 +3509,7 @@ Content-Type: application/json
                         <td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">Long</p></td>
                         <td class="tableblock halign-left valign-top"></td>
-                        <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+                        <td class="tableblock halign-left valign-top"><p class="tableblock">0L</p></td>
                         <td class="tableblock halign-left valign-top"><p class="tableblock">总数</p></td>
                     </tr>
                     </tbody>
@@ -3518,7 +3518,7 @@ Content-Type: application/json
         </div>
     </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script>hljs.initHighlighting()</script>
 </body>

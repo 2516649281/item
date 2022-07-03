@@ -2,8 +2,7 @@ package com.chunfeng.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.chunfeng.entity.FileSource;
-import com.chunfeng.util.JsonRequest;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.chunfeng.entity.JsonRequest;
 
 import java.util.List;
 
@@ -29,5 +28,5 @@ public interface IFileAdminService extends IService<FileSource> {
      * @param fileName 查询的条件
      * @return JSON
      */
-    JsonRequest<List<FileSource>> selectFileBySource(Integer current, Integer size, @RequestParam String fileName);
+    JsonRequest<List<FileSource>> selectFileBySource(Integer current, Integer size, String fileName);
 }

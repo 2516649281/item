@@ -1,16 +1,14 @@
 package com.chunfeng.controller;
 
 import com.chunfeng.entity.Class;
-import com.chunfeng.entity.CreateWork;
-import com.chunfeng.entity.Student;
-import com.chunfeng.entity.SubmitWork;
+import com.chunfeng.entity.*;
 import com.chunfeng.service.IPublicWorkService;
 import com.chunfeng.service.IWorkService;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 教师端
@@ -22,13 +20,13 @@ public class WorkController extends ServiceController {
     /**
      * 作业业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IWorkService workService;
 
     /**
      * 公共业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IPublicWorkService publicWorkService;
 
     /**
@@ -79,15 +77,17 @@ public class WorkController extends ServiceController {
     }
 
     /**
-     * 删除作业信息
+     * 批量删除或恢复已提交的作业
      *
-     * @param workId 作业编号
-     * @param index  操作指数(true删除,false代表恢复)
+     * @param map <p>
+     *            key:提交作业id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    @DeleteMapping("/{workId}/{index}")
-    JsonRequest<Integer> deleteWorkById(@PathVariable Long workId, @PathVariable Boolean index) {
-        return workService.deleteWork(workId, index);
+    @DeleteMapping
+    JsonRequest<Integer> deleteWorkById(@RequestBody Map<Long, Boolean> map) {
+        return workService.deleteWork(map);
     }
 
     /**

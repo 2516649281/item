@@ -4,19 +4,22 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chunfeng.controller.FileClientController;
-import com.chunfeng.dao.*;
+import com.chunfeng.dao.AdminMapper;
+import com.chunfeng.dao.StudentMapper;
+import com.chunfeng.dao.TeacherMapper;
+import com.chunfeng.dao.UserMapper;
 import com.chunfeng.entity.*;
+import com.chunfeng.service.ILogService;
 import com.chunfeng.service.IRedisService;
 import com.chunfeng.service.IUserService;
 import com.chunfeng.service.ex.addException.AddException;
 import com.chunfeng.service.ex.addException.AddSourceIsExistException;
-import com.chunfeng.service.ex.logException.LogAddErrorException;
-import com.chunfeng.service.ex.logException.LogUpdateErrorException;
+import com.chunfeng.service.ex.logException.updateException.LogUpdateErrorException;
 import com.chunfeng.service.ex.selectException.SelectException;
 import com.chunfeng.service.ex.selectException.SelectSourceIsNullException;
 import com.chunfeng.service.ex.updateException.UpdateException;
-import com.chunfeng.util.JsonRequest;
 import com.chunfeng.util.JwtTokenUtil;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -36,47 +39,48 @@ import java.util.UUID;
  */
 @Service
 @Transactional
+@Log4j
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
     /**
      * 用户管理持久层
      */
-    @Autowired
+    @Autowired(required = false)
     private UserMapper userMapper;
 
     /**
      * 日志持久层
      */
-    @Autowired
-    private LogMapper logMapper;
+    @Autowired(required = false)
+    private ILogService logService;
 
     /**
      * 学生持久层
      */
-    @Autowired
+    @Autowired(required = false)
     private StudentMapper studentMapper;
 
     /**
      * 教师持久层
      */
-    @Autowired
+    @Autowired(required = false)
     private TeacherMapper teacherMapper;
 
     /**
      * 管理员持久层
      */
-    @Autowired
+    @Autowired(required = false)
     private AdminMapper adminMapper;
 
     /**
      * redis业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IRedisService<User> redisService;
 
     /**
      * fegin客户端
      */
-    @Autowired
+    @Autowired(required = false)
     private FileClientController fileClientController;
 
     /**
@@ -124,7 +128,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         user1.setUserIdentity(userSource.getUserIdentity());//放入用户身份信息
         user1.setToken(new JwtTokenUtil<>().createToken(userSource));//放入token
         redisService.set("user", user1);//将user存入redis
-        return new JsonRequest<>(200, "", user1, null);
+        return new JsonRequest<>(user1, null);
     }
 
     /**
@@ -136,10 +140,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public JsonRequest<Integer> register(User user) {
         Log log = new Log(new SimpleDateFormat(dateFormat).format(new Date()));//创建日志对象
-        int logColumn = logMapper.insert(log);//添加日志
-        if (logColumn < 1) {
-            throw new LogAddErrorException("拉取日志失败!");
-        }
+        logService.insertLog(log);//添加日志
         user.setLogId(log.getLogId());//返回日志编号
         User userSource = userMapper.selectOne(new LambdaQueryWrapper<User>()
                 .eq(User::getUserName, user.getUserName()));
@@ -153,7 +154,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (column < 1) {
             throw new AddException("注册失败!");
         }
-        return new JsonRequest<>(200, "", column, null);
+        return new JsonRequest<>(column);
     }
 
     /**
@@ -169,7 +170,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             throw new SelectSourceIsNullException("该用户不存在!");
         }
         Log log = new Log(userSource.getLogId(), new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
-        int logColumn = logMapper.updateById(log);//拉取日志
+        int logColumn = logService.updateLogById(log).getData();//拉取日志
         if (logColumn < 1) {
             throw new LogUpdateErrorException("拉取日志失败!");
         }
@@ -184,7 +185,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (column < 1) {
             throw new UpdateException("修改账号失败!");
         }
-        return new JsonRequest<>(200, "", column, null);
+        return new JsonRequest<>(column);
     }
 
     /**
@@ -199,11 +200,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (user == null) {
             throw new SelectSourceIsNullException("用户信息不存在!");
         }
-        int column = logMapper.updateById(new Log(user.getLogId(), 1, new SimpleDateFormat(dateFormat).format(new Date())));
+        int column = logService.updateLogById(new Log(user.getLogId(), 1, new SimpleDateFormat(dateFormat).format(new Date()))).getData();
         if (column < 1) {
             throw new UpdateException("注销用户失败!");
         }
-        return new JsonRequest<>(200, "", column, null);
+        return new JsonRequest<>(column);
     }
 
     /**
@@ -225,7 +226,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             throw new SelectSourceIsNullException("用户信息不存在!");
         }
         Log log = new Log(userSource.getLogId(), new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
-        int logColumn = logMapper.updateById(log);//拉取日志
+        int logColumn = logService.updateLogById(log).getData();//拉取日志
         if (logColumn < 1) {
             throw new LogUpdateErrorException("拉取日志失败!");
         }
@@ -251,7 +252,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         } else {
             throw new UpdateException("头像上传失败!");
         }
-        return new JsonRequest<>(200, "", column, null);
+        return new JsonRequest<>(column);
     }
 
     /**
@@ -292,7 +293,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (column < 1) {
             throw new UpdateException("绑定失败!");
         }
-        return new JsonRequest<>(200, "", column, null);
+        return new JsonRequest<>(column);
     }
 
     /**
@@ -318,7 +319,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * @return Boolean 判断用户是否被删除
      */
     public Boolean getLog(Long id) {
-        Log log = logMapper.selectById(id);
+        Log log = logService.selectLogById(id).getData();
         if (log == null) {
             throw new SelectSourceIsNullException("拉取日志失败!");
         }
@@ -345,8 +346,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                 user.setUser(t);
             }
         } catch (Exception e) {
+            log.info("反射捕获到异常:" + e.getMessage());
             e.printStackTrace();
         }
-
     }
 }

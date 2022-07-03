@@ -10,7 +10,7 @@
       "name": "管理员管理控制层",
       "item": [
         {
-          "id": "0fe87277-830d-48c6-9605-75ff0715d8a8",
+          "id": "886c0d68-6956-42bf-a6d7-f06f8291bb3f",
           "name": "查询所有管理员",
           "request": {
             "url": {
@@ -82,7 +82,7 @@
           ]
         },
         {
-          "id": "354075b2-eb34-48c2-86b7-55b8019ad9b0",
+          "id": "99d3736b-2fe9-41ce-91e6-11f1ae31dcff",
           "name": "按照地址查询管理员",
           "request": {
             "url": {
@@ -168,7 +168,7 @@
           ]
         },
         {
-          "id": "91d5781d-b099-4bb2-b9ec-38d2e1e3cc7e",
+          "id": "51d2c650-41be-4cab-8664-0277ca122956",
           "name": "根据编号查询管理员",
           "request": {
             "url": {
@@ -226,8 +226,8 @@
           ]
         },
         {
-          "id": "4e4f260b-113e-498b-a799-80a56f0fd5e6",
-          "name": "添加管理员",
+          "id": "80c712d5-6b51-490f-b036-8804d164107d",
+          "name": "添加或批量添加管理员",
           "request": {
             "url": {
               "protocol": "http",
@@ -282,7 +282,7 @@
           ]
         },
         {
-          "id": "e345c898-c51c-40d8-93f1-09194b39159f",
+          "id": "773f5656-5271-49b5-81f3-388154b24a7e",
           "name": "修改管理员",
           "request": {
             "url": {
@@ -338,18 +338,25 @@
           ]
         },
         {
-          "id": "0cf5d7c0-0d1d-4e7b-b8a8-128e7c2e9593",
-          "name": "删除或恢复管理员",
+          "id": "425db158-44f6-4c90-99fa-8dd61134ed4d",
+          "name": "批量删除或恢复管理员",
           "request": {
             "url": {
               "protocol": "http",
               "host": "{{host}}",
-              "path": "/admin/{AdminId}/{index}",
+              "path": "/admin",
               "query": []
             },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
+              "mode": "raw",
+              "raw": "null",
               "urlencoded": [],
               "formdata": []
             }
@@ -361,12 +368,19 @@
                 "url": {
                   "protocol": "http",
                   "host": "{{host}}",
-                  "path": "/admin/{AdminId}/{index}",
+                  "path": "/admin",
                   "query": []
                 },
                 "method": "DELETE",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
                 "body": {
+                  "mode": "raw",
+                  "raw": "null",
                   "urlencoded": [],
                   "formdata": []
                 }
@@ -385,7 +399,7 @@
       "name": "班级控制层",
       "item": [
         {
-          "id": "c34f41a1-2f96-4693-ab30-a073c259d0b3",
+          "id": "7968922c-4d00-4ef6-abf0-5a6543aa31ab",
           "name": "查询所有班级",
           "request": {
             "url": {
@@ -457,7 +471,7 @@
           ]
         },
         {
-          "id": "19cad4af-4f03-4622-a206-a9078def396b",
+          "id": "b4054bb8-4567-458c-b4ae-7358c4e37064",
           "name": "根据班级名查询所有班级",
           "request": {
             "url": {
@@ -543,7 +557,7 @@
           ]
         },
         {
-          "id": "af01d78c-9949-4119-a684-60867e844c07",
+          "id": "d1c3b031-cc8d-45b1-bf15-7bae69a52f16",
           "name": "根据班级编号查询班级",
           "request": {
             "url": {
@@ -601,7 +615,7 @@
           ]
         },
         {
-          "id": "0a3e90f2-a6f1-4c54-b9d7-a659000e3778",
+          "id": "0166824b-8740-4a36-a4e8-dda8daf594dc",
           "name": "添加班级",
           "request": {
             "url": {
@@ -657,7 +671,7 @@
           ]
         },
         {
-          "id": "73d680e0-7bf5-4609-a83d-24e861bc8398",
+          "id": "38fb8d0c-49aa-4c0b-bc99-0059d5c9585d",
           "name": "修改班级",
           "request": {
             "url": {
@@ -713,18 +727,25 @@
           ]
         },
         {
-          "id": "a6d226a5-c2c0-41f2-83e1-776cc3c81354",
-          "name": "删除或恢复班级",
+          "id": "38d04ab4-88f4-4859-bfe8-3b17a760301d",
+          "name": "批量删除或恢复班级",
           "request": {
             "url": {
               "protocol": "http",
               "host": "{{host}}",
-              "path": "/class/{classId}/{index}",
+              "path": "/class",
               "query": []
             },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
+              "mode": "raw",
+              "raw": "null",
               "urlencoded": [],
               "formdata": []
             }
@@ -736,12 +757,19 @@
                 "url": {
                   "protocol": "http",
                   "host": "{{host}}",
-                  "path": "/class/{classId}/{index}",
+                  "path": "/class",
                   "query": []
                 },
                 "method": "DELETE",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
                 "body": {
+                  "mode": "raw",
+                  "raw": "null",
                   "urlencoded": [],
                   "formdata": []
                 }
@@ -760,7 +788,7 @@
       "name": "文件管理控制层",
       "item": [
         {
-          "id": "5024d710-6f3c-4fff-adc0-edcae15e430b",
+          "id": "e8f2ba38-dbe2-47b8-bb9f-b9e39d4ab258",
           "name": "查询所有已知文件",
           "request": {
             "url": {
@@ -832,7 +860,7 @@
           ]
         },
         {
-          "id": "d6746e08-d601-4fbd-be3b-e56b5d6bd42a",
+          "id": "64de71c7-ed07-431d-b1e4-5c73e58c808d",
           "name": "条件查询",
           "request": {
             "url": {
@@ -923,7 +951,7 @@
       "name": "学生管理控制层",
       "item": [
         {
-          "id": "fa9b2140-4aa0-4f06-b5c2-1e838ea9aa1b",
+          "id": "5af2ae1c-a9f2-436d-92f3-d9a490b22609",
           "name": "查询所有学生",
           "request": {
             "url": {
@@ -995,7 +1023,7 @@
           ]
         },
         {
-          "id": "88f51124-31c0-43ea-b42a-8757d9b6b7c7",
+          "id": "5f5c0910-2bb6-490e-91bb-d683d0c4b943",
           "name": "按照班级编号查询学生",
           "request": {
             "url": {
@@ -1081,7 +1109,7 @@
           ]
         },
         {
-          "id": "f373927d-062a-47d0-9158-93167f5ae98e",
+          "id": "409f4908-ce32-410b-a8ec-00b73d62f5f5",
           "name": "根据编号查询学生",
           "request": {
             "url": {
@@ -1139,7 +1167,7 @@
           ]
         },
         {
-          "id": "55718174-a793-4f55-8af4-9c29d68e1b60",
+          "id": "b1e99066-a87f-4d47-a7d2-c5cc93e6996b",
           "name": "添加学生",
           "request": {
             "url": {
@@ -1195,7 +1223,7 @@
           ]
         },
         {
-          "id": "3ca570ba-f6b8-4666-9a38-a5d354c8a6fa",
+          "id": "8c775a20-2f8d-44b2-b497-7d96b9efe2f4",
           "name": "修改学生",
           "request": {
             "url": {
@@ -1251,18 +1279,25 @@
           ]
         },
         {
-          "id": "1719c18e-472e-4859-90b2-7e56a2d0bb8e",
-          "name": "删除或恢复学生",
+          "id": "8940e95d-4bb2-495a-9111-27227862666e",
+          "name": "批量删除或恢复学生",
           "request": {
             "url": {
               "protocol": "http",
               "host": "{{host}}",
-              "path": "/student/{studentId}/{index}",
+              "path": "/student",
               "query": []
             },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
+              "mode": "raw",
+              "raw": "null",
               "urlencoded": [],
               "formdata": []
             }
@@ -1274,12 +1309,19 @@
                 "url": {
                   "protocol": "http",
                   "host": "{{host}}",
-                  "path": "/student/{studentId}/{index}",
+                  "path": "/student",
                   "query": []
                 },
                 "method": "DELETE",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
                 "body": {
+                  "mode": "raw",
+                  "raw": "null",
                   "urlencoded": [],
                   "formdata": []
                 }
@@ -1298,7 +1340,7 @@
       "name": "科目控制层",
       "item": [
         {
-          "id": "f9443845-a291-43c3-945d-2473d002df1c",
+          "id": "e09c5fed-47bd-412f-b885-f9dbf2145541",
           "name": "查询所有科目",
           "request": {
             "url": {
@@ -1370,7 +1412,7 @@
           ]
         },
         {
-          "id": "cd017ea8-582d-47ac-aa29-ceac0755dd4b",
+          "id": "5fcb5c14-f157-44ed-8abc-ed1a289bb562",
           "name": "根据科目名查询",
           "request": {
             "url": {
@@ -1456,7 +1498,7 @@
           ]
         },
         {
-          "id": "9f37af1e-8589-44f5-bd33-8593d8acb821",
+          "id": "42692103-a1b5-4fe8-833b-2df21247577f",
           "name": "根据科目编号查询",
           "request": {
             "url": {
@@ -1514,7 +1556,7 @@
           ]
         },
         {
-          "id": "b42e3eb2-98e9-405d-9f6e-64d24755c31b",
+          "id": "fc962963-c997-4f0f-8e88-2e98687aac1e",
           "name": "添加科目",
           "request": {
             "url": {
@@ -1570,7 +1612,7 @@
           ]
         },
         {
-          "id": "09b440ff-b9e0-459d-89c2-fcc115c5e37e",
+          "id": "ac5997ce-a869-4476-b1f6-7448e9502d4f",
           "name": "修改科目",
           "request": {
             "url": {
@@ -1626,18 +1668,25 @@
           ]
         },
         {
-          "id": "8c78451c-af3f-4146-a661-cfbbb5e54162",
-          "name": "删除或恢复科目",
+          "id": "15bd7a7f-a583-4f18-9360-3cd40354bd96",
+          "name": "批量删除或恢复科目",
           "request": {
             "url": {
               "protocol": "http",
               "host": "{{host}}",
-              "path": "/subject/{subjectId}/{index}",
+              "path": "/subject",
               "query": []
             },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
+              "mode": "raw",
+              "raw": "null",
               "urlencoded": [],
               "formdata": []
             }
@@ -1649,12 +1698,19 @@
                 "url": {
                   "protocol": "http",
                   "host": "{{host}}",
-                  "path": "/subject/{subjectId}/{index}",
+                  "path": "/subject",
                   "query": []
                 },
                 "method": "DELETE",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
                 "body": {
+                  "mode": "raw",
+                  "raw": "null",
                   "urlencoded": [],
                   "formdata": []
                 }
@@ -1673,7 +1729,7 @@
       "name": "教师控制层",
       "item": [
         {
-          "id": "0abf42c6-1416-4cf7-a3b7-bacca7fec5a5",
+          "id": "851b74c5-f563-40b5-bad9-cd0db9618215",
           "name": "查询所有教师",
           "request": {
             "url": {
@@ -1745,7 +1801,7 @@
           ]
         },
         {
-          "id": "a0ddd653-054d-4495-903e-64dc97c255f9",
+          "id": "c3c75a30-d4d4-4c88-a27a-39c2a1bf727d",
           "name": "按照科目编号查询教师",
           "request": {
             "url": {
@@ -1831,7 +1887,7 @@
           ]
         },
         {
-          "id": "a9458cc7-b3c8-4e90-afe2-05ac2da52008",
+          "id": "720d58e2-d368-4476-a66c-db6efcf77522",
           "name": "根据编号查询教师",
           "request": {
             "url": {
@@ -1889,7 +1945,7 @@
           ]
         },
         {
-          "id": "8b143883-a7a1-4a8f-9c3a-b270b30c2338",
+          "id": "6f345308-ad1c-4d08-9f1b-da37b708619f",
           "name": "添加教师",
           "request": {
             "url": {
@@ -1945,7 +2001,7 @@
           ]
         },
         {
-          "id": "6e09b509-cafb-4bc0-8692-d50a334045c9",
+          "id": "9af515bf-7fe0-4240-9d8b-8e10ff384c8a",
           "name": "修改教师",
           "request": {
             "url": {
@@ -2001,18 +2057,25 @@
           ]
         },
         {
-          "id": "58ee1473-7002-44e9-b9de-d4b6ce56bf0a",
-          "name": "删除或恢复教师",
+          "id": "84323600-a8b5-4767-8fce-57fedc4ad610",
+          "name": "批量删除或恢复教师",
           "request": {
             "url": {
               "protocol": "http",
               "host": "{{host}}",
-              "path": "/teacher/{teacherId}/{index}",
+              "path": "/teacher",
               "query": []
             },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
+              "mode": "raw",
+              "raw": "null",
               "urlencoded": [],
               "formdata": []
             }
@@ -2024,12 +2087,19 @@
                 "url": {
                   "protocol": "http",
                   "host": "{{host}}",
-                  "path": "/teacher/{teacherId}/{index}",
+                  "path": "/teacher",
                   "query": []
                 },
                 "method": "DELETE",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
                 "body": {
+                  "mode": "raw",
+                  "raw": "null",
                   "urlencoded": [],
                   "formdata": []
                 }

@@ -1,11 +1,13 @@
 package com.chunfeng.service.ex.tokenException;
 
-import com.chunfeng.service.ex.ServiceException;
-
 /**
  * token验证错误
+ *
+ * @author 春风能解释
+ * <p>
+ * 2022/7/1
  */
-public class TokenVerifyErrorException extends ServiceException {
+public class TokenVerifyErrorException extends TokenException {
     public TokenVerifyErrorException() {
         super();
     }

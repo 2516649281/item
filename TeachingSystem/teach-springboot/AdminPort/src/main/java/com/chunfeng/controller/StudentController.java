@@ -1,12 +1,13 @@
 package com.chunfeng.controller;
 
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.entity.Student;
 import com.chunfeng.service.IStudentService;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 学生管理控制层
@@ -18,7 +19,7 @@ public class StudentController extends ServiceController {
     /**
      * 学生业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IStudentService studentService;
 
     /**
@@ -80,14 +81,16 @@ public class StudentController extends ServiceController {
     }
 
     /**
-     * 删除或恢复学生
+     * 批量删除或恢复学生
      *
-     * @param studentId 学生编号
-     * @param index     操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:学生id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    @DeleteMapping("/{studentId}/{index}")
-    JsonRequest<Integer> deleteStudentById(@PathVariable Long studentId, @PathVariable Boolean index) {
-        return studentService.deleteStudentById(studentId, index);
+    @DeleteMapping
+    JsonRequest<Integer> deleteStudentById(@RequestBody Map<Long, Boolean> map) {
+        return studentService.deleteStudentById(map);
     }
 }

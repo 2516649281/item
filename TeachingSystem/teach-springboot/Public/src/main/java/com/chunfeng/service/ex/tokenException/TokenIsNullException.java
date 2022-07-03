@@ -1,11 +1,13 @@
 package com.chunfeng.service.ex.tokenException;
 
-import com.chunfeng.service.ex.ServiceException;
-
 /**
  * token为空
+ *
+ * @author 春风能解释
+ * <p>
+ * 2022/7/1
  */
-public class TokenIsNullException extends ServiceException {
+public class TokenIsNullException extends TokenException {
     public TokenIsNullException() {
         super();
     }

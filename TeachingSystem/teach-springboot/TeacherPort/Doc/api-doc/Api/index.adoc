@@ -83,20 +83,14 @@ HTTP/1.1 200 OK
 ----
 
 
-=== 删除作业信息
+=== 批量删除或恢复已提交的作业
 请求
 [source,HTTP ]
 ----
-DELETE /work/{workId}/{index} HTTP/1.1
+DELETE /work HTTP/1.1
+Content-Type: application/json
 
 ----
-
-[options="header"]
-|===
-|+名称+|+类型+|+校验+|+默认+|+描述+
-|+workId+|+Long+|||+作业编号+
-|+index+|+Boolean+|||+操作指数(true删除,false代表恢复)+
-|===
 
 响应
 [source,HTTP ]

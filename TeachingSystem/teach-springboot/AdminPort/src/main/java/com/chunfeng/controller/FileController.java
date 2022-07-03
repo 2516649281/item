@@ -1,13 +1,10 @@
 package com.chunfeng.controller;
 
 import com.chunfeng.entity.FileSource;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.service.impl.FileClientController;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,7 +18,7 @@ public class FileController extends ServiceController {
     /**
      * 文件feign客户端
      */
-    @Autowired
+    @Autowired(required = false)
     private FileClientController fileClientController;
 
 
@@ -40,13 +37,13 @@ public class FileController extends ServiceController {
     /**
      * 条件查询
      *
-     * @param current    页码
-     * @param size       页长
-     * @param fileSource 查询的条件
+     * @param current  页码
+     * @param size     页长
+     * @param fileName 查询的条件
      * @return JSON
      */
     @GetMapping("/selectB/{current}/{size}")
-    JsonRequest<List<FileSource>> selectAllFileBySource(@PathVariable Integer current, @PathVariable Integer size, String fileName) {
+    JsonRequest<List<FileSource>> selectAllFileBySource(@PathVariable Integer current, @PathVariable Integer size, @RequestParam("fileName") String fileName) {
         return fileClientController.selectAllFileBySource(current, size, fileName);
     }
 }

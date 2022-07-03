@@ -1,8 +1,8 @@
 package com.chunfeng.controller;
 
 import com.chunfeng.entity.FileSource;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.service.IFileAdminService;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +18,7 @@ public class FileAdminController extends ServiceController {
     /**
      * 文件业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IFileAdminService fileAdminService;
 
     /**
@@ -42,7 +42,7 @@ public class FileAdminController extends ServiceController {
      * @return JSON
      */
     @GetMapping("/selectB/{current}/{size}")
-    JsonRequest<List<FileSource>> selectAllFileBySource(@PathVariable Integer current, @PathVariable Integer size, @RequestParam String fileName) {
+    JsonRequest<List<FileSource>> selectAllFileBySource(@PathVariable Integer current, @PathVariable Integer size, @RequestParam("fileName") String fileName) {
         return fileAdminService.selectFileBySource(current, size, fileName);
     }
 }

@@ -4,18 +4,17 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chunfeng.dao.AdminMapper;
-import com.chunfeng.dao.LogMapper;
 import com.chunfeng.entity.Admin;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.entity.Log;
 import com.chunfeng.service.IAdminService;
+import com.chunfeng.service.ILogService;
 import com.chunfeng.service.ex.addException.AddException;
 import com.chunfeng.service.ex.deleteExcpption.DeleteException;
-import com.chunfeng.service.ex.logException.LogAddErrorException;
-import com.chunfeng.service.ex.logException.LogSelectErrorException;
-import com.chunfeng.service.ex.logException.LogUpdateErrorException;
+import com.chunfeng.service.ex.deleteExcpption.DeleteSourceIsNullException;
+import com.chunfeng.service.ex.logException.updateException.LogUpdateErrorException;
 import com.chunfeng.service.ex.selectException.SelectSourceIsNullException;
 import com.chunfeng.service.ex.updateException.UpdateException;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
@@ -26,6 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 管理员管理业务层实现类
@@ -37,14 +37,14 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     /**
      * 管理员持久层
      */
-    @Autowired
+    @Autowired(required = false)
     private AdminMapper adminMapper;
 
     /**
-     * 日志持久层
+     * 日志业务层
      */
-    @Autowired
-    private LogMapper logMapper;
+    @Autowired(required = false)
+    private ILogService logService;
 
 
     /**
@@ -69,14 +69,11 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         }
         List<Admin> adminList = adminPage.getRecords();//获取所有管理员
         for (Admin admin : adminList) {
-            Log log = logMapper.selectById(admin.getLogId());//拉取日志
-            if (log == null) {
-                throw new LogSelectErrorException("日志拉取失败!");
-            }
+            Log log = logService.selectLogById(admin.getLogId()).getData();//拉取日志
             admin.setLog(log);//添加
         }
         long pageSize = adminPage.getTotal();
-        return new JsonRequest<>(200, "", adminList, pageSize);
+        return new JsonRequest<>(adminList, pageSize);
     }
 
     /**
@@ -99,13 +96,10 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         }
         List<Admin> adminList = adminPage.getRecords();//获取所有管理员
         for (Admin admin : adminList) {
-            Log log = logMapper.selectById(admin.getLogId());//拉取日志
-            if (log == null) {
-                throw new LogSelectErrorException("日志拉取失败!");
-            }
+            Log log = logService.selectLogById(admin.getLogId()).getData();//拉取日志
             admin.setLog(log);//添加
         }
-        return new JsonRequest<>(200, "", adminList, adminPage.getTotal());
+        return new JsonRequest<>(adminList, adminPage.getTotal());
     }
 
     /**
@@ -120,7 +114,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         if (admin == null) {
             throw new SelectSourceIsNullException("未查询到数据!");
         }
-        return new JsonRequest<>(200, "", admin, null);
+        return new JsonRequest<>(admin, null);
     }
 
     /**
@@ -133,16 +127,13 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     @Override
     public JsonRequest<Integer> addAdmin(Admin admin) {
         Log log = new Log(new SimpleDateFormat(dateFormat).format(new Date()));//创建日志对象
-        int logColumn = logMapper.insert(log);//添加日志
-        if (logColumn < 1) {
-            throw new LogAddErrorException("拉取日志失败!");
-        }
+        logService.insertLog(log);//添加日志
         admin.setLogId(log.getLogId());//获取已添加的日志id
         int column = adminMapper.insert(admin);
         if (column < 1) {
             throw new AddException("添加数据失败!");
         }
-        return new JsonRequest<>(200, "", column, null);
+        return new JsonRequest<>(column);
     }
 
     /**
@@ -160,7 +151,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         }
         Log log = new Log(adminSource.getLogId(),
                 new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
-        int logColumn = logMapper.updateById(log);//拉取日志
+        int logColumn = logService.updateLogById(log).getData();//拉取日志
         if (logColumn < 1) {
             throw new LogUpdateErrorException("拉取日志失败!");
         }
@@ -168,29 +159,41 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         if (column < 1) {
             throw new UpdateException("修改数据失败!");
         }
-        return new JsonRequest<>(200, "", column, null);
+        return new JsonRequest<>(column);
     }
 
     /**
-     * 删除或恢复管理员
+     * 批量删除或恢复管理员
      *
-     * @param adminId 管理员编号
-     * @param index   操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:管理员id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
     @CacheEvict(value = {"admin_address", "admin_page"}, allEntries = true)
     @Override
-    public JsonRequest<Integer> deleteAdminById(Long adminId, Boolean index) {
-        Admin admin = adminMapper.selectById(adminId);
-        if (admin == null) {
-            throw new SelectSourceIsNullException("该数据不存在!");
+    public JsonRequest<Integer> deleteAdminById(Map<Long, Boolean> map) {
+        if (map.size() < 1) {
+            throw new DeleteSourceIsNullException("删除失败");
         }
-        int column = logMapper.updateById(
-                new Log(admin.getLogId(), index ? 1 : 0,
-                        new SimpleDateFormat(dateFormat).format(new Date())));
-        if (column < 1) {
-            throw new DeleteException("删除失败!");
+        int columns = 0;
+        //遍历
+        for (Map.Entry<Long, Boolean> entry : map.entrySet()) {
+            //查找一次
+            Admin admin = adminMapper.selectById(entry.getKey());
+            if (admin == null) {
+                throw new SelectSourceIsNullException("该数据不存在!");
+            }
+            //修改日志删除标志部分
+            int column = logService.updateLogById(
+                    new Log(admin.getLogId(), entry.getValue() ? 1 : 0,
+                            new SimpleDateFormat(dateFormat).format(new Date()))).getData();
+            if (column < 1) {
+                throw new DeleteException("删除失败!");
+            }
+            columns += column;
         }
-        return new JsonRequest<>(200, "", column, null);
+        return new JsonRequest<>(columns);
     }
 }

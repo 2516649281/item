@@ -12,10 +12,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class StudentTest {
 
-    @Autowired
+    @Autowired(required = false)
     private StudentMapper studentMapper;
 
-    @Autowired
+    @Autowired(required = false)
     private IRedisService<User> iRedisService;
 
     @Test

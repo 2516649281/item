@@ -25,7 +25,7 @@ public class LoginInterceptor implements HandlerInterceptor, RequestInterceptor 
     /**
      * redis业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IRedisService<User> redisService;
 
     /**

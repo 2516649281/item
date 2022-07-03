@@ -43,7 +43,7 @@ GET /fileMage/selectB/{current}/{size}?fileName= HTTP/1.1
 |+名称+|+类型+|+校验+|+默认+|+描述+
 |+current+|+Integer+|||+页码+
 |+size+|+Integer+|||+页长+
-|+fileName+|+String+|||
+|+fileName+|+String+|||+查询的条件+
 |===
 
 

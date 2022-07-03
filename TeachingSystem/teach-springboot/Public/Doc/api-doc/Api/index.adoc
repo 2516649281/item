@@ -72,8 +72,8 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : {
     "userId" : 0,
     "userName" : "",
@@ -94,15 +94,15 @@ HTTP/1.1 200 OK
     },
     "token" : ""
   },
-  "pageSize" : 0
+  "pageSize" : "0L"
 }
 ----
 
 [options="header"]
 |===
 |+名称+|+类型+|+校验+|+默认+|+描述+
-|+statue+|+Integer+||+0+|+状态码+
-|+message+|+String+|||+消息+
+|+statue+|+Integer+||+200+|+状态码+
+|+message+|+String+||+请求已完成!+|+消息+
 |+data+|+User+|||+数据+
 |+data.userId+|+Long+||+0+|
 |+data.userName+|+String+|||+用户名+
@@ -122,7 +122,7 @@ HTTP/1.1 200 OK
 |+data.log.updateTime+|+String+|||+修改时间+
 |+data.token+|+String+|||
 |+data.user+|+Object+|||
-|+pageSize+|+Long+||+0+|+总数+
+|+pageSize+|+Long+||+0L+|+总数+
 |===
 
 
@@ -184,20 +184,20 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }
 ----
 
 [options="header"]
 |===
 |+名称+|+类型+|+校验+|+默认+|+描述+
-|+statue+|+Integer+||+0+|+状态码+
-|+message+|+String+|||+消息+
+|+statue+|+Integer+||+200+|+状态码+
+|+message+|+String+||+请求已完成!+|+消息+
 |+data+|+Integer+||+0+|+数据+
-|+pageSize+|+Long+||+0+|+总数+
+|+pageSize+|+Long+||+0L+|+总数+
 |===
 
 
@@ -259,20 +259,20 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }
 ----
 
 [options="header"]
 |===
 |+名称+|+类型+|+校验+|+默认+|+描述+
-|+statue+|+Integer+||+0+|+状态码+
-|+message+|+String+|||+消息+
+|+statue+|+Integer+||+200+|+状态码+
+|+message+|+String+||+请求已完成!+|+消息+
 |+data+|+Integer+||+0+|+数据+
-|+pageSize+|+Long+||+0+|+总数+
+|+pageSize+|+Long+||+0L+|+总数+
 |===
 
 
@@ -334,20 +334,20 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }
 ----
 
 [options="header"]
 |===
 |+名称+|+类型+|+校验+|+默认+|+描述+
-|+statue+|+Integer+||+0+|+状态码+
-|+message+|+String+|||+消息+
+|+statue+|+Integer+||+200+|+状态码+
+|+message+|+String+||+请求已完成!+|+消息+
 |+data+|+Integer+||+0+|+数据+
-|+pageSize+|+Long+||+0+|+总数+
+|+pageSize+|+Long+||+0L+|+总数+
 |===
 
 
@@ -371,20 +371,20 @@ PUT /user/{userId} HTTP/1.1
 HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }
 ----
 
 [options="header"]
 |===
 |+名称+|+类型+|+校验+|+默认+|+描述+
-|+statue+|+Integer+||+0+|+状态码+
-|+message+|+String+|||+消息+
+|+statue+|+Integer+||+200+|+状态码+
+|+message+|+String+||+请求已完成!+|+消息+
 |+data+|+Integer+||+0+|+数据+
-|+pageSize+|+Long+||+0+|+总数+
+|+pageSize+|+Long+||+0L+|+总数+
 |===
 
 
@@ -409,20 +409,20 @@ PUT /user/{userId}/{userIndex} HTTP/1.1
 HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
+  "statue" : "200",
+  "message" : "请求已完成!",
   "data" : 0,
-  "pageSize" : 0
+  "pageSize" : "0L"
 }
 ----
 
 [options="header"]
 |===
 |+名称+|+类型+|+校验+|+默认+|+描述+
-|+statue+|+Integer+||+0+|+状态码+
-|+message+|+String+|||+消息+
+|+statue+|+Integer+||+200+|+状态码+
+|+message+|+String+||+请求已完成!+|+消息+
 |+data+|+Integer+||+0+|+数据+
-|+pageSize+|+Long+||+0+|+总数+
+|+pageSize+|+Long+||+0L+|+总数+
 |===
 
 
@@ -440,18 +440,18 @@ GET /user HTTP/1.1
 HTTP/1.1 200 OK
 
 {
-  "statue" : 0,
-  "message" : "",
-  "pageSize" : 0
+  "statue" : "200",
+  "message" : "请求已完成!",
+  "pageSize" : "0L"
 }
 ----
 
 [options="header"]
 |===
 |+名称+|+类型+|+校验+|+默认+|+描述+
-|+statue+|+Integer+||+0+|+状态码+
-|+message+|+String+|||+消息+
+|+statue+|+Integer+||+200+|+状态码+
+|+message+|+String+||+请求已完成!+|+消息+
 |+data+|+Boolean+|||+数据+
-|+pageSize+|+Long+||+0+|+总数+
+|+pageSize+|+Long+||+0L+|+总数+
 |===
 

@@ -1,10 +1,11 @@
 package com.chunfeng.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.entity.Student;
-import com.chunfeng.util.JsonRequest;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 学生业务层接口
@@ -55,11 +56,13 @@ public interface IStudentService extends IService<Student> {
     JsonRequest<Integer> updateStudentById(Student student);
 
     /**
-     * 删除或恢复学生
+     * 批量删除或恢复学生
      *
-     * @param studentId 学生编号
-     * @param index     操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:学生id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    JsonRequest<Integer> deleteStudentById(Long studentId, Boolean index);
+    JsonRequest<Integer> deleteStudentById(Map<Long, Boolean> map);
 }

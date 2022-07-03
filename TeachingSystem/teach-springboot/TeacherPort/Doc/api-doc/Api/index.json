@@ -10,7 +10,7 @@
       "name": "教师端",
       "item": [
         {
-          "id": "5a165996-9f5e-4445-804b-1a303ad2f59f",
+          "id": "407e62f0-36d4-4081-a9ee-fcd7c0ce8239",
           "name": "分页查询已经布置的作业",
           "request": {
             "url": {
@@ -82,7 +82,7 @@
           ]
         },
         {
-          "id": "0de946bf-9563-474d-a055-8b31e347bb5d",
+          "id": "109fa029-e9cf-4376-8230-d5defdad9c6f",
           "name": "根据教师编号查询作业",
           "request": {
             "url": {
@@ -168,7 +168,7 @@
           ]
         },
         {
-          "id": "d006caef-e8cc-48f2-a6fa-fb10490e2910",
+          "id": "750be6a6-06d2-4b68-86e4-14a80339f6f2",
           "name": "添加作业信息",
           "request": {
             "url": {
@@ -224,7 +224,7 @@
           ]
         },
         {
-          "id": "58a28634-9a10-4425-8684-a9127d7d1bee",
+          "id": "7729aa3c-7596-4e2b-8087-107242034d6a",
           "name": "修改作业信息",
           "request": {
             "url": {
@@ -280,18 +280,25 @@
           ]
         },
         {
-          "id": "20972cef-af90-4e8e-9651-5d65df8445a5",
-          "name": "删除作业信息",
+          "id": "e01617c1-c4c0-4d77-93ce-2a475b957b1b",
+          "name": "批量删除或恢复已提交的作业",
           "request": {
             "url": {
               "protocol": "http",
               "host": "{{host}}",
-              "path": "/work/{workId}/{index}",
+              "path": "/work",
               "query": []
             },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
+              "mode": "raw",
+              "raw": "null",
               "urlencoded": [],
               "formdata": []
             }
@@ -303,12 +310,19 @@
                 "url": {
                   "protocol": "http",
                   "host": "{{host}}",
-                  "path": "/work/{workId}/{index}",
+                  "path": "/work",
                   "query": []
                 },
                 "method": "DELETE",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
                 "body": {
+                  "mode": "raw",
+                  "raw": "null",
                   "urlencoded": [],
                   "formdata": []
                 }
@@ -322,7 +336,7 @@
           ]
         },
         {
-          "id": "7dceaf32-ced0-4446-b2f4-7e0fd7fcd5d4",
+          "id": "1db47701-aa3d-4e24-84a0-5dd5d8dfb45e",
           "name": "根据班级编号查询学生",
           "request": {
             "url": {
@@ -380,7 +394,7 @@
           ]
         },
         {
-          "id": "ea5bd74a-68a6-402e-bda9-6906c3e62137",
+          "id": "3c4dbb77-df05-4723-aaf6-0814014c253b",
           "name": "教师端根据作业编号查询已提交的作业",
           "request": {
             "url": {
@@ -438,7 +452,7 @@
           ]
         },
         {
-          "id": "ea0bd011-37e8-419a-8821-0cbb8b87b374",
+          "id": "3088fdd8-843e-4d91-9538-62c9156f7d9a",
           "name": "根据班级编号查询教师布置的作业",
           "request": {
             "url": {
@@ -496,7 +510,7 @@
           ]
         },
         {
-          "id": "fe10971d-db65-4538-bb8d-1689e0d52e8d",
+          "id": "9287bd85-5fdc-48ce-8c17-5d29f8a8ed26",
           "name": "教师端批改学生作业",
           "request": {
             "url": {
@@ -552,7 +566,7 @@
           ]
         },
         {
-          "id": "4f5949eb-cdbd-4b23-9753-18240bb355a9",
+          "id": "3036ad3b-985f-4b6c-8b8d-970f6545d508",
           "name": "教师端查询所有班级",
           "request": {
             "url": {

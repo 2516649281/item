@@ -5,6 +5,7 @@ import com.chunfeng.service.IRedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * redis业务层实现类
@@ -12,12 +13,13 @@ import org.springframework.stereotype.Service;
  * @param <T> 实体
  */
 @Service
+@Transactional
 public class RedisServiceImpl<T> implements IRedisService<T> {
 
     /**
      * redis操作对象
      */
-    @Autowired
+    @Autowired(required = false)
     private StringRedisTemplate redisTemplate;
 
 

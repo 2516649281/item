@@ -8,7 +8,7 @@
   "item" : [ {
     "name" : "管理员管理控制层",
     "item" : [ {
-      "id" : "917e6e45-a8f3-4867-9235-da2799525ab1",
+      "id" : "b02226b2-fd33-43e5-9a8e-ab29cb1ec1ad",
       "name" : "查询所有管理员",
       "request" : {
         "url" : {
@@ -65,13 +65,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "af341591-e4cb-49fc-ae5b-b5d0a1e527c2",
+      "id" : "c7a4df73-a992-406a-bf7a-3a6943e909e0",
       "name" : "按照地址查询管理员",
       "request" : {
         "url" : {
@@ -140,13 +140,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "dec69878-0e66-4f86-889d-d878877aa53c",
+      "id" : "496201e6-d6ee-436f-909a-4a735b6d9200",
       "name" : "根据编号查询管理员",
       "request" : {
         "url" : {
@@ -191,14 +191,14 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"adminId\" : 0,\r\n    \"adminName\" : \"\",\r\n    \"adminAge\" : 0,\r\n    \"adminGender\" : 0,\r\n    \"adminAddress\" : \"\",\r\n    \"adminPhone\" : \"\",\r\n    \"adminEmail\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "6aade991-2a02-4caf-9121-a4431458395e",
-      "name" : "添加管理员",
+      "id" : "8ee3246c-0cd8-4ab2-8e36-ee155feb5754",
+      "name" : "添加或批量添加管理员",
       "request" : {
         "url" : {
           "protocol" : "http",
@@ -240,13 +240,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "b2e4a93e-8ee8-439e-a7f4-52ec586422a6",
+      "id" : "ed01a5b7-3f07-4878-a67a-d7f1a4b0595d",
       "name" : "修改管理员",
       "request" : {
         "url" : {
@@ -289,24 +289,29 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "f5a633df-0b5e-4006-9da5-14f2fe4d7643",
-      "name" : "删除或恢复管理员",
+      "id" : "ab97c0ad-e8d9-4690-8c0a-7891b8c7ac5b",
+      "name" : "批量删除或恢复管理员",
       "request" : {
         "url" : {
           "protocol" : "http",
           "host" : "{{host}}",
-          "path" : "/admin/{AdminId}/{index}",
+          "path" : "/admin",
           "query" : [ ]
         },
         "method" : "DELETE",
-        "header" : [ ],
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
         "body" : {
+          "mode" : "raw",
+          "raw" : "null",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -317,18 +322,23 @@
           "url" : {
             "protocol" : "http",
             "host" : "{{host}}",
-            "path" : "/admin/{AdminId}/{index}",
+            "path" : "/admin",
             "query" : [ ]
           },
           "method" : "DELETE",
-          "header" : [ ],
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
           "body" : {
+            "mode" : "raw",
+            "raw" : "null",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -337,7 +347,7 @@
   }, {
     "name" : "班级控制层",
     "item" : [ {
-      "id" : "8f0a34b1-0190-4375-a1d4-469298a8bec4",
+      "id" : "03a870b3-9f94-4862-8d7e-e3cdfff5d808",
       "name" : "查询所有班级",
       "request" : {
         "url" : {
@@ -394,13 +404,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "c6faa49f-4081-44b1-96c0-aff518c4e875",
+      "id" : "2fd74cfb-53d5-4e50-85dd-38c39a9335dd",
       "name" : "根据班级名查询所有班级",
       "request" : {
         "url" : {
@@ -469,13 +479,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "94992bbe-50d2-4ef8-87f5-825b36f25324",
+      "id" : "3b4349ed-68a9-462c-998b-102aa20ec49c",
       "name" : "根据班级编号查询班级",
       "request" : {
         "url" : {
@@ -520,13 +530,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "29e690d3-6796-4780-b582-d71afeaae46a",
+      "id" : "8750cbb0-f93c-45ab-9ee0-888906598098",
       "name" : "添加班级",
       "request" : {
         "url" : {
@@ -569,13 +579,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "5b361759-c387-4ae9-9293-6744aa4e0e97",
+      "id" : "d641a79f-e1da-4581-a298-76f87389c83b",
       "name" : "修改班级",
       "request" : {
         "url" : {
@@ -618,24 +628,29 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "ed2f0324-cefb-4c0f-a3c3-a5c070894a25",
-      "name" : "删除或恢复班级",
+      "id" : "b8e734d1-aee5-4da2-9cd2-295cae0f7b43",
+      "name" : "批量删除或恢复班级",
       "request" : {
         "url" : {
           "protocol" : "http",
           "host" : "{{host}}",
-          "path" : "/class/{classId}/{index}",
+          "path" : "/class",
           "query" : [ ]
         },
         "method" : "DELETE",
-        "header" : [ ],
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
         "body" : {
+          "mode" : "raw",
+          "raw" : "null",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -646,18 +661,23 @@
           "url" : {
             "protocol" : "http",
             "host" : "{{host}}",
-            "path" : "/class/{classId}/{index}",
+            "path" : "/class",
             "query" : [ ]
           },
           "method" : "DELETE",
-          "header" : [ ],
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
           "body" : {
+            "mode" : "raw",
+            "raw" : "null",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -666,7 +686,7 @@
   }, {
     "name" : "文件管理控制层",
     "item" : [ {
-      "id" : "95d42383-157c-4855-9175-152ad21c1e33",
+      "id" : "d566e665-330f-42e1-8b30-a52987048a3b",
       "name" : "查询所有已知文件",
       "request" : {
         "url" : {
@@ -723,13 +743,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "736bf9de-285a-49c1-b4ab-d5d3d20920f7",
+      "id" : "8150f41d-9f7c-4606-8383-b6026bcb638e",
       "name" : "条件查询",
       "request" : {
         "url" : {
@@ -798,7 +818,7 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -807,7 +827,7 @@
   }, {
     "name" : "文件操作controller",
     "item" : [ {
-      "id" : "2b17d259-66b5-434c-969d-179683a6e2c1",
+      "id" : "c9ddf319-8fdb-4479-a80f-f8f2fdbd4136",
       "name" : "一次上传一个文件",
       "request" : {
         "url" : {
@@ -850,13 +870,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"0\" : 0\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"0\" : 0\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "7c9c48d0-341b-46bb-a3fc-3c7920d92be1",
+      "id" : "933c8a01-bf42-45d9-bbe7-e3f363d874e6",
       "name" : "一次上传多个文件",
       "request" : {
         "url" : {
@@ -899,13 +919,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"0\" : 0\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"0\" : 0\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "6e962f18-4be2-4b86-8d23-a96f6fc9863d",
+      "id" : "ae2cac63-7dc7-4175-aec5-a3a06600b5e7",
       "name" : "修改一个文件",
       "request" : {
         "url" : {
@@ -948,13 +968,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "dc59dbff-137d-486d-9220-1898e9682700",
+      "id" : "d0b2ec95-7573-4957-9a7e-79b4ed1f020f",
       "name" : "一次修改多个文件",
       "request" : {
         "url" : {
@@ -997,13 +1017,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "e000205f-a04a-442a-8f56-ecbcecda7f5c",
+      "id" : "a41f4c78-c764-46df-877c-d72aaa8beae5",
       "name" : "删除一个文件",
       "request" : {
         "url" : {
@@ -1036,13 +1056,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "c0f6188f-1e2a-49fa-a2a1-64243efe9209",
+      "id" : "783a4f33-eb19-4059-9511-c7c5e1f92fba",
       "name" : "一次删除多个文件",
       "request" : {
         "url" : {
@@ -1085,13 +1105,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "feadc610-765f-4214-9255-028175d5d566",
+      "id" : "6db5462b-c811-4b19-9712-2e750af550b7",
       "name" : "读取一个文件",
       "request" : {
         "url" : {
@@ -1142,7 +1162,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "5662d62c-8158-47fd-9c28-0a19daa2d6f2",
+      "id" : "fa58908c-bd92-402f-af12-44c8393f8caa",
       "name" : "读取多个文件",
       "request" : {
         "url" : {
@@ -1194,7 +1214,7 @@
   }, {
     "name" : "文件管理控制层",
     "item" : [ {
-      "id" : "b6673d19-4c89-4950-b2d6-9ade2bddc5c3",
+      "id" : "6438b485-09cb-4679-8786-7e7af1f8fe50",
       "name" : "查询所有已知文件",
       "request" : {
         "url" : {
@@ -1251,13 +1271,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "5e95ec54-2810-4680-957f-1456db7a4cda",
+      "id" : "03379077-49fe-4072-b450-395c3df95599",
       "name" : "条件查询",
       "request" : {
         "url" : {
@@ -1326,7 +1346,7 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"fileId\" : 0,\r\n    \"fileName\" : \"\",\r\n    \"filePath\" : \"\",\r\n    \"fileType\" : \"\",\r\n    \"fileSize\" : \"\",\r\n    \"fileUploadTime\" : \"\",\r\n    \"fileUpdateTime\" : \"\"\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -1338,7 +1358,7 @@
   }, {
     "name" : "学生管理控制层",
     "item" : [ {
-      "id" : "dc96e2a0-17e6-4e9f-b173-340803ff0dae",
+      "id" : "6dc1a5da-a01a-4aae-ad43-45ca1df5d3a7",
       "name" : "查询所有学生",
       "request" : {
         "url" : {
@@ -1395,13 +1415,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "4bef9703-3f90-4fad-ab97-e758d792fdc1",
+      "id" : "13bd519f-506a-49a3-8b5c-90143bf85a27",
       "name" : "按照班级编号查询学生",
       "request" : {
         "url" : {
@@ -1470,13 +1490,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "f07864f5-2a77-4f5c-a478-b6e8fa66c070",
+      "id" : "e5a038f4-ad62-45ff-8c96-1eaebb91fa42",
       "name" : "根据编号查询学生",
       "request" : {
         "url" : {
@@ -1521,13 +1541,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "5beee89b-6fd3-4c5e-b8f9-0c1f74a38fe5",
+      "id" : "3a50d525-6c55-46bf-864f-7bce47b4b756",
       "name" : "添加学生",
       "request" : {
         "url" : {
@@ -1570,13 +1590,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "4b1ee4cb-49c5-4d81-a451-f66bac22ff9d",
+      "id" : "fc6a1eb9-eae4-4d35-a087-8735029e27a8",
       "name" : "修改学生",
       "request" : {
         "url" : {
@@ -1619,24 +1639,29 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "5c528deb-e23e-4d2c-b28b-1012bf60af56",
-      "name" : "删除或恢复学生",
+      "id" : "790451fd-78da-4896-8890-fef7f134e44c",
+      "name" : "批量删除或恢复学生",
       "request" : {
         "url" : {
           "protocol" : "http",
           "host" : "{{host}}",
-          "path" : "/student/{studentId}/{index}",
+          "path" : "/student",
           "query" : [ ]
         },
         "method" : "DELETE",
-        "header" : [ ],
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
         "body" : {
+          "mode" : "raw",
+          "raw" : "null",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -1647,18 +1672,23 @@
           "url" : {
             "protocol" : "http",
             "host" : "{{host}}",
-            "path" : "/student/{studentId}/{index}",
+            "path" : "/student",
             "query" : [ ]
           },
           "method" : "DELETE",
-          "header" : [ ],
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
           "body" : {
+            "mode" : "raw",
+            "raw" : "null",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -1667,7 +1697,7 @@
   }, {
     "name" : "科目控制层",
     "item" : [ {
-      "id" : "23e92ed1-f7ce-44f6-a140-15a352a4e698",
+      "id" : "fad3aaa7-46be-4724-aee7-be48c3c1a762",
       "name" : "查询所有科目",
       "request" : {
         "url" : {
@@ -1724,13 +1754,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "231b5a0f-158f-4786-82cd-ccb23e95ab6b",
+      "id" : "994bf956-0dd4-4764-aeaf-3531d450160a",
       "name" : "根据科目名查询",
       "request" : {
         "url" : {
@@ -1799,13 +1829,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "42802f49-db56-4c5c-a4de-c74cfd53a64c",
+      "id" : "a6e49f73-8072-414d-b5ae-fc1f7d42d66c",
       "name" : "根据科目编号查询",
       "request" : {
         "url" : {
@@ -1850,13 +1880,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"subjectId\" : 0,\r\n    \"subjectName\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "127225ec-595b-4234-83b8-76bb5db5ef75",
+      "id" : "3a582f88-b1d5-4017-a49f-7598ea8b860f",
       "name" : "添加科目",
       "request" : {
         "url" : {
@@ -1899,13 +1929,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "069d42f7-3193-4f90-92aa-ce476bf3597b",
+      "id" : "c57bf8d3-7a0a-45a4-94dc-d66468d67f7f",
       "name" : "修改科目",
       "request" : {
         "url" : {
@@ -1948,24 +1978,29 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "6b4967ee-62e4-43aa-9835-5e2c90306afc",
-      "name" : "删除或恢复科目",
+      "id" : "d6d5d95a-2100-4f02-bc8f-fd0059a7e322",
+      "name" : "批量删除或恢复科目",
       "request" : {
         "url" : {
           "protocol" : "http",
           "host" : "{{host}}",
-          "path" : "/subject/{subjectId}/{index}",
+          "path" : "/subject",
           "query" : [ ]
         },
         "method" : "DELETE",
-        "header" : [ ],
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
         "body" : {
+          "mode" : "raw",
+          "raw" : "null",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -1976,18 +2011,23 @@
           "url" : {
             "protocol" : "http",
             "host" : "{{host}}",
-            "path" : "/subject/{subjectId}/{index}",
+            "path" : "/subject",
             "query" : [ ]
           },
           "method" : "DELETE",
-          "header" : [ ],
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
           "body" : {
+            "mode" : "raw",
+            "raw" : "null",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -1996,7 +2036,7 @@
   }, {
     "name" : "教师控制层",
     "item" : [ {
-      "id" : "92d77a89-521a-400a-a961-d118857af9f7",
+      "id" : "01df9277-db26-4e35-8851-cf833a9736e4",
       "name" : "查询所有教师",
       "request" : {
         "url" : {
@@ -2053,13 +2093,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "b8d862e4-0ef5-4075-af49-cd4a0cabb0ce",
+      "id" : "634823db-74e3-45bc-9f3f-b391f4fb25b3",
       "name" : "按照科目编号查询教师",
       "request" : {
         "url" : {
@@ -2128,13 +2168,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "fff142c8-edb7-4e48-9cf4-4226aab8f1af",
+      "id" : "6aa6c1de-2786-43da-8706-4cc9ccc76e0a",
       "name" : "根据编号查询教师",
       "request" : {
         "url" : {
@@ -2179,13 +2219,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"teacherId\" : 0,\r\n    \"teacherName\" : \"\",\r\n    \"teacherAge\" : 0,\r\n    \"teacherGender\" : 0,\r\n    \"teacherAddress\" : \"\",\r\n    \"teacherPhone\" : \"\",\r\n    \"teacherEmail\" : \"\",\r\n    \"subjectId\" : 0,\r\n    \"subject\" : {\r\n      \"subjectId\" : 0,\r\n      \"subjectName\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "b4725eb5-af16-4725-b755-ff2612ecaa61",
+      "id" : "174324d3-bc67-45fd-8b8a-754806770661",
       "name" : "添加教师",
       "request" : {
         "url" : {
@@ -2228,13 +2268,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "3541d8e3-4c45-4a3d-a21a-1b00bb380fe5",
+      "id" : "c793e57a-dfa8-4920-beae-24d2c1fc5499",
       "name" : "修改教师",
       "request" : {
         "url" : {
@@ -2277,24 +2317,29 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "d8d1ce23-b1fe-44d7-8796-df4d5729a8e6",
-      "name" : "删除或恢复教师",
+      "id" : "0d75cf27-8a00-47ef-981d-a57a3d0218c2",
+      "name" : "批量删除或恢复教师",
       "request" : {
         "url" : {
           "protocol" : "http",
           "host" : "{{host}}",
-          "path" : "/teacher/{teacherId}/{index}",
+          "path" : "/teacher",
           "query" : [ ]
         },
         "method" : "DELETE",
-        "header" : [ ],
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
         "body" : {
+          "mode" : "raw",
+          "raw" : "null",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -2305,18 +2350,23 @@
           "url" : {
             "protocol" : "http",
             "host" : "{{host}}",
-            "path" : "/teacher/{teacherId}/{index}",
+            "path" : "/teacher",
             "query" : [ ]
           },
           "method" : "DELETE",
-          "header" : [ ],
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
           "body" : {
+            "mode" : "raw",
+            "raw" : "null",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -2325,7 +2375,7 @@
   }, {
     "name" : "用户管理控制层",
     "item" : [ {
-      "id" : "fd0dd6d9-0cbf-457a-a1d0-58b7e652a47a",
+      "id" : "f06a27b6-2c95-4c95-9691-4a001f0855af",
       "name" : "用户登录",
       "request" : {
         "url" : {
@@ -2368,13 +2418,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : {\r\n    \"userId\" : 0,\r\n    \"userName\" : \"\",\r\n    \"newUserName\" : \"\",\r\n    \"userPassword\" : \"\",\r\n    \"newUserPassword\" : \"\",\r\n    \"userSalt\" : \"\",\r\n    \"userHeader\" : \"\",\r\n    \"newUserHeader\" : \"\",\r\n    \"userIndex\" : 0,\r\n    \"userIdentity\" : 0,\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    },\r\n    \"token\" : \"\"\r\n  },\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"userId\" : 0,\r\n    \"userName\" : \"\",\r\n    \"newUserName\" : \"\",\r\n    \"userPassword\" : \"\",\r\n    \"newUserPassword\" : \"\",\r\n    \"userSalt\" : \"\",\r\n    \"userHeader\" : \"\",\r\n    \"newUserHeader\" : \"\",\r\n    \"userIndex\" : 0,\r\n    \"userIdentity\" : 0,\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    },\r\n    \"token\" : \"\"\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "573d5c92-39c1-4162-859b-1f5be2eb4fb4",
+      "id" : "2a9f92ce-29e7-49fa-9e2b-efb4477e718c",
       "name" : "用户注册",
       "request" : {
         "url" : {
@@ -2417,13 +2467,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "371a680d-0421-4f7e-a0a3-396214e90719",
+      "id" : "e795e8f5-1d3d-490e-bab3-8d85490dd439",
       "name" : "修改用户信息",
       "request" : {
         "url" : {
@@ -2466,13 +2516,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "d6800fd5-a7e7-4664-8e68-b75ab7143724",
+      "id" : "93fb3077-a252-448c-b326-39004f08050d",
       "name" : "注销",
       "request" : {
         "url" : {
@@ -2515,13 +2565,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "2823cd8c-bdaf-428d-ba84-3aa99b7f0c91",
+      "id" : "26dce55b-e67b-4dbc-bbe4-0e3ee492c553",
       "name" : "根据用户编号上传头像",
       "request" : {
         "url" : {
@@ -2554,13 +2604,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "9e79fe95-832f-4610-b5b6-4e7b6f0662ce",
+      "id" : "bf7bd599-8591-4e60-8f4c-d8eb5fea987a",
       "name" : "绑定身份信息",
       "request" : {
         "url" : {
@@ -2593,13 +2643,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "9cb3b984-b3b7-4de9-aae8-cb67c31c0b24",
+      "id" : "824fcf9e-32df-419b-8e76-e9848e6f97ef",
       "name" : "前端每隔3min向后端发送一次http请求，验证token是否已过期或服务器是否关闭",
       "request" : {
         "url" : {
@@ -2632,7 +2682,7 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -2641,7 +2691,7 @@
   }, {
     "name" : "学生端控制层",
     "item" : [ {
-      "id" : "8b4c5af9-50bb-466d-961d-7cac65ec319d",
+      "id" : "5cd97201-4e55-42e9-ba60-eda5e35fadf8",
       "name" : "分页查询已经提交的作业",
       "request" : {
         "url" : {
@@ -2704,7 +2754,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "1bbef93a-f7cd-481d-8800-ddfdb342f3f5",
+      "id" : "194ef86f-40b0-4061-ac8b-05eb16bde9d7",
       "name" : "根据学生编号查询提交的作业",
       "request" : {
         "url" : {
@@ -2779,7 +2829,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "0d32bc64-15fa-4047-bc91-a94681128674",
+      "id" : "d3648fec-136f-4a1d-af9c-576743446288",
       "name" : "提交作业",
       "request" : {
         "url" : {
@@ -2822,13 +2872,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "e89dff84-5e69-42c6-9bf1-816577a6c406",
+      "id" : "4a4cc91e-c7e6-4250-a4f9-fe508d2d4417",
       "name" : "修改已提交的作业",
       "request" : {
         "url" : {
@@ -2871,24 +2921,29 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "384f824c-a512-49a2-8fc9-eea59ba49562",
-      "name" : "删除已提交的作业",
+      "id" : "acfb7094-a002-40c3-96ea-10365ca507bd",
+      "name" : "批量删除或恢复已提交的作业",
       "request" : {
         "url" : {
           "protocol" : "http",
           "host" : "{{host}}",
-          "path" : "/work/{submitId}/{index}",
+          "path" : "/work",
           "query" : [ ]
         },
         "method" : "DELETE",
-        "header" : [ ],
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
         "body" : {
+          "mode" : "raw",
+          "raw" : "null",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -2899,24 +2954,29 @@
           "url" : {
             "protocol" : "http",
             "host" : "{{host}}",
-            "path" : "/work/{submitId}/{index}",
+            "path" : "/work",
             "query" : [ ]
           },
           "method" : "DELETE",
-          "header" : [ ],
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
           "body" : {
+            "mode" : "raw",
+            "raw" : "null",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "9727a586-7edf-4e57-bff5-698bae730341",
+      "id" : "3ca10a4e-48ab-4e53-be35-2f838405c0be",
       "name" : "根据班级编号查询学生",
       "request" : {
         "url" : {
@@ -2961,13 +3021,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "be487096-adbf-40cf-97f1-47bf72a73d78",
+      "id" : "6b20dd89-810a-46a0-a925-7fab51d22b41",
       "name" : "根据班级编号查询教师布置的作业",
       "request" : {
         "url" : {
@@ -3012,7 +3072,7 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
@@ -3021,7 +3081,7 @@
   }, {
     "name" : "教师端",
     "item" : [ {
-      "id" : "2371fbf4-3a3c-499d-abd1-8a84032a726e",
+      "id" : "84d77c29-9317-4b9f-91f4-5858ab614d1f",
       "name" : "分页查询已经布置的作业",
       "request" : {
         "url" : {
@@ -3078,13 +3138,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "313ce461-059e-4374-8c20-fca640f6439f",
+      "id" : "47163e55-a237-40d5-a8c7-262318e7ea44",
       "name" : "根据教师编号查询作业",
       "request" : {
         "url" : {
@@ -3153,13 +3213,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"workId\" : 0,\r\n    \"workName\" : \"\",\r\n    \"workContent\" : \"\",\r\n    \"teacherId\" : 0,\r\n    \"teacher\" : {\r\n      \"teacherId\" : 0,\r\n      \"teacherName\" : \"\",\r\n      \"teacherAge\" : 0,\r\n      \"teacherGender\" : 0,\r\n      \"teacherAddress\" : \"\",\r\n      \"teacherPhone\" : \"\",\r\n      \"teacherEmail\" : \"\",\r\n      \"subjectId\" : 0,\r\n      \"subject\" : {\r\n        \"subjectId\" : 0,\r\n        \"subjectName\" : \"\",\r\n        \"logId\" : 0,\r\n        \"log\" : {\r\n          \"logId\" : 0,\r\n          \"deleted\" : 0,\r\n          \"createTime\" : \"\",\r\n          \"updateTime\" : \"\"\r\n        }\r\n      },\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "ac62ea2b-7fce-49b7-a59e-9d2abf193ed1",
+      "id" : "dcb46be0-a27c-4f60-9f14-823cf81b55a9",
       "name" : "添加作业信息",
       "request" : {
         "url" : {
@@ -3202,13 +3262,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "60397c52-54e4-4413-86ad-9de0e775528b",
+      "id" : "bd9ddcc0-aee0-46e0-871c-ce93ab8ae946",
       "name" : "修改作业信息",
       "request" : {
         "url" : {
@@ -3251,24 +3311,29 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "aa837b80-082e-4bac-9084-1394f3a49b18",
-      "name" : "删除作业信息",
+      "id" : "a249065f-8282-418d-9ff1-f35162efd0a8",
+      "name" : "批量删除或恢复已提交的作业",
       "request" : {
         "url" : {
           "protocol" : "http",
           "host" : "{{host}}",
-          "path" : "/work/{workId}/{index}",
+          "path" : "/work",
           "query" : [ ]
         },
         "method" : "DELETE",
-        "header" : [ ],
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
         "body" : {
+          "mode" : "raw",
+          "raw" : "null",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -3279,24 +3344,29 @@
           "url" : {
             "protocol" : "http",
             "host" : "{{host}}",
-            "path" : "/work/{workId}/{index}",
+            "path" : "/work",
             "query" : [ ]
           },
           "method" : "DELETE",
-          "header" : [ ],
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
           "body" : {
+            "mode" : "raw",
+            "raw" : "null",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "223daf32-e3a3-4c58-94dc-570fc9fff2fa",
+      "id" : "8f6a5991-4992-4372-b4dc-bd6112eec5bb",
       "name" : "根据班级编号查询学生",
       "request" : {
         "url" : {
@@ -3341,13 +3411,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"studentId\" : 0,\r\n    \"studentName\" : \"\",\r\n    \"studentAge\" : 0,\r\n    \"studentGender\" : 0,\r\n    \"studentAddress\" : \"\",\r\n    \"studentPhone\" : \"\",\r\n    \"studentEmail\" : \"\",\r\n    \"classId\" : 0,\r\n    \"aClass\" : {\r\n      \"classId\" : 0,\r\n      \"className\" : \"\",\r\n      \"logId\" : 0,\r\n      \"log\" : {\r\n        \"logId\" : 0,\r\n        \"deleted\" : 0,\r\n        \"createTime\" : \"\",\r\n        \"updateTime\" : \"\"\r\n      }\r\n    },\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "84df0636-2927-47e2-9637-fc63c902ed32",
+      "id" : "cd5333fa-b6ff-47fa-ba2a-bcfe132ec02b",
       "name" : "教师端根据作业编号查询已提交的作业",
       "request" : {
         "url" : {
@@ -3398,7 +3468,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "f00c2c6d-aeb2-4590-9cee-676539aefa0b",
+      "id" : "e21117ca-ffa9-4b7a-b78e-3cd5ae7cefea",
       "name" : "根据班级编号查询教师布置的作业",
       "request" : {
         "url" : {
@@ -3449,7 +3519,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "a263531a-4592-47b6-b7a7-0b4438f2aba4",
+      "id" : "3fd16e8c-2484-439f-a344-a5d02cbe9497",
       "name" : "教师端批改学生作业",
       "request" : {
         "url" : {
@@ -3492,13 +3562,13 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : 0,\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "83928a9b-f7de-4e52-8e56-69eec41607ee",
+      "id" : "7679d6bf-b22c-499d-b11e-47dfc1758d9a",
       "name" : "教师端查询所有班级",
       "request" : {
         "url" : {
@@ -3531,7 +3601,7 @@
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : 0,\r\n  \"message\" : \"\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : 0\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : [ {\r\n    \"classId\" : 0,\r\n    \"className\" : \"\",\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    }\r\n  } ],\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"

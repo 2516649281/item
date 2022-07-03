@@ -1,8 +1,8 @@
 package com.chunfeng.controller;
 
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.entity.User;
 import com.chunfeng.service.IUserService;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +17,7 @@ public class UserController extends ServiceController {
     /**
      * 用户业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IUserService userService;
 
     /**
@@ -95,6 +95,6 @@ public class UserController extends ServiceController {
      */
     @GetMapping
     JsonRequest<Boolean> tokenTimer() {
-        return new JsonRequest<>(200, "", true, null);
+        return new JsonRequest<>(true, null);
     }
 }

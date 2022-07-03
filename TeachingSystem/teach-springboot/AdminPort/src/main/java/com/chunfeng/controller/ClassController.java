@@ -1,24 +1,25 @@
 package com.chunfeng.controller;
 
 import com.chunfeng.entity.Class;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.service.IClassService;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 班级控制层
  */
 @RestController
 @RequestMapping("/class")
-public class ClassController {
+public class ClassController extends ServiceController {
 
     /**
      * 班级业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IClassService classService;
 
     /**
@@ -80,14 +81,16 @@ public class ClassController {
     }
 
     /**
-     * 删除或恢复班级
+     * 批量删除或恢复班级
      *
-     * @param classId 班级编号
-     * @param index   操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:班级id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    @DeleteMapping("/{classId}/{index}")
-    JsonRequest<Integer> deleteClassById(@PathVariable Long classId, @PathVariable Boolean index) {
-        return classService.deleteClassById(classId, index);
+    @DeleteMapping
+    JsonRequest<Integer> deleteClassById(@RequestBody Map<Long, Boolean> map) {
+        return classService.deleteClassById(map);
     }
 }

@@ -101,11 +101,11 @@ create table file
 public class FileSource {
     @TableId
     private Long fileId;//文件编号
-    private String fileName;//文件名称
-    private String filePath;//文件路径
-    private String fileType;//文件类型
-    private String fileSize;//文件大小
-    private String fileUploadTime;//文件上传时间
+    private final String fileName;//文件名称
+    private final String filePath;//文件路径
+    private final String fileType;//文件类型
+    private final String fileSize;//文件大小
+    private final String fileUploadTime;//文件上传时间
     private String fileUpdateTime;//文件修改时间
 
     public FileSource(String fileName, String filePath, String fileType, String fileSize, String fileUploadTime, String fileUpdateTime) {
@@ -173,7 +173,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, FileSource> impleme
     /**
      * 文件持久层
      */
-    @Autowired
+    @Autowired(required = false)
     private FileMapper fileMapper;
 
 
@@ -209,7 +209,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, FileSource> impleme
             throw new FileLoadErrorException("文件上传失败");
         }
         map.put(source.getFileId(), column);
-        return new JsonRequest<>(200, map, "文件上传成功");
+        return new JsonRequest<>( map, "文件上传成功");
     }
 
     /**
@@ -236,7 +236,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, FileSource> impleme
         for (Integer value : loadFile.values()) {
             column += value;
         }
-        return new JsonRequest<>(200, loadFile, column + "个文件上传成功");
+        return new JsonRequest<>( loadFile, column + "个文件上传成功");
     }
 
     /**
@@ -271,7 +271,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, FileSource> impleme
         if (column < 1) {
             throw new FileDeleteErrorException("修改文件失败!");
         }
-        return new JsonRequest<>(200, column, "文件修改成功!");
+        return new JsonRequest<>( column, "文件修改成功!");
     }
 
     /**
@@ -291,7 +291,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, FileSource> impleme
             JsonRequest<Integer> jsonRequest = updateFile(bytes.get(i), fileSize[i], oldFileName[i], fileId[i]);
             column += jsonRequest.getData();
         }
-        return new JsonRequest<>(200, column, column + "个文件修改完成");
+        return new JsonRequest<>( column, column + "个文件修改完成");
     }
 
     /**
@@ -317,7 +317,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, FileSource> impleme
         if (column < 1) {
             throw new FileDeleteErrorException("文件删除失败!");
         }
-        return new JsonRequest<>(200, column, "删除成功!");
+        return new JsonRequest<>( column, "删除成功!");
     }
 
     /**
@@ -334,7 +334,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, FileSource> impleme
             JsonRequest<Integer> jsonRequest = deleteFile(fileId);
             column += jsonRequest.getData();
         }
-        return new JsonRequest<>(200, column, column + "个文件已删除!");
+        return new JsonRequest<>( column, column + "个文件已删除!");
     }
 
     /**
@@ -586,7 +586,7 @@ public class FileController extends ServiceController {
     /**
      * 文件业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IFileService fileService;
 
     /**

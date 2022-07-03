@@ -5,12 +5,13 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chunfeng.dao.FileMapper;
 import com.chunfeng.entity.FileSource;
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.service.IFileAdminService;
 import com.chunfeng.service.ex.fileException.look.FileLookIsNullException;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,12 +19,13 @@ import java.util.List;
  * 文件管理业务层层
  */
 @Service
+@Transactional
 public class FileAdminImpl extends ServiceImpl<FileMapper, FileSource> implements IFileAdminService {
 
     /**
      * 文件持久层
      */
-    @Autowired
+    @Autowired(required = false)
     private FileMapper fileMapper;
 
     /**
@@ -44,7 +46,7 @@ public class FileAdminImpl extends ServiceImpl<FileMapper, FileSource> implement
         if (pageSize < 1) {
             throw new FileLookIsNullException("文件库无数据!");
         }
-        return new JsonRequest<>(200, null, fileSourcePage.getRecords(), pageSize);
+        return new JsonRequest<>(null, fileSourcePage.getRecords(), pageSize);
     }
 
     /**
@@ -67,6 +69,6 @@ public class FileAdminImpl extends ServiceImpl<FileMapper, FileSource> implement
         if (pageSize < 1) {
             throw new FileLookIsNullException("文件库无数据!");
         }
-        return new JsonRequest<>(200, null, sourcePage.getRecords(), pageSize);
+        return new JsonRequest<>(null, sourcePage.getRecords(), pageSize);
     }
 }

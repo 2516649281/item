@@ -1,9 +1,11 @@
 package com.chunfeng.service;
 
 import com.chunfeng.entity.Admin;
-import com.chunfeng.util.JsonRequest;
+import com.chunfeng.entity.JsonRequest;
+import org.springframework.cache.annotation.CacheEvict;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 管理员业务层接口
@@ -53,11 +55,13 @@ public interface IAdminService {
     JsonRequest<Integer> updateAdminById(Admin admin);
 
     /**
-     * 删除或恢复管理员
+     * 批量删除或恢复管理员
      *
-     * @param adminId 管理员编号
-     * @param index   操作指数(如果index值为true,则代表删除,反之代表恢复)
+     * @param map <p>
+     *            key:管理员id
+     *            <p>
+     *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
      * @return JSON
      */
-    JsonRequest<Integer> deleteAdminById(Long adminId, Boolean index);
+    JsonRequest<Integer> deleteAdminById(Map<Long, Boolean> map);
 }

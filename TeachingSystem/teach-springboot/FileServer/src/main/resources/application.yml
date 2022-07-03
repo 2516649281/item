@@ -35,7 +35,7 @@ spring:
   #服务器内存放文件的磁盘位置
 file:
   Path: D:/Test/
-  #    Path: /home/item/Test/
+  #  Path: /home/item/Test/
 
   #全局时间格式
 date:

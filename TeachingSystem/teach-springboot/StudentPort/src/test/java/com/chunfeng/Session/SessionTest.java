@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 @SpringBootTest
 public class SessionTest {
 
-    @Autowired
+    @Autowired(required = false)
     private UserServiceImpl userService;
 
-    @Autowired
+    @Autowired(required = false)
     private HttpServletRequest httpServletRequest;
 
-    @Autowired
+    @Autowired(required = false)
     private StudentMapper studentMapper;
 
 
-    @Autowired
+    @Autowired(required = false)
     private IRedisService<User> redisService;
 
 

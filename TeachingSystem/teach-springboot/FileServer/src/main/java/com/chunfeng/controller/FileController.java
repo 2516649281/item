@@ -1,7 +1,7 @@
 package com.chunfeng.controller;
 
+import com.chunfeng.entity.JsonRequest;
 import com.chunfeng.service.IFileService;
-import com.chunfeng.util.JsonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ public class FileController extends ServiceController {
     /**
      * 文件业务层
      */
-    @Autowired
+    @Autowired(required = false)
     private IFileService fileService;
 
     /**

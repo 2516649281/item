@@ -20,7 +20,7 @@ public class MyBatisPlusPageConfig {
      */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
-        log.info("MyBatis-Plus分插件注册");
+        log.info("MyBatis-Plus分页插件准备就绪");
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.H2));
         return interceptor;
