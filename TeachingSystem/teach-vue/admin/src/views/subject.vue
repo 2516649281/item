@@ -4,124 +4,118 @@
       <el-form :inline="true" :model="selectFrom">
         <el-form-item>
           <el-input
-              v-model="selectFrom.subjectName"
-              placeholder="键入科目名称"
+            v-model="selectFrom.subjectName"
+            placeholder="键入科目名称"
           ></el-input>
         </el-form-item>
         <el-form-item>
           <el-button
-              icon="el-icon-search"
-              type="primary"
-              @click="
+            type="primary"
+            @click="
               selectAllSubjectByName(
                 this.current,
                 this.size,
                 selectFrom.subjectName
               )
             "
-          >查询
-          </el-button
+            icon="el-icon-search"
+            >查询</el-button
           >
           <el-button
-              icon="el-icon-delete"
-              type="danger"
-              @click="deleteSubjects(this.subjectIds, true)"
-          >批量删除
-          </el-button
+            type="danger"
+            @click="deleteSubjects(this.subjectIds, true)"
+            icon="el-icon-delete"
+            >批量删除</el-button
           >
           <el-button
-              icon="el-icon-refresh-right"
-              type="success"
-              @click="deleteSubjects(this.subjectIds, false)"
-          >批量恢复
-          </el-button
+            type="success"
+            @click="deleteSubjects(this.subjectIds, false)"
+            icon="el-icon-refresh-right"
+            >批量恢复</el-button
           >
         </el-form-item>
       </el-form>
     </el-header>
     <el-main>
       <el-table
-          ref="classIds"
-          :data="tableData"
-          height="400"
-          @selection-change="handleSelectionChange"
+        :data="tableData"
+        height="400"
+        ref="classIds"
+        @selection-change="handleSelectionChange"
       >
-        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column type="selection" width="55"> </el-table-column>
         <el-table-column
-            align="center"
-            fixed="left"
-            label="科目编号"
-            prop="subjectId"
-            width="100"
+          label="科目编号"
+          prop="subjectId"
+          align="center"
+          width="100"
+          fixed="left"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="科目名称"
-            prop="subjectName"
-            width="200"
+          label="科目名称"
+          prop="subjectName"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="创建时间"
-            prop="log.createTime"
-            width="250"
+          label="创建时间"
+          prop="log.createTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="最后修改时间"
-            prop="log.updateTime"
-            width="250"
+          label="最后修改时间"
+          prop="log.updateTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column label="状态" align="center" width="100">
           <template #default="scope">
             <el-tag
-                :type="scope.row.log.deleted === 0 ? 'success' : 'danger'"
-                disable-transitions
-            >{{ scope.row.log.deleted == 0 ? "正常" : "已删除" }}
-            </el-tag
+              :type="scope.row.log.deleted === 0 ? 'success' : 'danger'"
+              disable-transitions
+              >{{ scope.row.log.deleted == 0 ? "正常" : "已删除" }}</el-tag
             >
           </template>
         </el-table-column>
         <el-table-column label="操作" width="200" align="center" fixed="right">
           <template #default="scope"
-          >
-            <el-button
-                circle
-                icon="el-icon-edit"
-                type="primary"
-                @click="editClick(scope.row)"
+            ><el-button
+              type="primary"
+              circle
+              icon="el-icon-edit"
+              @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                circle
-                icon="el-icon-delete"
-                type="danger"
-                @click="deleteSubjectById(scope.row.subjectId, true)"
+              type="danger"
+              circle
+              icon="el-icon-delete"
+              @click="deleteSubjectById(scope.row.subjectId, true)"
             >
             </el-button>
             <el-button
-                circle
-                icon="el-icon-refresh-right"
-                type="success"
-                @click="deleteSubjectById(scope.row.subjectId, false)"
+              type="success"
+              circle
+              icon="el-icon-refresh-right"
+              @click="deleteSubjectById(scope.row.subjectId, false)"
             ></el-button
-            >
-          </template>
+          ></template>
         </el-table-column>
       </el-table>
       <div class="addbtn">
         <el-button
-            circle
-            icon="el-icon-plus"
-            type="success"
-            @click="adddialogFormVisible = true"
+          type="success"
+          circle
+          icon="el-icon-plus"
+          @click="adddialogFormVisible = true"
         ></el-button>
       </div>
       <el-pagination
-          :page-size="size"
-          :total="pageSize"
-          background
-          layout="prev, pager, next"
-          @current-change="handleCurrentChange"
+        background
+        @current-change="handleCurrentChange"
+        layout="prev, pager, next"
+        :total="pageSize"
+        :page-size="size"
       >
       </el-pagination>
     </el-main>
@@ -136,8 +130,7 @@
     <template v-slot:footer>
       <el-button @click="adddialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="addSubject(addFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
@@ -152,8 +145,7 @@
     <template v-slot:footer>
       <el-button @click="editdialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="updateSubjectById(editFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
@@ -206,16 +198,16 @@ export default {
       //表单验证
       rules: {
         subjectName: [
-          {required: true, message: "科目名称不得为空!", trigger: "blur"},
+          { required: true, message: "科目名称不得为空!", trigger: "blur" },
         ],
       },
     };
   },
   created() {
     this.selectAllSubjectByName(
-        this.current,
-        this.size,
-        this.selectFrom.subjectName
+      this.current,
+      this.size,
+      this.selectFrom.subjectName
     );
   },
   methods: {
@@ -246,9 +238,9 @@ export default {
                 showClose: true,
               });
               this.selectAllSubjectByName(
-                  this.current,
-                  this.size,
-                  this.selectFrom.subjectName
+                this.current,
+                this.size,
+                this.selectFrom.subjectName
               );
               this.adddialogFormVisible = false;
             } else {
@@ -277,9 +269,9 @@ export default {
                 showClose: true,
               });
               this.selectAllSubjectByName(
-                  this.current,
-                  this.size,
-                  this.selectFrom.subjectName
+                this.current,
+                this.size,
+                this.selectFrom.subjectName
               );
               this.editdialogFormVisible = false;
             } else {
@@ -298,15 +290,15 @@ export default {
     //删除科目
     deleteSubjectById(subjectId, index) {
       this.$confirm(
-          index
-              ? "此操作将删除该科目, 是否继续?"
-              : "此操作将恢复该科目, 是否继续?",
-          "提示",
-          {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
+        index
+          ? "此操作将删除该科目, 是否继续?"
+          : "此操作将恢复该科目, 是否继续?",
+        "提示",
+        {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
       ).then(() => {
         this.map = new Map();
         this.map[subjectId] = index;
@@ -318,9 +310,9 @@ export default {
               showClose: true,
             });
             this.selectAllSubjectByName(
-                this.current,
-                this.size,
-                this.selectFrom.subjectName
+              this.current,
+              this.size,
+              this.selectFrom.subjectName
             );
           } else {
             this.$message({
@@ -340,13 +332,13 @@ export default {
     //批量删除
     deleteSubjects(ids, index) {
       this.$confirm(
-          index ? "此操作将删除科目 是否继续?" : "此操作将恢复科目 是否继续?",
-          "提示",
-          {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
+        index ? "此操作将删除科目 是否继续?" : "此操作将恢复科目 是否继续?",
+        "提示",
+        {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
       ).then(() => {
         this.map = new Map();
         for (let i = 0; i < ids.length; i++) {
@@ -360,9 +352,9 @@ export default {
               showClose: true,
             });
             this.selectAllSubjectByName(
-                this.current,
-                this.size,
-                this.selectFrom.subjectName
+              this.current,
+              this.size,
+              this.selectFrom.subjectName
             );
           } else {
             this.$message({
@@ -382,9 +374,9 @@ export default {
     handleCurrentChange(val) {
       this.current = val;
       this.selectAllSubjectByName(
-          this.current,
-          this.size,
-          this.selectFrom.subjectName
+        this.current,
+        this.size,
+        this.selectFrom.subjectName
       );
     },
   },
@@ -407,13 +399,11 @@ export default {
   width: 10%;
   margin: 0 auto;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;
 }
-
-/deep/ .el-input__inner {
+/deep/.el-input__inner {
   background-color: transparent;
   /* color: white; */
 }

@@ -5,68 +5,65 @@
         <el-form-item>
           <el-select v-model="selectFrom.subjectId" placeholder="请选择科目">
             <el-option
-                v-for="item in subjectMap"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
+              v-for="item in subjectMap"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
             >
             </el-option>
           </el-select>
         </el-form-item>
         <el-form-item>
           <el-button
-              icon="el-icon-search"
-              type="primary"
-              @click="
+            type="primary"
+            @click="
               selectAllTeacherBySubject(
                 this.current,
                 this.size,
                 selectFrom.subjectId
               )
             "
-          >查询
-          </el-button
+            icon="el-icon-search"
+            >查询</el-button
           >
           <el-button
-              icon="el-icon-delete"
-              type="danger"
-              @click="deleteTeachers(this.teacherIds, true)"
-          >批量删除
-          </el-button
+            type="danger"
+            @click="deleteTeachers(this.teacherIds, true)"
+            icon="el-icon-delete"
+            >批量删除</el-button
           >
           <el-button
-              icon="el-icon-refresh-right"
-              type="success"
-              @click="deleteTeachers(this.teacherIds, false)"
-          >批量恢复
-          </el-button
+            type="success"
+            @click="deleteTeachers(this.teacherIds, false)"
+            icon="el-icon-refresh-right"
+            >批量恢复</el-button
           >
         </el-form-item>
       </el-form>
     </el-header>
     <el-main>
       <el-table
-          ref="teacherIds"
-          :data="tableData"
-          height="400"
-          @selection-change="handleSelectionChange"
+        :data="tableData"
+        height="400"
+        ref="teacherIds"
+        @selection-change="handleSelectionChange"
       >
-        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column type="selection" width="55"> </el-table-column>
         <el-table-column
-            align="center"
-            fixed="left"
-            label="教师编号"
-            prop="teacherId"
-            width="100"
+          label="教师编号"
+          prop="teacherId"
+          align="center"
+          width="100"
+          fixed="left"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="教师姓名"
-            prop="teacherName"
-            width="200"
+          label="教师姓名"
+          prop="teacherName"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column label="教师年龄" align="center" width="200">
-          <template #default="scope"> {{ scope.row.teacherAge }}岁</template>
+          <template #default="scope"> {{ scope.row.teacherAge }}岁 </template>
         </el-table-column>
         <el-table-column label="教师性别" align="center" width="200">
           <template #default="scope">
@@ -74,91 +71,88 @@
           </template>
         </el-table-column>
         <el-table-column
-            align="center"
-            label="教师科目"
-            prop="subject.subjectName"
-            width="200"
+          label="教师科目"
+          prop="subject.subjectName"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="教师住址"
-            prop="teacherAddress"
-            width="200"
+          label="教师住址"
+          prop="teacherAddress"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="教师电话"
-            prop="teacherPhone"
-            width="200"
+          label="教师电话"
+          prop="teacherPhone"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="教师邮箱"
-            prop="teacherEmail"
-            width="200"
+          label="教师邮箱"
+          prop="teacherEmail"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="创建时间"
-            prop="log.createTime"
-            width="250"
+          label="创建时间"
+          prop="log.createTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="最后修改时间"
-            prop="log.updateTime"
-            width="250"
+          label="最后修改时间"
+          prop="log.updateTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column label="状态" align="center" width="100">
           <template #default="scope">
             <el-tag
-                :type="scope.row.log.deleted === 0 ? 'success' : 'danger'"
-                disable-transitions
-            >{{ scope.row.log.deleted == 0 ? "正常" : "已删除" }}
-            </el-tag
+              :type="scope.row.log.deleted === 0 ? 'success' : 'danger'"
+              disable-transitions
+              >{{ scope.row.log.deleted == 0 ? "正常" : "已删除" }}</el-tag
             >
           </template>
         </el-table-column>
         <el-table-column label="操作" width="200" align="center" fixed="right">
           <template #default="scope"
-          >
-            <el-button
-                circle
-                icon="el-icon-edit"
-                type="primary"
-                @click="editClick(scope.row)"
+            ><el-button
+              type="primary"
+              circle
+              icon="el-icon-edit"
+              @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                circle
-                icon="el-icon-delete"
-                type="danger"
-                @click="deleteTeacherById(scope.row.teacherId, true)"
+              type="danger"
+              circle
+              icon="el-icon-delete"
+              @click="deleteTeacherById(scope.row.teacherId, true)"
             >
             </el-button>
             <el-button
-                circle
-                icon="el-icon-refresh-right"
-                type="success"
-                @click="deleteTeacherById(scope.row.teacherId, false)"
+              type="success"
+              circle
+              icon="el-icon-refresh-right"
+              @click="deleteTeacherById(scope.row.teacherId, false)"
             ></el-button
-            >
-          </template>
+          ></template>
         </el-table-column>
       </el-table>
       <div class="addbtn">
         <el-button
-            circle
-            icon="el-icon-plus"
-            type="success"
-            @click="adddialogFormVisible = true"
+          type="success"
+          circle
+          icon="el-icon-plus"
+          @click="adddialogFormVisible = true"
         ></el-button>
       </div>
       <el-pagination
-          :page-size="size"
-          :total="pageSize"
-          background
-          layout="prev, pager, next"
-          @current-change="handleCurrentChange"
+        background
+        @current-change="handleCurrentChange"
+        layout="prev, pager, next"
+        :total="pageSize"
+        :page-size="size"
       >
       </el-pagination>
     </el-main>
@@ -180,8 +174,8 @@
       </el-form-item>
       <el-form-item label="教师住址:" prop="teacherAddress">
         <el-input
-            v-model="addFrom.teacherAddress"
-            autocomplete="off"
+          v-model="addFrom.teacherAddress"
+          autocomplete="off"
         ></el-input>
       </el-form-item>
       <el-form-item label="教师电话:" prop="teacherPhone">
@@ -191,24 +185,20 @@
         <el-input v-model="addFrom.teacherEmail" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="所在科目" prop="subjectId"
-      >
-        <el-select v-model="addFrom.subjectId" placeholder="请选择">
+        ><el-select v-model="addFrom.subjectId" placeholder="请选择">
           <el-option
-              v-for="item in subjectMap"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
+            v-for="item in subjectMap"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
           >
-          </el-option>
-        </el-select
-        >
-      </el-form-item>
+          </el-option> </el-select
+      ></el-form-item>
     </el-form>
     <template v-slot:footer>
       <el-button @click="adddialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="addTeacher(addFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
@@ -230,8 +220,8 @@
       </el-form-item>
       <el-form-item label="教师住址:" prop="teacherAddress">
         <el-input
-            v-model="editFrom.teacherAddress"
-            autocomplete="off"
+          v-model="editFrom.teacherAddress"
+          autocomplete="off"
         ></el-input>
       </el-form-item>
       <el-form-item label="教师电话:" prop="teacherPhone">
@@ -241,24 +231,20 @@
         <el-input v-model="editFrom.teacherEmail" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="所在科目" prop="subjectId"
-      >
-        <el-select v-model="editFrom.subjectId" placeholder="请选择">
+        ><el-select v-model="editFrom.subjectId" placeholder="请选择">
           <el-option
-              v-for="item in subjectMap"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
+            v-for="item in subjectMap"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
           >
-          </el-option>
-        </el-select
-        >
-      </el-form-item>
+          </el-option> </el-select
+      ></el-form-item>
     </el-form>
     <template v-slot:footer>
       <el-button @click="editdialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="updateTeacherById(editFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
@@ -272,7 +258,7 @@ import {
   updateTeacherById,
   deleteTeacherById,
 } from "../api/teacher";
-import {selectAllSubject} from "../api/subject";
+import { selectAllSubject } from "../api/subject";
 export default {
   data() {
     return {
@@ -334,25 +320,25 @@ export default {
       //表单验证
       rules: {
         teacherName: [
-          {required: true, message: "教师姓名不得为空!", trigger: "blur"},
+          { required: true, message: "教师姓名不得为空!", trigger: "blur" },
         ],
         teacherAge: [
-          {required: true, message: "教师年龄不得为空!", trigger: "blur"},
+          { required: true, message: "教师年龄不得为空!", trigger: "blur" },
         ],
         teacherGender: [
-          {required: true, message: "教师性别不得为空!", trigger: "blur"},
+          { required: true, message: "教师性别不得为空!", trigger: "blur" },
         ],
         teacherAddress: [
-          {required: true, message: "教师地址不得为空!", trigger: "blur"},
+          { required: true, message: "教师地址不得为空!", trigger: "blur" },
         ],
         teacherPhone: [
-          {required: true, message: "教师电话不得为空!", trigger: "blur"},
+          { required: true, message: "教师电话不得为空!", trigger: "blur" },
         ],
         teacherEmail: [
-          {required: true, message: "教师邮箱不得为空!", trigger: "blur"},
+          { required: true, message: "教师邮箱不得为空!", trigger: "blur" },
         ],
         subjectId: [
-          {required: true, message: "科目不得为空!", trigger: "blur"},
+          { required: true, message: "科目不得为空!", trigger: "blur" },
         ],
       },
     };
@@ -402,9 +388,9 @@ export default {
                 showClose: true,
               });
               this.selectAllTeacherBySubject(
-                  this.current,
-                  this.size,
-                  this.selectFrom.subjectId
+                this.current,
+                this.size,
+                this.selectFrom.subjectId
               );
               this.adddialogFormVisible = false;
             } else {
@@ -433,9 +419,9 @@ export default {
                 showClose: true,
               });
               this.selectAllTeacherBySubject(
-                  this.current,
-                  this.size,
-                  this.selectFrom.subjectId
+                this.current,
+                this.size,
+                this.selectFrom.subjectId
               );
               this.editdialogFormVisible = false;
             } else {
@@ -454,15 +440,15 @@ export default {
     //删除教师
     deleteTeacherById(teacherId, index) {
       this.$confirm(
-          index
-              ? "此操作将删除该教师, 是否继续?"
-              : "此操作将恢复该教师, 是否继续?",
-          "提示",
-          {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
+        index
+          ? "此操作将删除该教师, 是否继续?"
+          : "此操作将恢复该教师, 是否继续?",
+        "提示",
+        {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
       ).then(() => {
         this.map = new Map();
         this.map[teacherId] = index;
@@ -474,9 +460,9 @@ export default {
               showClose: true,
             });
             this.selectAllTeacherBySubject(
-                this.current,
-                this.size,
-                this.selectFrom.subjectId
+              this.current,
+              this.size,
+              this.selectFrom.subjectId
             );
           } else {
             this.$message({
@@ -491,13 +477,13 @@ export default {
     //批量删除
     deleteTeachers(ids, index) {
       this.$confirm(
-          index ? "此操作将删除教师, 是否继续?" : "此操作将恢复教师, 是否继续?",
-          "提示",
-          {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
+        index ? "此操作将删除教师, 是否继续?" : "此操作将恢复教师, 是否继续?",
+        "提示",
+        {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
       ).then(() => {
         this.map = new Map();
         for (let i = 0; i < ids.length; i++) {
@@ -511,9 +497,9 @@ export default {
               showClose: true,
             });
             this.selectAllTeacherBySubject(
-                this.current,
-                this.size,
-                this.selectFrom.subjectId
+              this.current,
+              this.size,
+              this.selectFrom.subjectId
             );
           } else {
             this.$message({
@@ -538,9 +524,9 @@ export default {
     handleCurrentChange(val) {
       this.current = val;
       this.selectAllTeacherBySubject(
-          this.current,
-          this.size,
-          this.selectFrom.subjectId
+        this.current,
+        this.size,
+        this.selectFrom.subjectId
       );
     },
   },
@@ -563,13 +549,11 @@ export default {
   width: 10%;
   margin: 0 auto;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;
 }
-
-/deep/ .el-input__inner {
+/deep/.el-input__inner {
   background-color: transparent;
   /* color: white; */
 }

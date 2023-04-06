@@ -1,4 +1,4 @@
-package com.chunfeng.service.ex.addException;
+package com.chunfeng.service.ex.sourceException.addException;
 
 /**
  * 添加数据失败

@@ -4,24 +4,21 @@
       <h1>绑定身份信息</h1>
       <el-form :model="IdentityFrom" :rules="rules" ref="studentIndex">
         <el-form-item label="请输入管理员提供的学生编号:" prop="userIndex">
-          <el-input v-model="IdentityFrom.userIndex"></el-input>
+          <el-input v-model="IdentityFrom.userIndex"> </el-input>
         </el-form-item>
         <el-form-item>
           <el-button
-              icon="el-icon-paperclip"
-              round
-              type="primary"
-              @click="bindIdentity(IdentityFrom.userIndex)"
-          >绑定
-          </el-button
-          >
-          <el-button
-              icon="el-icon-switch-button"
-              round
-              type="danger"
-              @click="exit"
-          >返回
-          </el-button
+            type="primary"
+            @click="bindIdentity(IdentityFrom.userIndex)"
+            round
+            icon="el-icon-paperclip"
+            >绑定</el-button
+          ><el-button
+            type="danger"
+            @click="exit"
+            round
+            icon="el-icon-switch-button"
+            >返回</el-button
           >
         </el-form-item>
       </el-form>
@@ -30,7 +27,7 @@
 </template>
 
 <script>
-import {bindIdentity} from "../api/user";
+import { bindIdentity } from "../api/user";
 import jwtDecode from "jwt-decode";
 export default {
   data() {
@@ -42,14 +39,14 @@ export default {
       },
       rules: {
         userIndex: [
-          {required: true, message: "学生编号不得为空!", trigger: "blur"},
+          { required: true, message: "学生编号不得为空!", trigger: "blur" },
         ],
       },
     };
   },
   created() {
     this.IdentityFrom.userId = jwtDecode(
-        sessionStorage.getItem("token")
+      sessionStorage.getItem("token")
     ).user.userId;
     this.$notify({
       title: "提示",

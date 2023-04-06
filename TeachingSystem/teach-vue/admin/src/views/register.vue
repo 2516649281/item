@@ -1,52 +1,48 @@
 <template>
   <div>
     <video autoplay loop muted class="login-fillWidth" v-on:canplay="canplay">
-      <source src="../image/login.mp4" type="video/mp4"/>
+      <source src="../image/login.mp4" type="video/mp4" />
     </video>
   </div>
   <el-container>
     <el-main>
       <el-form
-          ref="registerFrom"
-          :inline-message="true"
-          :model="registerFrom"
-          :rules="rules"
-          @keyup.enter.native="register(registerFrom)"
+        :model="registerFrom"
+        :rules="rules"
+        :inline-message="true"
+        @keyup.enter.native="register(registerFrom)"
+        ref="registerFrom"
       >
         <h1>欢迎注册</h1>
         <el-form-item prop="userName">
           <el-input
-              v-model="registerFrom.userName"
-              placeholder="请输入账号"
+            placeholder="请输入账号"
+            v-model="registerFrom.userName"
           ></el-input>
         </el-form-item>
         <el-form-item prop="userPassword">
           <el-input
-              v-model="registerFrom.userPassword"
-              placeholder="请输入密码"
-              show-password
+            placeholder="请输入密码"
+            v-model="registerFrom.userPassword"
+            show-password
           ></el-input>
         </el-form-item>
         <el-form-item prop="againPassword">
           <el-input
-              v-model="registerFrom.againPassword"
-              placeholder="请再次输入密码"
-              show-password
+            placeholder="请再次输入密码"
+            v-model="registerFrom.againPassword"
+            show-password
           ></el-input>
         </el-form-item>
         <el-form-item prop="code">
           <el-input placeholder="请输入验证码" v-model="registerFrom.code"
-          >
-            <template v-slot:prefix><i class="el-icon-s-check"></i></template
-            >
-            <template v-slot:suffix
-            >
-              <s-identify
-                  :identifyCode="identifyCode"
-                  @click="refreshCode"
+            ><template v-slot:prefix><i class="el-icon-s-check"></i></template
+            ><template v-slot:suffix
+              ><s-identify
+                :identifyCode="identifyCode"
+                @click="refreshCode"
               ></s-identify
-              >
-            </template>
+            ></template>
           </el-input>
         </el-form-item>
         <el-form-item>
@@ -60,7 +56,7 @@
 
 <script>
 import SIdentify from "../components/identify";
-import {register} from "../api/user";
+import { register } from "../api/user";
 export default {
   components: {
     SIdentify: SIdentify,
@@ -86,15 +82,15 @@ export default {
       //表单验证
       rules: {
         userName: [
-          {required: true, message: "用户名不得为空!", trigger: "blur"},
+          { required: true, message: "用户名不得为空!", trigger: "blur" },
         ],
         userPassword: [
-          {required: true, message: "密码不得为空!", trigger: "blur"},
+          { required: true, message: "密码不得为空!", trigger: "blur" },
         ],
         againPassword: [
-          {required: true, message: "请再次输入密码!", trigger: "blur"},
+          { required: true, message: "请再次输入密码!", trigger: "blur" },
         ],
-        code: [{required: true, message: "验证码不得为空!", trigger: "blur"}],
+        code: [{ required: true, message: "验证码不得为空!", trigger: "blur" }],
       },
     };
   },
@@ -127,14 +123,14 @@ export default {
                 message: "注册成功!请登录!",
                 showClose: true,
               });
-              this.$router.push({name: "login"});
+              this.$router.push({ name: "login" });
             } else {
               this.$message({
                 type: "error",
                 message:
-                    req.data.message === null
-                        ? "服务器未知异常!"
-                        : req.data.message,
+                  req.data.message === null
+                    ? "服务器未知异常!"
+                    : req.data.message,
                 showClose: true,
               });
             }
@@ -154,7 +150,7 @@ export default {
     makeCode(o, l) {
       for (let i = 0; i < l; i++) {
         this.identifyCode +=
-            this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
+          this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       }
     },
   },

@@ -1,11 +1,11 @@
-package com.chunfeng.service.ex.addException;
+package com.chunfeng.service.ex.sourceException.addException;
 
-import com.chunfeng.service.ex.ServiceException;
+import com.chunfeng.service.ex.sourceException.SourceException;
 
 /**
  * 添加异常
  */
-public class AddException extends ServiceException {
+public class AddException extends SourceException {
     public AddException() {
         super();
     }

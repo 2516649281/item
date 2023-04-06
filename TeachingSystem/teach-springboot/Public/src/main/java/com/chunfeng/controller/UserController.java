@@ -27,7 +27,7 @@ public class UserController extends ServiceController {
      * @return JSON
      */
     @PostMapping("/login")
-    JsonRequest<User> login(@RequestBody User user) {
+    JsonRequest<String> login(@RequestBody User user) {
         return userService.login(user);
     }
 

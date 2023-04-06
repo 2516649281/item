@@ -1,70 +1,59 @@
 <template>
   <div>
     <video autoplay loop muted class="login-fillWidth" v-on:canplay="canplay">
-      <source src="../image/bg.mp4" type="video/mp4"/>
+      <source src="../image/bg.mp4" type="video/mp4" />
     </video>
   </div>
   <el-container>
     <el-main>
       <el-form
-          ref="registerFrom"
-          :inline-message="true"
-          :model="registerFrom"
-          :rules="rules"
-          @keyup.enter.native="register(registerFrom)"
+        :model="registerFrom"
+        :rules="rules"
+        :inline-message="true"
+        @keyup.enter.native="register(registerFrom)"
+        ref="registerFrom"
       >
         <h1>欢迎注册</h1>
         <el-form-item prop="userName">
           <el-input placeholder="请输入账号" v-model="registerFrom.userName"
-          >
-            <template v-slot:prefix
-            ><i class="el-icon-user-solid"></i></template
-            >
-          </el-input>
+            ><template v-slot:prefix
+              ><i class="el-icon-user-solid"></i></template
+          ></el-input>
         </el-form-item>
         <el-form-item prop="userPassword">
           <el-input
-              v-model="registerFrom.userPassword"
-              placeholder="请输入密码"
-              show-password
-          >
-            <template v-slot:prefix><i class="el-icon-lock"></i></template
-            >
-          </el-input>
+            placeholder="请输入密码"
+            v-model="registerFrom.userPassword"
+            show-password
+            ><template v-slot:prefix><i class="el-icon-lock"></i></template
+          ></el-input>
         </el-form-item>
         <el-form-item prop="againPassword">
           <el-input
-              v-model="registerFrom.againPassword"
-              placeholder="请再次输入密码"
-              show-password
-          >
-            <template v-slot:prefix><i class="el-icon-lock"></i></template
-            >
-          </el-input>
+            placeholder="请再次输入密码"
+            v-model="registerFrom.againPassword"
+            show-password
+            ><template v-slot:prefix><i class="el-icon-lock"></i></template
+          ></el-input>
         </el-form-item>
         <el-form-item prop="code">
           <el-input
-              v-model="registerFrom.code"
-              class="input_code"
-              placeholder="请输入验证码"
-          >
-            <template v-slot:prefix><i class="el-icon-s-check"></i></template
-            >
-            <template v-slot:suffix
-            >
-              <s-identify
-                  :identifyCode="identifyCode"
-                  @click="refreshCode"
+            class="input_code"
+            placeholder="请输入验证码"
+            v-model="registerFrom.code"
+            ><template v-slot:prefix><i class="el-icon-s-check"></i></template
+            ><template v-slot:suffix
+              ><s-identify
+                :identifyCode="identifyCode"
+                @click="refreshCode"
               ></s-identify
-              >
-            </template>
+            ></template>
           </el-input>
         </el-form-item>
         <el-form-item>
           <el-button @click="exit" class="form-btn" round>返回</el-button>
           <el-button class="form-btn" round @click="register(registerFrom)"
-          >注册
-          </el-button
+            >注册</el-button
           >
         </el-form-item>
       </el-form>
@@ -73,7 +62,7 @@
 </template>
 
 <script>
-import {register} from "../api/user";
+import { register } from "../api/user";
 import SIdentify from "../components/identify";
 export default {
   data() {
@@ -98,18 +87,18 @@ export default {
       //表单验证
       rules: {
         userName: [
-          {required: true, message: "用户名不得为空!", trigger: "blur"},
+          { required: true, message: "用户名不得为空!", trigger: "blur" },
         ],
         userPassword: [
-          {required: true, message: "密码不得为空!", trigger: "blur"},
+          { required: true, message: "密码不得为空!", trigger: "blur" },
         ],
         againPassword: [
-          {required: true, message: "请再次输入密码!", trigger: "blur"},
+          { required: true, message: "请再次输入密码!", trigger: "blur" },
         ],
         userName: [
-          {required: true, message: "用户名不得为空!", trigger: "blur"},
+          { required: true, message: "用户名不得为空!", trigger: "blur" },
         ],
-        code: [{required: true, message: "验证码不得为空!", trigger: "blur"}],
+        code: [{ required: true, message: "验证码不得为空!", trigger: "blur" }],
       },
     };
   },
@@ -172,7 +161,7 @@ export default {
     makeCode(o, l) {
       for (let i = 0; i < l; i++) {
         this.identifyCode +=
-            this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
+          this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       }
     },
   },
@@ -197,17 +186,14 @@ video {
   width: 80%;
   border: 1px solid white;
 }
-
 .el-form-item__error {
   z-index: 5;
 }
-
-/deep/ .el-input__inner {
+/deep/.el-input__inner {
   color: white;
   background-color: transparent;
   font-size: 20px;
 }
-
 .el-form h1 {
   text-align: center;
 }

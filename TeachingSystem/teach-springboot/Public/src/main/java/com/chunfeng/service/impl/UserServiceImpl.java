@@ -12,12 +12,12 @@ import com.chunfeng.entity.*;
 import com.chunfeng.service.ILogService;
 import com.chunfeng.service.IRedisService;
 import com.chunfeng.service.IUserService;
-import com.chunfeng.service.ex.addException.AddException;
-import com.chunfeng.service.ex.addException.AddSourceIsExistException;
 import com.chunfeng.service.ex.logException.updateException.LogUpdateErrorException;
-import com.chunfeng.service.ex.selectException.SelectException;
-import com.chunfeng.service.ex.selectException.SelectSourceIsNullException;
-import com.chunfeng.service.ex.updateException.UpdateException;
+import com.chunfeng.service.ex.sourceException.addException.AddException;
+import com.chunfeng.service.ex.sourceException.addException.AddSourceIsExistException;
+import com.chunfeng.service.ex.sourceException.selectException.SelectException;
+import com.chunfeng.service.ex.sourceException.selectException.SelectSourceIsNullException;
+import com.chunfeng.service.ex.sourceException.updateException.UpdateException;
 import com.chunfeng.util.JwtTokenUtil;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,7 +75,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * redis业务层
      */
     @Autowired(required = false)
-    private IRedisService<User> redisService;
+    private IRedisService<String> redisService;
 
     /**
      * fegin客户端
@@ -97,7 +97,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * @return JSON
      */
     @Override
-    public JsonRequest<User> login(User user) {
+    public JsonRequest<String> login(User user) {
         //根据用户名查询密码及盐值
         User userSource = userMapper.selectOne(new LambdaQueryWrapper<User>()
                 .eq(User::getUserName, user.getUserName()));//用户名查询
@@ -124,11 +124,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                     break;
             }
         }
-        User user1 = new User();
-        user1.setUserIdentity(userSource.getUserIdentity());//放入用户身份信息
-        user1.setToken(new JwtTokenUtil<>().createToken(userSource));//放入token
-        redisService.set("user", user1);//将user存入redis
-        return new JsonRequest<>(user1, null);
+        String token = new JwtTokenUtil<>().createToken(userSource);//构造token
+        redisService.set("user", token);//将token存入redis
+        return new JsonRequest<>(token);
     }
 
     /**

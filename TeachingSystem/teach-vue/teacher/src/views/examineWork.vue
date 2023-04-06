@@ -7,19 +7,18 @@
         </el-form-item>
         <el-form-item>
           <el-button round @click="selectAllSubmit(selectFrom.workId)"
-          >查询
-          </el-button
+            >查询</el-button
           >
         </el-form-item>
       </el-form>
     </el-main>
     <el-main v-show="!show1">
       <el-button
-          circle
-          class="exitbtn"
-          icon="el-icon-refresh-left"
-          type="primary"
-          @click="exit"
+        type="primary"
+        @click="exit"
+        circle
+        class="exitbtn"
+        icon="el-icon-refresh-left"
       ></el-button>
       <el-table :data="tableData" height="450">
         <el-table-column label="提交信息" type="expand" width="100">
@@ -32,42 +31,42 @@
           </template>
         </el-table-column>
         <el-table-column
-            align="center"
-            label="提交编号"
-            prop="submitId"
-            width="100"
+          label="提交编号"
+          prop="submitId"
+          align="center"
+          width="100"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="学生姓名"
-            prop="student.studentName"
-            width="150"
+          label="学生姓名"
+          prop="student.studentName"
+          align="center"
+          width="150"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="学生成绩"
-            prop="submitScore"
-            width="150"
+          label="学生成绩"
+          prop="submitScore"
+          align="center"
+          width="150"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="创建时间"
-            prop="log.createTime"
-            width="250"
+          label="创建时间"
+          prop="log.createTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="最后修改时间"
-            prop="log.updateTime"
-            width="250"
+          label="最后修改时间"
+          prop="log.updateTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column label="操作" fixed="right">
           <template #default="props">
             <el-button
-                circle
-                icon="el-icon-edit"
-                type="success"
-                @click="updateClick(props.row)"
+              icon="el-icon-edit"
+              circle
+              type="success"
+              @click="updateClick(props.row)"
             ></el-button>
           </template>
         </el-table-column>
@@ -80,24 +79,23 @@
     <el-form :model="editFrom">
       <el-form-item label="请输入一个合适的分数:" :label-width="formLabelWidth">
         <el-input-number
-            v-model="editFrom.submitScore"
-            :max="100"
-            :min="0"
-            :step="10"
+          v-model="editFrom.submitScore"
+          :min="0"
+          :max="100"
+          :step="10"
         ></el-input-number>
       </el-form-item>
     </el-form>
     <template v-slot:footer>
       <el-button @click="editdialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="updateSubmit(editFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
 </template>
 <script>
-import {selectAllSubmit, updateSubmit} from "../api/work";
+import { selectAllSubmit, updateSubmit } from "../api/work";
 export default {
   data() {
     return {
@@ -199,12 +197,10 @@ export default {
   background-color: transparent;
   color: grey;
 }
-
-/deep/ .selectFrom .el-input__inner {
+/deep/.selectFrom .el-input__inner {
   color: white;
   background-color: transparent;
 }
-
 .el-form {
   /* width: 50%; */
   margin: 0 auto;

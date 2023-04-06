@@ -1,45 +1,41 @@
 <template>
   <div>
     <video autoplay loop muted class="login-fillWidth" v-on:canplay="canplay">
-      <source src="../image/login.mp4" type="video/mp4"/>
+      <source src="../image/login.mp4" type="video/mp4" />
     </video>
   </div>
   <el-container>
     <el-main>
       <el-form
-          ref="loginFrom"
-          :inline-message="true"
-          :model="loginForm"
-          :rules="rules"
-          @keyup.enter.native="login(loginForm)"
+        @keyup.enter.native="login(loginForm)"
+        :model="loginForm"
+        :rules="rules"
+        :inline-message="true"
+        ref="loginFrom"
       >
         <h1>欢迎登录</h1>
         <el-form-item prop="userName">
           <el-input
-              v-model="loginForm.userName"
-              placeholder="请输入账号"
+            placeholder="请输入账号"
+            v-model="loginForm.userName"
           ></el-input>
         </el-form-item>
         <el-form-item prop="userPassword">
           <el-input
-              v-model="loginForm.userPassword"
-              placeholder="请输入密码"
-              show-password
+            placeholder="请输入密码"
+            v-model="loginForm.userPassword"
+            show-password
           ></el-input>
         </el-form-item>
         <el-form-item prop="code">
           <el-input placeholder="请输入验证码" v-model="loginForm.code"
-          >
-            <template v-slot:prefix><i class="el-icon-s-check"></i></template
-            >
-            <template v-slot:suffix
-            >
-              <s-identify
-                  :identifyCode="identifyCode"
-                  @click="refreshCode"
+            ><template v-slot:prefix><i class="el-icon-s-check"></i></template
+            ><template v-slot:suffix
+              ><s-identify
+                :identifyCode="identifyCode"
+                @click="refreshCode"
               ></s-identify
-              >
-            </template>
+            ></template>
           </el-input>
         </el-form-item>
         <el-form-item>
@@ -52,7 +48,8 @@
 </template>
 
 <script>
-import {login} from "../api/user";
+import { login } from "../api/user";
+import jwtDecode from "jwt-decode";
 import SIdentify from "../components/identify";
 export default {
   components: {
@@ -68,6 +65,8 @@ export default {
         //验证码
         code: "",
       },
+      //用户信息
+      user: {},
       //随机数仓库
       identifyCodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
       //验证码
@@ -75,12 +74,12 @@ export default {
       //表单验证
       rules: {
         userName: [
-          {required: true, message: "用户名不得为空!", trigger: "blur"},
+          { required: true, message: "用户名不得为空!", trigger: "blur" },
         ],
         userPassword: [
-          {required: true, message: "密码不得为空!", trigger: "blur"},
+          { required: true, message: "密码不得为空!", trigger: "blur" },
         ],
-        code: [{required: true, message: "验证码不得为空!", trigger: "blur"}],
+        code: [{ required: true, message: "验证码不得为空!", trigger: "blur" }],
       },
     };
   },
@@ -94,7 +93,8 @@ export default {
         if (valid) {
           login(obj).then((req) => {
             if ((req.data.statue === 200) & (req.data.data != null)) {
-              if (req.data.data.userIdentity != 2) {
+              this.user = jwtDecode(req.data.data).user;
+              if (this.user.userIdentity != 2) {
                 this.$message({
                   type: "warning",
                   message: "该账号不是管理员账号，请使用管理员账号登录!",
@@ -108,7 +108,8 @@ export default {
                 message: "登录成功!",
                 showClose: true,
               });
-              sessionStorage.setItem("token", req.data.data.token);
+              sessionStorage.setItem("user", JSON.stringify(this.user)); //将用户信息存储到session
+              sessionStorage.setItem("token", req.data.data); //存储token
               this.$router.push({
                 name: "public",
               });
@@ -117,9 +118,9 @@ export default {
               this.$message({
                 type: "error",
                 message:
-                    req.data.message === null
-                        ? "服务器未知异常!"
-                        : req.data.message,
+                  req.data.message === null
+                    ? "服务器未知异常!"
+                    : req.data.message,
                 showClose: true,
               });
             }
@@ -131,7 +132,7 @@ export default {
     },
     //注册
     toRegister() {
-      this.$router.push({name: "register"});
+      this.$router.push({ name: "register" });
     },
     randomNum(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
@@ -143,7 +144,7 @@ export default {
     makeCode(o, l) {
       for (let i = 0; i < l; i++) {
         this.identifyCode +=
-            this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
+          this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       }
     },
   },

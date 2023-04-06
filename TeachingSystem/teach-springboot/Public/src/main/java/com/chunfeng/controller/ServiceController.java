@@ -142,6 +142,9 @@ public class ServiceController {
             case "LogException"://日志异常
                 STATUS = 14000;
                 break;
+            case "SourceException"://数据类异常
+                STATUS = 15000;
+                break;
             default:
                 STATUS = 500;//其他未知异常
         }

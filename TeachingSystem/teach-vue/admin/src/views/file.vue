@@ -4,23 +4,22 @@
       <el-form :inline="true" :model="selectFrom">
         <el-form-item>
           <el-input
-              v-model="selectFrom.fileName"
-              placeholder="键入文件名称"
+            v-model="selectFrom.fileName"
+            placeholder="键入文件名称"
           ></el-input>
         </el-form-item>
         <el-form-item>
           <el-button
-              icon="el-icon-search"
-              type="primary"
-              @click="
+            type="primary"
+            @click="
               selectAllFileByName(
                 this.current,
                 this.size,
                 this.selectFrom.fileName
               )
             "
-          >查询
-          </el-button
+            icon="el-icon-search"
+            >查询</el-button
           >
         </el-form-item>
       </el-form>
@@ -28,67 +27,66 @@
     <el-main>
       <el-table :data="tableData" height="400">
         <el-table-column
-            align="center"
-            fixed="left"
-            label="文件编号"
-            prop="fileId"
-            width="200"
+          label="文件编号"
+          prop="fileId"
+          align="center"
+          width="200"
+          fixed="left"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="文件名称"
-            prop="fileName"
-            width="350"
+          label="文件名称"
+          prop="fileName"
+          align="center"
+          width="350"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="文件类型"
-            prop="fileType"
-            width="200"
+          label="文件类型"
+          prop="fileType"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="存放路径"
-            prop="filePath"
-            width="450"
+          label="存放路径"
+          prop="filePath"
+          align="center"
+          width="450"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="文件大小"
-            prop="fileSize"
-            width="200"
+          label="文件大小"
+          prop="fileSize"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="上传时间"
-            prop="fileUploadTime"
-            width="200"
+          label="上传时间"
+          prop="fileUploadTime"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="修改时间"
-            prop="fileUpdateTime"
-            width="200"
+          label="修改时间"
+          prop="fileUpdateTime"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column label="操作" width="200" align="center" fixed="right">
           <template #default="scope">
             <el-button
-                circle
-                icon="el-icon-delete"
-                type="danger"
-                @click="deleteFileById(scope.row.fileId)"
+              type="danger"
+              circle
+              icon="el-icon-delete"
+              @click="deleteFileById(scope.row.fileId)"
             >
             </el-button
-            >
-          </template>
+          ></template>
         </el-table-column>
       </el-table>
       <el-pagination
-          :page-size="size"
-          :total="pageSize"
-          background
-          layout="prev, pager, next"
-          @current-change="handleCurrentChange"
+        background
+        @current-change="handleCurrentChange"
+        layout="prev, pager, next"
+        :total="pageSize"
+        :page-size="size"
       >
       </el-pagination>
     </el-main>
@@ -152,9 +150,9 @@ export default {
               showClose: true,
             });
             this.selectAllFileByName(
-                this.current,
-                this.size,
-                this.selectFrom.fileName
+              this.current,
+              this.size,
+              this.selectFrom.fileName
             );
           } else {
             this.$message({
@@ -170,9 +168,9 @@ export default {
     handleCurrentChange(val) {
       this.current = val;
       this.selectAllFileByName(
-          this.current,
-          this.size,
-          this.selectFrom.fileName
+        this.current,
+        this.size,
+        this.selectFrom.fileName
       );
     },
   },
@@ -195,13 +193,11 @@ export default {
   width: 10%;
   margin: 0 auto;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;
 }
-
-/deep/ .el-input__inner {
+/deep/.el-input__inner {
   background-color: transparent;
   /* color: white; */
 }

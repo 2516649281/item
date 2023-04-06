@@ -4,24 +4,20 @@
       <el-main>
         <el-descriptions title="教师信息" border="true">
           <el-descriptions-item label="教师编号">{{
-              tableData.user.teacherId
-            }}
-          </el-descriptions-item>
+            tableData.user.teacherId
+          }}</el-descriptions-item>
           <el-descriptions-item label="教师姓名">{{
-              tableData.user.teacherName
-            }}
-          </el-descriptions-item>
+            tableData.user.teacherName
+          }}</el-descriptions-item>
           <el-descriptions-item label="教师年龄"
-          >{{ tableData.user.teacherAge }}岁
-          </el-descriptions-item
+            >{{ tableData.user.teacherAge }}岁</el-descriptions-item
           >
           <el-descriptions-item label="教师性别">
             {{ tableData.user.teacherGender === 0 ? "女" : "男" }}
           </el-descriptions-item>
           <el-descriptions-item label="教师住址">{{
-              tableData.user.teacherAddress
-            }}
-          </el-descriptions-item>
+            tableData.user.teacherAddress
+          }}</el-descriptions-item>
           <el-descriptions-item>
             <router-link to="/identity">不是我？前去更改身份</router-link>
           </el-descriptions-item>
@@ -29,30 +25,26 @@
         <el-divider></el-divider>
         <el-descriptions title="用户信息" border="true">
           <el-descriptions-item label="用户编号">{{
-              tableData.userId
-            }}
-          </el-descriptions-item>
+            tableData.userId
+          }}</el-descriptions-item>
           <el-descriptions-item label="用户名">{{
-              tableData.userName
-            }}
-          </el-descriptions-item>
+            tableData.userName
+          }}</el-descriptions-item>
         </el-descriptions>
         <el-divider></el-divider>
         <el-button
-            icon="el-icon-key"
-            round
-            type="primary"
-            @click="editdialogFormVisible = true"
-        >修改密码
-        </el-button
+          round
+          type="primary"
+          icon="el-icon-key"
+          @click="editdialogFormVisible = true"
+          >修改密码</el-button
         >
         <el-button
-            icon="el-icon-upload"
-            round
-            type="success"
-            @click="toggleShow"
-        >更改头像
-        </el-button
+          round
+          type="success"
+          icon="el-icon-upload"
+          @click="toggleShow"
+          >更改头像</el-button
         >
       </el-main>
     </div>
@@ -66,29 +58,25 @@
         <el-divider></el-divider>
         <el-descriptions title="用户信息" border="true">
           <el-descriptions-item label="用户编号">{{
-              tableData.userId
-            }}
-          </el-descriptions-item>
+            tableData.userId
+          }}</el-descriptions-item>
           <el-descriptions-item label="用户名">{{
-              tableData.userName
-            }}
-          </el-descriptions-item>
+            tableData.userName
+          }}</el-descriptions-item>
         </el-descriptions>
         <el-button
-            icon="el-icon-key"
-            round
-            type="primary"
-            @click="editdialogFormVisible = true"
-        >修改密码
-        </el-button
+          round
+          type="primary"
+          icon="el-icon-key"
+          @click="editdialogFormVisible = true"
+          >修改密码</el-button
         >
         <el-button
-            icon="el-icon-upload"
-            round
-            type="success"
-            @click="toggleShow"
-        >更改头像
-        </el-button
+          round
+          type="success"
+          icon="el-icon-upload"
+          @click="toggleShow"
+          >更改头像</el-button
         >
       </el-main>
     </div>
@@ -98,57 +86,54 @@
     <el-form :model="updateFrom" :rules="rules" ref="updateFrom">
       <el-form-item prop="userPassword">
         <el-input
-            v-model="updateFrom.userPassword"
-            autocomplete="off"
-            placeholder="请输入原始密码"
-            show-password
+          v-model="updateFrom.userPassword"
+          autocomplete="off"
+          placeholder="请输入原始密码"
+          show-password
         ></el-input>
       </el-form-item>
       <el-form-item prop="newUserPassword">
         <el-input
-            v-model="updateFrom.newUserPassword"
-            autocomplete="off"
-            placeholder="请输入新密码"
-            show-password
+          v-model="updateFrom.newUserPassword"
+          autocomplete="off"
+          placeholder="请输入新密码"
+          show-password
         ></el-input>
       </el-form-item>
       <el-form-item prop="againPassword">
         <el-input
-            v-model="updateFrom.againPassword"
-            autocomplete="off"
-            placeholder="请再次输入新密码"
-            show-password
+          v-model="updateFrom.againPassword"
+          autocomplete="off"
+          placeholder="请再次输入新密码"
+          show-password
         ></el-input>
       </el-form-item>
     </el-form>
     <template v-slot:footer>
       <el-button @click="editdialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="updateUser(updateFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
   <!-- 上传头像组件 -->
   <div>
     <myUpload
-        v-model="showDialog"
-        :headers="Headers"
-        :url="url + `/user/${this.tableData.userId}`"
-        method="PUT"
-        @crop-upload-success="cropUploadSuccess"
+      method="PUT"
+      :headers="Headers"
+      v-model="showDialog"
+      :url="url + `/user/${this.tableData.userId}`"
+      @crop-upload-success="cropUploadSuccess"
     />
   </div>
 </template>
 
 <script>
-import jwtDecode from "jwt-decode";
-import {updateUser, getToken} from "../api/user";
-import {baseURL} from "../../public/config";
+import { updateUser, getToken } from "../api/user";
+import { baseURL } from "../../public/config";
 import myUpload from "vue-image-crop-upload";
-
 export default {
-  components: {myUpload},
+  components: { myUpload },
   data() {
     return {
       //数据
@@ -169,26 +154,26 @@ export default {
       //显示上传图片窗口
       showDialog: false,
       //请求头
-      Headers: {token: sessionStorage.getItem("token")},
+      Headers: { token: sessionStorage.getItem("token") },
       //编辑框
       editdialogFormVisible: false,
       //表单验证
       rules: {
         userPassword: [
-          {required: true, message: "原始密码不得为空!", trigger: "blur"},
+          { required: true, message: "原始密码不得为空!", trigger: "blur" },
         ],
         newUserPassword: [
-          {required: true, message: "请输入新密码!", trigger: "blur"},
+          { required: true, message: "请输入新密码!", trigger: "blur" },
         ],
         againPassword: [
-          {required: true, message: "请再次输入密码!", trigger: "blur"},
+          { required: true, message: "请再次输入密码!", trigger: "blur" },
         ],
       },
       timer: "",
     };
   },
   created() {
-    this.tableData = jwtDecode(sessionStorage.getItem("token")).user;
+    this.tableData = JSON.parse(sessionStorage.getItem("user"));
     this.timer = setInterval(this.getToken, 1000 * 60 * 3);
   },
   methods: {
@@ -212,7 +197,7 @@ export default {
                 showClose: true,
               });
               sessionStorage.clear();
-              this.$router.push({name: "login"});
+              this.$router.push({ name: "login" });
             } else {
               this.$message({
                 type: "error",
@@ -234,16 +219,16 @@ export default {
     cropUploadSuccess(jsonData) {
       if ((jsonData.statue === 200) & (jsonData.data != null)) {
         this.$confirm(
-            "更换头像成功!但需要重新登录才能生效, 是否重新登录?",
-            "提示",
-            {
-              confirmButtonText: "确定",
-              cancelButtonText: "取消",
-              type: "warning",
-            }
+          "更换头像成功!但需要重新登录才能生效, 是否重新登录?",
+          "提示",
+          {
+            confirmButtonText: "确定",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
         ).then(() => {
           sessionStorage.clear();
-          this.$router.push({name: "login"});
+          this.$router.push({ name: "login" });
         });
       } else {
         this.$message({

@@ -1,16 +1,15 @@
 <template>
-  <img id="background" alt="" src="../image/bg.jpg"/>
+  <img src="../image/bg.jpg" alt="" id="background" />
   <el-container>
     <el-aside :width="collapse ? '5%' : '20%'"
-    >
-      <el-menu
-          :collapse="collapse"
-          :collapse-transition="false"
-          active-text-color="#ffd04b"
-          background-color="transparent"
-          class="el-menu-vertical-demo"
-          default-active="1"
-          text-color="#fff"
+      ><el-menu
+        default-active="1"
+        class="el-menu-vertical-demo"
+        background-color="transparent"
+        text-color="#fff"
+        active-text-color="#ffd04b"
+        :collapse="collapse"
+        :collapse-transition="false"
       >
         <el-image :src="require('@/assets/logo.png')" fit="contain"></el-image>
         <el-menu-item index="1" @click="getUser">
@@ -29,39 +28,34 @@
           <i class="el-icon-switch-button"></i>
           <span>退出系统</span>
         </el-menu-item>
-      </el-menu>
-    </el-aside
+      </el-menu></el-aside
     >
     <el-container>
       <el-header
-      >
-        <el-button
-            :icon="this.collapse ? 'el-icon-caret-right' : 'el-icon-caret-left'"
-            class="menu_shrink"
-            @click="this.collapse = !this.collapse"
+        ><el-button
+          class="menu_shrink"
+          :icon="this.collapse ? 'el-icon-caret-right' : 'el-icon-caret-left'"
+          @click="this.collapse = !this.collapse"
         ></el-button>
         <div class="user">
           <el-avatar
-              v-if="userFrom.userHeader != 0"
-              :src="FileURL + this.userFrom.userHeader"
-              fit="contain"
-              shape="square"
+            shape="square"
+            v-if="userFrom.userHeader != 0"
+            fit="contain"
+            :src="FileURL + this.userFrom.userHeader"
           >
           </el-avatar>
           <el-avatar shape="square" v-else>user</el-avatar>
           <h1>欢迎你，{{ this.userFrom.userName }}</h1>
         </div>
       </el-header>
-      <el-main>
-        <router-view></router-view>
-      </el-main>
+      <el-main><router-view></router-view></el-main>
     </el-container>
   </el-container>
 </template>
 
 <script>
-import jwtDecode from "jwt-decode";
-import {FileServerURL} from "../../public/config";
+import { FileServerURL } from "../../public/config";
 export default {
   data() {
     return {
@@ -78,15 +72,12 @@ export default {
     };
   },
   created() {
-    this.token = sessionStorage.getItem("token");
-    if (this.token != null) {
-      this.userFrom = jwtDecode(this.token).user;
-    }
+    this.userFrom = JSON.parse(sessionStorage.getItem("user"));
     if (this.userFrom.user === null) {
       this.$message({
         type: "warning",
         message:
-            "当前账号未绑定教师身份信息，请联系管理员绑定后以获取完整功能!",
+          "当前账号未绑定教师身份信息，请联系管理员绑定后以获取完整功能!",
         showClose: true,
       });
       this.menudisabled = true;
@@ -95,17 +86,17 @@ export default {
   methods: {
     //检查作业
     getExamine() {
-      this.$router.push({name: "examine"});
+      this.$router.push({ name: "examine" });
     },
 
     //已发布的作业
     getLook() {
-      this.$router.push({name: "look"});
+      this.$router.push({ name: "look" });
     },
 
     //用户管理
     getUser() {
-      this.$router.push({name: "user"});
+      this.$router.push({ name: "user" });
     },
 
     //退出
@@ -116,7 +107,7 @@ export default {
         type: "warning",
       }).then(() => {
         sessionStorage.clear();
-        this.$router.push({name: "login"});
+        this.$router.push({ name: "login" });
         this.$message({
           type: "success",
           message: "登出成功!",

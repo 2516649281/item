@@ -1,62 +1,54 @@
 <template>
   <div>
     <video autoplay loop muted class="login-fillWidth" v-on:canplay="canplay">
-      <source src="../image/bg.mp4" type="video/mp4"/>
+      <source src="../image/bg.mp4" type="video/mp4" />
     </video>
   </div>
   <el-container>
     <el-main>
       <el-form
-          ref="loginFrom"
-          :inline-message="true"
-          :model="loginFrom"
-          :rules="rules"
-          @keyup.enter.native="login(loginFrom)"
+        :model="loginFrom"
+        :rules="rules"
+        :inline-message="true"
+        @keyup.enter.native="login(loginFrom)"
+        ref="loginFrom"
       >
         <h1>欢迎登录</h1>
         <el-form-item prop="userName">
           <el-input v-model="loginFrom.userName" placeholder="请输入账号">
             <template v-slot:prefix
-            ><i class="el-icon-user-solid"></i
+              ><i class="el-icon-user-solid"></i
             ></template>
           </el-input>
         </el-form-item>
         <el-form-item prop="userPassword">
           <el-input
-              v-model="loginFrom.userPassword"
-              placeholder="请输入密码"
-              show-password
-          >
-            <template v-slot:prefix><i class="el-icon-lock"></i></template
-            >
-          </el-input>
+            v-model="loginFrom.userPassword"
+            placeholder="请输入密码"
+            show-password
+            ><template v-slot:prefix><i class="el-icon-lock"></i></template
+          ></el-input>
         </el-form-item>
         <el-form-item prop="code">
           <el-input
-              v-model="loginFrom.code"
-              class="input_code"
-              placeholder="请输入验证码"
-          >
-            <template v-slot:prefix><i class="el-icon-s-check"></i></template
-            >
-            <template v-slot:suffix
-            >
-              <s-identify
-                  :identifyCode="identifyCode"
-                  @click="refreshCode"
+            class="input_code"
+            placeholder="请输入验证码"
+            v-model="loginFrom.code"
+            ><template v-slot:prefix><i class="el-icon-s-check"></i></template
+            ><template v-slot:suffix
+              ><s-identify
+                :identifyCode="identifyCode"
+                @click="refreshCode"
               ></s-identify
-              >
-            </template>
+            ></template>
           </el-input>
         </el-form-item>
         <el-form-item prop="againPassword">
           <el-button @click="getRegister" class="form-btn" round
-          >注册
-          </el-button
+            >注册</el-button
           >
           <el-button class="form-btn" round @click="login(loginFrom)"
-          >登录
-          </el-button
+            >登录</el-button
           >
         </el-form-item>
       </el-form>
@@ -65,11 +57,14 @@
 </template>
 
 <script>
-import {login} from "../api/user";
+import { login } from "../api/user";
 import SIdentify from "../components/identify";
+import jwtDecode from "jwt-decode";
 export default {
   data() {
     return {
+      //用户信息
+      user: {},
       //表单数据
       dataFrom: {},
       //登录表单
@@ -88,12 +83,12 @@ export default {
       //表单验证
       rules: {
         userName: [
-          {required: true, message: "用户名不得为空!", trigger: "blur"},
+          { required: true, message: "用户名不得为空!", trigger: "blur" },
         ],
         userPassword: [
-          {required: true, message: "密码不得为空!", trigger: "blur"},
+          { required: true, message: "密码不得为空!", trigger: "blur" },
         ],
-        code: [{required: true, message: "验证码不得为空!", trigger: "blur"}],
+        code: [{ required: true, message: "验证码不得为空!", trigger: "blur" }],
       },
     };
   },
@@ -106,7 +101,7 @@ export default {
   methods: {
     //跳转到注册页面
     getRegister() {
-      this.$router.push({name: "register"});
+      this.$router.push({ name: "register" });
     },
     //登录逻辑
     login(obj) {
@@ -114,14 +109,16 @@ export default {
         if (valid) {
           login(obj).then((req) => {
             if ((req.data.statue === 200) & (req.data.data != null)) {
-              if (req.data.data.userIdentity === 1) {
+              this.user = jwtDecode(req.data.data).user;
+              if (this.user.userIdentity === 1) {
                 this.$message({
                   type: "success",
                   message: "登录成功!",
                   showClose: true,
                 });
-                sessionStorage.setItem("token", req.data.data.token);
-                this.$router.push({name: "public"});
+                sessionStorage.setItem("user", JSON.stringify(this.user));
+                sessionStorage.setItem("token", req.data.data);
+                this.$router.push({ name: "public" });
               } else {
                 this.$message({
                   type: "warning",
@@ -154,7 +151,7 @@ export default {
     makeCode(o, l) {
       for (let i = 0; i < l; i++) {
         this.identifyCode +=
-            this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
+          this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       }
     },
   },
@@ -179,17 +176,14 @@ video {
   width: 80%;
   border: 1px solid white;
 }
-
 .el-form-item__error {
   z-index: 5;
 }
-
-/deep/ .el-input__inner {
+/deep/.el-input__inner {
   color: white;
   background-color: transparent;
   font-size: 20px;
 }
-
 .el-form h1 {
   text-align: center;
 }

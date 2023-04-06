@@ -8,7 +8,7 @@
   "item" : [ {
     "name" : "管理员管理控制层",
     "item" : [ {
-      "id" : "b02226b2-fd33-43e5-9a8e-ab29cb1ec1ad",
+      "id" : "7dde6797-0fd4-4c1f-92e1-81f25b647fce",
       "name" : "查询所有管理员",
       "request" : {
         "url" : {
@@ -71,7 +71,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "c7a4df73-a992-406a-bf7a-3a6943e909e0",
+      "id" : "765f0dc0-ce4a-4a2e-b46a-c5c96b873d7f",
       "name" : "按照地址查询管理员",
       "request" : {
         "url" : {
@@ -146,7 +146,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "496201e6-d6ee-436f-909a-4a735b6d9200",
+      "id" : "0faeeaa0-5fb8-4086-b607-fdd257315627",
       "name" : "根据编号查询管理员",
       "request" : {
         "url" : {
@@ -197,7 +197,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "8ee3246c-0cd8-4ab2-8e36-ee155feb5754",
+      "id" : "66246724-2800-4241-81ba-bede71bb3fdb",
       "name" : "添加或批量添加管理员",
       "request" : {
         "url" : {
@@ -246,7 +246,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "ed01a5b7-3f07-4878-a67a-d7f1a4b0595d",
+      "id" : "cba0d282-bc1f-49a7-894a-9ee3b2c38ee1",
       "name" : "修改管理员",
       "request" : {
         "url" : {
@@ -295,7 +295,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "ab97c0ad-e8d9-4690-8c0a-7891b8c7ac5b",
+      "id" : "ec6ba2a7-f668-4149-af48-dfe9369afe5c",
       "name" : "批量删除或恢复管理员",
       "request" : {
         "url" : {
@@ -347,7 +347,7 @@
   }, {
     "name" : "班级控制层",
     "item" : [ {
-      "id" : "03a870b3-9f94-4862-8d7e-e3cdfff5d808",
+      "id" : "494f212f-8efa-434b-abe1-b28bdff51ae1",
       "name" : "查询所有班级",
       "request" : {
         "url" : {
@@ -410,7 +410,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "2fd74cfb-53d5-4e50-85dd-38c39a9335dd",
+      "id" : "a9c3efe6-bce2-42bc-9805-8609346ff33e",
       "name" : "根据班级名查询所有班级",
       "request" : {
         "url" : {
@@ -485,7 +485,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "3b4349ed-68a9-462c-998b-102aa20ec49c",
+      "id" : "7ee0d5b5-bb1d-4a2e-a57a-9c2d08246737",
       "name" : "根据班级编号查询班级",
       "request" : {
         "url" : {
@@ -536,7 +536,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "8750cbb0-f93c-45ab-9ee0-888906598098",
+      "id" : "18459c8a-c896-4f41-98f1-319e05765529",
       "name" : "添加班级",
       "request" : {
         "url" : {
@@ -585,7 +585,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "d641a79f-e1da-4581-a298-76f87389c83b",
+      "id" : "b555a75d-b65f-4d6d-af7e-2fc2865205db",
       "name" : "修改班级",
       "request" : {
         "url" : {
@@ -634,7 +634,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "b8e734d1-aee5-4da2-9cd2-295cae0f7b43",
+      "id" : "3b0404cb-53d8-4186-8761-ae7aa3bfd18f",
       "name" : "批量删除或恢复班级",
       "request" : {
         "url" : {
@@ -686,7 +686,7 @@
   }, {
     "name" : "文件管理控制层",
     "item" : [ {
-      "id" : "d566e665-330f-42e1-8b30-a52987048a3b",
+      "id" : "3f65f931-812e-46b9-be5d-02ed5823e6d8",
       "name" : "查询所有已知文件",
       "request" : {
         "url" : {
@@ -749,7 +749,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "8150f41d-9f7c-4606-8383-b6026bcb638e",
+      "id" : "e4e5d023-4e44-4674-9cd9-718cb597bc65",
       "name" : "条件查询",
       "request" : {
         "url" : {
@@ -827,7 +827,7 @@
   }, {
     "name" : "文件操作controller",
     "item" : [ {
-      "id" : "c9ddf319-8fdb-4479-a80f-f8f2fdbd4136",
+      "id" : "1a270291-0f18-49ab-8d43-1f61755cda3a",
       "name" : "一次上传一个文件",
       "request" : {
         "url" : {
@@ -876,7 +876,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "933c8a01-bf42-45d9-bbe7-e3f363d874e6",
+      "id" : "04bf12d6-d02b-478b-97a5-ebeef4c9559b",
       "name" : "一次上传多个文件",
       "request" : {
         "url" : {
@@ -925,7 +925,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "ae2cac63-7dc7-4175-aec5-a3a06600b5e7",
+      "id" : "4fa83940-ba3a-46e3-89fa-27d1726acd70",
       "name" : "修改一个文件",
       "request" : {
         "url" : {
@@ -974,7 +974,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "d0b2ec95-7573-4957-9a7e-79b4ed1f020f",
+      "id" : "3821f5d3-acbd-40af-9df5-0e98351b0993",
       "name" : "一次修改多个文件",
       "request" : {
         "url" : {
@@ -1023,7 +1023,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "a41f4c78-c764-46df-877c-d72aaa8beae5",
+      "id" : "fa9409cd-af9d-4532-a6e2-00f9ed9ae8d0",
       "name" : "删除一个文件",
       "request" : {
         "url" : {
@@ -1062,7 +1062,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "783a4f33-eb19-4059-9511-c7c5e1f92fba",
+      "id" : "1350a8d7-d08d-4ee9-8515-96bdb959a2f8",
       "name" : "一次删除多个文件",
       "request" : {
         "url" : {
@@ -1111,7 +1111,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "6db5462b-c811-4b19-9712-2e750af550b7",
+      "id" : "91e828c3-d872-4293-9d7e-a757eb074b5f",
       "name" : "读取一个文件",
       "request" : {
         "url" : {
@@ -1162,7 +1162,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "fa58908c-bd92-402f-af12-44c8393f8caa",
+      "id" : "4d5f8b66-945b-4aa3-8b9f-f6799ba60786",
       "name" : "读取多个文件",
       "request" : {
         "url" : {
@@ -1214,7 +1214,7 @@
   }, {
     "name" : "文件管理控制层",
     "item" : [ {
-      "id" : "6438b485-09cb-4679-8786-7e7af1f8fe50",
+      "id" : "aba7d0b0-019c-4ba0-88bd-13da5b2b0b2b",
       "name" : "查询所有已知文件",
       "request" : {
         "url" : {
@@ -1277,7 +1277,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "03379077-49fe-4072-b450-395c3df95599",
+      "id" : "7e07f2b5-121e-40f7-a9e1-fe6fff5fe2f9",
       "name" : "条件查询",
       "request" : {
         "url" : {
@@ -1358,7 +1358,7 @@
   }, {
     "name" : "学生管理控制层",
     "item" : [ {
-      "id" : "6dc1a5da-a01a-4aae-ad43-45ca1df5d3a7",
+      "id" : "74761158-787c-4279-8a96-8a91a179dee1",
       "name" : "查询所有学生",
       "request" : {
         "url" : {
@@ -1421,7 +1421,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "13bd519f-506a-49a3-8b5c-90143bf85a27",
+      "id" : "251021b5-65ed-4b68-b69b-4a9949fa78bb",
       "name" : "按照班级编号查询学生",
       "request" : {
         "url" : {
@@ -1496,7 +1496,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "e5a038f4-ad62-45ff-8c96-1eaebb91fa42",
+      "id" : "c3271531-df6a-4159-9bd8-f4e4f1ef98e3",
       "name" : "根据编号查询学生",
       "request" : {
         "url" : {
@@ -1547,7 +1547,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "3a50d525-6c55-46bf-864f-7bce47b4b756",
+      "id" : "6f5e4249-cd9d-4c62-a2e6-24a3660e14cf",
       "name" : "添加学生",
       "request" : {
         "url" : {
@@ -1596,7 +1596,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "fc6a1eb9-eae4-4d35-a087-8735029e27a8",
+      "id" : "6ab84994-d57a-44c7-8e15-02a3db57789e",
       "name" : "修改学生",
       "request" : {
         "url" : {
@@ -1645,7 +1645,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "790451fd-78da-4896-8890-fef7f134e44c",
+      "id" : "2dbf587e-a315-4d9c-8835-bf9372879adc",
       "name" : "批量删除或恢复学生",
       "request" : {
         "url" : {
@@ -1697,7 +1697,7 @@
   }, {
     "name" : "科目控制层",
     "item" : [ {
-      "id" : "fad3aaa7-46be-4724-aee7-be48c3c1a762",
+      "id" : "9a237ae4-ed08-490a-9374-ab9e9e41f4af",
       "name" : "查询所有科目",
       "request" : {
         "url" : {
@@ -1760,7 +1760,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "994bf956-0dd4-4764-aeaf-3531d450160a",
+      "id" : "6e742092-0adf-43df-9814-c7f0740d3d7b",
       "name" : "根据科目名查询",
       "request" : {
         "url" : {
@@ -1835,7 +1835,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "a6e49f73-8072-414d-b5ae-fc1f7d42d66c",
+      "id" : "51689035-b000-4988-84b1-042d406baced",
       "name" : "根据科目编号查询",
       "request" : {
         "url" : {
@@ -1886,7 +1886,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "3a582f88-b1d5-4017-a49f-7598ea8b860f",
+      "id" : "0712ba20-5176-4c38-9bed-017f6ee7bf20",
       "name" : "添加科目",
       "request" : {
         "url" : {
@@ -1935,7 +1935,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "c57bf8d3-7a0a-45a4-94dc-d66468d67f7f",
+      "id" : "855b3b3c-0ef3-48da-9cab-15eee5c20496",
       "name" : "修改科目",
       "request" : {
         "url" : {
@@ -1984,7 +1984,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "d6d5d95a-2100-4f02-bc8f-fd0059a7e322",
+      "id" : "1860da0c-f97f-42c9-bc22-f2dfd1442eab",
       "name" : "批量删除或恢复科目",
       "request" : {
         "url" : {
@@ -2036,7 +2036,7 @@
   }, {
     "name" : "教师控制层",
     "item" : [ {
-      "id" : "01df9277-db26-4e35-8851-cf833a9736e4",
+      "id" : "33973e18-837b-4581-a275-cf2a1e4773c3",
       "name" : "查询所有教师",
       "request" : {
         "url" : {
@@ -2099,7 +2099,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "634823db-74e3-45bc-9f3f-b391f4fb25b3",
+      "id" : "d95490eb-90ea-4fb1-b8c0-6822a4ae7ac8",
       "name" : "按照科目编号查询教师",
       "request" : {
         "url" : {
@@ -2174,7 +2174,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "6aa6c1de-2786-43da-8706-4cc9ccc76e0a",
+      "id" : "29d56962-e9d0-4b9c-ba3b-9ee671469e54",
       "name" : "根据编号查询教师",
       "request" : {
         "url" : {
@@ -2225,7 +2225,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "174324d3-bc67-45fd-8b8a-754806770661",
+      "id" : "f18fa650-3f7e-4337-a231-bc28eb411b22",
       "name" : "添加教师",
       "request" : {
         "url" : {
@@ -2274,7 +2274,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "c793e57a-dfa8-4920-beae-24d2c1fc5499",
+      "id" : "785d79d4-9bf1-4db7-8b0b-3b3bbf121ee2",
       "name" : "修改教师",
       "request" : {
         "url" : {
@@ -2323,7 +2323,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "0d75cf27-8a00-47ef-981d-a57a3d0218c2",
+      "id" : "6bae362a-a73a-4e39-abdb-55b5b9a43d86",
       "name" : "批量删除或恢复教师",
       "request" : {
         "url" : {
@@ -2375,7 +2375,7 @@
   }, {
     "name" : "用户管理控制层",
     "item" : [ {
-      "id" : "f06a27b6-2c95-4c95-9691-4a001f0855af",
+      "id" : "68d32cde-4028-48a3-ae16-2df4fac38b47",
       "name" : "用户登录",
       "request" : {
         "url" : {
@@ -2391,7 +2391,7 @@
         } ],
         "body" : {
           "mode" : "raw",
-          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -2412,19 +2412,19 @@
           } ],
           "body" : {
             "mode" : "raw",
-            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
         },
         "header" : [ ],
-        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : {\r\n    \"userId\" : 0,\r\n    \"userName\" : \"\",\r\n    \"newUserName\" : \"\",\r\n    \"userPassword\" : \"\",\r\n    \"newUserPassword\" : \"\",\r\n    \"userSalt\" : \"\",\r\n    \"userHeader\" : \"\",\r\n    \"newUserHeader\" : \"\",\r\n    \"userIndex\" : 0,\r\n    \"userIdentity\" : 0,\r\n    \"logId\" : 0,\r\n    \"log\" : {\r\n      \"logId\" : 0,\r\n      \"deleted\" : 0,\r\n      \"createTime\" : \"\",\r\n      \"updateTime\" : \"\"\r\n    },\r\n    \"token\" : \"\"\r\n  },\r\n  \"pageSize\" : \"0L\"\r\n}",
+        "body" : "{\r\n  \"statue\" : \"200\",\r\n  \"message\" : \"请求已完成!\",\r\n  \"data\" : \"\",\r\n  \"pageSize\" : \"0L\"\r\n}",
         "status" : "OK",
         "code" : 200,
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "2a9f92ce-29e7-49fa-9e2b-efb4477e718c",
+      "id" : "a01f358b-0484-4035-bcf9-ffafd2cd90f6",
       "name" : "用户注册",
       "request" : {
         "url" : {
@@ -2440,7 +2440,7 @@
         } ],
         "body" : {
           "mode" : "raw",
-          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -2461,7 +2461,7 @@
           } ],
           "body" : {
             "mode" : "raw",
-            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
@@ -2473,7 +2473,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "e795e8f5-1d3d-490e-bab3-8d85490dd439",
+      "id" : "3013a9f0-366b-49f2-a5df-f6c0cd546e2b",
       "name" : "修改用户信息",
       "request" : {
         "url" : {
@@ -2489,7 +2489,7 @@
         } ],
         "body" : {
           "mode" : "raw",
-          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -2510,7 +2510,7 @@
           } ],
           "body" : {
             "mode" : "raw",
-            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
@@ -2522,7 +2522,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "93fb3077-a252-448c-b326-39004f08050d",
+      "id" : "36f28a11-556e-42de-9fa7-201b4e964d76",
       "name" : "注销",
       "request" : {
         "url" : {
@@ -2538,7 +2538,7 @@
         } ],
         "body" : {
           "mode" : "raw",
-          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+          "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
           "urlencoded" : [ ],
           "formdata" : [ ]
         }
@@ -2559,7 +2559,7 @@
           } ],
           "body" : {
             "mode" : "raw",
-            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  },\r\n  \"token\" : \"\"\r\n}",
+            "raw" : "{\r\n  \"userId\" : 0,\r\n  \"userName\" : \"\",\r\n  \"newUserName\" : \"\",\r\n  \"userPassword\" : \"\",\r\n  \"newUserPassword\" : \"\",\r\n  \"userSalt\" : \"\",\r\n  \"userHeader\" : \"\",\r\n  \"newUserHeader\" : \"\",\r\n  \"userIndex\" : 0,\r\n  \"userIdentity\" : 0,\r\n  \"logId\" : 0,\r\n  \"log\" : {\r\n    \"logId\" : 0,\r\n    \"deleted\" : 0,\r\n    \"createTime\" : \"\",\r\n    \"updateTime\" : \"\"\r\n  }\r\n}",
             "urlencoded" : [ ],
             "formdata" : [ ]
           }
@@ -2571,7 +2571,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "26dce55b-e67b-4dbc-bbe4-0e3ee492c553",
+      "id" : "66f0c3fe-572b-418a-a63c-6dbe23e58a82",
       "name" : "根据用户编号上传头像",
       "request" : {
         "url" : {
@@ -2610,7 +2610,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "bf7bd599-8591-4e60-8f4c-d8eb5fea987a",
+      "id" : "c4e5e0c9-4fc2-4b28-aae1-c24ddcd2a7e8",
       "name" : "绑定身份信息",
       "request" : {
         "url" : {
@@ -2649,7 +2649,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "824fcf9e-32df-419b-8e76-e9848e6f97ef",
+      "id" : "3ce4d11a-6b1b-44c1-a96d-ab35b150cc35",
       "name" : "前端每隔3min向后端发送一次http请求，验证token是否已过期或服务器是否关闭",
       "request" : {
         "url" : {
@@ -2691,7 +2691,7 @@
   }, {
     "name" : "学生端控制层",
     "item" : [ {
-      "id" : "5cd97201-4e55-42e9-ba60-eda5e35fadf8",
+      "id" : "442b5cc0-bcce-423f-a5a4-30df29b801ef",
       "name" : "分页查询已经提交的作业",
       "request" : {
         "url" : {
@@ -2754,7 +2754,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "194ef86f-40b0-4061-ac8b-05eb16bde9d7",
+      "id" : "376fb504-0343-41d0-ab02-7dad8644a9b8",
       "name" : "根据学生编号查询提交的作业",
       "request" : {
         "url" : {
@@ -2829,7 +2829,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "d3648fec-136f-4a1d-af9c-576743446288",
+      "id" : "edcbc74f-578c-49e1-b683-d43620c9e678",
       "name" : "提交作业",
       "request" : {
         "url" : {
@@ -2878,7 +2878,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "4a4cc91e-c7e6-4250-a4f9-fe508d2d4417",
+      "id" : "858039a6-ac83-40f1-8dba-840c8050a8a1",
       "name" : "修改已提交的作业",
       "request" : {
         "url" : {
@@ -2927,7 +2927,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "acfb7094-a002-40c3-96ea-10365ca507bd",
+      "id" : "e1691a2e-a811-40eb-bb87-731cc0b939c3",
       "name" : "批量删除或恢复已提交的作业",
       "request" : {
         "url" : {
@@ -2976,7 +2976,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "3ca10a4e-48ab-4e53-be35-2f838405c0be",
+      "id" : "43aaf38f-ea2a-4f5e-95c4-c2c2d2482acb",
       "name" : "根据班级编号查询学生",
       "request" : {
         "url" : {
@@ -3027,7 +3027,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "6b20dd89-810a-46a0-a925-7fab51d22b41",
+      "id" : "7ad7dad8-411b-4392-bd1d-a069a0e9700c",
       "name" : "根据班级编号查询教师布置的作业",
       "request" : {
         "url" : {
@@ -3081,7 +3081,7 @@
   }, {
     "name" : "教师端",
     "item" : [ {
-      "id" : "84d77c29-9317-4b9f-91f4-5858ab614d1f",
+      "id" : "15c0f616-b60e-480e-ada4-5db4db43113e",
       "name" : "分页查询已经布置的作业",
       "request" : {
         "url" : {
@@ -3144,7 +3144,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "47163e55-a237-40d5-a8c7-262318e7ea44",
+      "id" : "9751bbe6-bb60-483d-9698-f0f276301d9c",
       "name" : "根据教师编号查询作业",
       "request" : {
         "url" : {
@@ -3219,7 +3219,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "dcb46be0-a27c-4f60-9f14-823cf81b55a9",
+      "id" : "511ad605-1072-430c-b222-8d7949c47eb3",
       "name" : "添加作业信息",
       "request" : {
         "url" : {
@@ -3268,7 +3268,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "bd9ddcc0-aee0-46e0-871c-ce93ab8ae946",
+      "id" : "5c9872b0-4d8d-43b5-9e9e-dd5b90535247",
       "name" : "修改作业信息",
       "request" : {
         "url" : {
@@ -3317,7 +3317,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "a249065f-8282-418d-9ff1-f35162efd0a8",
+      "id" : "b3a7a72d-1a14-4fb4-b819-dd5c2d0b8b8e",
       "name" : "批量删除或恢复已提交的作业",
       "request" : {
         "url" : {
@@ -3366,7 +3366,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "8f6a5991-4992-4372-b4dc-bd6112eec5bb",
+      "id" : "7616cbb2-b3f1-4154-9e34-1c0e5ca7e3e2",
       "name" : "根据班级编号查询学生",
       "request" : {
         "url" : {
@@ -3417,7 +3417,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "cd5333fa-b6ff-47fa-ba2a-bcfe132ec02b",
+      "id" : "7eefcd62-f4d7-4673-995f-01aa9b1c26fc",
       "name" : "教师端根据作业编号查询已提交的作业",
       "request" : {
         "url" : {
@@ -3468,7 +3468,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "e21117ca-ffa9-4b7a-b78e-3cd5ae7cefea",
+      "id" : "ce417496-69b4-49e4-9856-e3d225fc2cc8",
       "name" : "根据班级编号查询教师布置的作业",
       "request" : {
         "url" : {
@@ -3519,7 +3519,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "3fd16e8c-2484-439f-a344-a5d02cbe9497",
+      "id" : "1ac0f7aa-208c-45a7-acf6-0101fb278446",
       "name" : "教师端批改学生作业",
       "request" : {
         "url" : {
@@ -3568,7 +3568,7 @@
         "_postman_previewlanguage" : "json"
       } ]
     }, {
-      "id" : "7679d6bf-b22c-499d-b11e-47dfc1758d9a",
+      "id" : "d204d2b8-96fe-4720-8709-621503a0c1be",
       "name" : "教师端查询所有班级",
       "request" : {
         "url" : {

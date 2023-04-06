@@ -4,6 +4,8 @@
 
 [TOC]
 
+
+
 # 一、项目概述
 
 在 2021 年 1 月 25 日，我发布了教务管理系统初代版本，鉴于当时个人技术不成熟，该项目存在着很多缺陷
@@ -84,7 +86,7 @@ create table `log`
     deleted     int      not null default 0 comment '逻辑删除',
     create_time datetime not null default CURRENT_TIMESTAMP comment '添加时间',
     update_time datetime not null default CURRENT_TIMESTAMP comment '更新时间'
-);
+) comment '日志表';
 -- ----------------------------------------------
 -- -----------------==班级表==----------------- --
 -- ----------------------------------------------
@@ -94,7 +96,7 @@ create table `class`
     class_name varchar(32) not null comment '班级名',
     log_id     bigint      not null comment '日志编号',
     constraint cl_lg_fk foreign key (log_id) references log (log_id)
-);
+) comment '班级表';
 -- ----------------------------------------------
 -- -----------------==科目表==----------------- --
 -- ----------------------------------------------
@@ -104,7 +106,7 @@ create table `subject`
     subject_name varchar(32) not null comment '科目名',
     log_id       bigint      not null comment '日志编号',
     constraint su_lg_fk foreign key (log_id) references log (log_id)
-);
+) comment '科目表';
 -- ----------------------------------------------
 -- -----------------==用户表==----------------- --
 -- ----------------------------------------------
@@ -119,7 +121,7 @@ create table `user`
     user_identity int                not null default 0 comment '身份码(0学生,1教师,2管理员)',
     log_id        bigint             not null comment '日志编号',
     constraint us_lg_fk foreign key (log_id) references log (log_id)
-);
+) comment '用户表';
 -- ----------------------------------------------
 -- -----------------==教师表==----------------- --
 -- ----------------------------------------------
@@ -136,7 +138,7 @@ create table `teacher`
     log_id          bigint      not null comment '日志编号',
     constraint te_lg_fk foreign key (log_id) references log (log_id),
     constraint te_su_fk foreign key (subject_id) references subject (subject_id)
-);
+) comment '教师表';
 -- ----------------------------------------------
 -- -----------------==学生表==----------------- --
 -- ----------------------------------------------
@@ -153,7 +155,7 @@ create table `student`
     log_id          bigint      not null comment '日志编号',
     constraint st_lg_fk foreign key (log_id) references log (log_id),
     constraint st_cl_fk foreign key (class_id) references class (class_id)
-);
+) comment '学生表';
 
 -- ----------------------------------------------
 -- -----------------==管理员表==--------------  --
@@ -169,7 +171,7 @@ create table `admin`
     admin_email   varchar(32) not null comment '管理员邮箱',
     log_id        bigint      not null comment '日志编号',
     constraint ad_lg_fk foreign key (log_id) references log (log_id)
-);
+) comment '管理员表';
 -- ----------------------------------------------
 -- -----------------==作业表==----------------- --
 -- ----------------------------------------------
@@ -184,7 +186,7 @@ create table `create_work`
     constraint wk_lg_fk foreign key (log_id) references log (log_id),
     constraint wk_cl_fk foreign key (class_id) references class (class_id),
     constraint wk_te_fk foreign key (teacher_id) references teacher (teacher_id)
-);
+) comment '教师作业关系表';
 -- ----------------------------------------------
 -- -----------------==提交表==----------------- --
 -- ----------------------------------------------
@@ -199,7 +201,120 @@ create table `submit_work`
     constraint suk_lg_fk foreign key (log_id) references log (log_id),
     constraint suk_crk_fk foreign key (work_id) references create_work (work_id),
     constraint suk_st_fk foreign key (student_id) references student (student_id)
-);
+) comment '学生作业关系表';
+
+-- ----------------------------------------------
+-- -----------------==测试数据==--------------- --
+-- ----------------------------------------------
+INSERT INTO `log` VALUES (1, 0, '2022-04-06 13:59:17', '2022-04-06 13:59:17');
+INSERT INTO `log` VALUES (2, 0, '2022-04-06 13:59:20', '2022-04-06 13:59:20');
+INSERT INTO `log` VALUES (3, 0, '2022-04-06 13:59:21', '2022-04-06 13:59:21');
+INSERT INTO `log` VALUES (4, 0, '2022-04-06 13:59:22', '2022-04-06 13:59:22');
+INSERT INTO `log` VALUES (5, 0, '2022-04-06 14:01:32', '2022-04-06 14:01:32');
+INSERT INTO `log` VALUES (6, 0, '2022-04-06 14:01:33', '2022-04-06 14:01:33');
+INSERT INTO `log` VALUES (7, 0, '2022-04-06 14:01:34', '2022-04-06 14:01:34');
+INSERT INTO `log` VALUES (8, 0, '2022-04-06 14:01:35', '2022-04-06 14:01:35');
+INSERT INTO `log` VALUES (9, 0, '2022-04-06 02:02:49', '2022-06-23 19:16:18');
+INSERT INTO `log` VALUES (10, 0, '2022-04-06 02:05:46', '2022-06-23 19:22:15');
+INSERT INTO `log` VALUES (12, 0, '2022-04-07 09:00:14', '2022-04-22 18:17:41');
+INSERT INTO `log` VALUES (13, 0, '2022-04-07 10:21:48', '2022-04-07 10:22:56');
+INSERT INTO `log` VALUES (15, 0, '2022-04-07 10:27:35', '2022-06-23 11:34:56');
+INSERT INTO `log` VALUES (16, 0, '2022-04-07 02:31:08', '2022-04-07 02:33:02');
+INSERT INTO `log` VALUES (17, 0, '2022-04-07 02:59:40', '2022-04-07 03:01:46');
+INSERT INTO `log` VALUES (22, 0, '2022-04-13 08:57:31', '2022-04-13 08:57:31');
+INSERT INTO `log` VALUES (23, 0, '2022-04-13 08:57:52', '2022-04-22 16:59:38');
+INSERT INTO `log` VALUES (24, 0, '2022-04-13 08:58:37', '2022-04-13 08:58:37');
+INSERT INTO `log` VALUES (29, 0, '2022-04-14 09:46:54', '2022-04-14 10:28:08');
+INSERT INTO `log` VALUES (30, 0, '2022-04-14 10:23:44', '2022-04-15 15:47:00');
+INSERT INTO `log` VALUES (32, 0, '2022-04-14 04:28:50', '2022-04-14 16:28:50');
+INSERT INTO `log` VALUES (33, 0, '2022-04-14 06:48:42', '2022-04-14 18:48:42');
+INSERT INTO `log` VALUES (34, 0, '2022-04-16 16:14:39', '2022-04-16 16:14:39');
+INSERT INTO `log` VALUES (37, 0, '2022-04-17 02:34:32', '2022-04-17 14:34:32');
+INSERT INTO `log` VALUES (42, 0, '2022-04-18 06:36:01', '2022-04-18 18:36:01');
+INSERT INTO `log` VALUES (43, 0, '2022-04-18 06:37:38', '2022-04-18 18:37:38');
+INSERT INTO `log` VALUES (44, 0, '2022-04-18 06:39:22', '2022-04-18 18:39:22');
+INSERT INTO `log` VALUES (46, 0, '2022-04-18 06:39:58', '2022-04-18 18:39:58');
+INSERT INTO `log` VALUES (47, 0, '2022-04-18 06:41:49', '2022-04-18 18:41:49');
+INSERT INTO `log` VALUES (48, 0, '2022-04-19 15:22:43', '2022-06-09 18:07:25');
+INSERT INTO `log` VALUES (49, 0, '2022-04-19 15:23:34', '2022-05-03 08:24:33');
+INSERT INTO `log` VALUES (50, 0, '2022-04-19 15:24:34', '2022-04-20 09:11:18');
+INSERT INTO `log` VALUES (52, 0, '2022-04-20 09:54:08', '2022-04-20 09:54:08');
+INSERT INTO `log` VALUES (53, 0, '2022-04-22 10:45:27', '2022-05-13 22:49:36');
+INSERT INTO `log` VALUES (54, 0, '2022-04-22 10:54:04', '2022-04-22 10:54:04');
+INSERT INTO `log` VALUES (55, 0, '2022-04-22 01:59:17', '2022-06-23 17:20:13');
+INSERT INTO `log` VALUES (56, 0, '2022-04-22 03:47:58', '2022-05-19 08:39:57');
+INSERT INTO `log` VALUES (57, 0, '2022-04-22 16:41:45', '2022-04-22 16:51:29');
+INSERT INTO `log` VALUES (58, 0, '2022-04-22 16:53:16', '2022-04-22 16:53:16');
+INSERT INTO `log` VALUES (59, 0, '2022-04-22 18:16:49', '2022-04-22 19:02:03');
+INSERT INTO `log` VALUES (60, 0, '2022-04-22 18:39:11', '2022-05-02 17:28:23');
+INSERT INTO `log` VALUES (61, 0, '2022-04-22 18:39:57', '2022-05-02 17:34:12');
+INSERT INTO `log` VALUES (62, 0, '2022-04-22 18:52:59', '2022-04-22 18:53:16');
+INSERT INTO `log` VALUES (63, 0, '2022-04-22 18:53:35', '2022-04-22 18:53:35');
+INSERT INTO `log` VALUES (64, 0, '2022-04-22 18:54:42', '2022-04-22 19:38:29');
+INSERT INTO `log` VALUES (65, 0, '2022-04-22 18:59:46', '2022-04-22 19:00:05');
+INSERT INTO `log` VALUES (66, 0, '2022-04-22 19:03:19', '2022-04-22 19:03:19');
+INSERT INTO `log` VALUES (68, 0, '2022-04-22 07:04:40', '2022-04-22 19:04:40');
+INSERT INTO `log` VALUES (69, 0, '2022-04-22 19:12:57', '2022-04-22 19:12:57');
+INSERT INTO `log` VALUES (70, 0, '2022-04-22 19:13:18', '2022-05-02 17:34:54');
+INSERT INTO `log` VALUES (71, 0, '2022-04-22 19:15:37', '2022-04-22 19:15:37');
+INSERT INTO `log` VALUES (72, 0, '2022-04-22 19:16:08', '2022-05-02 18:41:34');
+INSERT INTO `log` VALUES (73, 0, '2022-04-22 19:16:54', '2022-04-22 19:16:54');
+
+INSERT INTO `user` VALUES (1, 'root', '36B5049766BDA814D7A9D4F382673827', '1D9CD5B6-00A7-4415-AD48-E3ADA50E95C4', '1539930344914968577', 1, 0, 9);
+INSERT INTO `user` VALUES (2, 'root1', '57F9E73F72DDE394E620D45E2370175C', '6A91ECA1-DEB7-44DD-AF61-E509540F86FF', '1539931840746381313', 1, 1, 10);
+INSERT INTO `user` VALUES (3, 'root3', 'A8DCB9396F1F87ED45F5DBC05930AC7D', '422A5781-21EA-4963-ADE7-364939EFBF17', 'E7241324-5D90-46F4-A692-EF92369C54BA.png', 2, 0, 32);
+INSERT INTO `user` VALUES (4, 'root4', '7A423DA158D360B7CE8DFF1A79B4884C', 'F8AEAD9A-1D8B-4D7F-9914-CB85D0BEED24', '0', 0, 0, 33);
+INSERT INTO `user` VALUES (5, 'root2', 'E435AACB686ED0C97575BFFD71403377', '08A076E8-5F9E-4D22-BE9F-78DE354E0C4D', '0', 0, 0, 37);
+INSERT INTO `user` VALUES (9, 'root5', 'CF74C08FB2E251B51CA9994CEBB6CA2F', 'B48533DB-A70C-4B8C-B0E2-D8EF1A24FAB5', '888A559E-D431-4A27-876C-AD95CAA8C602.png', 3, 1, 46);
+INSERT INTO `user` VALUES (10, 'root6', '0DD1DEF2DCE31C8565607B47973E3437', '94B4C261-88B2-424C-A86A-C360729E846D', '0', 0, 1, 47);
+INSERT INTO `user` VALUES (11, 'teacher1', 'E8BBE906DBF5C44A6F11F197E56701BF', 'A44A222D-4812-40E3-9221-9C4765B4F7B5', '0', 0, 1, 54);
+INSERT INTO `user` VALUES (12, 'admin1', 'CB739874244ABDB6D6B628CCD6C42AE6', 'EEB6C4B1-EDAD-4D9C-823C-BCB3A178297B', '1539901130383867905', 1, 2, 55);
+INSERT INTO `user` VALUES (13, 'admin2', '41A550F683E58CCFDB0C01FAE2291FF3', '6E781D85-DDF4-4FE4-B7E5-8D8763BD2D6A', '1527086624637812737', 2, 2, 56);
+INSERT INTO `user` VALUES (14, 'admin3', '79437FF9F510DC00C2F3146BAD26C229', 'FA2D11DC-D7B1-4332-AD92-0273D7AF6493', '0', 0, 2, 68);
+
+INSERT INTO `class` VALUES (1, '计算机01', 1);
+INSERT INTO `class` VALUES (2, '计算机02', 2);
+INSERT INTO `class` VALUES (3, '计算机03', 16);
+INSERT INTO `class` VALUES (4, '计算机04', 62);
+INSERT INTO `class` VALUES (5, '电商01', 63);
+INSERT INTO `class` VALUES (6, '电商02', 64);
+INSERT INTO `class` VALUES (7, '电商03', 72);
+
+INSERT INTO `admin` VALUES (1, 'root', 19, 0, '北京', '15692468756', '1564896325@qq.com', 53);
+INSERT INTO `admin` VALUES (2, 'root2', 19, 0, '上海', '15698456978', '8546932568@qq.com', 60);
+INSERT INTO `admin` VALUES (3, 'root3', 18, 1, '上海', '15698743652', '1456987456@qq.com', 61);
+INSERT INTO `admin` VALUES (4, 'root4', 18, 0, '武汉', '15698485964', '1258745896@qq.com', 73);
+
+INSERT INTO `student` VALUES (1, '小明', 19, 1, '北京', '15693258746', '2567534987@qq.com', 1, 3);
+INSERT INTO `student` VALUES (2, '小红', 18, 0, '上海', '15698743256', '2567534987@qq.com', 2, 4);
+INSERT INTO `student` VALUES (3, '小花', 19, 0, '上海', '15632894578', '2987056231@qq.com', 1, 22);
+INSERT INTO `student` VALUES (4, 'frisk', 19, 0, 'England', '15632894578', '2987056231@qq.com', 2, 23);
+INSERT INTO `student` VALUES (5, '李华', 20, 1, '北京', '15689453256', '4587914568@qq.com', 1, 24);
+INSERT INTO `student` VALUES (6, 'student1', 19, 1, '北京', '15698743652', '1568748596@qq.com', 3, 57);
+INSERT INTO `student` VALUES (7, 'student2', 18, 1, '上海', '15687469584', '2398734123@qq.com', 3, 58);
+INSERT INTO `student` VALUES (8, 'student3', 19, 0, '北京', '15698746325', '4569826358@qq.com', 5, 66);
+INSERT INTO `student` VALUES (9, 'student4', 18, 1, '北京', '15698746582', '4587965236@qq.com', 3, 71);
+
+INSERT INTO `subject` VALUES (1, '计算机基础', 7);
+INSERT INTO `subject` VALUES (2, 'C语言程序设计基础', 17);
+INSERT INTO `subject` VALUES (3, 'java语言设计基础', 65);
+INSERT INTO `subject` VALUES (4, 'python语言设计基础', 69);
+INSERT INTO `subject` VALUES (5, '静态网页设计基础', 70);
+
+INSERT INTO `teacher` VALUES (1, '李老师', 36, 1, '北京', '15692846325', '2876509234@qq.com', 1, 8);
+INSERT INTO `teacher` VALUES (3, '王老师', 23, 0, '北京', '15693258469', '2563148965@qq.com', 1, 12);
+INSERT INTO `teacher` VALUES (4, '黄老师', 19, 1, '上海', '15698746325', '2487613098@qq.com', 2, 59);
+
+INSERT INTO `create_work` VALUES (1, 'java', '111', 1, 1, 13);
+INSERT INTO `create_work` VALUES (2, 'python', '在控制台打印三角形', 1, 1, 48);
+INSERT INTO `create_work` VALUES (3, 'C语言', '完成第一个c语言程序', 1, 2, 49);
+INSERT INTO `create_work` VALUES (4, '高等数学', '完成数学练习', 1, 1, 50);
+INSERT INTO `create_work` VALUES (5, 'java', '111111', 3, 1, 52);
+
+INSERT INTO `submit_work` VALUES (1, 1, 1, '2222', 85, 15);
+INSERT INTO `submit_work` VALUES (6, 1, 1, '3333', 70, 29);
+INSERT INTO `submit_work` VALUES (7, 1, 1, '55554', 85, 30);
+INSERT INTO `submit_work` VALUES (8, 2, 1, '4444', 98, 34);
 ```
 
 ## 3.表结构
@@ -298,20 +413,20 @@ create table `submit_work`
        /**
         * 提交作业持久层
         */
-       @Autowired
+       @Autowired(required = false)
        private SubmitWorkMapper submitWorkMapper;
    
        /**
         * 日志持久层
         */
-       @Autowired
-       private LogMapper logMapper;
+       @Autowired(required = false)
+       private ILogService logService;
    
        /**
-        * 学生持久层
+        * 时间格式
         */
-       @Autowired
-       private StudentMapper studentMapper;
+       @Value("${date.format}")
+       private String dateFormat;
    
        /**
         * 查询所有学生提交的作业
@@ -320,6 +435,7 @@ create table `submit_work`
         * @param size    页长
         * @return JSON
         */
+       @Cacheable(value = "submit_work", key = "#current")
        @Override
        public JsonRequest<List<SubmitWork>> selectAllWork(Integer current, Integer size) {
            Page<SubmitWork> workPage = submitWorkMapper.selectPage(new Page<>(current, size), null);//获取所有作业
@@ -328,13 +444,14 @@ create table `submit_work`
            }
            List<SubmitWork> works = workPage.getRecords();//获取所有作业
            for (SubmitWork work : works) {
-               Log log = logMapper.selectById(work.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
+               Log log = logService.selectLogById(work.getLogId()).getData();//拉取日志
+               //如果查询到已删除的字段，则跳过此次循环
+               if (log.getDeleted() == 1) {
+                   continue;
                }
                work.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", works, workPage.getTotal());
+           return new JsonRequest<>(works, workPage.getTotal());
        }
    
        /**
@@ -345,21 +462,22 @@ create table `submit_work`
         * @param studentId 学生编号
         * @return JSON
         */
+       @Cacheable(value = "submit_work_studentId", key = "#studentId+'_'+#current")
        @Override
        public JsonRequest<List<SubmitWork>> selectWorkByStudentWork(Integer current, Integer size, Long studentId) {
-           Page<SubmitWork> workPage = submitWorkMapper.selectPage(new Page<>(current, size), new QueryWrapper<SubmitWork>().eq("student_Id", studentId));//获取所有作业
+           Page<SubmitWork> workPage = submitWorkMapper.selectPage(
+                   new Page<>(current, size), //分页
+                   new LambdaQueryWrapper<SubmitWork>().
+                           eq(SubmitWork::getStudentId, studentId));//根据学生id获取所有作业
            if (workPage == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
            List<SubmitWork> works = workPage.getRecords();//获取所有作业
            for (SubmitWork work : works) {
-               Log log = logMapper.selectById(work.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(work.getLogId()).getData();//拉取日志
                work.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", works, workPage.getTotal());
+           return new JsonRequest<>(works, workPage.getTotal());
        }
    
        /**
@@ -368,19 +486,17 @@ create table `submit_work`
         * @param submitWork 需提供:学生编号,作业编号,作业内容
         * @return JSON
         */
+       @CacheEvict(value = {"submit_work", "submit_work_studentId", "submit_work_workId"}, allEntries = true)
        @Override
        public JsonRequest<Integer> addWork(SubmitWork submitWork) {
-           Log log = new Log(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//创建日志对象
-           int logColumn = logMapper.insert(log);//添加日志
-           if (logColumn < 1) {
-               throw new LogAddErrorException("拉取日志失败!");
-           }
+           Log log = new Log(new SimpleDateFormat(dateFormat).format(new Date()));//创建日志对象
+           logService.insertLog(log);//添加日志
            submitWork.setLogId(log.getLogId());//获取已添加的日志id
            int column = submitWorkMapper.insert(submitWork);
            if (column < 1) {
                throw new AddException("添加数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
@@ -389,14 +505,15 @@ create table `submit_work`
         * @param submitWork 需提供:提交编号,可提供:学生编号,作业编号,作业内容
         * @return JSON
         */
+       @CacheEvict(value = {"submit_work", "submit_work_studentId", "submit_work_workId"}, allEntries = true)
        @Override
        public JsonRequest<Integer> updateWorkById(SubmitWork submitWork) {
            SubmitWork work = submitWorkMapper.selectById(submitWork.getWorkId());//判断作业信息是否存在
            if (work == null) {
                throw new SelectSourceIsNullException("该数据不存在!");
            }
-           Log log = new Log(work.getLogId(), new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//获取并修改时间
-           int logColumn = logMapper.updateById(log);//拉取日志
+           Log log = new Log(work.getLogId(), new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
+           int logColumn = logService.updateLogById(log).getData();//拉取日志
            if (logColumn < 1) {
                throw new LogUpdateErrorException("拉取日志失败!");
            }
@@ -404,27 +521,38 @@ create table `submit_work`
            if (column < 1) {
                throw new UpdateException("修改数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
-        * 删除已提交的作业
+        * 批量删除或恢复已提交的作业
         *
-        * @param submitId 需提供:提交编号
-        * @param index    操作指数(如果index值为true,则代表删除,反之代表恢复)
+        * @param map <p>
+        *            key:提交作业id
+        *            <p>
+        *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
         * @return JSON
         */
+       @CacheEvict(value = {"submit_work", "submit_work_studentId", "submit_work_workId"}, allEntries = true)
        @Override
-       public JsonRequest<Integer> deleteWorkById(Long submitId, Boolean index) {
-           SubmitWork submitWork = submitWorkMapper.selectById(submitId);
-           if (submitWork == null) {
-               throw new SelectSourceIsNullException("该数据不存在!");
+       public JsonRequest<Integer> deleteWorkById(Map<Long, Boolean> map) {
+           if (map.size() < 1) {
+               throw new DeleteSourceIsNullException("删除失败");
            }
-           int column = logMapper.updateById(new Log(submitWork.getLogId(), index ? 1 : 0, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())));
-           if (column < 1) {
-               throw new DeleteException("删除失败!");
+           int columns = 0;
+           for (Map.Entry<Long, Boolean> entry : map.entrySet()) {
+               SubmitWork submitWork = submitWorkMapper.selectById(entry.getKey());
+               if (submitWork == null) {
+                   throw new SelectSourceIsNullException("该数据不存在!");
+               }
+               int column = logService.updateLogById(new Log(submitWork.getLogId(), entry.getValue() ? 1 : 0,
+                       new SimpleDateFormat(dateFormat).format(new Date()))).getData();
+               if (column < 1) {
+                   throw new DeleteException("删除失败!");
+               }
+               columns += column;
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(columns);
        }
    }
    ```
@@ -446,14 +574,20 @@ create table `submit_work`
        /**
         * 作业持久层
         */
-       @Autowired
+       @Autowired(required = false)
        private CreateWorkMapper createWorkMapper;
    
        /**
         * 日志持久层
         */
-       @Autowired
-       private LogMapper logMapper;
+       @Autowired(required = false)
+       private ILogService logService;
+   
+       /**
+        * 时间格式
+        */
+       @Value("${date.format}")
+       private String dateFormat;
    
        /**
         * 分页查询已经布置的作业
@@ -462,21 +596,20 @@ create table `submit_work`
         * @param size    页数
         * @return JSON
         */
+       @Cacheable(value = "create_work_page", key = "#current")
        @Override
        public JsonRequest<List<CreateWork>> selectWork(Integer current, Integer size) {
-           Page<CreateWork> workPage = createWorkMapper.selectPage(new Page<>(current, size), null);//获取所有作业
+           Page<CreateWork> workPage = createWorkMapper.selectPage(
+                   new Page<>(current, size), null);//获取所有作业
            if (workPage == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
            List<CreateWork> works = workPage.getRecords();//获取所有作业
            for (CreateWork work : works) {
-               Log log = logMapper.selectById(work.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(work.getLogId()).getData();//拉取日志
                work.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", works, workPage.getTotal());
+           return new JsonRequest<>(works, workPage.getTotal());
        }
    
        /**
@@ -487,21 +620,22 @@ create table `submit_work`
         * @param teacherId 教师编号
         * @return JSON
         */
+       @Cacheable(value = "create_work_teacherId", key = "#teacherId+'_'+#current")
        @Override
        public JsonRequest<List<CreateWork>> selectAllWorkByTeacherId(Integer current, Integer size, Long teacherId) {
-           Page<CreateWork> workPage = createWorkMapper.selectPage(new Page<>(current, size), new QueryWrapper<CreateWork>().eq("teacher_Id", teacherId));//获取所有作业
+           Page<CreateWork> workPage = createWorkMapper.selectPage(
+                   new Page<>(current, size), //分页
+                   new LambdaQueryWrapper<CreateWork>().
+                           eq(CreateWork::getTeacherId, teacherId));//根据教师id获取所有作业
            if (workPage == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
            List<CreateWork> works = workPage.getRecords();//获取所有作业
            for (CreateWork work : works) {
-               Log log = logMapper.selectById(work.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(work.getLogId()).getData();//拉取日志
                work.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", works, workPage.getTotal());
+           return new JsonRequest<>(works, workPage.getTotal());
        }
    
        /**
@@ -510,19 +644,17 @@ create table `submit_work`
         * @param createWork 需提供:作业名,作业描述(可以是文件),班级编号,教师编号
         * @return JSON
         */
+       @CacheEvict(value = {"create_work_teacherId", "create_work_page", "create_work_classId"}, allEntries = true)
        @Override
        public JsonRequest<Integer> addWork(CreateWork createWork) {
-           Log log = new Log(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//创建日志对象
-           int logColumn = logMapper.insert(log);//添加日志
-           if (logColumn < 1) {
-               throw new LogAddErrorException("拉取日志失败!");
-           }
+           Log log = new Log(new SimpleDateFormat(dateFormat).format(new Date()));//创建日志对象
+           logService.insertLog(log);//添加日志
            createWork.setLogId(log.getLogId());//获取已添加的日志id
            int column = createWorkMapper.insert(createWork);
            if (column < 1) {
                throw new AddException("添加数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
@@ -531,14 +663,16 @@ create table `submit_work`
         * @param createWork 需提供:作业编号,可提供:作业名,作业描述(可以是文件),班级编号
         * @return JSON
         */
+       @CacheEvict(value = {"create_work_teacherId", "create_work_page", "create_work_classId"}, allEntries = true)
        @Override
        public JsonRequest<Integer> updateWorkById(CreateWork createWork) {
            CreateWork work = createWorkMapper.selectById(createWork.getWorkId());//判断作业信息是否存在
            if (work == null) {
                throw new SelectSourceIsNullException("该数据不存在!");
            }
-           Log log = new Log(work.getLogId(), new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//获取并修改时间
-           int logColumn = logMapper.updateById(log);//拉取日志
+           Log log = new Log(work.getLogId(),
+                   new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
+           int logColumn = logService.updateLogById(log).getData();//拉取日志
            if (logColumn < 1) {
                throw new LogUpdateErrorException("拉取日志失败!");
            }
@@ -546,27 +680,38 @@ create table `submit_work`
            if (column < 1) {
                throw new UpdateException("修改数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
-        * 删除或恢复作业信息
+        * 批量删除或恢复已提交的作业
         *
-        * @param workId 作业编号
-        * @param index  操作指数(如果index值为true,则代表删除,反之代表恢复)
+        * @param map <p>
+        *            key:提交作业id
+        *            <p>
+        *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
         * @return JSON
         */
+       @CacheEvict(value = {"create_work_teacherId", "create_work_page", "create_work_classId"}, allEntries = true)
        @Override
-       public JsonRequest<Integer> deleteWork(Long workId, Boolean index) {
-           CreateWork createWork = createWorkMapper.selectById(workId);
-           if (createWork == null) {
-               throw new SelectSourceIsNullException("该数据不存在!");
+       public JsonRequest<Integer> deleteWork(Map<Long, Boolean> map) {
+           if (map.size() < 1) {
+               throw new DeleteSourceIsNullException("删除失败");
            }
-           int column = logMapper.updateById(new Log(createWork.getLogId(), index ? 1 : 0, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())));
-           if (column < 1) {
-               throw new DeleteException("删除失败!");
+           int columns = 0;
+           for (Map.Entry<Long, Boolean> entry : map.entrySet()) {
+               CreateWork createWork = createWorkMapper.selectById(entry.getKey());
+               if (createWork == null) {
+                   throw new SelectSourceIsNullException("该数据不存在!");
+               }
+               int column = logService.updateLogById(new Log(createWork.getLogId(), entry.getValue() ? 1 : 0,
+                       new SimpleDateFormat(dateFormat).format(new Date()))).getData();
+               if (column < 1) {
+                   throw new DeleteException("删除失败!");
+               }
+               columns += column;
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(columns);
        }
    }
    ```
@@ -590,14 +735,27 @@ create table `submit_work`
        /**
         * 学生持久层
         */
-       @Autowired
+       @Autowired(required = false)
        private StudentMapper studentMapper;
    
        /**
-        * 日志持久层
+        * 日志业务层
         */
-       @Autowired
-       private LogMapper logMapper;
+       @Autowired(required = false)
+       private ILogService logService;
+   
+   
+       /**
+        * 时间格式
+        */
+       @Value("${date.format}")
+       private String dateFormat;
+   
+       /**
+        * 班级持久层
+        */
+       @Autowired(required = false)
+       private IClassService classService;
    
        /**
         * 查询所有学生
@@ -606,6 +764,7 @@ create table `submit_work`
         * @param size    页长
         * @return JSON
         */
+       @Cacheable(value = "student_page", key = "#current")
        @Override
        public JsonRequest<List<Student>> selectAllStudent(Integer current, Integer size) {
            Page<Student> studentPage = studentMapper.selectPage(new Page<>(current, size), null);//获取所有学生
@@ -614,14 +773,17 @@ create table `submit_work`
            }
            List<Student> studentList = studentPage.getRecords();//获取所有学生
            for (Student student : studentList) {
-               Log log = logMapper.selectById(student.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(student.getLogId()).getData();//拉取日志
+               ////查询出已删除的学生,则隐藏
+               //if (log.getDeleted() == 1) {
+               //    continue;
+               //}
+               //填充班级
+               student.setAClass(classService.selectAllClassById(student.getClassId()).getData());
                student.setLog(log);//添加
            }
            long pageSize = studentPage.getTotal();
-           return new JsonRequest<>(200, "", studentList, pageSize);
+           return new JsonRequest<>(studentList, pageSize);
        }
    
        /**
@@ -632,21 +794,28 @@ create table `submit_work`
         * @param classId 班级编号
         * @return JSON
         */
+       @Cacheable(value = "student_class", key = "#classId+'_'+#current")
        @Override
        public JsonRequest<List<Student>> selectAllStudentByClassId(Integer current, Integer size, Long classId) {
-           Page<Student> studentPage = studentMapper.selectPage(new Page<>(current, size), new QueryWrapper<Student>().eq("class_id", classId));//获取所有学生
+           Page<Student> studentPage = studentMapper.selectPage(
+                   new Page<>(current, size), //分页
+                   new LambdaQueryWrapper<Student>().
+                           eq(Student::getClassId, classId));//根据班级id获取所有学生
            if (studentPage == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
            List<Student> studentList = studentPage.getRecords();//获取所有学生
            for (Student student : studentList) {
-               Log log = logMapper.selectById(student.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(student.getLogId()).getData();//拉取日志
+               ////查询出已删除的学生,则隐藏
+               //if (log.getDeleted() == 1) {
+               //    continue;
+               //}
+               //填充班级
+               student.setAClass(classService.selectAllClassById(student.getClassId()).getData());
                student.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", studentList, studentPage.getTotal());
+           return new JsonRequest<>(studentList, studentPage.getTotal());
        }
    
        /**
@@ -655,13 +824,14 @@ create table `submit_work`
         * @param studentId 学生编号
         * @return JSON
         */
+       @Cacheable(value = "student_id", key = "#studentId")
        @Override
        public JsonRequest<Student> selectAllStudentById(Long studentId) {
            Student student = studentMapper.selectById(studentId);
            if (student == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
-           return new JsonRequest<>(200, "", student, null);
+           return new JsonRequest<>(student, null);
        }
    
        /**
@@ -670,19 +840,17 @@ create table `submit_work`
         * @param student 需提供:学生姓名,学生年龄,学生性别,学生住址,学生电话,学生邮箱,班级编号
         * @return JSON
         */
+       @CacheEvict(value = {"student_page", "student_class", "student_class"}, allEntries = true)
        @Override
        public JsonRequest<Integer> addStudent(Student student) {
-           Log log = new Log(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//创建日志对象
-           int logColumn = logMapper.insert(log);//添加日志
-           if (logColumn < 1) {
-               throw new LogAddErrorException("拉取日志失败!");
-           }
+           Log log = new Log(new SimpleDateFormat(dateFormat).format(new Date()));//创建日志对象
+           logService.insertLog(log);//添加日志
            student.setLogId(log.getLogId());//获取已添加的日志id
            int column = studentMapper.insert(student);
            if (column < 1) {
                throw new AddException("添加数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
@@ -691,14 +859,16 @@ create table `submit_work`
         * @param student 需提供:学生编号,可提供:学生姓名,学生年龄,学生性别,学生住址,学生电话,学生邮箱,班级编号
         * @return JSON
         */
+       @CacheEvict(value = {"student_page", "student_class", "student_class"}, allEntries = true)
        @Override
        public JsonRequest<Integer> updateStudentById(Student student) {
            Student studentSource = studentMapper.selectById(student.getStudentId());//判断学生信息是否存在
            if (studentSource == null) {
                throw new SelectSourceIsNullException("该数据不存在!");
            }
-           Log log = new Log(studentSource.getLogId(), new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//获取并修改时间
-           int logColumn = logMapper.updateById(log);//拉取日志
+           Log log = new Log(studentSource.getLogId(),
+                   new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
+           int logColumn = logService.updateLogById(log).getData();//拉取日志
            if (logColumn < 1) {
                throw new LogUpdateErrorException("拉取日志失败!");
            }
@@ -706,33 +876,44 @@ create table `submit_work`
            if (column < 1) {
                throw new UpdateException("修改数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
-        * 删除或恢复学生
+        * 批量删除或恢复学生
         *
-        * @param studentId 学生编号
-        * @param index     操作指数(如果index值为true,则代表删除,反之代表恢复)
+        * @param map <p>
+        *            key:学生id
+        *            <p>
+        *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
         * @return JSON
         */
+       @CacheEvict(value = {"student_page", "student_class", "student_class"}, allEntries = true)
        @Override
-       public JsonRequest<Integer> deleteStudentById(Long studentId, Boolean index) {
-           Student student = studentMapper.selectById(studentId);
-           if (student == null) {
-               throw new SelectSourceIsNullException("该数据不存在!");
+       public JsonRequest<Integer> deleteStudentById(Map<Long, Boolean> map) {
+           if (map.size() < 1) {
+               throw new DeleteSourceIsNullException("删除失败");
            }
-           int column = logMapper.updateById(new Log(student.getLogId(), index ? 1 : 0, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())));
-           if (column < 1) {
-               throw new DeleteException("删除失败!");
+           int columns = 0;
+           for (Map.Entry<Long, Boolean> entry : map.entrySet()) {
+               Student student = studentMapper.selectById(entry.getKey());
+               if (student == null) {
+                   throw new SelectSourceIsNullException("该数据不存在!");
+               }
+               int column = logService.updateLogById(new Log(student.getLogId(), entry.getValue() ? 1 : 0,
+                       new SimpleDateFormat(dateFormat).format(new Date()))).getData();
+               if (column < 1) {
+                   throw new DeleteException("删除失败!");
+               }
+               columns += column;
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(columns);
        }
    }
    ```
-
+   
    **教师管理**
-
+   
    ```java
    /**
     * 教师管理业务层实现类
@@ -744,14 +925,27 @@ create table `submit_work`
        /**
         * 教师持久层
         */
-       @Autowired
+       @Autowired(required = false)
        private TeacherMapper teacherMapper;
    
+   
        /**
-        * 日志持久层
+        * 时间格式
         */
-       @Autowired
-       private LogMapper logMapper;
+       @Value("${date.format}")
+       private String dateFormat;
+   
+       /**
+        * 日志业务层
+        */
+       @Autowired(required = false)
+       private ILogService logService;
+   
+       /**
+        * 科目业务层
+        */
+       @Autowired(required = false)
+       private ISubjectService subjectService;
    
        /**
         * 查询所有教师
@@ -760,22 +954,23 @@ create table `submit_work`
         * @param size    页长
         * @return JSON
         */
+       @Cacheable(value = "teacher_page", key = "#current")
        @Override
        public JsonRequest<List<Teacher>> selectAllTeacher(Integer current, Integer size) {
-           Page<Teacher> teacherPage = teacherMapper.selectPage(new Page<>(current, size), null);//获取所有教师
+           Page<Teacher> teacherPage = teacherMapper.selectPage(
+                   new Page<>(current, size), null);//获取所有教师
            if (teacherPage == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
            Long pageSize = teacherPage.getTotal();
            List<Teacher> teacherList = teacherPage.getRecords();//获取所有教师
            for (Teacher teacher : teacherList) {
-               Log log = logMapper.selectById(teacher.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(teacher.getLogId()).getData();//拉取日志
+               Subject subject = subjectService.selectAllById(teacher.getSubjectId()).getData();//获取科目
                teacher.setLog(log);//添加
+               teacher.setSubject(subject);
            }
-           return new JsonRequest<>(200, "", teacherList, pageSize);
+           return new JsonRequest<>(teacherList, pageSize);
        }
    
        /**
@@ -786,22 +981,25 @@ create table `submit_work`
         * @param subjectId 科目编号
         * @return JSON
         */
+       @Cacheable(value = "teacher_subjectId", key = "#subjectId+'_'+#current")
        @Override
        public JsonRequest<List<Teacher>> selectAllBySubject(Integer current, Integer size, Long subjectId) {
-           Page<Teacher> teacherPage = teacherMapper.selectPage(new Page<>(current, size), new QueryWrapper<Teacher>().eq("subject_id", subjectId));//获取所有教师
+           Page<Teacher> teacherPage = teacherMapper.selectPage(
+                   new Page<>(current, size), //分页
+                   new LambdaQueryWrapper<Teacher>().
+                           eq(Teacher::getSubjectId, subjectId));//根据科目编号获取所有教师
            if (teacherPage == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
            Long pageSize = teacherPage.getTotal();
            List<Teacher> teacherList = teacherPage.getRecords();//获取所有教师
            for (Teacher teacher : teacherList) {
-               Log log = logMapper.selectById(teacher.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(teacher.getLogId()).getData();//拉取日志
+               Subject subject = subjectService.selectAllById(teacher.getSubjectId()).getData();//获取科目
+               teacher.setSubject(subject);
                teacher.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", teacherList, pageSize);
+           return new JsonRequest<>(teacherList, pageSize);
        }
    
        /**
@@ -816,7 +1014,8 @@ create table `submit_work`
            if (teacher == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
-           return new JsonRequest<>(200, "", teacher, null);
+           teacher.setLog(logService.selectLogById(teacher.getLogId()).getData());
+           return new JsonRequest<>(teacher, null);
        }
    
        /**
@@ -825,19 +1024,17 @@ create table `submit_work`
         * @param teacher 需提供:教师姓名,教师年龄,教师性别,教师住址,教师电话,教师邮箱,科目编号
         * @return JSON
         */
+       @CacheEvict(value = {"teacher_page", "teacher_subjectId"}, allEntries = true)
        @Override
        public JsonRequest<Integer> addTeacher(Teacher teacher) {
-           Log log = new Log(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//创建日志对象
-           int logColumn = logMapper.insert(log);//添加日志
-           if (logColumn < 1) {
-               throw new LogAddErrorException("拉取日志失败!");
-           }
+           Log log = new Log(new SimpleDateFormat(dateFormat).format(new Date()));//创建日志对象
+           logService.insertLog(log);//添加日志
            teacher.setLogId(log.getLogId());//获取已添加的日志id
            int column = teacherMapper.insert(teacher);
            if (column < 1) {
                throw new AddException("添加数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
@@ -846,14 +1043,16 @@ create table `submit_work`
         * @param teacher 需提供:教师编号,可提供:教师姓名,教师年龄,教师性别,教师住址,教师电话,教师邮箱,科目编号
         * @return JSON
         */
+       @CacheEvict(value = {"teacher_page", "teacher_subjectId"}, allEntries = true)
        @Override
        public JsonRequest<Integer> updateTeacher(Teacher teacher) {
            Teacher teacherSource = teacherMapper.selectById(teacher.getTeacherId());//判断教师信息是否存在
            if (teacherSource == null) {
                throw new SelectSourceIsNullException("该数据不存在!");
            }
-           Log log = new Log(teacherSource.getLogId(), new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//获取并修改时间
-           int logColumn = logMapper.updateById(log);//拉取日志
+           Log log = new Log(teacherSource.getLogId(),
+                   new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
+           int logColumn = logService.updateLogById(log).getData();//拉取日志
            if (logColumn < 1) {
                throw new LogUpdateErrorException("拉取日志失败!");
            }
@@ -861,33 +1060,44 @@ create table `submit_work`
            if (column < 1) {
                throw new UpdateException("修改数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
-        * 删除或恢复教师
+        * 批量删除或恢复教师
         *
-        * @param teacherId 教师编号
-        * @param index     操作指数(如果index值为true,则代表删除,反之代表恢复)
+        * @param map <p>
+        *            key:教师id
+        *            <p>
+        *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
         * @return JSON
         */
+       @CacheEvict(value = {"teacher_page", "teacher_subjectId"}, allEntries = true)
        @Override
-       public JsonRequest<Integer> deleteTeacher(Integer teacherId, Boolean index) {
-           Teacher teacher = teacherMapper.selectById(teacherId);
-           if (teacher == null) {
-               throw new SelectSourceIsNullException("该数据不存在!");
+       public JsonRequest<Integer> deleteTeacher(Map<Long, Boolean> map) {
+           if (map.size() < 1) {
+               throw new DeleteSourceIsNullException("删除失败");
            }
-           int column = logMapper.updateById(new Log(teacher.getLogId(), index ? 1 : 0, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())));
-           if (column < 1) {
-               throw new DeleteException("删除失败!");
+           int columns = 0;
+           for (Map.Entry<Long, Boolean> entry : map.entrySet()) {
+               Teacher teacher = teacherMapper.selectById(entry.getKey());
+               if (teacher == null) {
+                   throw new SelectSourceIsNullException("该数据不存在!");
+               }
+               int column = logService.updateLogById(new Log(teacher.getLogId(), entry.getValue() ? 1 : 0,
+                       new SimpleDateFormat(dateFormat).format(new Date()))).getData();
+               if (column < 1) {
+                   throw new DeleteException("删除失败!");
+               }
+               columns += column;
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(columns);
        }
    }
    ```
-
+   
    **管理员管理**
-
+   
    ```java
    /**
     * 管理员管理业务层实现类
@@ -899,14 +1109,21 @@ create table `submit_work`
        /**
         * 管理员持久层
         */
-       @Autowired
+       @Autowired(required = false)
        private AdminMapper adminMapper;
    
        /**
-        * 日志持久层
+        * 日志业务层
         */
-       @Autowired
-       private LogMapper logMapper;
+       @Autowired(required = false)
+       private ILogService logService;
+   
+   
+       /**
+        * 时间格式
+        */
+       @Value("${date.format}")
+       private String dateFormat;
    
        /**
         * 查询所有管理员
@@ -915,6 +1132,7 @@ create table `submit_work`
         * @param size    页长
         * @return JSON
         */
+       @Cacheable(value = "admin_page", key = "#current")
        @Override
        public JsonRequest<List<Admin>> selectAllAdmin(Integer current, Integer size) {
            Page<Admin> adminPage = adminMapper.selectPage(new Page<>(current, size), null);//获取所有管理员
@@ -923,14 +1141,11 @@ create table `submit_work`
            }
            List<Admin> adminList = adminPage.getRecords();//获取所有管理员
            for (Admin admin : adminList) {
-               Log log = logMapper.selectById(admin.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(admin.getLogId()).getData();//拉取日志
                admin.setLog(log);//添加
            }
            long pageSize = adminPage.getTotal();
-           return new JsonRequest<>(200, "", adminList, pageSize);
+           return new JsonRequest<>(adminList, pageSize);
        }
    
        /**
@@ -941,21 +1156,22 @@ create table `submit_work`
         * @param adminAddress 住址
         * @return JSON
         */
+       @Cacheable(value = "admin_address", key = "#adminAddress+'_'+#current")
        @Override
        public JsonRequest<List<Admin>> selectAllAdminByAddress(Integer current, Integer size, String adminAddress) {
-           Page<Admin> adminPage = adminMapper.selectPage(new Page<>(current, size), new QueryWrapper<Admin>().like("admin_address", adminAddress));//获取所有管理员
+           Page<Admin> adminPage = adminMapper.selectPage(
+                   new Page<>(current, size),
+                   new LambdaQueryWrapper<Admin>()
+                           .like(Admin::getAdminAddress, adminAddress));//获取所有管理员
            if (adminPage == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
            List<Admin> adminList = adminPage.getRecords();//获取所有管理员
            for (Admin admin : adminList) {
-               Log log = logMapper.selectById(admin.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(admin.getLogId()).getData();//拉取日志
                admin.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", adminList, adminPage.getTotal());
+           return new JsonRequest<>(adminList, adminPage.getTotal());
        }
    
        /**
@@ -970,7 +1186,7 @@ create table `submit_work`
            if (admin == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
-           return new JsonRequest<>(200, "", admin, null);
+           return new JsonRequest<>(admin, null);
        }
    
        /**
@@ -979,19 +1195,17 @@ create table `submit_work`
         * @param admin 需提供:管理员姓名,管理员年龄,管理员性别,管理员住址,管理员电话,管理员邮箱
         * @return JSON
         */
+       @CacheEvict(value = {"admin_address", "admin_page"}, allEntries = true)
        @Override
        public JsonRequest<Integer> addAdmin(Admin admin) {
-           Log log = new Log(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//创建日志对象
-           int logColumn = logMapper.insert(log);//添加日志
-           if (logColumn < 1) {
-               throw new LogAddErrorException("拉取日志失败!");
-           }
+           Log log = new Log(new SimpleDateFormat(dateFormat).format(new Date()));//创建日志对象
+           logService.insertLog(log);//添加日志
            admin.setLogId(log.getLogId());//获取已添加的日志id
            int column = adminMapper.insert(admin);
            if (column < 1) {
                throw new AddException("添加数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
@@ -1000,14 +1214,16 @@ create table `submit_work`
         * @param admin 需提供:管理员编号,可提供:管理员姓名,管理员年龄,管理员性别,管理员住址,管理员电话,管理员邮箱
         * @return JSON
         */
+       @CacheEvict(value = {"admin_address", "admin_page"}, allEntries = true)
        @Override
        public JsonRequest<Integer> updateAdminById(Admin admin) {
            Admin adminSource = adminMapper.selectById(admin.getAdminId());//判断管理员信息是否存在
            if (adminSource == null) {
                throw new SelectSourceIsNullException("该数据不存在!");
            }
-           Log log = new Log(adminSource.getLogId(), new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//获取并修改时间
-           int logColumn = logMapper.updateById(log);//拉取日志
+           Log log = new Log(adminSource.getLogId(),
+                   new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
+           int logColumn = logService.updateLogById(log).getData();//拉取日志
            if (logColumn < 1) {
                throw new LogUpdateErrorException("拉取日志失败!");
            }
@@ -1015,33 +1231,49 @@ create table `submit_work`
            if (column < 1) {
                throw new UpdateException("修改数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
-        * 删除或恢复管理员
+        * 批量删除或恢复管理员
         *
-        * @param adminId 管理员编号
-        * @param index   操作指数(如果index值为true,则代表删除,反之代表恢复)
+        * @param map <p>
+        *            key:管理员id
+        *            <p>
+        *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
         * @return JSON
         */
+       @CacheEvict(value = {"admin_address", "admin_page"}, allEntries = true)
        @Override
-       public JsonRequest<Integer> deleteAdminById(Long adminId, Boolean index) {
-           Admin admin = adminMapper.selectById(adminId);
-           if (admin == null) {
-               throw new SelectSourceIsNullException("该数据不存在!");
+       public JsonRequest<Integer> deleteAdminById(Map<Long, Boolean> map) {
+           if (map.size() < 1) {
+               throw new DeleteSourceIsNullException("删除失败");
            }
-           int column = logMapper.updateById(new Log(admin.getLogId(), index ? 1 : 0, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())));
-           if (column < 1) {
-               throw new DeleteException("删除失败!");
+           int columns = 0;
+           //遍历
+           for (Map.Entry<Long, Boolean> entry : map.entrySet()) {
+               //查找一次
+               Admin admin = adminMapper.selectById(entry.getKey());
+               if (admin == null) {
+                   throw new SelectSourceIsNullException("该数据不存在!");
+               }
+               //修改日志删除标志部分
+               int column = logService.updateLogById(
+                       new Log(admin.getLogId(), entry.getValue() ? 1 : 0,
+                               new SimpleDateFormat(dateFormat).format(new Date()))).getData();
+               if (column < 1) {
+                   throw new DeleteException("删除失败!");
+               }
+               columns += column;
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(columns);
        }
    }
+   
    ```
-
+   
    **班级管理**
-
+   
    ```java
    /**
     * 班级业务层实现类
@@ -1194,9 +1426,9 @@ create table `submit_work`
        }
    }
    ```
-
+   
    **科目管理**
-
+   
    ```java
    /**
     * 科目业务层实现类
@@ -1208,14 +1440,26 @@ create table `submit_work`
        /**
         * 科目持久层
         */
-       @Autowired
+       @Autowired(required = false)
        private SubjectMapper subjectMapper;
    
        /**
-        * 日志持久层
+        * 日志业务层
         */
-       @Autowired
-       private LogMapper logMapper;
+       @Autowired(required = false)
+       private ILogService logService;
+   
+       /**
+        * 教师持久层
+        */
+       @Autowired(required = false)
+       private TeacherMapper teacherMapper;
+   
+       /**
+        * 时间格式
+        */
+       @Value("${date.format}")
+       private String dateFormat;
    
        /**
         * 查询所有科目
@@ -1224,6 +1468,7 @@ create table `submit_work`
         * @param size    页长
         * @return JSON
         */
+       @Cacheable(value = "subject_page", key = "#current")
        @Override
        public JsonRequest<List<Subject>> selectAllSubject(Integer current, Integer size) {
            Page<Subject> subjectPage = subjectMapper.selectPage(new Page<>(current, size), null);//获取所有科目
@@ -1233,13 +1478,10 @@ create table `submit_work`
            Long pageSize = subjectPage.getTotal();
            List<Subject> classList = subjectPage.getRecords();//获取所有科目
            for (Subject subject : classList) {
-               Log log = logMapper.selectById(subject.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(subject.getLogId()).getData();//拉取日志
                subject.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", classList, pageSize);
+           return new JsonRequest<>(classList, pageSize);
        }
    
        /**
@@ -1250,22 +1492,21 @@ create table `submit_work`
         * @param subjectName 科目名
         * @return JSON
         */
+       @Cacheable(value = "subject_name", key = "#subjectName+'_'+#current")
        @Override
        public JsonRequest<List<Subject>> selectAllLikeName(Integer current, Integer size, String subjectName) {
-           Page<Subject> subjectPage = subjectMapper.selectPage(new Page<>(current, size), new QueryWrapper<Subject>().like("subject_name", subjectName));
+           Page<Subject> subjectPage = subjectMapper.selectPage(new Page<>(current, size), new LambdaQueryWrapper<Subject>()
+                   .like(Subject::getSubjectName, subjectName));//根据科目名查询
            if (subjectPage == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
            Long pageSize = subjectPage.getTotal();
            List<Subject> classList = subjectPage.getRecords();//获取所有科目
            for (Subject subject : classList) {
-               Log log = logMapper.selectById(subject.getLogId());//拉取日志
-               if (log == null) {
-                   throw new LogSelectErrorException("日志拉取失败!");
-               }
+               Log log = logService.selectLogById(subject.getLogId()).getData();//拉取日志
                subject.setLog(log);//添加
            }
-           return new JsonRequest<>(200, "", classList, pageSize);
+           return new JsonRequest<>(classList, pageSize);
        }
    
        /**
@@ -1274,13 +1515,15 @@ create table `submit_work`
         * @param subjectId 科目编号
         * @return JSON
         */
+       @Cacheable(value = "subject_id", key = "#subjectId")
        @Override
        public JsonRequest<Subject> selectAllById(Long subjectId) {
            Subject subject = subjectMapper.selectById(subjectId);
            if (subject == null) {
                throw new SelectSourceIsNullException("未查询到数据!");
            }
-           return new JsonRequest<>(200, "", subject, null);
+           subject.setLog(logService.selectLogById(subject.getLogId()).getData());
+           return new JsonRequest<>(subject, null);
        }
    
        /**
@@ -1289,19 +1532,17 @@ create table `submit_work`
         * @param subject 需提供:科目名
         * @return JSON
         */
+       @CacheEvict(value = {"subject_page", "subject_name", "subject_id"}, allEntries = true)
        @Override
        public JsonRequest<Integer> addSubject(Subject subject) {
-           Log log = new Log(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//创建日志对象
-           int logColumn = logMapper.insert(log);//添加日志
-           if (logColumn < 1) {
-               throw new LogAddErrorException("拉取日志失败!");
-           }
+           Log log = new Log(new SimpleDateFormat(dateFormat).format(new Date()));//创建日志对象
+           logService.insertLog(log);
            subject.setLogId(log.getLogId());//获取已添加的日志id
            int column = subjectMapper.insert(subject);
            if (column < 1) {
                throw new AddException("添加数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
@@ -1310,14 +1551,16 @@ create table `submit_work`
         * @param subject 需提供:科目编号,可提供:科目名
         * @return JSON
         */
+       @CacheEvict(value = {"subject_page", "subject_name", "subject_id"}, allEntries = true)
        @Override
        public JsonRequest<Integer> updateSubjectById(Subject subject) {
            Subject subjectSource = subjectMapper.selectById(subject.getSubjectId());//判断科目信息是否存在
            if (subjectSource == null) {
                throw new SelectSourceIsNullException("该数据不存在!");
            }
-           Log log = new Log(subjectSource.getLogId(), new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//获取并修改时间
-           int logColumn = logMapper.updateById(log);//拉取日志
+           Log log = new Log(subjectSource.getLogId(),
+                   new SimpleDateFormat(dateFormat).format(new Date()));//获取并修改时间
+           int logColumn = logService.updateLogById(log).getData();//拉取日志
            if (logColumn < 1) {
                throw new LogUpdateErrorException("拉取日志失败!");
            }
@@ -1325,30 +1568,50 @@ create table `submit_work`
            if (column < 1) {
                throw new UpdateException("修改数据失败!");
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(column);
        }
    
        /**
-        * 删除或恢复科目
+        * 批量删除或恢复科目
         *
-        * @param subjectId 科目编号
-        * @param index     操作指数(如果index值为true,则代表删除,反之代表恢复)
+        * @param map <p>
+        *            key:科目id
+        *            <p>
+        *            value:操作指数(如果index值为true,则代表删除,反之代表恢复)
         * @return JSON
         */
+       @CacheEvict(value = {"subject_page", "subject_name", "subject_id"}, allEntries = true)
        @Override
-       public JsonRequest<Integer> deleteSubjectById(Long subjectId, Boolean index) {
-           Subject subject = subjectMapper.selectById(subjectId);
-           if (subject == null) {
-               throw new SelectSourceIsNullException("该数据不存在!");
+       public JsonRequest<Integer> deleteSubjectById(Map<Long, Boolean> map) {
+           if (map.size() < 1) {
+               throw new DeleteSourceIsNullException("删除失败");
            }
-           int column = logMapper.updateById(new Log(subject.getLogId(), index ? 1 : 0, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())));
-           if (column < 1) {
-               throw new DeleteException("删除失败!");
+           int columns = 0;
+           for (Map.Entry<Long, Boolean> entry : map.entrySet()) {
+               Subject subject = subjectMapper.selectById(entry.getKey());
+               if (subject == null) {
+                   throw new SelectSourceIsNullException("该数据不存在!");
+               }
+               //查询该科目中是否存在教师
+               List<Teacher> students = teacherMapper.selectList(
+                       new LambdaQueryWrapper<Teacher>()
+                               .eq(Teacher::getSubjectId, entry.getKey()));//匹配班级编号
+               if (students.size() > 0) {
+                   throw new DeleteSourceErrorException("该科目存在教师,不可更改!");
+               }
+               int column = logService.updateLogById(new Log(subject.getLogId(), entry.getValue() ? 1 : 0,//修改日志状态
+                       new SimpleDateFormat(dateFormat).format(new Date()))).getData();//修改日志时间
+               if (column < 1) {
+                   throw new DeleteException("删除失败!");
+               }
+               columns += column;
            }
-           return new JsonRequest<>(200, "", column, null);
+           return new JsonRequest<>(columns);
        }
    }
    ```
+
+
 
 ### (4)公共模块
 
@@ -3749,9 +4012,9 @@ export function deleteSubjectById(subjectId, index) {
 
 ## 2.项目已知 bug 及项目注意事项
 
-(1)前端头像及用户信息更改时需要用户重新登录
+(1)~~~~前端头像及用户信息更改时需要用户重新登录~~(已修复)
 
-(2)后端打包时需要先将 public 模块进行 install 操作，而后对其他模块进行 package 操作
+(2)~~后端打包时需要先将 public 模块进行 install 操作，而后对其他模块进行 package 操作~~(Maven基本操作)
 
 (3)后端文件服务器上传时延迟较长(根据电脑配置而定)
 
@@ -3790,3 +4053,5 @@ export function deleteSubjectById(subjectId, index) {
 2022/7/1 修复管理端当班级存在学生时能直接删除的bug，后端缓存系统优化，管理员查看学生和教师信息更加详细和快速
 
 2022/7/3 前后端代码优化，新增批量删除功能
+
+2022/7/14 登录接口优化，后端业务层异常处理类整理

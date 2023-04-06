@@ -1,4 +1,4 @@
-package com.chunfeng.service.ex.updateException;
+package com.chunfeng.service.ex.sourceException.updateException;
 
 /**
  * 修改数据失败

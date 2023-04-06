@@ -1,76 +1,70 @@
 <template>
   <div>
     <video autoplay loop muted class="login-fillWidth" v-on:canplay="canplay">
-      <source src="../img/login.mp4" type="video/mp4"/>
+      <source src="../img/login.mp4" type="video/mp4" />
     </video>
   </div>
   <el-button type="success" @click="toIndex" round>回到主页</el-button>
   <el-container>
     <el-form
-        ref="loginFrom"
-        :inline-message="true"
-        :model="loginForm"
-        :rules="rules"
-        @keyup.enter.native="login(loginForm)"
+      :model="loginForm"
+      @keyup.enter.native="login(loginForm)"
+      :rules="rules"
+      :inline-message="true"
+      ref="loginFrom"
     >
       <el-form-item>
         <h1>欢迎登录</h1>
       </el-form-item>
       <el-form-item prop="userName">
         <el-input
-            v-model="loginForm.userName"
-            class="input_user"
-            placeholder="请输入账号"
-            prefix-icon="el-icon-user-solid"
+          prefix-icon="el-icon-user-solid"
+          v-model="loginForm.userName"
+          placeholder="请输入账号"
+          class="input_user"
         ></el-input>
       </el-form-item>
       <el-form-item prop="userPassword"
-      >
-        <el-input
-            v-model="loginForm.userPassword"
-            class="input_password"
-            placeholder="请输入密码"
-            prefix-icon="el-icon-lock"
-            show-password
+        ><el-input
+          prefix-icon="el-icon-lock"
+          show-password
+          v-model="loginForm.userPassword"
+          placeholder="请输入密码"
+          class="input_password"
         ></el-input
-        >
-      </el-form-item>
+      ></el-form-item>
       <el-form-item prop="code">
         <el-input
-            v-model="loginForm.code"
-            class="input_code"
-            placeholder="请输入验证码"
-        >
-          <template v-slot:prefix><i class="el-icon-s-check"></i></template
-          >
-          <template v-slot:suffix
-          >
-            <s-identify
-                :identifyCode="identifyCode"
-                @click="refreshCode"
+          class="input_code"
+          placeholder="请输入验证码"
+          v-model="loginForm.code"
+          ><template v-slot:prefix><i class="el-icon-s-check"></i></template
+          ><template v-slot:suffix
+            ><s-identify
+              :identifyCode="identifyCode"
+              @click="refreshCode"
             ></s-identify
-            >
-          </template>
+          ></template>
         </el-input>
       </el-form-item>
       <el-form-item>
         <el-button round type="primary" @click="toRegister">注册</el-button>
         <el-button round type="success" @click="login(loginForm)"
-        >登录
-        </el-button
-        >
-      </el-form-item
+          >登录</el-button
+        ></el-form-item
       >
     </el-form>
   </el-container>
 </template>
 
 <script>
-import {login} from "../api/user";
+import { login } from "../api/user";
 import SIdentify from "../components/identify";
+import jwtDecode from "jwt-decode";
 export default {
   data() {
     return {
+      user: {},
       loginForm: {
         userName: "",
         userPassword: "",
@@ -93,12 +87,12 @@ export default {
       },
       rules: {
         userName: [
-          {required: true, message: "账号不得为空!", trigger: "blur"},
+          { required: true, message: "账号不得为空!", trigger: "blur" },
         ],
         userPassword: [
-          {required: true, message: "密码不得为空!", trigger: "blur"},
+          { required: true, message: "密码不得为空!", trigger: "blur" },
         ],
-        code: [{required: true, message: "验证码不得为空!", trigger: "blur"}],
+        code: [{ required: true, message: "验证码不得为空!", trigger: "blur" }],
       },
       //随机数仓库
       identifyCodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
@@ -120,16 +114,18 @@ export default {
           login(obj).then((req) => {
             this.loginData = req.data;
             if (
-                (this.loginData.statue == 200) &
-                (this.loginData.data != null)
+              (this.loginData.statue == 200) &
+              (this.loginData.data != null)
             ) {
-              if (req.data.data.userIdentity === 0) {
+              this.user = jwtDecode(req.data.data).user;
+              if (this.user.userIdentity === 0) {
                 this.$message({
                   type: "success",
                   message: "登录成功!",
                   showClose: true,
                 });
-                sessionStorage.setItem("token", this.loginData.data.token);
+                sessionStorage.setItem("user", JSON.stringify(this.user));
+                sessionStorage.setItem("token", this.loginData.data);
                 this.$router.push({
                   name: "public",
                   showClose: true,
@@ -177,7 +173,7 @@ export default {
     makeCode(o, l) {
       for (let i = 0; i < l; i++) {
         this.identifyCode +=
-            this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
+          this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       }
     },
   },

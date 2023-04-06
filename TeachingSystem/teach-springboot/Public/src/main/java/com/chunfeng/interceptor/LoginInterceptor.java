@@ -1,6 +1,5 @@
 package com.chunfeng.interceptor;
 
-import com.alibaba.fastjson.JSON;
 import com.chunfeng.entity.User;
 import com.chunfeng.service.IRedisService;
 import com.chunfeng.service.ex.tokenException.TokenIsNullException;
@@ -47,13 +46,14 @@ public class LoginInterceptor implements HandlerInterceptor, RequestInterceptor 
         if (HttpMethod.OPTIONS.toString().equals(request.getMethod())) {
             return true;
         }
-        String token = request.getHeader("token");//获取请求头的token
-        this.token = JSON.parseObject(redisService.get("user"), User.class).getToken();
-        if (this.token == null || token == null) {//判断token和redis是否为空
+        token = request.getHeader("token");//获取请求头的token
+        //由于redis对string类型值的特殊处理(会自动加上双引号)，这里简化开发，直接分割字符串剔除双引号
+        String user1 = redisService.get("user").split("\"")[1];//获取redis中的token
+        if (token == null || user1 == null) {//判断token和redis是否为空
             throw new TokenIsNullException("token与redis数据不得为空!");
         }
-        log.info("拦截器状态:" + (this.token.equals(token) ? "放行" : "拦截"));
-        return this.token.equals(token);//比较请求头的token与redis中存储的token是否一致
+        log.info("拦截器状态:" + (token.equals(user1) ? "放行" : "拦截"));
+        return token.equals(user1);//比较请求头的token与redis中存储的token是否一致
     }
 
     /**
@@ -63,7 +63,6 @@ public class LoginInterceptor implements HandlerInterceptor, RequestInterceptor 
      */
     @Override
     public void apply(RequestTemplate template) {
-        this.token = JSON.parseObject(redisService.get("user"), User.class).getToken();
-        template.header("token", this.token);
+        template.header("token", token);
     }
 }

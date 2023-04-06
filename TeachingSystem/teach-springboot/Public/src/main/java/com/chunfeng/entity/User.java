@@ -38,8 +38,8 @@ public class User implements Serializable {
     private Long logId;//日志编号
     @TableField(exist = false)
     private Log log;//日志信息
-    @TableField(exist = false)
-    private String token;//token字符串
+    //@TableField(exist = false)
+    //private String token;//token字符串
     @TableField(exist = false)
     private Object user;//用户真实信息
 }

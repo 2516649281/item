@@ -16,7 +16,7 @@ public interface IUserService extends IService<User> {
      * @param user 用户信息:账号,密码
      * @return JSON
      */
-    JsonRequest<User> login(User user);
+    JsonRequest<String> login(User user);
 
     /**
      * 用户注册

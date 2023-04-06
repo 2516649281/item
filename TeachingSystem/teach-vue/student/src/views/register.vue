@@ -1,69 +1,63 @@
 <template>
   <div>
     <video autoplay loop muted class="login-fillWidth" v-on:canplay="canplay">
-      <source src="../img/login.mp4" type="video/mp4"/>
+      <source src="../img/login.mp4" type="video/mp4" />
     </video>
     <el-container>
       <el-main>
         <el-form
-            ref="registerFrom"
-            :inline-message="true"
-            :model="registerFrom"
-            :rules="rules"
-            @keyup.enter.native="register(registerFrom)"
-        >
-          <el-form-item>
+          :rules="rules"
+          :model="registerFrom"
+          @keyup.enter.native="register(registerFrom)"
+          :inline-message="true"
+          ref="registerFrom"
+          ><el-form-item>
             <h1>欢迎注册</h1>
           </el-form-item>
           <el-form-item prop="userName">
             <el-input
-                v-model="registerFrom.userName"
-                class="input_user"
-                placeholder="输入用户名"
-                prefix-icon="el-icon-user-solid"
+              prefix-icon="el-icon-user-solid"
+              v-model="registerFrom.userName"
+              placeholder="输入用户名"
+              class="input_user"
             ></el-input>
           </el-form-item>
           <el-form-item prop="userPassword">
             <el-input
-                v-model="registerFrom.userPassword"
-                class="input_password"
-                placeholder="输入密码"
-                prefix-icon="el-icon-lock"
-                show-password
+              prefix-icon="el-icon-lock"
+              v-model="registerFrom.userPassword"
+              placeholder="输入密码"
+              class="input_password"
+              show-password
             ></el-input>
           </el-form-item>
           <el-form-item prop="againPassword">
             <el-input
-                v-model="registerFrom.againPassword"
-                class="input_password"
-                placeholder="再次输入密码"
-                prefix-icon="el-icon-lock"
-                show-password
+              prefix-icon="el-icon-lock"
+              v-model="registerFrom.againPassword"
+              placeholder="再次输入密码"
+              class="input_password"
+              show-password
             ></el-input>
           </el-form-item>
           <el-form-item prop="code">
             <el-input
-                v-model="registerFrom.code"
-                class="input_code"
-                placeholder="请输入验证码"
-            >
-              <template v-slot:prefix><i class="el-icon-s-check"></i></template
-              >
-              <template v-slot:suffix
-              >
-                <s-identify
-                    :identifyCode="identifyCode"
-                    @click="refreshCode"
+              class="input_code"
+              placeholder="请输入验证码"
+              v-model="registerFrom.code"
+              ><template v-slot:prefix><i class="el-icon-s-check"></i></template
+              ><template v-slot:suffix
+                ><s-identify
+                  :identifyCode="identifyCode"
+                  @click="refreshCode"
                 ></s-identify
-                >
-              </template>
+              ></template>
             </el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" round @click="exit">返回</el-button>
             <el-button type="success" round @click="register(registerFrom)"
-            >注册
-            </el-button
+              >注册</el-button
             >
           </el-form-item>
         </el-form>
@@ -73,7 +67,7 @@
 </template>
 
 <script>
-import {register} from "../api/user";
+import { register } from "../api/user";
 import SIdentify from "../components/identify";
 export default {
   data() {
@@ -87,15 +81,15 @@ export default {
       },
       rules: {
         userName: [
-          {required: true, message: "账号不得为空!", trigger: "blur"},
+          { required: true, message: "账号不得为空!", trigger: "blur" },
         ],
         userPassword: [
-          {required: true, message: "密码不得为空!", trigger: "blur"},
+          { required: true, message: "密码不得为空!", trigger: "blur" },
         ],
         againPassword: [
-          {required: true, message: "请确认密码!", trigger: "blur"},
+          { required: true, message: "请确认密码!", trigger: "blur" },
         ],
-        code: [{required: true, message: "验证码不得为空!", trigger: "blur"}],
+        code: [{ required: true, message: "验证码不得为空!", trigger: "blur" }],
       },
       //随机数仓库
       identifyCodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
@@ -110,8 +104,7 @@ export default {
     this.identifyCode = "";
     this.makeCode(this.identifyCodes, 4);
   },
-  created() {
-  },
+  created() {},
   methods: {
     //返回
     exit() {
@@ -161,7 +154,7 @@ export default {
     makeCode(o, l) {
       for (let i = 0; i < l; i++) {
         this.identifyCode +=
-            this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
+          this.identifyCodes[this.randomNum(0, this.identifyCodes.length)];
       }
     },
   },

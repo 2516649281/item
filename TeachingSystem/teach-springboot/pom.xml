@@ -162,6 +162,10 @@
             <version>1.6</version>
             <type>pom</type>
         </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

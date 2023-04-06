@@ -2,7 +2,6 @@ package com.chunfeng.service;
 
 import com.chunfeng.entity.Admin;
 import com.chunfeng.entity.JsonRequest;
-import org.springframework.cache.annotation.CacheEvict;
 
 import java.util.List;
 import java.util.Map;

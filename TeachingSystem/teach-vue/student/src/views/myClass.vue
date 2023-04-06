@@ -3,17 +3,17 @@
     <el-main>
       <el-table :data="tableData" height="450" id="table">
         <el-table-column
-            align="center"
-            label="学生编号"
-            prop="studentId"
+          prop="studentId"
+          label="学生编号"
+          align="center"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="学生姓名"
-            prop="studentName"
+          prop="studentName"
+          label="学生姓名"
+          align="center"
         ></el-table-column>
         <el-table-column prop="studentAge" label="学生年龄" align="center">
-          <template #default="scope"> {{ scope.row.studentAge }}岁</template>
+          <template #default="scope"> {{ scope.row.studentAge }}岁 </template>
         </el-table-column>
         <el-table-column prop="studentGender" label="学生性别" align="center">
           <template #default="scope">
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import {selectAllStudentByClassId} from "../api/work";
+import { selectAllStudentByClassId } from "../api/work";
 import jwtDecode from "jwt-decode";
 export default {
   data() {
@@ -36,7 +36,7 @@ export default {
   },
   created() {
     this.selectAllStudentByClassId(
-        jwtDecode(sessionStorage.getItem("token")).user.user.classId
+      jwtDecode(sessionStorage.getItem("token")).user.user.classId
     );
   },
   methods: {

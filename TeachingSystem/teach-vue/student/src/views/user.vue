@@ -2,36 +2,28 @@
   <el-container>
     <div v-if="userFrom.user != null" class="main">
       <el-main
-      >
-        <el-descriptions border="true" class="userContent" title="学生信息">
+        ><el-descriptions title="学生信息" border="true" class="userContent">
           <el-descriptions-item label="学生编号">{{
-              userFrom.user.studentId
-            }}
-          </el-descriptions-item>
+            userFrom.user.studentId
+          }}</el-descriptions-item>
           <el-descriptions-item label="学生姓名">{{
-              userFrom.user.studentName
-            }}
-          </el-descriptions-item>
+            userFrom.user.studentName
+          }}</el-descriptions-item>
           <el-descriptions-item label="学生年龄"
-          >{{ userFrom.user.studentAge }}岁
-          </el-descriptions-item
+            >{{ userFrom.user.studentAge }}岁</el-descriptions-item
           >
           <el-descriptions-item label="学生性别">{{
-              userFrom.user.studentGender == 0 ? "女" : "男"
-            }}
-          </el-descriptions-item>
+            userFrom.user.studentGender == 0 ? "女" : "男"
+          }}</el-descriptions-item>
           <el-descriptions-item label="联系方式">{{
-              userFrom.user.studentPhone
-            }}
-          </el-descriptions-item>
+            userFrom.user.studentPhone
+          }}</el-descriptions-item>
           <el-descriptions-item label="学生居住地">{{
-              userFrom.user.studentAddress
-            }}
-          </el-descriptions-item>
+            userFrom.user.studentAddress
+          }}</el-descriptions-item>
           <el-descriptions-item label="电子邮箱">{{
-              userFrom.user.studentEmail
-            }}
-          </el-descriptions-item>
+            userFrom.user.studentEmail
+          }}</el-descriptions-item>
           <el-descriptions-item>
             <router-link to="/identity">不是我？前去更改身份</router-link>
           </el-descriptions-item>
@@ -39,27 +31,23 @@
         <el-divider></el-divider>
         <el-descriptions title="账号信息" border="true" class="userContent">
           <el-descriptions-item label="账号编号">{{
-              userFrom.userId
-            }}
-          </el-descriptions-item>
+            userFrom.userId
+          }}</el-descriptions-item>
           <el-descriptions-item label="账号">{{
-              userFrom.userName
-            }}
-          </el-descriptions-item>
+            userFrom.userName
+          }}</el-descriptions-item>
         </el-descriptions>
         <el-button
-            icon="el-icon-key"
-            type="primary"
-            @click="this.loginDialogFormVisible = true"
-        >修改密码
-        </el-button
+          type="primary"
+          @click="this.loginDialogFormVisible = true"
+          icon="el-icon-key"
+          >修改密码</el-button
         >
         <el-button type="success" icon="el-icon-upload" @click="toggleShow">
           更改头像
         </el-button>
         <el-button type="danger" @click="exitLogin" icon="el-icon-switch-button"
-        >退出登录
-        </el-button
+          >退出登录</el-button
         >
       </el-main>
     </div>
@@ -73,31 +61,27 @@
         <el-divider></el-divider>
         <el-descriptions title="账号信息" border="true" class="userContent">
           <el-descriptions-item label="账号编号">{{
-              userFrom.userId
-            }}
-          </el-descriptions-item>
+            userFrom.userId
+          }}</el-descriptions-item>
           <el-descriptions-item label="账号">{{
-              userFrom.userName
-            }}
-          </el-descriptions-item>
+            userFrom.userName
+          }}</el-descriptions-item>
         </el-descriptions>
         <el-button
-            icon="el-icon-key"
-            type="primary"
-            @click="this.loginDialogFormVisible = true"
-        >修改密码
-        </el-button
+          type="primary"
+          @click="this.loginDialogFormVisible = true"
+          icon="el-icon-key"
+          >修改密码</el-button
         >
         <el-button type="success" icon="el-icon-upload" @click="toggleShow">
           更改头像
         </el-button>
         <el-button
-            icon="el-icon-switch-button
+          type="danger"
+          @click="exitLogin"
+          icon="el-icon-switch-button
 "
-            type="danger"
-            @click="exitLogin"
-        >退出登录
-        </el-button
+          >退出登录</el-button
         >
       </el-main>
     </div>
@@ -105,68 +89,67 @@
   <!-- 修改密码 -->
   <el-dialog title="修改密码" v-model="loginDialogFormVisible">
     <el-form
-        ref="updateFrom"
-        :model="updatePasswordFrom"
-        :rules="rules"
-        @keyup.enter.native="updatePassword(updatePasswordFrom)"
+      :model="updatePasswordFrom"
+      @keyup.enter.native="updatePassword(updatePasswordFrom)"
+      :rules="rules"
+      ref="updateFrom"
     >
       <el-form-item
-          :label-width="formLabelWidth"
-          label="请输入密码:"
-          prop="userPassword"
+        label="请输入密码:"
+        :label-width="formLabelWidth"
+        prop="userPassword"
       >
         <el-input
-            v-model="updatePasswordFrom.userPassword"
-            show-password
+          v-model="updatePasswordFrom.userPassword"
+          show-password
         ></el-input>
       </el-form-item>
       <el-form-item
-          :label-width="formLabelWidth"
-          label="输入新密码:"
-          prop="newUserPassword"
+        label="输入新密码:"
+        :label-width="formLabelWidth"
+        prop="newUserPassword"
       >
         <el-input
-            v-model="updatePasswordFrom.newUserPassword"
-            show-password
+          v-model="updatePasswordFrom.newUserPassword"
+          show-password
         ></el-input>
       </el-form-item>
       <el-form-item
-          :label-width="formLabelWidth"
-          label="确认新密码:"
-          prop="againUserPassword"
+        label="确认新密码:"
+        :label-width="formLabelWidth"
+        prop="againUserPassword"
       >
         <el-input
-            v-model="updatePasswordFrom.againUserPassword"
-            show-password
+          v-model="updatePasswordFrom.againUserPassword"
+          show-password
         ></el-input>
       </el-form-item>
     </el-form>
     <div class="dialog-footer">
       <el-button @click="loginDialogFormVisible = false">取 消</el-button>
       <el-button type="primary" @click="updatePassword(updatePasswordFrom)"
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </div>
   </el-dialog>
   <div>
     <myUpload
-        v-model="showDialog"
-        :headers="Headers"
-        :url="url + `/user/${this.userFrom.userId}`"
-        method="PUT"
-        @crop-upload-success="cropUploadSuccess"
+      method="PUT"
+      :headers="Headers"
+      v-model="showDialog"
+      :url="url + `/user/${this.userFrom.userId}`"
+      @crop-upload-success="cropUploadSuccess"
     />
   </div>
 </template>
 
 <script>
 import myUpload from "vue-image-crop-upload";
-import {updatePassword} from "../api/user";
+import { updatePassword } from "../api/user";
 import jwtDecode from "jwt-decode";
-import {baseURL} from "../../public/config";
+import { baseURL } from "../../public/config";
 export default {
-  components: {myUpload},
+  components: { myUpload },
   data() {
     return {
       // 用户信息
@@ -184,20 +167,20 @@ export default {
       },
       rules: {
         userPassword: [
-          {required: true, message: "密码不得为空!", trigger: "blur"},
+          { required: true, message: "密码不得为空!", trigger: "blur" },
         ],
         newUserPassword: [
-          {required: true, message: "请输入新密码", trigger: "blur"},
+          { required: true, message: "请输入新密码", trigger: "blur" },
         ],
         againUserPassword: [
-          {required: true, message: "请再次输入密码", trigger: "blur"},
+          { required: true, message: "请再次输入密码", trigger: "blur" },
         ],
       },
       //访问路径
       url: baseURL,
       //显示上传图片窗口
       showDialog: false,
-      Headers: {token: sessionStorage.getItem("token")},
+      Headers: { token: sessionStorage.getItem("token") },
     };
   },
   created() {
@@ -268,16 +251,16 @@ export default {
     cropUploadSuccess(jsonData) {
       if ((jsonData.statue === 200) & (jsonData.data != null)) {
         this.$confirm(
-            "更换头像成功!但需要重新登录才能生效, 是否重新登录?",
-            "提示",
-            {
-              confirmButtonText: "确定",
-              cancelButtonText: "取消",
-              type: "warning",
-            }
+          "更换头像成功!但需要重新登录才能生效, 是否重新登录?",
+          "提示",
+          {
+            confirmButtonText: "确定",
+            cancelButtonText: "取消",
+            type: "warning",
+          }
         ).then(() => {
           sessionStorage.clear();
-          this.$router.push({name: "login"});
+          this.$router.push({ name: "login" });
         });
       } else {
         this.$message({

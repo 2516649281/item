@@ -1,13 +1,12 @@
 <template>
-  <img id="background" alt="" src="../image/bg.jpg"/>
+  <img src="../image/bg.jpg" alt="" id="background" />
   <el-container>
     <el-aside
-    >
-      <el-menu
-          active-text-color="#ffd04b"
-          background-color="transparent"
-          default-active="1"
-          text-color="#fff"
+      ><el-menu
+        default-active="1"
+        background-color="transparent"
+        text-color="#fff"
+        active-text-color="#ffd04b"
       >
         <el-image :src="require('@/assets/logo.png')" fit="contain"></el-image>
         <el-menu-item index="1" @click="toUser">
@@ -16,25 +15,17 @@
         </el-menu-item>
         <el-menu-item index="2" @click="toStudent" :disabled="menudisabled">
           <i class="el-icon-school"></i>
-          <template v-slot:title>学生管理</template>
-        </el-menu-item
-        >
-        <el-menu-item :disabled="menudisabled" index="3 " @click="toTeacher">
+          <template v-slot:title>学生管理</template> </el-menu-item
+        ><el-menu-item index="3 " @click="toTeacher" :disabled="menudisabled">
           <i class="el-icon-s-custom"></i>
-          <template v-slot:title>教师管理</template>
-        </el-menu-item
-        >
-        <el-menu-item :disabled="menudisabled" index="4" @click="toAdmin">
+          <template v-slot:title>教师管理</template> </el-menu-item
+        ><el-menu-item index="4" @click="toAdmin" :disabled="menudisabled">
           <i class="el-icon-star-on"></i>
-          <template v-slot:title>管理员管理</template>
-        </el-menu-item
-        >
-        <el-menu-item :disabled="menudisabled" index="5" @click="toClass">
+          <template v-slot:title>管理员管理</template> </el-menu-item
+        ><el-menu-item index="5" @click="toClass" :disabled="menudisabled">
           <i class="el-icon-price-tag"></i>
-          <template v-slot:title>班级管理</template>
-        </el-menu-item
-        >
-        <el-menu-item :disabled="menudisabled" index="6" @click="toSubject">
+          <template v-slot:title>班级管理</template> </el-menu-item
+        ><el-menu-item index="6" @click="toSubject" :disabled="menudisabled">
           <i class="el-icon-notebook-2"></i>
           <template v-slot:title>科目管理</template>
         </el-menu-item>
@@ -45,19 +36,17 @@
         <el-menu-item index="8" @click="exitLogin">
           <i class="el-icon-switch-button"></i>
           <template v-slot:title>退出登录</template>
-        </el-menu-item>
-      </el-menu
-      >
-    </el-aside
+        </el-menu-item></el-menu
+      ></el-aside
     >
     <el-container>
       <el-header>
         <div class="user">
           <el-avatar
-              v-if="userFrom.userHeader != 0"
-              :src="FileUrl + userFrom.userHeader"
-              fit="contain"
-              shape="square"
+            shape="square"
+            v-if="userFrom.userHeader != 0"
+            fit="contain"
+            :src="FileUrl + userFrom.userHeader"
           >
           </el-avatar>
           <el-avatar shape="square" v-else>user</el-avatar>
@@ -66,25 +55,23 @@
       </el-header>
       <el-main>
         <iframe
-            v-if="iframeV"
-            :src="nacos"
-            frameborder="0"
-            height="100%"
-            scrolling="yes"
-            width="100%"
+          v-if="iframeV"
+          :src="nacos"
+          scrolling="yes"
+          frameborder="0"
+          width="100%"
+          height="100%"
         ></iframe>
         <router-view v-else
-        />
-      </el-main>
+      /></el-main>
     </el-container>
   </el-container>
 </template>
 
 <script>
 import jwtDecode from "jwt-decode";
-import {getToken} from "../api/user";
-import {FileURL} from "../../public/config";
-
+import { getToken } from "../api/user";
+import { FileURL } from "../../public/config";
 export default {
   data() {
     return {
@@ -113,31 +100,31 @@ export default {
   methods: {
     //个人管理
     toUser() {
-      this.$router.push({name: "user"});
+      this.$router.push({ name: "user" });
     },
     //学生管理
     toStudent() {
-      this.$router.push({name: "student"});
+      this.$router.push({ name: "student" });
     },
     //教师管理
     toTeacher() {
-      this.$router.push({name: "teacher"});
+      this.$router.push({ name: "teacher" });
     },
     //管理员管理
     toAdmin() {
-      this.$router.push({name: "admin"});
+      this.$router.push({ name: "admin" });
     },
     //班级管理
     toClass() {
-      this.$router.push({name: "class"});
+      this.$router.push({ name: "class" });
     },
     //科目管理
     toSubject() {
-      this.$router.push({name: "subject"});
+      this.$router.push({ name: "subject" });
     },
     //文件管理
     toFile() {
-      this.$router.push({name: "file"});
+      this.$router.push({ name: "file" });
     },
     //退出登录
     exitLogin() {
@@ -152,7 +139,7 @@ export default {
           showClose: true,
         });
         sessionStorage.clear();
-        this.$router.push({name: "login"});
+        this.$router.push({ name: "login" });
       });
     },
     //验证token

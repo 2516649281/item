@@ -1,11 +1,11 @@
-package com.chunfeng.service.ex.deleteExcpption;
+package com.chunfeng.service.ex.sourceException.deleteExcpption;
 
-import com.chunfeng.service.ex.ServiceException;
+import com.chunfeng.service.ex.sourceException.SourceException;
 
 /**
  * 删除异常
  */
-public class DeleteException extends ServiceException {
+public class DeleteException extends SourceException {
     public DeleteException() {
         super();
     }

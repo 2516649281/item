@@ -2,13 +2,13 @@
   <el-container>
     <el-main>
       <el-table
-          ref="workIds"
-          :data="tableData"
-          height="400"
-          @selection-change="handleSelectionChange"
+        :data="tableData"
+        height="400"
+        ref="workIds"
+        @selection-change="handleSelectionChange"
       >
-        <el-table-column type="selection" width="55"></el-table-column>
-        <el-table-column fixed type="expand">
+        <el-table-column type="selection" width="55"> </el-table-column>
+        <el-table-column type="expand" fixed>
           <template #default="props">
             <el-form label-position="left" inline class="demo-table-expand">
               <el-form-item label="作业描述:">
@@ -18,95 +18,89 @@
           </template>
         </el-table-column>
         <el-table-column
-            align="center"
-            fixed
-            label="编号"
-            prop="workId"
-            width="150"
+          label="编号"
+          prop="workId"
+          align="center"
+          width="150"
+          fixed
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="作业名"
-            prop="workName"
-            width="200"
+          label="作业名"
+          prop="workName"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="创建时间"
-            prop="log.createTime"
-            width="250"
+          label="创建时间"
+          prop="log.createTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="最后修改时间"
-            prop="log.updateTime"
-            width="250"
+          label="最后修改时间"
+          prop="log.updateTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column label="状态" align="center" width="100">
           <template #default="scope">
             <el-tag
-                :type="scope.row.log.deleted === 0 ? 'success' : 'danger'"
-                disable-transitions
-            >{{ scope.row.log.deleted == 0 ? "正常" : "已删除" }}
-            </el-tag
+              :type="scope.row.log.deleted === 0 ? 'success' : 'danger'"
+              disable-transitions
+              >{{ scope.row.log.deleted == 0 ? "正常" : "已删除" }}</el-tag
             >
           </template>
         </el-table-column>
         <el-table-column label="操作" width="200" align="center" fixed="right">
           <template #default="scope"
-          >
-            <el-button
-                circle
-                icon="el-icon-edit"
-                type="primary"
-                @click="editClick(scope.row)"
+            ><el-button
+              type="primary"
+              circle
+              icon="el-icon-edit"
+              @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                circle
-                icon="el-icon-delete"
-                type="danger"
-                @click="deleteWork(scope.row.workId, true)"
+              type="danger"
+              circle
+              icon="el-icon-delete"
+              @click="deleteWork(scope.row.workId, true)"
             >
             </el-button>
             <el-button
-                circle
-                icon="el-icon-refresh-right"
-                type="success"
-                @click="deleteWork(scope.row.workId, false)"
+              type="success"
+              circle
+              icon="el-icon-refresh-right"
+              @click="deleteWork(scope.row.workId, false)"
             ></el-button
-            >
-          </template>
+          ></template>
         </el-table-column>
       </el-table>
       <div class="addbtn">
         <el-button
-            icon="el-icon-plus"
-            type="success"
-            @click="adddialogFormVisible = true"
-        >添加作业
-        </el-button
+          type="success"
+          icon="el-icon-plus"
+          @click="adddialogFormVisible = true"
+          >添加作业</el-button
         >
         <el-button
-            icon="el-icon-delete"
-            type="danger"
-            @click="deleteClasss(this.workIds, true)"
-        >批量删除
-        </el-button
+          type="danger"
+          @click="deleteClasss(this.workIds, true)"
+          icon="el-icon-delete"
+          >批量删除</el-button
         >
         <el-button
-            icon="el-icon-refresh-right"
-            type="success"
-            @click="deleteClasss(this.workIds, false)"
-        >批量恢复
-        </el-button
+          type="success"
+          @click="deleteClasss(this.workIds, false)"
+          icon="el-icon-refresh-right"
+          >批量恢复</el-button
         >
       </div>
       <el-pagination
-          :page-size="size"
-          :total="pageSize"
-          background
-          layout="prev, pager, next"
-          @current-change="handleCurrentChange"
+        background
+        @current-change="handleCurrentChange"
+        layout="prev, pager, next"
+        :total="pageSize"
+        :page-size="size"
       >
       </el-pagination>
     </el-main>
@@ -118,31 +112,27 @@
         <el-input v-model="addFrom.workName" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="发布班级" prop="workId"
-      >
-        <el-select v-model="addFrom.workId" placeholder="请选择">
+        ><el-select v-model="addFrom.workId" placeholder="请选择">
           <el-option
-              v-for="item in classMap"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
+            v-for="item in classMap"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
           >
-          </el-option>
-        </el-select
-        >
-      </el-form-item>
+          </el-option> </el-select
+      ></el-form-item>
       <el-form-item label="作业描述:" prop="workContent">
         <el-input
-            v-model="addFrom.workContent"
-            :rows="2"
-            type="textarea"
+          v-model="addFrom.workContent"
+          type="textarea"
+          :rows="2"
         ></el-input>
       </el-form-item>
     </el-form>
     <template v-slot:footer>
       <el-button @click="adddialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="addWork(addFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
@@ -154,31 +144,27 @@
         <el-input v-model="editFrom.workName" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="发布班级" prop="workId"
-      >
-        <el-select v-model="editFrom.workId" placeholder="请选择">
+        ><el-select v-model="editFrom.workId" placeholder="请选择">
           <el-option
-              v-for="item in classMap"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
+            v-for="item in classMap"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
           >
-          </el-option>
-        </el-select
-        >
-      </el-form-item>
+          </el-option> </el-select
+      ></el-form-item>
       <el-form-item label="作业描述:" prop="workContent">
         <el-input
-            v-model="editFrom.workContent"
-            :rows="2"
-            type="textarea"
+          v-model="editFrom.workContent"
+          type="textarea"
+          :rows="2"
         ></el-input>
       </el-form-item>
     </el-form>
     <template v-slot:footer>
       <el-button @click="editdialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="editWork(editFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
@@ -241,20 +227,20 @@ export default {
       //表单验证
       rules: {
         workName: [
-          {required: true, message: "作业名不得为空!", trigger: "blur"},
+          { required: true, message: "作业名不得为空!", trigger: "blur" },
         ],
-        workId: [{required: true, message: "请选择班级!", trigger: "change"}],
+        workId: [{ required: true, message: "请选择班级!", trigger: "change" }],
         workContent: [
-          {required: true, message: "作业描述不得为空!", trigger: "blur"},
+          { required: true, message: "作业描述不得为空!", trigger: "blur" },
         ],
       },
     };
   },
   created() {
     this.selectAllWorkByTeacherId(
-        this.current,
-        this.size,
-        jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
+      this.current,
+      this.size,
+      jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
     );
     this.selectAllClass();
   },
@@ -284,7 +270,7 @@ export default {
       this.$refs["addFrom"].validate((valid) => {
         if (valid) {
           obj.teacherId = jwtDecode(
-              sessionStorage.getItem("token")
+            sessionStorage.getItem("token")
           ).user.user.teacherId;
           addWork(obj).then((req) => {
             if ((req.data.statue === 200) & (req.data.data != null)) {
@@ -294,9 +280,9 @@ export default {
                 showClose: true,
               });
               this.selectAllWorkByTeacherId(
-                  this.current,
-                  this.size,
-                  jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
+                this.current,
+                this.size,
+                jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
               );
               this.adddialogFormVisible = false;
             } else {
@@ -324,9 +310,9 @@ export default {
                 showClose: true,
               });
               this.selectAllWorkByTeacherId(
-                  this.current,
-                  this.size,
-                  jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
+                this.current,
+                this.size,
+                jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
               );
               this.editdialogFormVisible = false;
             } else {
@@ -345,15 +331,15 @@ export default {
     //删除作业
     deleteWork(workId, index) {
       this.$confirm(
-          index
-              ? "此操作将删除该作业, 是否继续?"
-              : "此操作将恢复该作业, 是否继续?",
-          "提示",
-          {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
+        index
+          ? "此操作将删除该作业, 是否继续?"
+          : "此操作将恢复该作业, 是否继续?",
+        "提示",
+        {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
       ).then(() => {
         this.map = new Map();
         this.map[workId] = index;
@@ -365,9 +351,9 @@ export default {
               showClose: true,
             });
             this.selectAllWorkByTeacherId(
-                this.current,
-                this.size,
-                jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
+              this.current,
+              this.size,
+              jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
             );
           } else {
             this.$message({
@@ -387,13 +373,13 @@ export default {
     //批量删除
     deleteClasss(ids, index) {
       this.$confirm(
-          index ? "此操作将删除班级, 是否继续?" : "此操作将恢复班级, 是否继续?",
-          "提示",
-          {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
+        index ? "此操作将删除班级, 是否继续?" : "此操作将恢复班级, 是否继续?",
+        "提示",
+        {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
       ).then(() => {
         this.map = new Map();
         for (let i = 0; i < ids.length; i++) {
@@ -407,9 +393,9 @@ export default {
               showClose: true,
             });
             this.selectAllWorkByTeacherId(
-                this.current,
-                this.size,
-                jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
+              this.current,
+              this.size,
+              jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
             );
           } else {
             this.$message({
@@ -429,9 +415,9 @@ export default {
     handleCurrentChange(val) {
       this.current = val;
       this.selectAllWorkByTeacherId(
-          this.current,
-          this.size,
-          jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
+        this.current,
+        this.size,
+        jwtDecode(sessionStorage.getItem("token")).user.user.teacherId
       );
     },
   },

@@ -1,11 +1,11 @@
-package com.chunfeng.service.ex.updateException;
+package com.chunfeng.service.ex.sourceException.updateException;
 
-import com.chunfeng.service.ex.ServiceException;
+import com.chunfeng.service.ex.sourceException.SourceException;
 
 /**
  * 修改异常
  */
-public class UpdateException extends ServiceException {
+public class UpdateException extends SourceException {
     public UpdateException() {
         super();
     }

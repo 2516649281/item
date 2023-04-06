@@ -1,4 +1,4 @@
-package com.chunfeng.service.ex.deleteExcpption;
+package com.chunfeng.service.ex.sourceException.deleteExcpption;
 
 /**
  * 删除数据失败

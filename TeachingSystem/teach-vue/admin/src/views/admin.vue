@@ -4,64 +4,61 @@
       <el-form :inline="true" :model="selectFrom">
         <el-form-item>
           <el-input
-              v-model="selectFrom.adminAddress"
-              placeholder="键入管理员地址"
+            v-model="selectFrom.adminAddress"
+            placeholder="键入管理员地址"
           ></el-input>
         </el-form-item>
         <el-form-item>
           <el-button
-              icon="el-icon-search"
-              type="primary"
-              @click="
+            type="primary"
+            @click="
               selectAllAdminByAddress(
                 this.current,
                 this.size,
                 selectFrom.adminAddress
               )
             "
-          >查询
-          </el-button
+            icon="el-icon-search"
+            >查询</el-button
           >
           <el-button
-              icon="el-icon-delete"
-              type="danger"
-              @click="deleteAdmins(this.adminIds, true)"
-          >批量删除
-          </el-button
+            type="danger"
+            @click="deleteAdmins(this.adminIds, true)"
+            icon="el-icon-delete"
+            >批量删除</el-button
           >
           <el-button
-              icon="el-icon-refresh-right"
-              type="success"
-              @click="deleteAdmins(this.adminIds, false)"
-          >批量恢复
-          </el-button
+            type="success"
+            @click="deleteAdmins(this.adminIds, false)"
+            icon="el-icon-refresh-right"
+            >批量恢复</el-button
           >
         </el-form-item>
       </el-form>
     </el-header>
     <el-main>
       <el-table
-          ref="adminIds"
-          :data="tableData"
-          height="400"
-          @selection-change="handleSelectionChange"
+        :data="tableData"
+        height="400"
+        ref="adminIds"
+        @selection-change="handleSelectionChange"
       >
-        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column type="selection" width="55"> </el-table-column>
         <el-table-column
-            align="center"
-            fixed="left"
-            label="管理员编号"
-            prop="adminId"
-            width="100"
+          label="管理员编号"
+          prop="adminId"
+          align="center"
+          width="100"
+          fixed="left"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="管理员姓名"
-            prop="adminName"
-            width="200"
+          label="管理员姓名"
+          prop="adminName"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column label="管理员年龄" align="center" width="200">
-          <template #default="scope"> {{ scope.row.adminAge }}岁</template>
+          <template #default="scope"> {{ scope.row.adminAge }}岁 </template>
         </el-table-column>
         <el-table-column label="管理员性别" align="center" width="200">
           <template #default="scope">
@@ -69,85 +66,82 @@
           </template>
         </el-table-column>
         <el-table-column
-            align="center"
-            label="管理员住址"
-            prop="adminAddress"
-            width="200"
+          label="管理员住址"
+          prop="adminAddress"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="管理员电话"
-            prop="adminPhone"
-            width="200"
+          label="管理员电话"
+          prop="adminPhone"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="管理员邮箱"
-            prop="adminEmail"
-            width="200"
+          label="管理员邮箱"
+          prop="adminEmail"
+          align="center"
+          width="200"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="创建时间"
-            prop="log.createTime"
-            width="250"
+          label="创建时间"
+          prop="log.createTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column
-            align="center"
-            label="最后修改时间"
-            prop="log.updateTime"
-            width="250"
+          label="最后修改时间"
+          prop="log.updateTime"
+          align="center"
+          width="250"
         ></el-table-column>
         <el-table-column label="状态" align="center" width="100">
           <template #default="scope">
             <el-tag
-                :type="scope.row.log.deleted === 0 ? 'success' : 'danger'"
-                disable-transitions
-            >{{ scope.row.log.deleted == 0 ? "正常" : "已删除" }}
-            </el-tag
+              :type="scope.row.log.deleted === 0 ? 'success' : 'danger'"
+              disable-transitions
+              >{{ scope.row.log.deleted == 0 ? "正常" : "已删除" }}</el-tag
             >
           </template>
         </el-table-column>
         <el-table-column label="操作" width="200" align="center" fixed="right">
           <template #default="scope"
-          >
-            <el-button
-                circle
-                icon="el-icon-edit"
-                type="primary"
-                @click="editClick(scope.row)"
+            ><el-button
+              type="primary"
+              circle
+              icon="el-icon-edit"
+              @click="editClick(scope.row)"
             ></el-button>
             <el-button
-                circle
-                icon="el-icon-delete"
-                type="danger"
-                @click="deleteAdminById(scope.row.adminId, true)"
+              type="danger"
+              circle
+              icon="el-icon-delete"
+              @click="deleteAdminById(scope.row.adminId, true)"
             >
             </el-button>
             <el-button
-                circle
-                icon="el-icon-refresh-right"
-                type="success"
-                @click="deleteAdminById(scope.row.adminId, false)"
+              type="success"
+              circle
+              icon="el-icon-refresh-right"
+              @click="deleteAdminById(scope.row.adminId, false)"
             ></el-button
-            >
-          </template>
+          ></template>
         </el-table-column>
       </el-table>
       <div class="addbtn">
         <el-button
-            circle
-            icon="el-icon-plus"
-            type="success"
-            @click="adddialogFormVisible = true"
+          type="success"
+          circle
+          icon="el-icon-plus"
+          @click="adddialogFormVisible = true"
         ></el-button>
       </div>
       <el-pagination
-          :page-size="size"
-          :total="pageSize"
-          background
-          layout="prev, pager, next"
-          @current-change="handleCurrentChange"
+        background
+        @current-change="handleCurrentChange"
+        layout="prev, pager, next"
+        :total="pageSize"
+        :page-size="size"
       >
       </el-pagination>
     </el-main>
@@ -180,8 +174,7 @@
     <template v-slot:footer>
       <el-button @click="adddialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="addAdmin(addFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
@@ -214,8 +207,7 @@
     <template v-slot:footer>
       <el-button @click="editdialogFormVisible = false" round>取 消</el-button>
       <el-button type="primary" @click="updateAdminById(editFrom)" round
-      >确 定
-      </el-button
+        >确 定</el-button
       >
     </template>
   </el-dialog>
@@ -288,31 +280,31 @@ export default {
       //表单验证
       rules: {
         adminName: [
-          {required: true, message: "管理员姓名不得为空!", trigger: "blur"},
+          { required: true, message: "管理员姓名不得为空!", trigger: "blur" },
         ],
         adminAge: [
-          {required: true, message: "管理员年龄不得为空!", trigger: "blur"},
+          { required: true, message: "管理员年龄不得为空!", trigger: "blur" },
         ],
         adminGender: [
-          {required: true, message: "管理员性别不得为空!", trigger: "blur"},
+          { required: true, message: "管理员性别不得为空!", trigger: "blur" },
         ],
         adminAddress: [
-          {required: true, message: "管理员地址不得为空!", trigger: "blur"},
+          { required: true, message: "管理员地址不得为空!", trigger: "blur" },
         ],
         adminPhone: [
-          {required: true, message: "管理员电话不得为空!", trigger: "blur"},
+          { required: true, message: "管理员电话不得为空!", trigger: "blur" },
         ],
         adminEmail: [
-          {required: true, message: "管理员邮箱不得为空!", trigger: "blur"},
+          { required: true, message: "管理员邮箱不得为空!", trigger: "blur" },
         ],
       },
     };
   },
   created() {
     this.selectAllAdminByAddress(
-        this.current,
-        this.size,
-        this.selectFrom.adminAddress
+      this.current,
+      this.size,
+      this.selectFrom.adminAddress
     );
   },
   methods: {
@@ -343,9 +335,9 @@ export default {
                 showClose: true,
               });
               this.selectAllAdminByAddress(
-                  this.current,
-                  this.size,
-                  this.selectFrom.adminAddress
+                this.current,
+                this.size,
+                this.selectFrom.adminAddress
               );
               this.adddialogFormVisible = false;
             } else {
@@ -374,9 +366,9 @@ export default {
                 showClose: true,
               });
               this.selectAllAdminByAddress(
-                  this.current,
-                  this.size,
-                  this.selectFrom.adminAddress
+                this.current,
+                this.size,
+                this.selectFrom.adminAddress
               );
               this.editdialogFormVisible = false;
             } else {
@@ -395,15 +387,15 @@ export default {
     //单次删除管理员
     deleteAdminById(adminId, index) {
       this.$confirm(
-          index
-              ? "此操作将删除该管理员, 是否继续?"
-              : "此操作将恢复该管理员, 是否继续?",
-          "提示",
-          {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
+        index
+          ? "此操作将删除该管理员, 是否继续?"
+          : "此操作将恢复该管理员, 是否继续?",
+        "提示",
+        {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
       ).then(() => {
         //定义map集合
         this.map = new Map();
@@ -416,9 +408,9 @@ export default {
               showClose: true,
             });
             this.selectAllAdminByAddress(
-                this.current,
-                this.size,
-                this.selectFrom.adminAddress
+              this.current,
+              this.size,
+              this.selectFrom.adminAddress
             );
           } else {
             this.$message({
@@ -433,15 +425,15 @@ export default {
     //批量删除
     deleteAdmins(ids, index) {
       this.$confirm(
-          index
-              ? "此操作将删除管理员, 是否继续?"
-              : "此操作将恢复管理员, 是否继续?",
-          "提示",
-          {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
-            type: "warning",
-          }
+        index
+          ? "此操作将删除管理员, 是否继续?"
+          : "此操作将恢复管理员, 是否继续?",
+        "提示",
+        {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning",
+        }
       ).then(() => {
         this.map = new Map();
         for (let i = 0; i < ids.length; i++) {
@@ -455,9 +447,9 @@ export default {
               showClose: true,
             });
             this.selectAllAdminByAddress(
-                this.current,
-                this.size,
-                this.selectFrom.adminAddress
+              this.current,
+              this.size,
+              this.selectFrom.adminAddress
             );
           } else {
             this.$message({
@@ -482,9 +474,9 @@ export default {
     handleCurrentChange(val) {
       this.current = val;
       this.selectAllAdminByAddress(
-          this.current,
-          this.size,
-          this.selectFrom.adminAddress
+        this.current,
+        this.size,
+        this.selectFrom.adminAddress
       );
     },
   },
@@ -507,13 +499,11 @@ export default {
   width: 10%;
   margin: 0 auto;
 }
-
 .el-dialog .el-button {
   width: 20%;
   margin: 5% 15%;
 }
-
-/deep/ .el-input__inner {
+/deep/.el-input__inner {
   background-color: transparent;
   /* color: white; */
 }

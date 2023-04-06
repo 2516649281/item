@@ -7,8 +7,6 @@ com.chunfeng.entity
 com.chunfeng.interceptor
 com.chunfeng.service
 com.chunfeng.service.ex
-com.chunfeng.service.ex.addException
-com.chunfeng.service.ex.deleteExcpption
 com.chunfeng.service.ex.fileException
 com.chunfeng.service.ex.fileException.delete
 com.chunfeng.service.ex.fileException.load
@@ -20,8 +18,11 @@ com.chunfeng.service.ex.logException.deleteException
 com.chunfeng.service.ex.logException.selectException
 com.chunfeng.service.ex.logException.updateException
 com.chunfeng.service.ex.redisException
-com.chunfeng.service.ex.selectException
+com.chunfeng.service.ex.sourceException
+com.chunfeng.service.ex.sourceException.addException
+com.chunfeng.service.ex.sourceException.deleteExcpption
+com.chunfeng.service.ex.sourceException.selectException
+com.chunfeng.service.ex.sourceException.updateException
 com.chunfeng.service.ex.tokenException
-com.chunfeng.service.ex.updateException
 com.chunfeng.service.impl
 com.chunfeng.util

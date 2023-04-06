@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.chunfeng.service.IRedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,6 +44,8 @@ public class RedisServiceImpl<T> implements IRedisService<T> {
     @Override
     public void set(String key, T t) {
         String value = JSON.toJSONString(t);
+        //解决存储时值携带双引号
+        StringRedisSerializer redisSerializer = new StringRedisSerializer();
         redisTemplate.opsForValue().set(key, value);
     }
 }

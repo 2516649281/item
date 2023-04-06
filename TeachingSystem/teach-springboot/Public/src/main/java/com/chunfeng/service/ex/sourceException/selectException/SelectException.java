@@ -1,11 +1,11 @@
-package com.chunfeng.service.ex.selectException;
+package com.chunfeng.service.ex.sourceException.selectException;
 
-import com.chunfeng.service.ex.ServiceException;
+import com.chunfeng.service.ex.sourceException.SourceException;
 
 /**
  * 查询异常
  */
-public class SelectException extends ServiceException {
+public class SelectException extends SourceException {
     public SelectException() {
         super();
     }

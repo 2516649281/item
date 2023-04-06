@@ -38,8 +38,7 @@ Content-Type: application/json
     "deleted" : 0,
     "createTime" : "",
     "updateTime" : ""
-  },
-  "token" : ""
+  }
 }
 ----
 
@@ -62,8 +61,7 @@ Content-Type: application/json
 |+log.deleted+|+Integer+||+0+|+逻辑删除+
 |+log.createTime+|+String+|||+创建时间+
 |+log.updateTime+|+String+|||+修改时间+
-|+token+|+String+|||
-|+user+|+Object+|||
+|+user+|+Object+|||+private String token;//token字符串+
 |===
 
 响应
@@ -74,26 +72,7 @@ HTTP/1.1 200 OK
 {
   "statue" : "200",
   "message" : "请求已完成!",
-  "data" : {
-    "userId" : 0,
-    "userName" : "",
-    "newUserName" : "",
-    "userPassword" : "",
-    "newUserPassword" : "",
-    "userSalt" : "",
-    "userHeader" : "",
-    "newUserHeader" : "",
-    "userIndex" : 0,
-    "userIdentity" : 0,
-    "logId" : 0,
-    "log" : {
-      "logId" : 0,
-      "deleted" : 0,
-      "createTime" : "",
-      "updateTime" : ""
-    },
-    "token" : ""
-  },
+  "data" : "",
   "pageSize" : "0L"
 }
 ----
@@ -103,25 +82,7 @@ HTTP/1.1 200 OK
 |+名称+|+类型+|+校验+|+默认+|+描述+
 |+statue+|+Integer+||+200+|+状态码+
 |+message+|+String+||+请求已完成!+|+消息+
-|+data+|+User+|||+数据+
-|+data.userId+|+Long+||+0+|
-|+data.userName+|+String+|||+用户名+
-|+data.newUserName+|+String+|||
-|+data.userPassword+|+String+|||+用户密码+
-|+data.newUserPassword+|+String+|||
-|+data.userSalt+|+String+|||+盐值+
-|+data.userHeader+|+String+|||+头像+
-|+data.newUserHeader+|+String+|||
-|+data.userIndex+|+Long+||+0+|
-|+data.userIdentity+|+Integer+||+0+|+身份指数+
-|+data.logId+|+Long+||+0+|
-|+data.log+|+Log+|||
-|+data.log.logId+|+Long+||+0+|
-|+data.log.deleted+|+Integer+||+0+|+逻辑删除+
-|+data.log.createTime+|+String+|||+创建时间+
-|+data.log.updateTime+|+String+|||+修改时间+
-|+data.token+|+String+|||
-|+data.user+|+Object+|||
+|+data+|+String+|||+数据+
 |+pageSize+|+Long+||+0L+|+总数+
 |===
 
@@ -150,8 +111,7 @@ Content-Type: application/json
     "deleted" : 0,
     "createTime" : "",
     "updateTime" : ""
-  },
-  "token" : ""
+  }
 }
 ----
 
@@ -174,8 +134,7 @@ Content-Type: application/json
 |+log.deleted+|+Integer+||+0+|+逻辑删除+
 |+log.createTime+|+String+|||+创建时间+
 |+log.updateTime+|+String+|||+修改时间+
-|+token+|+String+|||
-|+user+|+Object+|||
+|+user+|+Object+|||+private String token;//token字符串+
 |===
 
 响应
@@ -225,8 +184,7 @@ Content-Type: application/json
     "deleted" : 0,
     "createTime" : "",
     "updateTime" : ""
-  },
-  "token" : ""
+  }
 }
 ----
 
@@ -249,8 +207,7 @@ Content-Type: application/json
 |+log.deleted+|+Integer+||+0+|+逻辑删除+
 |+log.createTime+|+String+|||+创建时间+
 |+log.updateTime+|+String+|||+修改时间+
-|+token+|+String+|||
-|+user+|+Object+|||
+|+user+|+Object+|||+private String token;//token字符串+
 |===
 
 响应
@@ -300,8 +257,7 @@ Content-Type: application/json
     "deleted" : 0,
     "createTime" : "",
     "updateTime" : ""
-  },
-  "token" : ""
+  }
 }
 ----
 
@@ -324,8 +280,7 @@ Content-Type: application/json
 |+log.deleted+|+Integer+||+0+|+逻辑删除+
 |+log.createTime+|+String+|||+创建时间+
 |+log.updateTime+|+String+|||+修改时间+
-|+token+|+String+|||
-|+user+|+Object+|||
+|+user+|+Object+|||+private String token;//token字符串+
 |===
 
 响应

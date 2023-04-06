@@ -1,4 +1,4 @@
-package com.chunfeng.service.ex.selectException;
+package com.chunfeng.service.ex.sourceException.selectException;
 
 /**
  * 查询的数据不存在

@@ -1,30 +1,27 @@
 <template>
-  <img id="background" alt="" src="../img/bg.png"/>
+  <img src="../img/bg.png" alt="" id="background" />
   <el-container>
     <el-header>
       <div id="header-image">
         <el-image :src="header" fit="fill"></el-image>
       </div>
       <el-menu
-          id="header-link"
-          :default-active="1"
-          active-text-color="#ffd04b"
-          background-color="#212121"
-          class="el-menu-demo"
-          mode="horizontal"
-          text-color="#fff"
+        :default-active="1"
+        class="el-menu-demo"
+        mode="horizontal"
+        id="header-link"
+        background-color="#212121"
+        active-text-color="#ffd04b"
+        text-color="#fff"
       >
         <el-menu-item @click="toIndex" index="1"
-        >
-          <template v-slot:title>
+          ><template v-slot:title>
             <i class="el-icon-s-home"></i>
             <span>首页</span></template
-          >
-        </el-menu-item
+          ></el-menu-item
         >
         <el-menu-item @click="toMyClass" index="2" :disabled="menudisabled"
-        >
-          <template v-slot:title>
+          ><template v-slot:title>
             <i class="el-icon-s-custom"></i>
             <span>我的班级</span></template
           >
@@ -35,66 +32,56 @@
             <span>作业</span></template
           >
           <el-menu-item @click="toSubmitWork" index="3-1"
-          >
-            <template v-slot:title>
+            ><template v-slot:title>
               <i class="el-icon-document-checked"></i>
               <span>已提交的作业</span></template
-            >
-          </el-menu-item
+            ></el-menu-item
           >
           <el-menu-item index="3-2" @click="toCompleteWork"
-          >
-            <template v-slot:title>
+            ><template v-slot:title>
               <i class="el-icon-document"></i>
               <span>需完成的作业 </span></template
-            >
-          </el-menu-item
+            ></el-menu-item
           >
         </el-submenu>
       </el-menu>
       <div id="header-link"></div>
       <div id="header-input">
         <el-input
-            v-model="search"
-            class="search_input"
-            placeholder="输入关键字"
+          placeholder="输入关键字"
+          v-model="search"
+          class="search_input"
         >
         </el-input>
         <el-button type="success" icon="el-icon-search"></el-button>
       </div>
       <div id="header-user" v-if="this.token === null">
         <el-button :underline="false" type="success" circle @click="toRegister"
-        >注
-        </el-button
+          >注</el-button
         >
         <router-link to="/login" :underline="false"
-        >
-          <el-avatar shape="square"> 请登录</el-avatar>
-        </router-link
+          ><el-avatar shape="square"> 请登录 </el-avatar></router-link
         >
       </div>
       <div id="header-user" v-else>
         <router-link to="/user" :underline="false"
-        >
-          <el-avatar
-              v-if="userFrom.userHeader != 0"
-              :src="fileUrl + userFrom.userHeader"
-              fit="contain"
-              shape="square"
+          ><el-avatar
+            shape="square"
+            v-if="userFrom.userHeader != 0"
+            fit="contain"
+            :src="fileUrl + userFrom.userHeader"
           >
           </el-avatar>
           <el-avatar
-              v-else
-              icon="el-icon-user-solid"
-              shape="square"
-          ></el-avatar>
-        </router-link
-        >
-        欢迎你,{{ userFrom.userName }}
+            shape="square"
+            icon="el-icon-user-solid"
+            v-else
+          ></el-avatar></router-link
+        >欢迎你,{{ userFrom.userName }}
       </div>
     </el-header>
     <el-main>
-      <router-view/>
+      <router-view />
     </el-main>
     <el-footer>
       <el-footer>
@@ -105,18 +92,15 @@
           <li>活动</li>
           <li>关于</li>
           <li></li>
-        </div>
-      </el-footer
-      >
-    </el-footer>
+        </div> </el-footer
+    ></el-footer>
   </el-container>
 </template>
 
 <script>
-import {getToken} from "../api/user";
-import jwtDecode from "jwt-decode";
+import { getToken } from "../api/user";
 import jpg from "@/assets/logo.png";
-import {FileServerURL} from "../../public/config";
+import { FileServerURL } from "../../public/config";
 export default {
   data() {
     return {
@@ -140,15 +124,13 @@ export default {
     };
   },
   created() {
-    this.token = sessionStorage.getItem("token");
-    if (this.token != null) {
-      this.userFrom = jwtDecode(this.token).user;
-    }
+    this.userFrom = JSON.parse(sessionStorage.getItem("user"));
+    console.log(this.userFrom);
     if (this.userFrom.user === null) {
       this.$message({
         type: "warning",
         message:
-            "当前账号未绑定学生身份信息，请联系管理员绑定后以获取完整功能!",
+          "当前账号未绑定学生身份信息，请联系管理员绑定后以获取完整功能!",
         showClose: true,
       });
       this.menudisabled = true;
@@ -159,17 +141,17 @@ export default {
     if (this.token != "") {
       const timer = setInterval(() => {
         setTimeout(
-            getToken().then((req) => {
-              if (req.data.statue != 200 || req.data.data != true) {
-                clearInterval(timer);
-                this.$notify({
-                  title: "提示",
-                  message: "当前登录信息已失效，请重新登录!",
-                  type: "warning",
-                });
-              }
-            }),
-            0
+          getToken().then((req) => {
+            if (req.data.statue != 200 || req.data.data != true) {
+              clearInterval(timer);
+              this.$notify({
+                title: "提示",
+                message: "当前登录信息已失效，请重新登录!",
+                type: "warning",
+              });
+            }
+          }),
+          0
         );
       }, 3 * 60 * 1000);
     }

@@ -1,614 +1,537 @@
 {
-  "info": {
-    "name": "教务管理系统",
-    "_postman_id": "index",
-    "description": "教务管理系统接口",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  "info" : {
+    "name" : "教务管理系统",
+    "_postman_id" : "index",
+    "description" : "教务管理系统接口",
+    "schema" : "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
-  "item": [
-    {
-      "name": "文件管理控制层",
-      "item": [
-        {
-          "id": "a655b3eb-aa46-44ae-b20b-3a140b19cd52",
-          "name": "查询所有已知文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/fileMage/select/{current}/{size}",
-              "query": [
-                {
-                  "key": "current",
-                  "type": "Integer",
-                  "value": "",
-                  "description": "",
-                  "disabled": false
-                },
-                {
-                  "key": "size",
-                  "type": "Integer",
-                  "value": "",
-                  "description": "",
-                  "disabled": false
-                }
-              ]
-            },
-            "method": "GET",
-            "header": [],
-            "body": {
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/fileMage/select/{current}/{size}",
-                  "query": [
-                    {
-                      "key": "current",
-                      "type": "Integer",
-                      "value": "",
-                      "description": "",
-                      "disabled": false
-                    },
-                    {
-                      "key": "size",
-                      "type": "Integer",
-                      "value": "",
-                      "description": "",
-                      "disabled": false
-                    }
-                  ]
-                },
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "null",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
+  "item" : [ {
+    "name" : "文件管理控制层",
+    "item" : [ {
+      "id" : "b8094277-6c30-4a64-abb6-fedbc1cff046",
+      "name" : "查询所有已知文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/fileMage/select/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
         },
-        {
-          "id": "e7e2459c-082f-48fb-b335-efc5c9e4f003",
-          "name": "条件查询",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/fileMage/selectB/{current}/{size}",
-              "query": [
-                {
-                  "key": "current",
-                  "type": "Integer",
-                  "value": "",
-                  "description": "",
-                  "disabled": false
-                },
-                {
-                  "key": "size",
-                  "type": "Integer",
-                  "value": "",
-                  "description": "",
-                  "disabled": false
-                },
-                {
-                  "key": "fileName",
-                  "type": "String",
-                  "value": "",
-                  "description": "",
-                  "disabled": false
-                }
-              ]
-            },
-            "method": "GET",
-            "header": [],
-            "body": {
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/fileMage/selectB/{current}/{size}",
-                  "query": [
-                    {
-                      "key": "current",
-                      "type": "Integer",
-                      "value": "",
-                      "description": "",
-                      "disabled": false
-                    },
-                    {
-                      "key": "size",
-                      "type": "Integer",
-                      "value": "",
-                      "description": "",
-                      "disabled": false
-                    },
-                    {
-                      "key": "fileName",
-                      "type": "String",
-                      "value": "",
-                      "description": "",
-                      "disabled": false
-                    }
-                  ]
-                },
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "null",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
         }
-      ]
-    },
-    {
-      "name": "文件操作controller",
-      "item": [
-        {
-          "id": "88b44b6e-ac6c-4fee-8761-eacf4d8edc22",
-          "name": "一次上传一个文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/file/load",
-              "query": []
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "[ 0 ]",
-              "urlencoded": [],
-              "formdata": []
-            }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/fileMage/select/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
           },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/file/load",
-                  "query": []
-                },
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "[ 0 ]",
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "{\r\n  \"0\" : 0\r\n}",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
         },
-        {
-          "id": "1dc492ab-85c1-4181-a8d4-337d3d13898c",
-          "name": "一次上传多个文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/file/loads",
-              "query": []
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "[ [ 0 ] ]",
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/file/loads",
-                  "query": []
-                },
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "[ [ 0 ] ]",
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "{\r\n  \"0\" : 0\r\n}",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "d54461b7-a5c3-40ed-a16c-1118d49a14bd",
+      "name" : "条件查询",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/fileMage/selectB/{current}/{size}",
+          "query" : [ {
+            "key" : "current",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "size",
+            "type" : "Integer",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          }, {
+            "key" : "fileName",
+            "type" : "String",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
         },
-        {
-          "id": "051c8a0c-4674-49a7-ab18-1930542e5fae",
-          "name": "修改一个文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/file/update/{fileId}",
-              "query": []
-            },
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "[ 0 ]",
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/file/update/{fileId}",
-                  "query": []
-                },
-                "method": "PUT",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "[ 0 ]",
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "0",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
-        },
-        {
-          "id": "031c50b3-159e-4452-a90e-0f991c4880ae",
-          "name": "一次修改多个文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/file/updates",
-              "query": []
-            },
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "[ [ 0 ] ]",
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/file/updates",
-                  "query": []
-                },
-                "method": "PUT",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "[ [ 0 ] ]",
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "0",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
-        },
-        {
-          "id": "9b82e715-615b-4648-82d4-900798a69f0c",
-          "name": "删除一个文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/file/delete/{fileId}",
-              "query": []
-            },
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/file/delete/{fileId}",
-                  "query": []
-                },
-                "method": "DELETE",
-                "header": [],
-                "body": {
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "0",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
-        },
-        {
-          "id": "5b6bc3e9-1004-4edf-a4ef-4eecafcf5ed9",
-          "name": "一次删除多个文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/file/deletes",
-              "query": []
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "[ 0 ]",
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/file/deletes",
-                  "query": []
-                },
-                "method": "DELETE",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "[ 0 ]",
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "0",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
-        },
-        {
-          "id": "34511942-799e-4a3e-a754-e45bb8a38e15",
-          "name": "读取一个文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/file/select/{fileId}",
-              "query": [
-                {
-                  "key": "fileId",
-                  "type": "Long",
-                  "value": "",
-                  "description": "",
-                  "disabled": false
-                }
-              ]
-            },
-            "method": "GET",
-            "header": [],
-            "body": {
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/file/select/{fileId}",
-                  "query": [
-                    {
-                      "key": "fileId",
-                      "type": "Long",
-                      "value": "",
-                      "description": "",
-                      "disabled": false
-                    }
-                  ]
-                },
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "null",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
-        },
-        {
-          "id": "9a04aa0b-1b41-4a4e-b528-f9feff507aac",
-          "name": "读取多个文件",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "{{host}}",
-              "path": "/file/selects",
-              "query": []
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "[ 0 ]",
-              "urlencoded": [],
-              "formdata": []
-            }
-          },
-          "response": [
-            {
-              "name": "200 OK",
-              "originalRequest": {
-                "url": {
-                  "protocol": "http",
-                  "host": "{{host}}",
-                  "path": "/file/selects",
-                  "query": []
-                },
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "[ 0 ]",
-                  "urlencoded": [],
-                  "formdata": []
-                }
-              },
-              "header": [],
-              "body": "null",
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json"
-            }
-          ]
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
         }
-      ]
-    }
-  ]
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/fileMage/selectB/{current}/{size}",
+            "query" : [ {
+              "key" : "current",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "size",
+              "type" : "Integer",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            }, {
+              "key" : "fileName",
+              "type" : "String",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  }, {
+    "name" : "文件操作controller",
+    "item" : [ {
+      "id" : "f06d5ee6-4ccb-4f28-989d-2dfb7f9b284a",
+      "name" : "一次上传一个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/load",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ 0 ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/load",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ 0 ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"0\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "5b7fddcc-ea46-472c-80da-55909867e8ea",
+      "name" : "一次上传多个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/loads",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ [ 0 ] ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/loads",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ [ 0 ] ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "{\r\n  \"0\" : 0\r\n}",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "59d3a554-56c1-4e53-90c1-40c58e2ed39b",
+      "name" : "修改一个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/update/{fileId}",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ 0 ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/update/{fileId}",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ 0 ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "0",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "dac5aa61-8eb8-457a-9c20-e57da6c497d5",
+      "name" : "一次修改多个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/updates",
+          "query" : [ ]
+        },
+        "method" : "PUT",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ [ 0 ] ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/updates",
+            "query" : [ ]
+          },
+          "method" : "PUT",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ [ 0 ] ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "0",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "792db5a8-1c81-4c40-817c-9e657692abde",
+      "name" : "删除一个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/delete/{fileId}",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/delete/{fileId}",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "0",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "378c9995-e0ce-45d2-9863-b07f08e03e89",
+      "name" : "一次删除多个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/deletes",
+          "query" : [ ]
+        },
+        "method" : "DELETE",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ 0 ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/deletes",
+            "query" : [ ]
+          },
+          "method" : "DELETE",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ 0 ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "0",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "820e889b-0db4-492f-a19e-dff2ae6acd96",
+      "name" : "读取一个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/select/{fileId}",
+          "query" : [ {
+            "key" : "fileId",
+            "type" : "Long",
+            "value" : "",
+            "description" : "",
+            "disabled" : false
+          } ]
+        },
+        "method" : "GET",
+        "header" : [ ],
+        "body" : {
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/select/{fileId}",
+            "query" : [ {
+              "key" : "fileId",
+              "type" : "Long",
+              "value" : "",
+              "description" : "",
+              "disabled" : false
+            } ]
+          },
+          "method" : "GET",
+          "header" : [ ],
+          "body" : {
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    }, {
+      "id" : "73f0624d-aa67-468d-a640-3c3f0de57410",
+      "name" : "读取多个文件",
+      "request" : {
+        "url" : {
+          "protocol" : "http",
+          "host" : "{{host}}",
+          "path" : "/file/selects",
+          "query" : [ ]
+        },
+        "method" : "POST",
+        "header" : [ {
+          "key" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "body" : {
+          "mode" : "raw",
+          "raw" : "[ 0 ]",
+          "urlencoded" : [ ],
+          "formdata" : [ ]
+        }
+      },
+      "response" : [ {
+        "name" : "200 OK",
+        "originalRequest" : {
+          "url" : {
+            "protocol" : "http",
+            "host" : "{{host}}",
+            "path" : "/file/selects",
+            "query" : [ ]
+          },
+          "method" : "POST",
+          "header" : [ {
+            "key" : "Content-Type",
+            "value" : "application/json"
+          } ],
+          "body" : {
+            "mode" : "raw",
+            "raw" : "[ 0 ]",
+            "urlencoded" : [ ],
+            "formdata" : [ ]
+          }
+        },
+        "header" : [ ],
+        "body" : "null",
+        "status" : "OK",
+        "code" : 200,
+        "_postman_previewlanguage" : "json"
+      } ]
+    } ]
+  } ]
 }
