@@ -6,6 +6,13 @@
 
 
 
+![](https://img.shields.io/badge/Java-1.8+-green.svg)![](https://img.shields.io/badge/MySQL-5.7+-blue.svg)![](https://img.shields.io/badge/Vue-3.0+-red)![](https://img.shields.io/badge/Maven-3.0+-blue)
+
+[![](https://img.shields.io/badge/blog-@cfnjs-red.svg)](https://www.cnblogs.com/cfnjs)
+
+[![star](https://gitee.com/cfnjs20020602/item/badge/star.svg?theme=dark)](https://gitee.com/cfnjs20020602/lerun2)[![fork](https://gitee.com/cfnjs20020602/item/badge/fork.svg??theme=dark)](https://gitee.com/cfnjs20020602/lerun2)
+[![](https://img.shields.io/badge/version-v1.0-brightgreen.svg)](https://gitee.com/cfnjs20020602/lerun2)
+
 # 一、项目概述
 
 在 2021 年 1 月 25 日，我发布了教务管理系统初代版本，鉴于当时个人技术不成熟，该项目存在着很多缺陷
